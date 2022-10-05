@@ -14,14 +14,14 @@ SQL> INSERT INTO STUDENT_20_COPY VALUES('UE213089','TEST_NAME','IT',9999999999,D
 INSERT INTO STUDENT_20_COPY VALUES('UE213089','TEST_NAME','IT',9999999999,DATE '2003-01-01','DELHI')
 *
 ERROR at line 1:
-ORA-00001: unique constraint (SYS.STUDENT_20_COPY_RNO_PK) violated 
+ORA-00001: unique constraint (SYS.STUDENT_20_COPY_RNO_PK) violated
 
 
 SQL> INSERT INTO STUDENT_20_COPY VALUES('UE213189','TEST_NAME','IT',9999999999,DATE '2003-01-01','DELHI');
 INSERT INTO STUDENT_20_COPY VALUES('UE213189','TEST_NAME','IT',9999999999,DATE '2003-01-01','DELHI')
 *
 ERROR at line 1:
-ORA-00001: unique constraint (SYS.STUDENT_20_COPY_MOB_NO_UK) violated 
+ORA-00001: unique constraint (SYS.STUDENT_20_COPY_MOB_NO_UK) violated
 
 
 SQL> ALTER TABLE STUDENT_20_COPY MODIFY (MOB_NO NUMBER(10) CONSTRAINT STUDENT_20_COPY_MOB_NO_NN NOT NULL);
@@ -32,14 +32,14 @@ SQL> INSERT INTO STUDENT_20_COPY VALUES('UE213189','TEST_NAME','IT',9999999999,D
 INSERT INTO STUDENT_20_COPY VALUES('UE213189','TEST_NAME','IT',9999999999,DATE '2003-01-01','DELHI')
 *
 ERROR at line 1:
-ORA-00001: unique constraint (SYS.STUDENT_20_COPY_MOB_NO_UK) violated 
+ORA-00001: unique constraint (SYS.STUDENT_20_COPY_MOB_NO_UK) violated
 
 
 SQL> INSERT INTO STUDENT_20_COPY VALUES('99999','NEW_NAME','BIO',8888888888,DATE '2003-12-31','MUMBAI');
 INSERT INTO STUDENT_20_COPY VALUES('99999','NEW_NAME','BIO',8888888888,DATE '2003-12-31','MUMBAI')
 *
 ERROR at line 1:
-ORA-02290: check constraint (SYS.STUDENT_20_COPY_RNO_CC) violated 
+ORA-02290: check constraint (SYS.STUDENT_20_COPY_RNO_CC) violated
 
 
 SQL> INSERT INTO STUDENT_20_COPY VALUES('UE99999','NEW_NAME','BIO',8888888888,DATE '2003-12-31','MUMBAI');
@@ -50,15 +50,15 @@ SQL> INSERT INTO STUDENT_20_COPY(RNO,NAME) VALUES('UE888888','ANOTHER_NAME');
 INSERT INTO STUDENT_20_COPY(RNO,NAME) VALUES('UE888888','ANOTHER_NAME')
 *
 ERROR at line 1:
-ORA-01400: cannot insert NULL into ("SYS"."STUDENT_20_COPY"."MOB_NO") 
+ORA-01400: cannot insert NULL into ("SYS"."STUDENT_20_COPY"."MOB_NO")
 
 SQL> SELECT * FROM STUDENT_20_COPY;
 
-RNO        NAME                 DEP     MOB_NO DOB       ADDRESS                
----------- -------------------- --- ---------- --------- ---------------        
-UE213020   Aryan Singh Dhiman   CSE 9779906441 01-FEB-03 CHANDIGARH             
-UE213089   TEST_NAME            IT  9999999999 01-JAN-03 DELHI                  
-UE99999    NEW_NAME             BIO 8888888888 31-DEC-03 MUMBAI                 
+RNO        NAME                 DEP     MOB_NO DOB       ADDRESS
+---------- -------------------- --- ---------- --------- ---------------
+UE213020   Aryan Singh Dhiman   CSE 9779906441 01-FEB-03 CHANDIGARH
+UE213089   TEST_NAME            IT  9999999999 01-JAN-03 DELHI
+UE99999    NEW_NAME             BIO 8888888888 31-DEC-03 MUMBAI
 
 SQL> DESC STUDENT_20_COPY;
  Name                                      Null?    Type
@@ -84,14 +84,14 @@ SQL> INSERT INTO FEE_STATUS_20 VALUES('UE887788','NO');
 INSERT INTO FEE_STATUS_20 VALUES('UE887788','NO')
 *
 ERROR at line 1:
-ORA-02291: integrity constraint (SYS.FEE_STATUS_20_ROLL_NO_FK) violated - 
-parent key not found 
+ORA-02291: integrity constraint (SYS.FEE_STATUS_20_ROLL_NO_FK) violated -
+parent key not found
 
 
 SQL> SELECT * FROM FEE_STATUS_20;
 
-ROLL_NO    FEE                                                                  
----------- ---                                                                  
-UE213020   YES                                                                  
+ROLL_NO    FEE
+---------- ---
+UE213020   YES
 
 SQL> SPOOL OFF
