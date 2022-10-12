@@ -7,7 +7,7 @@ ADD B
 
 JC ONCAR
 
-CMA
+CMAa
 INX H
 MOV M,A
 INX H
