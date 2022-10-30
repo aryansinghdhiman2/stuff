@@ -143,3 +143,7 @@ SQL> ALTER SEQUENCE STU_SEQ CACHE 10;
 Sequence altered.
 
 SQL> SPOOL OFF;
+
+SQL> DROP SEQUENCE STU_SEQ;
+
+Sequence dropped.
