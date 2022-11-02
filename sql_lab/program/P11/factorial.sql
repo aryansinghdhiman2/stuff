@@ -1,0 +1,11 @@
+CREATE OR REPLACE PROCEDURE FACTO (INP IN NUMBER) AS
+    FAC NUMBER;
+    I NUMBER;
+BEGIN
+    FAC := 1;
+    FOR I IN 1 .. INP
+    LOOP
+        FAC := FAC * I;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE('Factorial is : ' || FAC);
+END;

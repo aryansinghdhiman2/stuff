@@ -1,0 +1,14 @@
+DECLARE
+    INPUT NUM_VARRAY;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Enter array of size less than 200: ');
+    INPUT := NUM_VARRAY(&LIST);
+    B_SORT(INPUT  => INPUT);
+
+
+    DBMS_OUTPUT.PUT_LINE(A  => 'SORTED LIST: ');
+    FOR I IN 1 .. INPUT.COUNT LOOP
+        DBMS_OUTPUT.PUT(INPUT(I)||' ');
+        END LOOP;
+    DBMS_OUTPUT.NEW_LINE();
+END;

@@ -1,12 +1,8 @@
-DECLARE
-    INP NUMBER(3);
-    I NUMBER(3);
-    REMAIN NUMBER(3);
-
+CREATE OR REPLACE PROCEDURE PRIME_FOR (INP IN NUMBER)
+AS
+    I NUMBER;
+    REMAIN NUMBER;
 BEGIN
-    -- DBMS_OUTPUT.PUT_LINE('Enter Number you want checked: ');
-    INP := &INP;
-
     IF INP <= 1 THEN 
         DBMS_OUTPUT.PUT_LINE('Number should be greater than 1');
     ELSE
@@ -23,5 +19,5 @@ BEGIN
             DBMS_OUTPUT.PUT_LINE(INP||' is not prime');
         END IF;
     END IF;
-END;
+END PRIME_FOR;
 

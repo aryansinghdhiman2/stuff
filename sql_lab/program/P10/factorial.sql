@@ -1,7 +1,7 @@
 DECLARE
-    INP NUMBER(1);
-    FAC NUMBER(6);
-    I NUMBER(1);
+    INP NUMBER;
+    FAC NUMBER;
+    I NUMBER;
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Enter number for which you want factorial: ');
     INP:=&INP;

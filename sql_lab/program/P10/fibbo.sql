@@ -1,8 +1,8 @@
 DECLARE
-    NUM_1 NUMBER(3):= 0;
-    NUM_2 NUMBER(3):= 1;
-    NUM_3 NUMBER(3);
-    INP NUMBER(3);
+    NUM_1 NUMBER:= 0;
+    NUM_2 NUMBER:= 1;
+    NUM_3 NUMBER;
+    INP NUMBER;
 BEGIN
     -- DBMS_OUTPUT.PUT_LINE('Enter number till which you want fibonacci series: ');
     INP := &INP;
