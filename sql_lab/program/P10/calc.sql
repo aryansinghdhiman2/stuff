@@ -4,11 +4,11 @@ DECLARE
     INP NUMBER(1);
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Enter first number: ');
-    NUM_1 := :NUM_1;
+    NUM_1 := &NUM_1;
     DBMS_OUTPUT.PUT_LINE('Enter second number: ');
-    NUM_2 := :NUM_2;
+    NUM_2 := &NUM_2;
     DBMS_OUTPUT.PUT_LINE('Enter 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division');
-    INP := :INP;
+    INP := &INP;
 
     CASE INP
         WHEN 1 THEN DBMS_OUTPUT.PUT_LINE('Addition: '|| (NUM_1+NUM_2));

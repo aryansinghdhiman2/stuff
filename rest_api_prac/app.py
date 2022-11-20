@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,abort
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ class Drink(db.Model):
 
 @app.route('/')
 def index():
-    return 'Hello!'
+    return abort(418)
 
 @app.route('/drinks')
 def get_drinks():

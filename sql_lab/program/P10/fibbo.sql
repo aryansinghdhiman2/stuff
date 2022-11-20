@@ -4,7 +4,7 @@ DECLARE
     NUM_3 NUMBER;
     INP NUMBER;
 BEGIN
-    -- DBMS_OUTPUT.PUT_LINE('Enter number till which you want fibonacci series: ');
+    DBMS_OUTPUT.PUT_LINE('Enter number till which you want fibonacci series: ');
     INP := &INP;
     DBMS_OUTPUT.PUT(NUM_1 ||' '|| NUM_2 || ' ');
     LOOP
