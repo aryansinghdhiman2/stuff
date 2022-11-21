@@ -189,3 +189,5 @@ NAME            LOWEST SALARY
 Akansha Jha             20000                                                   
 
 SQL> SPOOL OFF;
+
+SELECT EMP_NAME FROM EMPLOYEE_20 ORDER BY EMP_NAME LIMIT 4;
