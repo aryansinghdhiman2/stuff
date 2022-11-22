@@ -11,6 +11,7 @@ int main()
     t.insert(8);
     t.insert(20);
     t.insert(24);
+
     cout<<"In Order: ";
     t.traverse_in_order();
     cout<<'\n';
@@ -19,14 +20,11 @@ int main()
     cout<<'\n';
     cout<<"Pre Order: ";
     t.traverse_pre_order();
+    cout<<'\n';
 
-    cout<<"\nHeight: "<<t.height()<<endl;
-
+    cout<<"Height: "<<t.height()<<endl;
     cout<<"Total Nodes: "<<t.countTotal()<<endl;
-
     cout<<"Total Leafs: "<<t.countLeaf()<<endl;
-
     cout<<"Nodes with One: "<<t.countOneChild()<<endl;
-
     cout<<"Nodes with Two: "<<t.countTwoChild()<<endl;
 }
