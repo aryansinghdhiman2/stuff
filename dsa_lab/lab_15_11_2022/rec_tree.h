@@ -10,6 +10,15 @@ struct Node
     Node* right;
 };
 
+int max(int a,int b)
+{
+    if(a>b) 
+        return a;
+    else
+        return b;
+
+}
+
 class Tree
 {
     Node* head;
@@ -21,7 +30,10 @@ class Tree
     void traverse_in_order(Node* ptr);
     void traverse_pre_order(Node* temp);
     void traverse_post_order(Node* temp);
-    
+    int height(Node* temp);
+    int countTotal(Node* temp);
+    int countLeaf(Node* temp);
+    int countOneChild(Node* temp);
     public:
     Tree(){this->head = nullptr;}
     void insert(int data);
@@ -31,6 +43,10 @@ class Tree
     void traverse_post_order();
     void delete_node(int data);
     // ~Tree(){delete this->head}
+    int height();
+    int countTotal();
+    int countLeaf();
+    int countOneChild();
 };
 
 void Tree::insert(int data)
@@ -241,4 +257,95 @@ void Tree::delete_node(int data)
     {
         delete_two_child(temp);
     }
+}
+
+int Tree::height()
+{
+    if(this->head == nullptr)
+    {
+        return 0;
+    }
+    return (max(height(head->left),height(head->right))+1);
+}
+
+int Tree::height(Node* temp)
+{
+    if(temp==nullptr)
+        return 0;
+    else
+        return (max(height(temp->left),height(temp->right))+1);
+}
+
+int Tree::countTotal()
+{
+    if(head==nullptr)
+        return 0;
+    
+    return 1 + countTotal(head->left) + countTotal(head->right);
+}
+
+int Tree::countTotal(Node* temp)
+{
+    if(temp==nullptr)
+        return 0;
+    else
+        return 1 + countTotal(temp->right) + countTotal(temp->left);
+}
+
+int Tree::countLeaf()
+{
+    if(head==nullptr)
+    {
+        return 0;
+    }
+    else
+        return countLeaf(head->right)+countLeaf(head->left);
+}
+
+int Tree::countLeaf(Node* temp)
+{
+    if(temp==nullptr)
+        return 0;
+    else if(temp->right==nullptr && temp->left==nullptr)
+        return 1;
+    else return countLeaf(temp->left)+countLeaf(temp->right);
+}
+
+int Tree::countOneChild()
+{
+    if(head==nullptr)
+    {
+        return 0;
+    }
+    int count=countOneChild(head->left)+countOneChild(head->right);
+    if(head->left==nullptr && head->right!=nullptr)
+    {
+        return count+1;
+    }
+    if(head->right==nullptr && head->left!=nullptr)
+    {
+        return count+1;
+    }
+    else return count;
+    
+}
+
+int Tree::countOneChild(Node* temp)
+{
+    if(temp==nullptr)
+    {
+        return 0;
+    }
+    int count = countOneChild(temp->right)+countOneChild(temp->left);
+
+    if(temp->left==nullptr && temp->right!=nullptr)
+    {
+        return count+1;
+    }
+    if(temp->left!=nullptr && temp->right==nullptr)
+    {
+        return count+1;
+    }
+    else
+        return count;
 }

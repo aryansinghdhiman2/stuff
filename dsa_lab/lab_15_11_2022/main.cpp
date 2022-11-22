@@ -9,9 +9,18 @@ int main()
     t.insert(23);
     t.insert(4);
     t.insert(8);
+    cout<<"In Order: ";
     t.traverse_in_order();
     cout<<'\n';
-    t.traverse_post_order();
-    cout<<'\n';
-    t.traverse_pre_order();
+    // t.traverse_post_order();
+    // cout<<'\n';
+    // t.traverse_pre_order();
+
+    cout<<"Height: "<<t.height()<<endl;
+
+    cout<<"Total Nodes: "<<t.countTotal()<<endl;
+
+    cout<<"Total Leafs: "<<t.countLeaf()<<endl;
+
+    // cout<<"Nodes with One"
 }
