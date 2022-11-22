@@ -34,6 +34,7 @@ class Tree
     int countTotal(Node* temp);
     int countLeaf(Node* temp);
     int countOneChild(Node* temp);
+    int countTwoChild(Node* temp);
     public:
     Tree(){this->head = nullptr;}
     void insert(int data);
@@ -47,6 +48,7 @@ class Tree
     int countTotal();
     int countLeaf();
     int countOneChild();
+    int countTwoChild();
 };
 
 void Tree::insert(int data)
@@ -343,6 +345,37 @@ int Tree::countOneChild(Node* temp)
         return count+1;
     }
     if(temp->left!=nullptr && temp->right==nullptr)
+    {
+        return count+1;
+    }
+    else
+        return count;
+}
+
+int Tree::countTwoChild()
+{
+    if(head==nullptr)
+    {
+        return 0;
+    }
+    int count=countTwoChild(head->left)+countTwoChild(head->right);
+    if(head->left!=nullptr && head->right!=nullptr)
+    {
+        return count+1;
+    }
+    else return count;
+    
+}
+
+int Tree::countTwoChild(Node* temp)
+{
+    if(temp==nullptr)
+    {
+        return 0;
+    }
+    int count = countTwoChild(temp->right)+countTwoChild(temp->left);
+
+    if(temp->left!=nullptr && temp->right!=nullptr)
     {
         return count+1;
     }

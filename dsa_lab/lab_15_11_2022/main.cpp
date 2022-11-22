@@ -9,18 +9,24 @@ int main()
     t.insert(23);
     t.insert(4);
     t.insert(8);
+    t.insert(20);
+    t.insert(24);
     cout<<"In Order: ";
     t.traverse_in_order();
     cout<<'\n';
-    // t.traverse_post_order();
-    // cout<<'\n';
-    // t.traverse_pre_order();
+    cout<<"Post Order: ";
+    t.traverse_post_order();
+    cout<<'\n';
+    cout<<"Pre Order: ";
+    t.traverse_pre_order();
 
-    cout<<"Height: "<<t.height()<<endl;
+    cout<<"\nHeight: "<<t.height()<<endl;
 
     cout<<"Total Nodes: "<<t.countTotal()<<endl;
 
     cout<<"Total Leafs: "<<t.countLeaf()<<endl;
 
-    // cout<<"Nodes with One"
+    cout<<"Nodes with One: "<<t.countOneChild()<<endl;
+
+    cout<<"Nodes with Two: "<<t.countTwoChild()<<endl;
 }
