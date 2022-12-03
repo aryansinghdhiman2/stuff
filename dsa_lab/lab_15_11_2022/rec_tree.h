@@ -35,6 +35,7 @@ class Tree
     int countLeaf(Node* temp);
     int countOneChild(Node* temp);
     int countTwoChild(Node* temp);
+    
     public:
     Tree(){this->head = nullptr;}
     void insert(int data);
