@@ -15,16 +15,20 @@ int main()
     cout<<"In Order: ";
     t.traverse_in_order();
     cout<<'\n';
-    cout<<"Post Order: ";
-    t.traverse_post_order();
+    t.delete_node(24);
     cout<<'\n';
-    cout<<"Pre Order: ";
-    t.traverse_pre_order();
-    cout<<'\n';
+    t.traverse_in_order();
+    cout<<"\ntest";
+    // cout<<"Post Order: ";
+    // t.traverse_post_order();
+    // cout<<'\n';
+    // cout<<"Pre Order: ";
+    // t.traverse_pre_order();
+    // cout<<'\n';
 
-    cout<<"Height: "<<t.height()<<endl;
-    cout<<"Total Nodes: "<<t.countTotal()<<endl;
-    cout<<"Total Leafs: "<<t.countLeaf()<<endl;
-    cout<<"Nodes with One: "<<t.countOneChild()<<endl;
-    cout<<"Nodes with Two: "<<t.countTwoChild()<<endl;
+    // cout<<"Height: "<<t.height()<<endl;
+    // cout<<"Total Nodes: "<<t.countTotal()<<endl;
+    // cout<<"Total Leafs: "<<t.countLeaf()<<endl;
+    // cout<<"Nodes with One: "<<t.countOneChild()<<endl;
+    // cout<<"Nodes with Two: "<<t.countTwoChild()<<endl;
 }

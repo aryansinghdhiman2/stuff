@@ -22,7 +22,7 @@ int max(int a,int b)
 class Tree
 {
     Node* head;
-    void delete_one_child(Node* ptr);
+    void delete_one_child(Node*& ptr);
     void delete_two_child(Node* ptr);
     Node* in_order_succ(Node* ptr);
     void insert(Node* ptr,Node* parent,int data);
@@ -215,7 +215,7 @@ Node* Tree::in_order_succ(Node* ptr)
     
 }
 
-void Tree::delete_one_child(Node* ptr)
+void Tree::delete_one_child(Node*& ptr)
 {
     if(ptr==nullptr)
     {

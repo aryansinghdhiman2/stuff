@@ -1,25 +1,55 @@
-SQL> SELECT * FROM EMPLOYEE_20;
+--query 1
+SQL> SELECT DEPT_NO "DEPARTMENT NO",SUM(SALARY) "Sum of Salary" FROM EMPLOYEE_20 GROUP BY DEPT_NO ORDER BY DEPT_NO;
 
-EMP_ EMP_NAME        JOB            SALARY MAN    DEPT_NO                       
----- --------------- ---------- ---------- --- ----------                       
-E006 Amit            WORKER         100000 NO           2                       
-E018 Ashish          WORKER          40000 NO           3                       
-E010 Aniket          HR             130000 YES          4                       
-E003 Akansha Jha     WORKER          20000 YNO          4                       
-E012 Ankita Thakur   MANAGER        100000 YES          1                       
-E001 Abhishek        MANAGER        130000 YES          2                       
-E029 Ayush                         3000000                                      
-E004 Akansha Sharma  MANAGER        100000 YES          4                       
-E015 Anuj            HR             180000 YES          3                       
-E016 Archit          MANAGER        140000 YES          3                       
-E008 Ananya          HR             175000 YES          2                       
+DEPARTMENT NO Sum of Salary
+------------- -------------
+            1        360000
+            2        405000
+            3        360000
+            4        250000  
+					 3000000
+					 
+SQL> SELECT JOB "JOB",AVG(SALARY) "Average Salary" FROM EMPLOYEE_20 GROUP BY JOB ORDER BY JOB;
 
-EMP_ EMP_NAME        JOB            SALARY MAN    DEPT_NO                       
----- --------------- ---------- ---------- --- ----------                       
-E014 Anshal          HR             200000 YES          1                       
-E007 Amrit           WORKER          60000 NO           1                       
+JOB        Average Salary
+---------- --------------
+HR                 171250
+MANAGER            117500
+WORKER              55000
+                  3000000  	 
+				
+--query 3
+SELECT DEPT_NO "DEPARTMENT",JOB "JOB",AVG(SALARY) "Average Salary" FROM EMPLOYEE_20 GROUP BY JOB,DEPT_NO ORDER BY DEPT_NO;
+
+DEPARTMENT JOB        Average Salary
+---------- ---------- --------------
+         1 HR                 200000
+         1 MANAGER            100000
+         1 WORKER              60000
+         2 HR                 175000
+         2 MANAGER            130000
+         2 WORKER             100000
+         3 HR                 180000
+         3 MANAGER            140000
+         3 WORKER              40000
+         4 HR                 130000
+         4 MANAGER            100000
+
+DEPARTMENT JOB        Average Salary
+---------- ---------- --------------
+         4 WORKER              20000
+                             3000000
 
 13 rows selected.
+
+--QUERY 4
+
+SQL> SELECT JOB,SUM(SALARY) "TOTAL",MIN(SALARY) "MINIMUM",MAX(SALARY) "MAXIMUM",AVG(SALARY) "AVERAGE" FROM EMPLOYEE_20 WHERE DEPT_NO = 1 OR DEPT_NO = 2 HAVING AVG(SALARY)>100000 GROUP BY JOB;
+
+JOB             TOTAL    MINIMUM    MAXIMUM    AVERAGE
+---------- ---------- ---------- ---------- ----------
+MANAGER        230000     100000     130000     115000
+HR             375000     175000     200000     187500 
 
 --QUERY 5
 SQL> SELECT EMP_NAME "NAME" , SALARY
@@ -110,40 +140,7 @@ NAME
 ---------------                                                                 
 Amit                                                                            
 Ashish                                                                          
-Amrit                                                                           
-
-SQL> SELECT EMP_NAME "NAME" FROM EMPLOYEE_20 E1
-  2  WHERE EMP_NAME = ANY ( SELECT EMP_NAME FROM EMPLOYEE_20 WHERE MANAGERID = 'NO');
-
-NAME                                                                            
----------------                                                                 
-Amit                                                                            
-Ashish                                                                          
-Amrit                                                                           
-
-
-SQL> SELECT * FROM EMPLOYEE_20;
-
-EMP_ EMP_NAME        JOB            SALARY MAN    DEPT_NO                       
----- --------------- ---------- ---------- --- ----------                       
-E006 Amit            WORKER         100000 NO           2                       
-E018 Ashish          WORKER          40000 NO           3                       
-E010 Aniket          HR             130000 YES          4                       
-E003 Akansha Jha     WORKER          20000 YNO          4                       
-E012 Ankita Thakur   MANAGER        100000 YES          1                       
-E001 Abhishek        MANAGER        130000 YES          2                       
-E029 Ayush                         3000000                                      
-E004 Akansha Sharma  MANAGER        100000 YES          4                       
-E015 Anuj            HR             180000 YES          3                       
-E016 Archit          MANAGER        140000 YES          3                       
-E008 Ananya          HR             175000 YES          2                       
-
-EMP_ EMP_NAME        JOB            SALARY MAN    DEPT_NO                       
----- --------------- ---------- ---------- --- ----------                       
-E014 Anshal          HR             200000 YES          1                       
-E007 Amrit           WORKER          60000 NO           1                       
-
-13 rows selected.
+Amrit   
 
 --QUERY 14
 SQL> SELECT EMP_NAME "NAME" FROM EMPLOYEE_20
@@ -161,16 +158,7 @@ Anuj
 Archit                                                                          
 Ananya                                                                          
 Anshal                                                                          
-Amrit                                                                           
-
-9 rows selected.
-
-SQL> SELECT EMP_NAME "NAME" FROM EMPLOYEE_20
-  2  WHERE SALARY < (SELECT MIN(SALARY) FROM EMPLOYEE_20 WHERE DEPT_NO = 4)
-  3  AND
-  4  DEPT_NO <> 4;
-
-no rows selected                                                                         
+Amrit    
 
 --QUERY 15
 SQL> SELECT EMP_NAME "NAME",SALARY "HIGHEST SALARY" FROM EMPLOYEE_20
@@ -186,8 +174,4 @@ SQL> SELECT EMP_NAME "NAME",SALARY "LOWEST SALARY" FROM EMPLOYEE_20
 
 NAME            LOWEST SALARY                                                   
 --------------- -------------                                                   
-Akansha Jha             20000                                                   
-
-SQL> SPOOL OFF;
-
-SELECT EMP_NAME FROM EMPLOYEE_20 ORDER BY EMP_NAME LIMIT 4;
+Akansha Jha             20000  
