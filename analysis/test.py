@@ -29,9 +29,15 @@
 # # plt.plot(2,3,'bo',linewidth=2)
 # plt.show()
 
-import csv
-with open('eggs.csv', 'w', newline='') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=' ',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
-    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+# import csv
+# with open('eggs.csv', 'w', newline='') as csvfile:
+#     spamwriter = csv.writer(csvfile, delimiter=' ',
+#                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
+#     spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
+#     spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+
+from matplotlib import get_backend
+from matplotlib import pyplot
+print(get_backend())
+pyplot.plot([0,0],[1,1])
+pyplot.show()

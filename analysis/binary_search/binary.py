@@ -5,7 +5,7 @@ import csv
 
 def binary_search(data,key):
     begin = 0
-    end = len(data)
+    end = len(data)-1
     while(end >= begin):
         mid = int((begin + end)/2)
         if(data[mid]==key):
@@ -24,7 +24,6 @@ def log_joiner(log_1,log_2):
 
 def log_plotter(log):
     plt.plot(log['Range'],log['Time'])
-    # plt.axline([0, 0], [1, 1],color='g')
     plt.show()
 
 def logger(log):
@@ -38,13 +37,6 @@ def logger(log):
         for i in range(0,len(range_tuple)):
             csvwriter.writerow([range_tuple[i],time_tuple[i],index[i],keys[i]])
 
-
-log = {'Range':[],
-            'Index':[],
-            'Keys':[],
-            'Time':[]
-    }
-
 def analysis(range_of_data,number_of_iter):
     log = {'Range':[],
             'Index':[],
@@ -53,8 +45,7 @@ def analysis(range_of_data,number_of_iter):
     }
     for data_len in range_of_data:
         print(data_len)
-        log['Range'].append(data_len)
-        # log['Keys'].append(key)
+        log['Range'].append(data_len/2)
 
         index_list = []
         key_list = []
@@ -75,14 +66,17 @@ def analysis(range_of_data,number_of_iter):
         log['Time'].append(final_time)
         log['Index'].append(index_list)
         log['Keys'].append(key_list)
-    # plt.show()
     return log
 
-# plt.axline([0, 0], [1, 1])
-log_joiner(log,analysis(range(1000,10000,500),1000))
-log_joiner(log,analysis(range(10000,100000,5000),1000))
-log_joiner(log,analysis(range(100000,1000000,50000),500))
-log_joiner(log,analysis(range(1000000,2000000,100000),500))
-logger(log)
-# log_plotter(log)
-# plt.show()
+if(__name__=="__main__"):
+    log = {'Range':[],
+            'Index':[],
+            'Keys':[],
+            'Time':[]
+        }
+    log_joiner(log,analysis(range(1000,10000,500),1000))
+    log_joiner(log,analysis(range(10000,100000,5000),1000))
+    log_joiner(log,analysis(range(100000,1000000,50000),500))
+    log_joiner(log,analysis(range(1000000,2000000,100000),500))
+    logger(log)
+    log_plotter(log)

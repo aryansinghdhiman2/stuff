@@ -1,7 +1,7 @@
 from time import time
 from random import sample,randint
 import csv
-# from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 
 def linear_search(data,key):
     for i in range(0,len(data)):
@@ -76,10 +76,10 @@ def logger(log):
         for i in range(0,len(range_tuple)):
             csvwriter.writerow([range_tuple[i],time_tuple[i],index[i],keys[i]])
 
-# def log_plotter(log):
-#     plt.plot(log['N'],log['Time'])
-#     plt.show()
+def log_plotter(log):
+    plt.plot(log['N'],log['Time'])
+    plt.show()
 
-log = analysis([2,3,5],10,100)
-logger(log)
-# log_plotter(log)
+log = analysis(range(2,14),1000,1000)
+# logger(log)
+log_plotter(log)

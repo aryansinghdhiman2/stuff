@@ -17,11 +17,10 @@ def log_joiner(log_1,log_2):
 
 def log_plotter(log):
     plt.plot(log['Range'],log['Time'])
-    # plt.axline([0, 0], [1, 1],color='g')
     plt.show()
 
 def logger(log):
-    with open("linear_search_2.csv",'w',newline='') as csvfile:
+    with open("linear_search_fin.csv",'w',newline='') as csvfile:
         csvwriter = csv.writer(csvfile,delimiter='|')
         range_tuple = log['Range']
         index = log['Index']
@@ -30,13 +29,6 @@ def logger(log):
 
         for i in range(0,len(range_tuple)):
             csvwriter.writerow([range_tuple[i],time_tuple[i],index[i],keys[i]])
-
-
-log = {'Range':[],
-            'Index':[],
-            'Keys':[],
-            'Time':[]
-    }
 
 def analysis(array_of_range,number_of_iter):
     log = {'Range':[],
@@ -47,7 +39,6 @@ def analysis(array_of_range,number_of_iter):
     for range_of_sample_data in array_of_range:
         print(range_of_sample_data)
         log['Range'].append(int(range_of_sample_data/2))
-        # log['Keys'].append(key)
 
         index_list = []
         key_list = []
@@ -69,12 +60,18 @@ def analysis(array_of_range,number_of_iter):
         log['Keys'].append(key_list)
     return log
 
-# plt.axline([0, 0], [1, 1])
-# log_joiner(log,analysis(range(1000,10000,),1000))
-log_joiner(log,analysis(range(1000,10000,500),1000))
-# log_joiner(log,analysis(range(10000,100000,5000),1000))
-# log_joiner(log,analysis(range(100000,1000000,50000),500))
-# log_joiner(log,analysis(range(1000000,2000000,100000),500))
-#logger(log)
-log_plotter(log)
-# plt.show()
+
+if(__name__=="__main__"):
+
+    log = {'Range':[],
+            'Index':[],
+            'Keys':[],
+            'Time':[]
+        }
+
+    log_joiner(log,analysis(range(1000,10000,500),1000))
+    log_joiner(log,analysis(range(10000,100000,5000),1000))
+    log_joiner(log,analysis(range(100000,1000000,50000),500))
+    log_joiner(log,analysis(range(1000000,2000000,100000),500))
+    logger(log)
+    log_plotter(log)
