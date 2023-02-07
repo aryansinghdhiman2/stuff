@@ -1,0 +1,901 @@
+Script started on 2023-01-31 11:05:06+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="40"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ lscat > myfile[3Pman split[2Pcd lab2[3@mkdir[C[C[C[C[Cpython -u "/mnt/e/Programming/analysis/nary_search/n_way_2.py"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir lab2[K
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ cd lab2
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cd lab2[3@mkdir[C[C[C[C[Cls[Kcat > myfile[3Pman split[2Pcd lab2[3@mkdir[C[C[C[C[Cpython -u "/mnt/e/Programming/analysis/nary_search/n_way_2.py"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir lab2[K[3Pcd[C[C[C[C[Cman splitcat > myfile
+This a   file taht   hat wpu  ould be splo it.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mmyfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ split [K[K[K[K[K[Kman split
+[?1049h[22;0;0t[?1h=SPLIT(1)                                                              User Commands                                                             SPLIT(1)[m
+[m
+[1mNAME[0m[m
+       split - split a file into pieces[m
+[m
+[1mSYNOPSIS[0m[m
+       [1msplit[0m [[4mOPTION[24m]... [[4mFILE[24m [[4mPREFIX[24m]][m
+[m
+[1mDESCRIPTION[0m[m
+       Output pieces of FILE to PREFIXaa, PREFIXab, ...; default size is 1000 lines, and default PREFIX is 'x'.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[0m, [1m--suffix-length[0m=[4mN[24m[m
+              generate suffixes of length N (default 2)[m
+[m
+       [1m--additional-suffix[0m=[4mSUFFIX[24m[m
+              append an additional SUFFIX to file names[m
+[m
+       [1m-b[0m, [1m--bytes[0m=[4mSIZE[24m[m
+              put SIZE bytes per output file[m
+[m
+       [1m-C[0m, [1m--line-bytes[0m=[4mSIZE[24m[m
+              put at most SIZE bytes of records per output file[m
+[m
+       [1m-d[0m     use numeric suffixes starting at 0, not alphabetic[m
+[m
+       [1m--numeric-suffixes[0m[=[4mFROM[24m][m
+              same as [1m-d[0m, but allow setting the start value[m
+[m
+       [1m-x[0m     use hex suffixes starting at 0, not alphabetic[m
+[m
+       [1m--hex-suffixes[0m[=[4mFROM[24m][m
+              same as [1m-x[0m, but allow setting the start value[m
+[m
+       [1m-e[0m, [1m--elide-empty-files[0m[m
+              do not generate empty output files with '-n'[m
+[7m Manual page split(1) line 1 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 2 (press h for help or q to quit)[27m[K[K       [1m--filter[0m=[4mCOMMAND[24m[m
+[7m Manual page split(1) line 3 (press h for help or q to quit)[27m[K[K              write to shell COMMAND; file name is $FILE[m
+[7m Manual page split(1) line 4 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 5 (press h for help or q to quit)[27m[K[K       [1m-l[0m, [1m--lines[0m=[4mNUMBER[24m[m
+[7m Manual page split(1) line 6 (press h for help or q to quit)[27m[K[K              put NUMBER lines/records per output file[m
+[7m Manual page split(1) line 7 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 8 (press h for help or q to quit)[27m[K[K       [1m-n[0m, [1m--number[0m=[4mCHUNKS[24m[m
+[7m Manual page split(1) line 9 (press h for help or q to quit)[27m[K[K              generate CHUNKS output files; see explanation below[m
+[7m Manual page split(1) line 10 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 11 (press h for help or q to quit)[27m[K[K       [1m-t[0m, [1m--separator[0m=[4mSEP[24m[m
+[7m Manual page split(1) line 12 (press h for help or q to quit)[27m[K[K              use SEP instead of newline as the record separator; '\0' (zero) specifies the NUL character[m
+[7m Manual page split(1) line 13 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 14 (press h for help or q to quit)[27m[K[K       [1m-u[0m, [1m--unbuffered[0m[m
+[7m Manual page split(1) line 15 (press h for help or q to quit)[27m[K[K              immediately copy input to output with '-n r/...'[m
+[7m Manual page split(1) line 16 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 17 (press h for help or q to quit)[27m[K[K       [1m--verbose[0m[m
+[7m Manual page split(1) line 18 (press h for help or q to quit)[27m[K[K              print a diagnostic just before each output file is opened[m
+[7m Manual page split(1) line 19 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 20 (press h for help or q to quit)[27m[K[K       [1m--help[0m display this help and exit[m
+[7m Manual page split(1) line 21 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 22 (press h for help or q to quit)[27m[K[K       [1m--version[0m[m
+[7m Manual page split(1) line 23 (press h for help or q to quit)[27m[K[K              output version information and exit[m
+[7m Manual page split(1) line 24 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 25 (press h for help or q to quit)[27m[K[K       The  SIZE argument is an integer and optional unit (example: 10K is 10*1024).  Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of[m
+[7m Manual page split(1) line 26 (press h for help or q to quit)[27m[K[K       1000).[m
+[7m Manual page split(1) line 27 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 28 (press h for help or q to quit)[27m[K[K   [1mCHUNKS[0m [1mmay[0m [1mbe:[0m[m
+[7m Manual page split(1) line 29 (press h for help or q to quit)[27m[K[K       N      split into N files based on size of input[m
+[7m Manual page split(1) line 30 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 31 (press h for help or q to quit)[27m[K[K       K/N    output Kth of N to stdout[m
+[7m Manual page split(1) line 32 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 33 (press h for help or q to quit)[27m[K[K       l/N    split into N files without splitting lines/records[m
+[7m Manual page split(1) line 34 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 35 (press h for help or q to quit)[27m[K[K       l/K/N  output Kth of N to stdout without splitting lines/records[m
+[7m Manual page split(1) line 36 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 37 (press h for help or q to quit)[27m[K[K       r/N    like 'l' but use round robin distribution[m
+[7m Manual page split(1) line 38 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 39 (press h for help or q to quit)[27m[K[K       r/K/N  likewise but only output Kth of N to stdout[m
+[7m Manual page split(1) line 40 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page split(1) line 41 (press h for help or q to quit)[27m[K[K[1mAUTHOR[0m[m
+[7m Manual page split(1) line 42 (press h for help or q to quit)[27m[K[K       Written by Torbjorn Granlund and Richard M. Stallman.[m
+[7m Manual page split(1) line 43 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ sl[Kplit -n 4 myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mmyfile[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ lssplit -n 4 myfile[8Pman split
+[?1049h[22;0;0t[?1h=SPLIT(1)                                                              User Commands                                                             SPLIT(1)[m
+[m
+[1mNAME[0m[m
+       split - split a file into pieces[m
+[m
+[1mSYNOPSIS[0m[m
+       [1msplit[0m [[4mOPTION[24m]... [[4mFILE[24m [[4mPREFIX[24m]][m
+[m
+[1mDESCRIPTION[0m[m
+       Output pieces of FILE to PREFIXaa, PREFIXab, ...; default size is 1000 lines, and default PREFIX is 'x'.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[0m, [1m--suffix-length[0m=[4mN[24m[m
+              generate suffixes of length N (default 2)[m
+[m
+       [1m--additional-suffix[0m=[4mSUFFIX[24m[m
+              append an additional SUFFIX to file names[m
+[m
+       [1m-b[0m, [1m--bytes[0m=[4mSIZE[24m[m
+              put SIZE bytes per output file[m
+[m
+       [1m-C[0m, [1m--line-bytes[0m=[4mSIZE[24m[m
+              put at most SIZE bytes of records per output file[m
+[m
+       [1m-d[0m     use numeric suffixes starting at 0, not alphabetic[m
+[m
+       [1m--numeric-suffixes[0m[=[4mFROM[24m][m
+              same as [1m-d[0m, but allow setting the start value[m
+[m
+       [1m-x[0m     use hex suffixes starting at 0, not alphabetic[m
+[m
+       [1m--hex-suffixes[0m[=[4mFROM[24m][m
+              same as [1m-x[0m, but allow setting the start value[m
+[m
+       [1m-e[0m, [1m--elide-empty-files[0m[m
+              do not generate empty output files with '-n'[m
+[7m Manual page split(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat xaa & cat xab & cat xac  &^[[2~[K[K[K[K[K[K[K & cat xad
+[1] 175
+[2] 176
+[3] 177
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+[1]   Done                    cat xaa
+[2]-  Done                    cat xab
+[3]+  Done                    cat xac
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat xaa
+This a file that w]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat xab
+ould be split.
+Ran]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat xac
+dom Words.
+12 23 2]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat xad
+ 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat xadcba & cat xab & cat xac & cat xadman split[Kls[Kman split
+[?1049h[22;0;0t[?1h=SPLIT(1)                                                              User Commands                                                             SPLIT(1)[m
+[m
+[1mNAME[0m[m
+       split - split a file into pieces[m
+[m
+[1mSYNOPSIS[0m[m
+       [1msplit[0m [[4mOPTION[24m]... [[4mFILE[24m [[4mPREFIX[24m]][m
+[m
+[1mDESCRIPTION[0m[m
+       Output pieces of FILE to PREFIXaa, PREFIXab, ...; default size is 1000 lines, and default PREFIX is 'x'.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[0m, [1m--suffix-length[0m=[4mN[24m[m
+              generate suffixes of length N (default 2)[m
+[m
+       [1m--additional-suffix[0m=[4mSUFFIX[24m[m
+              append an additional SUFFIX to file names[m
+[m
+       [1m-b[0m, [1m--bytes[0m=[4mSIZE[24m[m
+              put SIZE bytes per output file[m
+[m
+       [1m-C[0m, [1m--line-bytes[0m=[4mSIZE[24m[m
+              put at most SIZE bytes of records per output file[m
+[m
+       [1m-d[0m     use numeric suffixes starting at 0, not alphabetic[m
+[m
+       [1m--numeric-suffixes[0m[=[4mFROM[24m][m
+              same as [1m-d[0m, but allow setting the start value[m
+[m
+       [1m-x[0m     use hex suffixes starting at 0, not alphabetic[m
+[m
+       [1m--hex-suffixes[0m[=[4mFROM[24m][m
+              same as [1m-x[0m, but allow setting the start value[m
+[m
+       [1m-e[0m, [1m--elide-empty-files[0m[m
+              do not generate empty output files with '-n'[m
+[7m Manual page split(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--filter[0m=[4mCOMMAND[24m[m
+[7m Manual page split(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              write to shell COMMAND; file name is $FILE[m
+[7m Manual page split(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-l[0m, [1m--lines[0m=[4mNUMBER[24m[m
+[7m Manual page split(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              put NUMBER lines/records per output file[m
+[7m Manual page split(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-n[0m, [1m--number[0m=[4mCHUNKS[24m[m
+[7m Manual page split(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              generate CHUNKS output files; see explanation below[m
+[7m Manual page split(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-t[0m, [1m--separator[0m=[4mSEP[24m[m
+[7m Manual page split(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              use SEP instead of newline as the record separator; '\0' (zero) specifies the NUL character[m
+[7m Manual page split(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-u[0m, [1m--unbuffered[0m[m
+[7m Manual page split(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              immediately copy input to output with '-n r/...'[m
+[7m Manual page split(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--verbose[0m[m
+[7m Manual page split(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              print a diagnostic just before each output file is opened[m
+[7m Manual page split(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--help[0m display this help and exit[m
+[7m Manual page split(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--version[0m[m
+[7m Manual page split(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              output version information and exit[m
+[7m Manual page split(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The  SIZE argument is an integer and optional unit (example: 10K is 10*1024).  Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of[m
+[7m Manual page split(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       1000).[m
+[7m Manual page split(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K   [1mCHUNKS[0m [1mmay[0m [1mbe:[0m[m
+[7m Manual page split(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       N      split into N files based on size of input[m
+[7m Manual page split(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       K/N    output Kth of N to stdout[m
+[7m Manual page split(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       l/N    split into N files without splitting lines/records[m
+[7m Manual page split(1) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       l/K/N  output Kth of N to stdout without splitting lines/records[m
+[7m Manual page split(1) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       r/N    like 'l' but use round robin distribution[m
+[7m Manual page split(1) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       r/K/N  likewise but only output Kth of N to stdout[m
+[7m Manual page split(1) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mAUTHOR[0m[m
+[7m Manual page split(1) line 42 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Written by Torbjorn Granlund and Richard M. Stallman.[m
+[7m Manual page split(1) line 43 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 44 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page split(1) line 45 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page split(1) line 46 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Report split translation bugs to <https://translationproject.org/team/>[m
+[7m Manual page split(1) line 47 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 48 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOPYRIGHT[0m[m
+[7m Manual page split(1) line 49 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page split(1) line 50 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[7m Manual page split(1) line 51 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 52 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page split(1) line 53 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Full documentation at: <https://www.gnu.org/software/coreutils/split>[m
+[7m Manual page split(1) line 54 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       or available locally via: info '(coreutils) split invocation'[m
+[7m Manual page split(1) line 55 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page split(1) line 56 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[KGNU coreutils 8.30                                                   September 2019                                                             SPLIT(1)[m
+[7m Manual page split(1) line 57 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page split(1) line 57/95 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man cut
+[?1049h[22;0;0t[?1h=CUT(1)                                                                User Commands                                                               CUT(1)[m
+[m
+[1mNAME[0m[m
+       cut - remove sections from each line of files[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mcut[0m [4mOPTION[24m... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       Print selected parts of lines from each FILE to standard output.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-b[0m, [1m--bytes[0m=[4mLIST[24m[m
+              select only these bytes[m
+[m
+       [1m-c[0m, [1m--characters[0m=[4mLIST[24m[m
+              select only these characters[m
+[m
+       [1m-d[0m, [1m--delimiter[0m=[4mDELIM[24m[m
+              use DELIM instead of TAB for field delimiter[m
+[m
+       [1m-f[0m, [1m--fields[0m=[4mLIST[24m[m
+              select only these fields;  also print any line that contains no delimiter character, unless the [1m-s[0m option is specified[m
+[m
+       [1m-n[0m     (ignored)[m
+[m
+       [1m--complement[0m[m
+              complement the set of selected bytes, characters or fields[m
+[m
+       [1m-s[0m, [1m--only-delimited[0m[m
+              do not print lines not containing delimiters[m
+[m
+       [1m--output-delimiter[0m=[4mSTRING[24m[m
+              use STRING as the output delimiter the default is to use the input delimiter[m
+[m
+       [1m-z[0m, [1m--zero-terminated[0m[m
+[7m Manual page cut(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat myfile
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ctu [K[K[Kut -[K[K[K[K[Kcat myfile[3Pman cut
+[?1049h[22;0;0t[?1h=CUT(1)                                                                User Commands                                                               CUT(1)[m
+[m
+[1mNAME[0m[m
+       cut - remove sections from each line of files[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mcut[0m [4mOPTION[24m... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       Print selected parts of lines from each FILE to standard output.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-b[0m, [1m--bytes[0m=[4mLIST[24m[m
+              select only these bytes[m
+[m
+       [1m-c[0m, [1m--characters[0m=[4mLIST[24m[m
+              select only these characters[m
+[m
+       [1m-d[0m, [1m--delimiter[0m=[4mDELIM[24m[m
+              use DELIM instead of TAB for field delimiter[m
+[m
+       [1m-f[0m, [1m--fields[0m=[4mLIST[24m[m
+              select only these fields;  also print any line that contains no delimiter character, unless the [1m-s[0m option is specified[m
+[m
+       [1m-n[0m     (ignored)[m
+[m
+       [1m--complement[0m[m
+              complement the set of selected bytes, characters or fields[m
+[m
+       [1m-s[0m, [1m--only-delimited[0m[m
+              do not print lines not containing delimiters[m
+[m
+       [1m--output-delimiter[0m=[4mSTRING[24m[m
+              use STRING as the output delimiter the default is to use the input delimiter[m
+[m
+       [1m-z[0m, [1m--zero-terminated[0m[m
+[7m Manual page cut(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cu [Kt -c W
+cut: invalid byte/character position ‘W’
+Try 'cut --help' for more information.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -c W''W'
+cut: invalid byte/character position ‘W’
+Try 'cut --help' for more information.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -c 'W'[2PW[1Pman cut
+[?1049h[22;0;0t[?1h=CUT(1)                                                                User Commands                                                               CUT(1)[m
+[m
+[1mNAME[0m[m
+       cut - remove sections from each line of files[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mcut[0m [4mOPTION[24m... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       Print selected parts of lines from each FILE to standard output.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-b[0m, [1m--bytes[0m=[4mLIST[24m[m
+              select only these bytes[m
+[m
+       [1m-c[0m, [1m--characters[0m=[4mLIST[24m[m
+              select only these characters[m
+[m
+       [1m-d[0m, [1m--delimiter[0m=[4mDELIM[24m[m
+              use DELIM instead of TAB for field delimiter[m
+[m
+       [1m-f[0m, [1m--fields[0m=[4mLIST[24m[m
+              select only these fields;  also print any line that contains no delimiter character, unless the [1m-s[0m option is specified[m
+[m
+       [1m-n[0m     (ignored)[m
+[m
+       [1m--complement[0m[m
+              complement the set of selected bytes, characters or fields[m
+[m
+       [1m-s[0m, [1m--only-delimited[0m[m
+              do not print lines not containing delimiters[m
+[m
+       [1m--output-delimiter[0m=[4mSTRING[24m[m
+              use STRING as the output delimiter the default is to use the input delimiter[m
+[m
+       [1m-z[0m, [1m--zero-terminated[0m[m
+[7m Manual page cut(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man cutcut -c 'W' myfile
+cut: invalid byte/character position ‘W’
+Try 'cut --help' for more information.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -c 'W' myfile[10Pman cut
+[?1049h[22;0;0t[?1h=CUT(1)                                                                User Commands                                                               CUT(1)[m
+[m
+[1mNAME[0m[m
+       cut - remove sections from each line of files[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mcut[0m [4mOPTION[24m... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       Print selected parts of lines from each FILE to standard output.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-b[0m, [1m--bytes[0m=[4mLIST[24m[m
+              select only these bytes[m
+[m
+       [1m-c[0m, [1m--characters[0m=[4mLIST[24m[m
+              select only these characters[m
+[m
+       [1m-d[0m, [1m--delimiter[0m=[4mDELIM[24m[m
+              use DELIM instead of TAB for field delimiter[m
+[m
+       [1m-f[0m, [1m--fields[0m=[4mLIST[24m[m
+              select only these fields;  also print any line that contains no delimiter character, unless the [1m-s[0m option is specified[m
+[m
+       [1m-n[0m     (ignored)[m
+[m
+       [1m--complement[0m[m
+              complement the set of selected bytes, characters or fields[m
+[m
+       [1m-s[0m, [1m--only-delimited[0m[m
+              do not print lines not containing delimiters[m
+[m
+       [1m--output-delimiter[0m=[4mSTRING[24m[m
+              use STRING as the output delimiter the default is to use the input delimiter[m
+[m
+       [1m-z[0m, [1m--zero-terminated[0m[m
+[7m Manual page cut(1) line 1 (press h for help or q to quit)[27m[K[K              line delimiter is NUL, not newline[m
+[7m Manual page cut(1) line 2 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 3 (press h for help or q to quit)[27m[K[K       [1m--help[0m display this help and exit[m
+[7m Manual page cut(1) line 4 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 5 (press h for help or q to quit)[27m[K[K       [1m--version[0m[m
+[7m Manual page cut(1) line 6 (press h for help or q to quit)[27m[K[K              output version information and exit[m
+[7m Manual page cut(1) line 7 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 8 (press h for help or q to quit)[27m[K[K       Use  one, and only one of [1m-b[0m, [1m-c[0m or [1m-f[0m.  Each LIST is made up of one range, or many ranges separated by commas.  Selected input is written in the[m
+[7m Manual page cut(1) line 9 (press h for help or q to quit)[27m[K[K       same order that it is read, and is written exactly once.  Each range is one of:[m
+[7m Manual page cut(1) line 10 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 11 (press h for help or q to quit)[27m[K[K       N      N'th byte, character or field, counted from 1[m
+[7m Manual page cut(1) line 12 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 13 (press h for help or q to quit)[27m[K[K       N-     from N'th byte, character or field, to end of line[m
+[7m Manual page cut(1) line 14 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 15 (press h for help or q to quit)[27m[K[K       N-M    from N'th to M'th (included) byte, character or field[m
+[7m Manual page cut(1) line 16 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 17 (press h for help or q to quit)[27m[K[K       [1m-M[0m     from first to M'th (included) byte, character or field[m
+[7m Manual page cut(1) line 18 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 19 (press h for help or q to quit)[27m[K[K[1mAUTHOR[0m[m
+[7m Manual page cut(1) line 20 (press h for help or q to quit)[27m[K[K       Written by David M. Ihnat, David MacKenzie, and Jim Meyering.[m
+[7m Manual page cut(1) line 21 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 22 (press h for help or q to quit)[27m[K[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page cut(1) line 23 (press h for help or q to quit)[27m[K[K       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page cut(1) line 24 (press h for help or q to quit)[27m[K[K       Report cut translation bugs to <https://translationproject.org/team/>[m
+[7m Manual page cut(1) line 25 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 26 (press h for help or q to quit)[27m[K[K[1mCOPYRIGHT[0m[m
+[7m Manual page cut(1) line 27 (press h for help or q to quit)[27m[K[K       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page cut(1) line 28 (press h for help or q to quit)[27m[K[K       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[7m Manual page cut(1) line 29 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 30 (press h for help or q to quit)[27m[K[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page cut(1) line 31 (press h for help or q to quit)[27m[K[K       Full documentation at: <https://www.gnu.org/software/coreutils/cut>[m
+[7m Manual page cut(1) line 32 (press h for help or q to quit)[27m[K[K       or available locally via: info '(coreutils) cut invocation'[m
+[7m Manual page cut(1) line 33 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page cut(1) line 34 (press h for help or q to quit)[27m[K[KGNU coreutils 8.30                                                   September 2019                                                               CUT(1)[m
+[7m Manual page cut(1) line 35 (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page cut(1) line 35/73 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man cutcut -c 'W' myfile[C[C[1P myfile] myfile[1P[1@[
+cut: invalid byte/character position ‘[W]’
+Try 'cut --help' for more information.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -c [W] myfile[C[1P myfile[1P myfile[1P myfile2 myfile, myfile8 myfile, myfile7 myfile
+h f
+a W
+22 
+eWo
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -c 2,8,7 myfile[C[1P myfile[1P myfile[1P myfile[1P myfile[1P myfile1 myfile, myfile2 myfile, myfile3 myfile
+Thi
+Ran
+12 
+Hel
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -c 1,2,3 myfile[C[C[1P[1@f
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -f 1,2,3 myfile[1P[1P
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cut -f 1,3 myfile-myfiledmyfile myfile'myfile myfile'myfile myfile[C
+This file
+Random
+12 2
+Hello
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man[K[K[Ksh[K[Kwhatis bc
+bc (1)               - An arbitrary precision calculator language
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+1+2
+3
+1*2+90[K-5
+6
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man ex[K[K[K[K[K[Kwhatis expr
+expr (1)             - evaluate expressions
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man expr
+[?1049h[22;0;0t[?1h=EXPR(1)                                                               User Commands                                                              EXPR(1)[m
+[m
+[1mNAME[0m[m
+       expr - evaluate expressions[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mexpr[0m [4mEXPRESSION[24m[m
+       [1mexpr[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       Print the value of EXPRESSION to standard output.  A blank line below separates increasing precedence groups.  EXPRESSION may be:[m
+[m
+       ARG1 | ARG2[m
+              ARG1 if it is neither null nor 0, otherwise ARG2[m
+[m
+       ARG1 & ARG2[m
+              ARG1 if neither argument is null or 0, otherwise 0[m
+[m
+       ARG1 < ARG2[m
+              ARG1 is less than ARG2[m
+[m
+       ARG1 <= ARG2[m
+              ARG1 is less than or equal to ARG2[m
+[m
+       ARG1 = ARG2[m
+              ARG1 is equal to ARG2[m
+[m
+       ARG1 != ARG2[m
+              ARG1 is unequal to ARG2[m
+[m
+       ARG1 >= ARG2[m
+              ARG1 is greater than or equal to ARG2[m
+[m
+       ARG1 > ARG2[m
+[7m Manual page expr(1) line 1 (press h for help or q to quit)[27m[K[K              ARG1 is greater than ARG2[m
+[7m Manual page expr(1) line 2 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 3 (press h for help or q to quit)[27m[K[K       ARG1 + ARG2[m
+[7m Manual page expr(1) line 4 (press h for help or q to quit)[27m[K[K              arithmetic sum of ARG1 and ARG2[m
+[7m Manual page expr(1) line 5 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 6 (press h for help or q to quit)[27m[K[K       ARG1 - ARG2[m
+[7m Manual page expr(1) line 7 (press h for help or q to quit)[27m[K[K              arithmetic difference of ARG1 and ARG2[m
+[7m Manual page expr(1) line 8 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 9 (press h for help or q to quit)[27m[K[K       ARG1 * ARG2[m
+[7m Manual page expr(1) line 10 (press h for help or q to quit)[27m[K[K              arithmetic product of ARG1 and ARG2[m
+[7m Manual page expr(1) line 11 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 12 (press h for help or q to quit)[27m[K[K       ARG1 / ARG2[m
+[7m Manual page expr(1) line 13 (press h for help or q to quit)[27m[K[K              arithmetic quotient of ARG1 divided by ARG2[m
+[7m Manual page expr(1) line 14 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 15 (press h for help or q to quit)[27m[K[K       ARG1 % ARG2[m
+[7m Manual page expr(1) line 16 (press h for help or q to quit)[27m[K[K              arithmetic remainder of ARG1 divided by ARG2[m
+[7m Manual page expr(1) line 17 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 18 (press h for help or q to quit)[27m[K[K       STRING : REGEXP[m
+[7m Manual page expr(1) line 19 (press h for help or q to quit)[27m[K[K              anchored pattern match of REGEXP in STRING[m
+[7m Manual page expr(1) line 20 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 21 (press h for help or q to quit)[27m[K[K       match STRING REGEXP[m
+[7m Manual page expr(1) line 22 (press h for help or q to quit)[27m[K[K              same as STRING : REGEXP[m
+[7m Manual page expr(1) line 23 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 24 (press h for help or q to quit)[27m[K[K       substr STRING POS LENGTH[m
+[7m Manual page expr(1) line 25 (press h for help or q to quit)[27m[K[K              substring of STRING, POS counted from 1[m
+[7m Manual page expr(1) line 26 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 27 (press h for help or q to quit)[27m[K[K       index STRING CHARS[m
+[7m Manual page expr(1) line 28 (press h for help or q to quit)[27m[K[K              index in STRING where any CHARS is found, or 0[m
+[7m Manual page expr(1) line 29 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 30 (press h for help or q to quit)[27m[K[K       length STRING[m
+[7m Manual page expr(1) line 31 (press h for help or q to quit)[27m[K[K              length of STRING[m
+[7m Manual page expr(1) line 32 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 33 (press h for help or q to quit)[27m[K[K       + TOKEN[m
+[7m Manual page expr(1) line 34 (press h for help or q to quit)[27m[K[K              interpret TOKEN as a string, even if it is a[m
+[7m Manual page expr(1) line 35 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 36 (press h for help or q to quit)[27m[K[K              keyword like 'match' or an operator like '/'[m
+[7m Manual page expr(1) line 37 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 38 (press h for help or q to quit)[27m[K[K       ( EXPRESSION )[m
+[7m Manual page expr(1) line 39 (press h for help or q to quit)[27m[K[K              value of EXPRESSION[m
+[7m Manual page expr(1) line 40 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 41 (press h for help or q to quit)[27m[K[K       Beware  that  many operators need to be escaped or quoted for shells.  Comparisons are arithmetic if both ARGs are numbers, else lexicographical.[m
+[7m Manual page expr(1) line 42 (press h for help or q to quit)[27m[K[K       Pattern matches return the string matched between \( and \) or null; if \( and \) are not used, they return the number of characters  matched  or[m
+[7m Manual page expr(1) line 43 (press h for help or q to quit)[27m[K[K       0.[m
+[7m Manual page expr(1) line 44 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 45 (press h for help or q to quit)[27m[K[K       Exit  status  is 0 if EXPRESSION is neither null nor 0, 1 if EXPRESSION is null or 0, 2 if EXPRESSION is syntactically invalid, and 3 if an error[m
+[7m Manual page expr(1) line 46 (press h for help or q to quit)[27m[K[K       occurred.[m
+[7m Manual page expr(1) line 47 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 48 (press h for help or q to quit)[27m[K[K[1mAUTHOR[0m[m
+[7m Manual page expr(1) line 49 (press h for help or q to quit)[27m[K[K       Written by Mike Parker, James Youngman, and Paul Eggert.[m
+[7m Manual page expr(1) line 50 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 51 (press h for help or q to quit)[27m[K[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page expr(1) line 52 (press h for help or q to quit)[27m[K[K       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page expr(1) line 53 (press h for help or q to quit)[27m[K[K       Report expr translation bugs to <https://translationproject.org/team/>[m
+[7m Manual page expr(1) line 54 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 55 (press h for help or q to quit)[27m[K[K[1mCOPYRIGHT[0m[m
+[7m Manual page expr(1) line 56 (press h for help or q to quit)[27m[K[K       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page expr(1) line 57 (press h for help or q to quit)[27m[K[K       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[7m Manual page expr(1) line 58 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 59 (press h for help or q to quit)[27m[K[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page expr(1) line 60 (press h for help or q to quit)[27m[K[K       Full documentation at: <https://www.gnu.org/software/coreutils/expr>[m
+[7m Manual page expr(1) line 61 (press h for help or q to quit)[27m[K[K       or available locally via: info '(coreutils) expr invocation'[m
+[7m Manual page expr(1) line 62 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page expr(1) line 63 (press h for help or q to quit)[27m[K[KGNU coreutils 8.30                                                   September 2019                                                              EXPR(1)[m
+[7m Manual page expr(1) line 64 (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page expr(1) line 64/102 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man expr
+[?1049h[22;0;0t[?1h=EXPR(1)                                                               User Commands                                                              EXPR(1)[m
+[m
+[1mNAME[0m[m
+       expr - evaluate expressions[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mexpr[0m [4mEXPRESSION[24m[m
+       [1mexpr[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       Print the value of EXPRESSION to standard output.  A blank line below separates increasing precedence groups.  EXPRESSION may be:[m
+[m
+       ARG1 | ARG2[m
+              ARG1 if it is neither null nor 0, otherwise ARG2[m
+[m
+       ARG1 & ARG2[m
+              ARG1 if neither argument is null or 0, otherwise 0[m
+[m
+       ARG1 < ARG2[m
+              ARG1 is less than ARG2[m
+[m
+       ARG1 <= ARG2[m
+              ARG1 is less than or equal to ARG2[m
+[m
+       ARG1 = ARG2[m
+              ARG1 is equal to ARG2[m
+[m
+       ARG1 != ARG2[m
+              ARG1 is unequal to ARG2[m
+[m
+       ARG1 >= ARG2[m
+              ARG1 is greater than or equal to ARG2[m
+[m
+       ARG1 > ARG2[m
+[7m Manual page expr(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 1+2
+1+2
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 1+2[K[K     [K[K[K[K[K&3
+[1] 319
+1
+3: command not found
+[1]+  Done                    expr 1
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 1&3+2man expr
+[?1049h[22;0;0t[?1h=EXPR(1)                                                               User Commands                                                              EXPR(1)[m
+[m
+[1mNAME[0m[m
+       expr - evaluate expressions[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mexpr[0m [4mEXPRESSION[24m[m
+       [1mexpr[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       Print the value of EXPRESSION to standard output.  A blank line below separates increasing precedence groups.  EXPRESSION may be:[m
+[m
+       ARG1 | ARG2[m
+              ARG1 if it is neither null nor 0, otherwise ARG2[m
+[m
+       ARG1 & ARG2[m
+              ARG1 if neither argument is null or 0, otherwise 0[m
+[m
+       ARG1 < ARG2[m
+              ARG1 is less than ARG2[m
+[m
+       ARG1 <= ARG2[m
+              ARG1 is less than or equal to ARG2[m
+[m
+       ARG1 = ARG2[m
+              ARG1 is equal to ARG2[m
+[m
+       ARG1 != ARG2[m
+              ARG1 is unequal to ARG2[m
+[m
+       ARG1 >= ARG2[m
+              ARG1 is greater than or equal to ARG2[m
+[m
+       ARG1 > ARG2[m
+[7m Manual page expr(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[Kqq[K[7m Manual page expr(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man expr[Cexpr 1&3+2man exprexpr 1+2[K[K<2
+bash: 2: No such file or directory
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 1<2man expr
+[?1049h[22;0;0t[?1h=EXPR(1)                                                               User Commands                                                              EXPR(1)[m
+[m
+[1mNAME[0m[m
+       expr - evaluate expressions[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mexpr[0m [4mEXPRESSION[24m[m
+       [1mexpr[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       Print the value of EXPRESSION to standard output.  A blank line below separates increasing precedence groups.  EXPRESSION may be:[m
+[m
+       ARG1 | ARG2[m
+              ARG1 if it is neither null nor 0, otherwise ARG2[m
+[m
+       ARG1 & ARG2[m
+              ARG1 if neither argument is null or 0, otherwise 0[m
+[m
+       ARG1 < ARG2[m
+              ARG1 is less than ARG2[m
+[m
+       ARG1 <= ARG2[m
+              ARG1 is less than or equal to ARG2[m
+[m
+       ARG1 = ARG2[m
+              ARG1 is equal to ARG2[m
+[m
+       ARG1 != ARG2[m
+              ARG1 is unequal to ARG2[m
+[m
+       ARG1 >= ARG2[m
+              ARG1 is greater than or equal to ARG2[m
+[m
+       ARG1 > ARG2[m
+[7m Manual page expr(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              ARG1 is greater than ARG2[m
+[7m Manual page expr(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ARG1 + ARG2[m
+[7m Manual page expr(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              arithmetic sum of ARG1 and ARG2[m
+[7m Manual page expr(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ARG1 - ARG2[m
+[7m Manual page expr(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              arithmetic difference of ARG1 and ARG2[m
+[7m Manual page expr(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ARG1 * ARG2[m
+[7m Manual page expr(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              arithmetic product of ARG1 and ARG2[m
+[7m Manual page expr(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ARG1 / ARG2[m
+[7m Manual page expr(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              arithmetic quotient of ARG1 divided by ARG2[m
+[7m Manual page expr(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ARG1 % ARG2[m
+[7m Manual page expr(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              arithmetic remainder of ARG1 divided by ARG2[m
+[7m Manual page expr(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       STRING : REGEXP[m
+[7m Manual page expr(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              anchored pattern match of REGEXP in STRING[m
+[7m Manual page expr(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       match STRING REGEXP[m
+[7m Manual page expr(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              same as STRING : REGEXP[m
+[7m Manual page expr(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       substr STRING POS LENGTH[m
+[7m Manual page expr(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              substring of STRING, POS counted from 1[m
+[7m Manual page expr(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       index STRING CHARS[m
+[7m Manual page expr(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              index in STRING where any CHARS is found, or 0[m
+[7m Manual page expr(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       length STRING[m
+[7m Manual page expr(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              length of STRING[m
+[7m Manual page expr(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       + TOKEN[m
+[7m Manual page expr(1) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              interpret TOKEN as a string, even if it is a[m
+[7m Manual page expr(1) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              keyword like 'match' or an operator like '/'[m
+[7m Manual page expr(1) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ( EXPRESSION )[m
+[7m Manual page expr(1) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              value of EXPRESSION[m
+[7m Manual page expr(1) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Beware  that  many operators need to be escaped or quoted for shells.  Comparisons are arithmetic if both ARGs are numbers, else lexicographical.[m
+[7m Manual page expr(1) line 42 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Pattern matches return the string matched between \( and \) or null; if \( and \) are not used, they return the number of characters  matched  or[m
+[7m Manual page expr(1) line 43 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       0.[m
+[7m Manual page expr(1) line 44 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 45 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Exit  status  is 0 if EXPRESSION is neither null nor 0, 1 if EXPRESSION is null or 0, 2 if EXPRESSION is syntactically invalid, and 3 if an error[m
+[7m Manual page expr(1) line 46 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       occurred.[m
+[7m Manual page expr(1) line 47 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 48 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mAUTHOR[0m[m
+[7m Manual page expr(1) line 49 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Written by Mike Parker, James Youngman, and Paul Eggert.[m
+[7m Manual page expr(1) line 50 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 51 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page expr(1) line 52 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page expr(1) line 53 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Report expr translation bugs to <https://translationproject.org/team/>[m
+[7m Manual page expr(1) line 54 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 55 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOPYRIGHT[0m[m
+[7m Manual page expr(1) line 56 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page expr(1) line 57 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[7m Manual page expr(1) line 58 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page expr(1) line 59 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man exprexpr 1<2\<2
+1<2
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 1\<2[1P\<22\<2[C[C[C[K1
+2<1
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 12 + 8
+20
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 12 + 8[C[1P8[1P+8
+12+8
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 12+8 + 8[2P2\<1 \<1[C[C 1
+0
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ expr 2 \< 1[2P12+8 + 8[2P2\<11\<2[1Pman exprexpr 1\<2 2[1@ 
+1
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man tr
+[?1049h[22;0;0t[?1h=TR(1)                                                                 User Commands                                                                TR(1)[m
+[m
+[1mNAME[0m[m
+       tr - translate or delete characters[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mtr[0m [[4mOPTION[24m]... [4mSET1[24m [[4mSET2[24m][m
+[m
+[1mDESCRIPTION[0m[m
+       Translate, squeeze, and/or delete characters from standard input, writing to standard output.[m
+[m
+       [1m-c[0m, [1m-C[0m, [1m--complement[0m[m
+              use the complement of SET1[m
+[m
+       [1m-d[0m, [1m--delete[0m[m
+              delete characters in SET1, do not translate[m
+[m
+       [1m-s[0m, [1m--squeeze-repeats[0m[m
+              replace each sequence of a repeated character that is listed in the last specified SET, with a single occurrence of that character[m
+[m
+       [1m-t[0m, [1m--truncate-set1[0m[m
+              first truncate SET1 to length of SET2[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       SETs are specified as strings of characters.  Most represent themselves.  Interpreted sequences are:[m
+[m
+       \NNN   character with octal value NNN (1 to 3 octal digits)[m
+[m
+       \\     backslash[m
+[m
+       \a     audible BEL[m
+[m
+       \b     backspace[m
+[m
+       \f     form feed[m
+[7m Manual page tr(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat myfile
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr Ea[K[KRan Dan > myfile
+^C
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr Ran Dan > myfile[1@-[1@s[1@ 
+^C
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat >> myfile
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat >> myfile[3Pmyfile[12@tr -s Ran Dan >[C[C[C[C[C[C[C
+^C
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr -s Ran Dan > myfile[9Pcat >[C[C[C[C[C[C[C[C[3Pmyfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat myfile[12@tr -s Ran Dan >[C[C[C[C[C[C[C[9Pcat >[C[C[C[C[C[C[C[C
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat >> myfile[3Pmyfile[12@tr -s Ran Dan >[C[C[C[C[C[C[C[1@'[1@"[C[C[C[C[1P[1@"[C[1@"[C[C[C[1@"
+^C
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr -s "Ran" "Dan" > myfile[13Pcat >[C[C[C[C[C[C[C[C
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat >> myfile[13@tr -s "Ran" "Dan" [C[C[C[C[C[C[C[C[C[1P[1@][1P[1@[[C[1@,[C[1@,[C[C[C[C[1P[1@[[C[C[C[C[1P[1@][1@,[1@,
+^C
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr -s [R,a,n] [D,a,n] > myfile[17Pcat >[C[C[C[C[C[C[C[C
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat >> myfile[17@tr -s [R,a,n] [D,a,n] [C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@R[1@a[1@n[C[1@ [1@D[1@a[1@n
+^C
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr Ran Dan > myfile[6Pcat >[C[C[C[C[C[C[C[C
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat >> myfile[6@tr Ran Dan [C[C[C[C[C[C[C[C[6Pcat >[C[C[C[C[C[C[C[C[17@tr -s [R,a,n] [D,a,n] [C[C[C[C[C[C[C[C[17Pcat >[C[C[C[C[C[C[C[C[1Pmyfile[1Pmyfile[1Pmyfile
+This a file that would be split.
+Random Words.
+12 23 2 37813
+Hello World!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat myfile>> myfile[6@tr Ran Dan [C[C[C[C[C[C[C[C[C[1@'[1@'[1@'[1@'
+skfhsdk
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr 'Ran' 'Dan' > myfile[13Pcat[C[C[C[C[C[C[C
+skfhsdk
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat myfile[13@tr 'Ran' 'Dan' >[C[C[C[C[C[C[C
+Radn  ndom
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tr 'Ran' 'Dan' > myfile[13Pcat[C[C[C[C[C[C[C
+Dandom
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ exit
+
+Script done on 2023-01-31 11:44:44+05:30 [COMMAND_EXIT_CODE="0"]

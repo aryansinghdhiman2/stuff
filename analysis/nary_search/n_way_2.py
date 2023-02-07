@@ -2,6 +2,7 @@ from time import time
 from random import sample,randint
 import csv
 from matplotlib import pyplot as plt
+
 def linear_search(data,key):
     for i in range(0,len(data)):
         if(data[i] == key):
@@ -85,8 +86,8 @@ def minimum_time(log):
     new_log.sort(key=sorter)
     print(f"{new_log[0]['N']},{new_log[0]['Time']}")
 
-
-log = analysis(range(2,30),1000,10000)
-# logger(log)
-minimum_time(log)
-log_plotter(log)
+if(__name__=="__main__"):
+    log = analysis(range(2,20),1000,10000)
+    #logger(log)
+    #minimum_time(log)
+    log_plotter(log)
