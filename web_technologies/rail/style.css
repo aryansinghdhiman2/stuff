@@ -1,0 +1,57 @@
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#mainBar {
+  font-size: 25px;
+  margin: 5px;
+  width: 95%;
+  height: 40px;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(247, 185, 109);
+  border-radius: 25px;
+  color: aliceblue;
+}
+
+#formContainer{
+    position: relative;
+    top:10px;
+    margin: 5px;
+    width: 98%;
+    height: 500px;
+    background-color: rgb(243, 212, 165);
+    border-radius: 25px;
+}
+
+#header{
+    position: relative;
+    top:5px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#formHead{
+    position: relative;
+    top: 15px;
+    color: aliceblue;
+    font-size: 16px;
+}
+#FROM{
+
+    position: relative;
+    top:5px;
+    bottom: 3px;
+    font-weight: normal;
+}
+#TO{
+    position: relative;
+    top:0px;
+    font-weight: normal;
+}
+
+.LabelClass{
+    font-weight: normal;
+}

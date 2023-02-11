@@ -1,4 +1,4 @@
-from simple_min_max import simple_min_max
+from brute_min_max import brute_min_max
 from random import sample
 from matplotlib import pyplot as plt
 from time import time

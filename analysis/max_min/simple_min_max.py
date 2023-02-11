@@ -1,13 +1,12 @@
 from time import time
 from random import sample,randint,seed
 from matplotlib import pyplot as plt
-
-def brute_min_max(arr):
+def simple_min_max(arr):
     maximum = minimum = arr[0]
-    for i in range(2,len(arr)):
+    for i in range(1,len(arr)):
         if(maximum < arr[i]):
             maximum = arr[i]
-        if(minimum > arr[i]):
+        elif(minimum > arr[i]):
             minimum = arr[i]
     return [maximum,minimum]
 
@@ -28,7 +27,7 @@ def analysis(array_of_range,number_of_iter):
         for i in range(0,number_of_iter):
             array = sample(range(0,n**2),n)
             begin = time()
-            pair = brute_min_max(array)
+            pair = simple_min_max(array)
             end = time()
             used_time+=(end-begin)
             max_list.append(pair[0])
