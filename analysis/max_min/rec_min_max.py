@@ -4,9 +4,11 @@ from matplotlib import pyplot as plt
 from time import time
 
 def rec_min_max(array,low,high):
+    count = 0
     if(low == high):
         minimum = maximum = array[low]
-        return [maximum,minimum]
+        count+=1
+        return [maximum,minimum,count]
     else:
         if(low == (high-1)):
             if(array[low]<array[high]):
@@ -15,14 +17,15 @@ def rec_min_max(array,low,high):
             else:
                 maximum = array[low]
                 minimum = array[high]
+            count+=1
             return [maximum,minimum]
         else:
             mid = (low + high)//2
             maximum1 = minimum1 = 0
             maximum2 = minimum2 = 0
 
-            maximum1,minimum1 = rec_min_max(array,low,mid)
-            maximum2,minimum2 = rec_min_max(array,mid+1,high)
+            maximum1,minimum1,count1 = rec_min_max(array,low,mid)
+            maximum2,minimum2,count2 = rec_min_max(array,mid+1,high)
 
             if(maximum1 > maximum2):
                 maximum = maximum1
@@ -33,7 +36,8 @@ def rec_min_max(array,low,high):
                 minimum = minimum1
             else:
                 minimum = minimum2
-            return [maximum,minimum]
+            count = count1 + count2 + 1
+            return [maximum,minimum,count]
 
 def analysis(array_of_range,number_of_iter):
     log = {

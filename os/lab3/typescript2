@@ -1,0 +1,532 @@
+Script started on 2023-02-14 09:48:56+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="40"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ man ps
+[?1049h[22;0;0t[?1h=PS(1)                                                                 User Commands                                                                PS(1)[m
+[m
+[1mNAME[0m[m
+       ps - report a snapshot of the current processes.[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mps[0m [[4moptions[24m][m
+[m
+[1mDESCRIPTION[0m[m
+       [1mps[0m displays information about a selection of the active processes.  If you want a repetitive update of the selection and the displayed[m
+       information, use [4mtop[24m(1) instead.[m
+[m
+       This version of [1mps[0m accepts several kinds of options:[m
+[m
+       1   UNIX options, which may be grouped and must be preceded by a dash.[m
+       2   BSD options, which may be grouped and must not be used with a dash.[m
+       3   GNU long options, which are preceded by two dashes.[m
+[m
+       Options of different types may be freely mixed, but conflicts can appear.  There are some synonymous options, which are functionally identical,[m
+       due to the many standards and [1mps[0m implementations that this [1mps[0m is compatible with.[m
+[m
+       Note that "[1mps[0m [1m-aux[0m" is distinct from "[1mps[0m [1maux[0m".  The POSIX and UNIX standards require that "[1mps[0m [1m-aux[0m" print all processes owned by a user named[m
+       "x", as well as printing all processes that would be selected by the [1m-a[0m option.  If the user named "x" does not exist, this [1mps[0m may interpret the[m
+       command as "[1mps[0m [1maux[0m" instead and print a warning.  This behavior is intended to aid in transitioning old scripts and habits.  It is fragile,[m
+       subject to change, and thus should not be relied upon.[m
+[m
+       By default, [1mps[0m selects all processes with the same effective user ID (euid=EUID) as the current user and associated with the same terminal as the[m
+       invoker.  It displays the process ID (pid=PID), the terminal associated with the process (tname=TTY), the cumulated CPU time in [DD-]hh:mm:ss[m
+       format (time=TIME), and the executable name (ucmd=CMD).  Output is unsorted by default.[m
+[m
+       The use of BSD-style options will add process state (stat=STAT) to the default display and show the command args (args=COMMAND) instead of the[m
+       executable name.  You can override this with the [1mPS_FORMAT[0m environment variable.  The use of BSD-style options will also change the process[m
+       selection to include processes on other terminals (TTYs) that are owned by you; alternately, this may be described as setting the selection to be[m
+       the set of all processes filtered to exclude processes owned by other users or not on a terminal.  These effects are not considered when options[m
+       are described as being "identical" below, so [1m-M[0m will be considered identical to [1mZ[0m and so on.[m
+[m
+       Except as described below, process selection options are additive.  The default selection is discarded, and then the selected processes are added[m
+       to the set of processes to be displayed.  A process will thus be shown if it meets any of the given selection criteria.[m
+[m
+[7m Manual page ps(1) line 1 (press h for help or q to quit)[27m[K[K[1mEXAMPLES[0m[m
+[7m Manual page ps(1) line 2 (press h for help or q to quit)[27m[K[K       To see every process on the system using standard syntax:[m
+[7m Manual page ps(1) line 3 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-e[0m[m
+[7m Manual page ps(1) line 4 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-ef[0m[m
+[7m Manual page ps(1) line 5 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-eF[0m[m
+[7m Manual page ps(1) line 6 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-ely[0m[m
+[7m Manual page ps(1) line 7 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 8 (press h for help or q to quit)[27m[K[K       To see every process on the system using BSD syntax:[m
+[7m Manual page ps(1) line 9 (press h for help or q to quit)[27m[K[K          [1mps[0m [1max[0m[m
+[7m Manual page ps(1) line 10 (press h for help or q to quit)[27m[K[K          [1mps[0m [1maxu[0m[m
+[7m Manual page ps(1) line 11 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 12 (press h for help or q to quit)[27m[K[K       To print a process tree:[m
+[7m Manual page ps(1) line 13 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-ejH[0m[m
+[7m Manual page ps(1) line 14 (press h for help or q to quit)[27m[K[K          [1mps[0m [1maxjf[0m[m
+[7m Manual page ps(1) line 15 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 16 (press h for help or q to quit)[27m[K[K       To get info about threads:[m
+[7m Manual page ps(1) line 17 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-eLf[0m[m
+[7m Manual page ps(1) line 18 (press h for help or q to quit)[27m[K[K          [1mps[0m [1maxms[0m[m
+[7m Manual page ps(1) line 19 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 20 (press h for help or q to quit)[27m[K[K       To get security info:[m
+[7m Manual page ps(1) line 21 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-eo[0m [1meuser,ruser,suser,fuser,f,comm,label[0m[m
+[7m Manual page ps(1) line 22 (press h for help or q to quit)[27m[K[K          [1mps[0m [1maxZ[0m[m
+[7m Manual page ps(1) line 23 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-eM[0m[m
+[7m Manual page ps(1) line 24 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 25 (press h for help or q to quit)[27m[K[K       To see every process running as root (real & effective ID) in user format:[m
+[7m Manual page ps(1) line 26 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-U[0m [1mroot[0m [1m-u[0m [1mroot[0m [1mu[0m[m
+[7m Manual page ps(1) line 27 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 28 (press h for help or q to quit)[27m[K[K       To see every process with a user-defined format:[m
+[7m Manual page ps(1) line 29 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-eo[0m [1mpid,tid,class,rtprio,ni,pri,psr,pcpu,stat,wchan:14,comm[0m[m
+[7m Manual page ps(1) line 30 (press h for help or q to quit)[27m[K[K          [1mps[0m [1maxo[0m [1mstat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm[0m[m
+[7m Manual page ps(1) line 31 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-Ao[0m [1mpid,tt,user,fname,tmout,f,wchan[0m[m
+[7m Manual page ps(1) line 32 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 33 (press h for help or q to quit)[27m[K[K       Print only the process IDs of syslogd:[m
+[7m Manual page ps(1) line 34 (press h for help or q to quit)[27m[K[K          [1mps[0m [1m-C[0m [1msyslogd[0m [1m-o[0m [1mpid=[0m[m
+[7m Manual page ps(1) line 35 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page ps(1) line 36 (press h for help or q to quit)[27m[K[K       Print only the name of PID 42:[m
+[7m Manual page ps(1) line 37 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps
+  PID TTY          TIME CMD
+   30 pts/1    00:00:00 bash
+   53 pts/1    00:00:00 ps
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 09:45 ?        00:00:00 /init
+root         4     1  0 09:45 ?        00:00:00 plan9 --control-socket 5 --log-level 4 --server-fd 6 --pipe-fd 8 --log-truncate
+root         7     1  0 09:45 ?        00:00:00 /init
+root         8     7  0 09:45 ?        00:00:00 /init
+aryan        9     8  0 09:45 pts/0    00:00:00 -bash
+aryan       29     9  0 09:48 pts/0    00:00:00 script
+aryan       30    29  0 09:48 pts/1    00:00:00 bash -i
+aryan       54    30  0 09:50 pts/1    00:00:00 ps -ef
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps -ef[K[KT
+  PID  SPID TTY          TIME CMD
+   30    30 pts/1    00:00:00 bash
+   55    55 pts/1    00:00:00 ps
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps -T\[K[K[K-e
+  PID TTY          TIME CMD
+    1 ?        00:00:00 init
+    4 ?        00:00:00 init
+    7 ?        00:00:00 init
+    8 ?        00:00:00 init
+    9 pts/0    00:00:00 bash
+   29 pts/0    00:00:00 script
+   30 pts/1    00:00:00 bash
+   56 pts/1    00:00:00 ps
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps -eTef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 09:45 ?        00:00:00 /init
+root         4     1  0 09:45 ?        00:00:00 plan9 --control-socket 5 --log-level 4 --server-fd 6 --pipe-fd 8 --log-truncate
+root         7     1  0 09:45 ?        00:00:00 /init
+root         8     7  0 09:45 ?        00:00:00 /init
+aryan        9     8  0 09:45 pts/0    00:00:00 -bash
+aryan       29     9  0 09:48 pts/0    00:00:00 script
+aryan       30    29  0 09:48 pts/1    00:00:00 bash -i
+aryan       57    30  0 09:50 pts/1    00:00:00 ps -ef
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ man nohup
+[?1049h[22;0;0t[?1h=NOHUP(1)                                                              User Commands                                                             NOHUP(1)[m
+[m
+[1mNAME[0m[m
+       nohup - run a command immune to hangups, with output to a non-tty[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mnohup[0m [4mCOMMAND[24m [[4mARG[24m]...[m
+       [1mnohup[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Run COMMAND, ignoring hangup signals.[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       If  standard  input is a terminal, redirect it from an unreadable file.  If standard output is a terminal, append output to 'nohup.out' if possi‐[m
+       ble, '$HOME/nohup.out' otherwise.  If standard error is a terminal, redirect it to standard output.  To save output to FILE, use 'nohup COMMAND >[m
+       FILE'.[m
+[m
+       NOTE: your shell may have its own version of nohup, which usually supersedes the version described here.  Please refer to your shell's documenta‐[m
+       tion for details about the options it supports.[m
+[m
+[1mAUTHOR[0m[m
+       Written by Jim Meyering.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report nohup translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       Full documentation at: <https://www.gnu.org/software/coreutils/nohup>[m
+       or available locally via: info '(coreutils) nohup invocation'[m
+[m
+[7m Manual page nohup(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nohup [K[K[K[K[K[Kman nohup
+[?1049h[22;0;0t[?1h=NOHUP(1)                                                              User Commands                                                             NOHUP(1)[m
+[m
+[1mNAME[0m[m
+       nohup - run a command immune to hangups, with output to a non-tty[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mnohup[0m [4mCOMMAND[24m [[4mARG[24m]...[m
+       [1mnohup[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Run COMMAND, ignoring hangup signals.[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       If  standard  input is a terminal, redirect it from an unreadable file.  If standard output is a terminal, append output to 'nohup.out' if possi‐[m
+       ble, '$HOME/nohup.out' otherwise.  If standard error is a terminal, redirect it to standard output.  To save output to FILE, use 'nohup COMMAND >[m
+       FILE'.[m
+[m
+       NOTE: your shell may have its own version of nohup, which usually supersedes the version described here.  Please refer to your shell's documenta‐[m
+       tion for details about the options it supports.[m
+[m
+[1mAUTHOR[0m[m
+       Written by Jim Meyering.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report nohup translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       Full documentation at: <https://www.gnu.org/software/coreutils/nohup>[m
+       or available locally via: info '(coreutils) nohup invocation'[m
+[m
+[7m Manual page nohup(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ noup [K[K[K[Kohup echo "Hellp"[K[Ko"
+nohup: ignoring input and appending output to 'nohup.out'
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ls
+[0m[01;32mnohup.out[0m  [01;32mtypescript[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ cat b[Knogup[K[K[K[Kohup.out
+Hello
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps
+  PID TTY          TIME CMD
+   30 pts/1    00:00:00 bash
+   95 pts/1    00:00:00 ps
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ man nice
+[?1049h[22;0;0t[?1h=NICE(1)                                                               User Commands                                                              NICE(1)[m
+[m
+[1mNAME[0m[m
+       nice - run a program with modified scheduling priority[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mnice[0m [[4mOPTION[24m] [[4mCOMMAND[24m [[4mARG[24m]...][m
+[m
+[1mDESCRIPTION[0m[m
+       Run  COMMAND  with  an  adjusted niceness, which affects process scheduling.  With no COMMAND, print the current niceness.  Niceness values range[m
+       from [1m-20[0m (most favorable to the process) to 19 (least favorable to the process).[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-n[0m, [1m--adjustment[0m=[4mN[24m[m
+              add integer N to the niceness (default 10)[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       NOTE: your shell may have its own version of nice, which usually supersedes the version described here.  Please refer to your shell's  documenta‐[m
+       tion for details about the options it supports.[m
+[m
+[1mAUTHOR[0m[m
+       Written by David MacKenzie.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report nice translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       nice(2), renice(1)[m
+[m
+[7m Manual page nice(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ mice
+
+Command 'mice' not found, did you mean:
+
+  command 'rice' from deb golang-rice (1.0.0+git20191102.d954009-1)
+  command 'nice' from deb coreutils (8.30-3ubuntu2)
+
+Try: sudo apt install <deb name>
+
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nice
+0
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nicemicean nice
+[?1049h[22;0;0t[?1h=NICE(1)                                                               User Commands                                                              NICE(1)[m
+[m
+[1mNAME[0m[m
+       nice - run a program with modified scheduling priority[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mnice[0m [[4mOPTION[24m] [[4mCOMMAND[24m [[4mARG[24m]...][m
+[m
+[1mDESCRIPTION[0m[m
+       Run  COMMAND  with  an  adjusted niceness, which affects process scheduling.  With no COMMAND, print the current niceness.  Niceness values range[m
+       from [1m-20[0m (most favorable to the process) to 19 (least favorable to the process).[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-n[0m, [1m--adjustment[0m=[4mN[24m[m
+              add integer N to the niceness (default 10)[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       NOTE: your shell may have its own version of nice, which usually supersedes the version described here.  Please refer to your shell's  documenta‐[m
+       tion for details about the options it supports.[m
+[m
+[1mAUTHOR[0m[m
+       Written by David MacKenzie.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report nice translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       nice(2), renice(1)[m
+[m
+[7m Manual page nice(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nice -n[K[K[K[K[K[K[Kman nice
+[?1049h[22;0;0t[?1h=NICE(1)                                                               User Commands                                                              NICE(1)[m
+[m
+[1mNAME[0m[m
+       nice - run a program with modified scheduling priority[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mnice[0m [[4mOPTION[24m] [[4mCOMMAND[24m [[4mARG[24m]...][m
+[m
+[1mDESCRIPTION[0m[m
+       Run  COMMAND  with  an  adjusted niceness, which affects process scheduling.  With no COMMAND, print the current niceness.  Niceness values range[m
+       from [1m-20[0m (most favorable to the process) to 19 (least favorable to the process).[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-n[0m, [1m--adjustment[0m=[4mN[24m[m
+              add integer N to the niceness (default 10)[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       NOTE: your shell may have its own version of nice, which usually supersedes the version described here.  Please refer to your shell's  documenta‐[m
+       tion for details about the options it supports.[m
+[m
+[1mAUTHOR[0m[m
+       Written by David MacKenzie.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report nice translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       nice(2), renice(1)[m
+[m
+[7m Manual page nice(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ man nice --adjustment=20 echo "TH[Khis process is very nice"
+[?1049h[22;0;0t[?1h=NICE(1)                                                               User Commands                                                              NICE(1)[m
+[m
+[1mNAME[0m[m
+       nice - run a program with modified scheduling priority[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mnice[0m [[4mOPTION[24m] [[4mCOMMAND[24m [[4mARG[24m]...][m
+[m
+[1mDESCRIPTION[0m[m
+       Run  COMMAND  with  an  adjusted niceness, which affects process scheduling.  With no COMMAND, print the current niceness.  Niceness values range[m
+       from [1m-20[0m (most favorable to the process) to 19 (least favorable to the process).[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-n[0m, [1m--adjustment[0m=[4mN[24m[m
+              add integer N to the niceness (default 10)[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       NOTE: your shell may have its own version of nice, which usually supersedes the version described here.  Please refer to your shell's  documenta‐[m
+       tion for details about the options it supports.[m
+[m
+[1mAUTHOR[0m[m
+       Written by David MacKenzie.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report nice translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       nice(2), renice(1)[m
+[m
+[7m Manual page nice(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tNo manual entry for --adjustment=20
+^[[A--Man-- next: echo(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+q   ^[[A^[[B^[[C^[[C                  ^C
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ man nice --adjustment=20 echo "This process is very nice"[C[C[C[1P[1P[1P[1P
+This process is very nice
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nice --adjustment=20 echo "This process is very nice"[C[C[1P[1P[1@-[1@1[1@9[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@n[1@o[1@t[1@ 
+nice: cannot set niceness: Permission denied
+This process is not very nice
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nice --adjustment=-19 echo "This process is not very nice"[1@s[1@u[1@d[1@o[1@ 
+[sudo] password for aryan: 
+This process is not very nice
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo nice --adjustment=-19 echo "This process is not very nice"
+This process is not very nice
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nice
+0
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ tty
+/dev/pts/1
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ bac[Ktch
+warning: commands will be executed using /bin/sh
+at> eh cho "Hello World"
+at> whatis batch
+at> whereis batch
+at> 
+at> q <EOT>
+at> EOT
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ batch
+warning: commands will be executed using /bin/sh
+at> echi   o "Hello OW  World"
+at> whatis batch
+at> whereis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo bact[K[Ktch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World"
+at> what is bact  tch^[[D^[[D^[[D^[[D                         is batch
+at> whereis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo batch[5Pbatch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World" > /dev/pts/1
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ batch
+warning: commands will be executed using /bin/sh
+at> whatis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo bacth[K[K[Ktch
+warning: commands will be executed using /bin/sh
+at> whta  atis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ bact[K[Ktch
+warning: commands will be executed using /bin/sh
+at> waht   hat  us    is batch >> temp.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps -o
+error: format specification must follow -o
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ bacth[K[K[Ktch
+warning: commands will be executed using /bin/sh
+at> echo :Hel    "Hello" >> test.     bt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ man at
+[?1049h[22;0;0t[?1h=AT(1)                                                            General Commands Manual                                                           AT(1)[m
+[m
+[1mNAME[0m[m
+       at, batch, atq, atrm - queue, examine, or delete jobs for later execution[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mat[0m [[1m-V[0m] [[1m-q[0m [4mqueue[24m] [[1m-f[0m [4mfile[24m] [[1m-mMlv[0m] [4mtimespec[24m ...[m
+       [1mat[0m [[1m-V[0m] [[1m-q[0m [4mqueue[24m] [[1m-f[0m [4mfile[24m] [[1m-mMkv[0m] [[1m-t[0m [4mtime[24m][m
+       [1mat[0m [1m-c[0m [4mjob[24m [...][m
+       [1matq[0m [[1m-V[0m] [[1m-q[0m [4mqueue[24m][m
+       [1mat[0m [[1m-rd[0m] [4mjob[24m [...][m
+       [1matrm[0m [[1m-V[0m] [4mjob[24m [...][m
+       [1mbatch[0m[m
+       [1mat[0m [1m-b[0m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1mat[0m and [1mbatch[0m read commands from standard input or a specified file which are to be executed at a later time, using [1m/bin/sh[0m.[m
+[m
+       [1mat[0m      executes commands at a specified time.[m
+[m
+       [1matq[0m     lists  the  user's  pending  jobs, unless the user is the superuser; in that case, everybody's jobs are listed.  The format of the output[m
+               lines (one for each job) is: Job number, date, hour, queue, and username.[m
+[m
+       [1matrm[0m    deletes jobs, identified by their job number.[m
+[m
+       [1mbatch[0m   executes commands when system load levels permit; in other words, when the load average drops below 1.5, or the value  specified  in  the[m
+               invocation of [1matd[0m.[m
+[m
+       [1mAt[0m allows fairly complex time specifications, extending the POSIX.2 standard.  It accepts times of the form [1mHH:MM[0m to run a job at a specific time[m
+       of day.  (If that time is already past, the next day is assumed.)  You may also specify [1mmidnight,[0m [1mnoon,[0m or [1mteatime[0m (4pm) and you can have a time-[m
+       of-day  suffixed with [1mAM[0m or [1mPM[0m for running in the morning or the evening.  You can also say what day the job will be run, by giving a date in the[m
+       form [1mmonth-name[0m [1mday[0m with an optional [1myear,[0m or giving a date of the form [4mMMDD[24m[[4mCC[24m][4mYY[24m, [4mMM[24m/[4mDD[24m/[[4mCC[24m][4mYY[24m, [4mDD[24m.[4mMM[24m.[[4mCC[24m][4mYY[24m or [[4mCC[24m][4mYY[24m-[4mMM[24m-[4mDD[24m.   The  specifica‐[m
+       tion  of  a date [4mmust[24m follow the specification of the time of day.  You can also give times like [1mnow[0m [1m+[0m [4mcount[24m [4mtime-units,[24m where the time-units can[m
+       be [1mminutes,[0m [1mhours,[0m [1mdays,[0m or [1mweeks[0m and you can tell [1mat[0m to run the job today by suffixing the time with [1mtoday[0m and to run the job tomorrow  by  suf‐[m
+       fixing the time with [1mtomorrow.[0m[m
+[m
+       For  example, to run a job at 4pm three days from now, you would do [1mat[0m [1m4pm[0m [1m+[0m [1m3[0m [1mdays,[0m to run a job at 10:00am on July 31, you would do [1mat[0m [1m10am[0m [1mJul[0m[m
+       [1m31[0m and to run a job at 1am tomorrow, you would do [1mat[0m [1m1am[0m [1mtomorrow.[0m[m
+[m
+[7m Manual page at(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ ps -e
+  PID TTY          TIME CMD
+    1 ?        00:00:00 init
+    4 ?        00:00:00 init
+    7 ?        00:00:00 init
+    8 ?        00:00:00 init
+    9 pts/0    00:00:00 bash
+   29 pts/0    00:00:00 script
+   30 pts/1    00:00:00 bash
+  217 pts/1    00:00:00 ps
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo service atd start
+[sudo] password for aryan: 
+ * Starting deferred execution scheduler atd       [156G [150G[[31mfail[39;49m]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo service atd startps -e[Kman at[1Pbatch
+warning: commands will be executed using /bin/sh
+at> echo "Hello Woels   rld in Batch" >> /dev.pts    /pts/1
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World" >> ht  bt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World" >> bt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ at now +5 seconds
+syntax error. Last token seen: s
+Garbled time
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ at now +5 seconds[K[K[K[K[K[K[Kminutes
+warning: commands will be executed using /bin/sh
+at> ech   touch attt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ exit
+
+Script done on 2023-02-14 10:34:32+05:30 [COMMAND_EXIT_CODE="1"]
