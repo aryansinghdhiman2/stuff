@@ -3,7 +3,6 @@ import heapq
 from sys import maxsize
 from matplotlib import pyplot as plt
 import networkx as nx
-# class undirectedEdge()
 
 class undirectedEdge():
     def __init__(self,source:int,destination:int,weight:int):
@@ -96,7 +95,7 @@ def graph_plotter(matrix:np.matrix):
     graph = nx.from_numpy_array(matrix)
     # layout = nx.kamada_kawai_layout(graph)
     labels = nx.get_edge_attributes(graph, "weight")
-    nx.draw(graph,pos=layout,with_labels=True,font_color='white')
+    nx.draw(graph,pos=layout,with_labels=True,font_color='white',node_color='red')
     nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels)
     plt.show()
     return layout
@@ -104,7 +103,7 @@ def graph_plotter(matrix:np.matrix):
 def tree_plotter(matrix:np.matrix,tree:np.ndarray):
     graph = nx.from_numpy_array(matrix)
     # layout = nx.kamada_kawai_layout(graph)
-    nx.draw(graph,pos=layout,with_labels=True,font_color='white',edge_color='white')
+    nx.draw(graph,pos=layout,with_labels=True,font_color='white',edge_color='white',node_color='red')
 
     treeCopy = np.copy(tree)
     remove_indices = []
@@ -116,7 +115,7 @@ def tree_plotter(matrix:np.matrix,tree:np.ndarray):
     treeGraph=nx.Graph()
     treeGraph.add_weighted_edges_from(treeCopy)
     treeLabels = nx.get_edge_attributes(treeGraph,"weight")
-    nx.draw(treeGraph,pos=layout,with_labels=True,font_color='white')
+    nx.draw(treeGraph,pos=layout,with_labels=True,font_color='white',node_color='red')
     nx.draw_networkx_edge_labels(treeGraph,pos=layout,edge_labels=treeLabels)
     plt.show()
 
@@ -147,10 +146,9 @@ if(__name__=="__main__"):
     n = int(input("Enter number of nodes: "))
     edge_list=create_edge_list(n)
     matrix=create_cost_matrix(n,edge_list)
-    layout = nx.kamada_kawai_layout(nx.from_numpy_array(matrix))
+    layout = nx.spring_layout(nx.from_numpy_array(matrix))
     graph_plotter(matrix)
     replace_with_maxsize(matrix)
     kruskal(edge_list,matrix)
     replace_with_zeroes(matrix)
     plt.show()
-    pass

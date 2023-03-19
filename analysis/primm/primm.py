@@ -78,13 +78,13 @@ def get_next_edge_node(matrix:np.matrix,near:np.ndarray)->int:
 def graph_plotter(matrix:np.matrix):
     graph = nx.from_numpy_array(matrix)
     labels = nx.get_edge_attributes(graph, "weight")
-    nx.draw(graph,pos=layout,with_labels=True,font_color='white')
+    nx.draw(graph,pos=layout,with_labels=True,font_color='white',node_color='red')
     nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels)
     plt.show()
 
 def tree_plotter(matrix:np.matrix,tree:np.ndarray):
     graph = nx.from_numpy_array(matrix)
-    nx.draw(graph,pos=layout,with_labels=True,font_color='white',edge_color='white')
+    nx.draw(graph,pos=layout,with_labels=True,font_color='white',edge_color='white',node_color='red')
 
     treeCopy = np.copy(tree)
     remove_indices = []
@@ -96,7 +96,7 @@ def tree_plotter(matrix:np.matrix,tree:np.ndarray):
     treeGraph=nx.Graph()
     treeGraph.add_weighted_edges_from(treeCopy)
     treeLabels = nx.get_edge_attributes(treeGraph,"weight")
-    nx.draw(treeGraph,pos=layout,with_labels=True,font_color='white')
+    nx.draw(treeGraph,pos=layout,with_labels=True,font_color='white',node_color='red')
     nx.draw_networkx_edge_labels(treeGraph,pos=layout,edge_labels=treeLabels)
     plt.show()\
 
@@ -136,8 +136,7 @@ if(__name__=="__main__"):
     n = int(input("Enter number of nodes: "))
     edge_list=create_edge_list(n)
     matrix=create_cost_matrix(n,edge_list)
-    layout = nx.kamada_kawai_layout(nx.from_numpy_array(matrix))
-    print(matrix)
+    layout = nx.spring_layout(nx.from_numpy_array(matrix))
     graph_plotter(matrix)
     replace_with_maxsize(matrix)
     result=primm(matrix)
@@ -154,3 +153,11 @@ if(__name__=="__main__"):
 #     [10,0,0,0,25,0,0],
 #     [0,14,0,18,24,0,0]]
 # matrix=np.matrix(adj,dtype=np.int64)
+
+
+    # adj= [[0, 0, 3, 0, 0],    
+    #     [0, 0, 10, 4, 0],    
+    #     [3, 10, 0, 2, 6],    
+    #     [0, 4, 2, 0, 1],    
+    #     [0, 0, 6, 1, 0]];   
+    # matrix=np.matrix(adj,dtype=np.int64)
