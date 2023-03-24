@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>
+        Recursive Fibbonacii
+    </title>
+</head>
+
+<body>
+    <h3>Enter value upto which you want Fibbonacii Series</h3>
+    <form>
+        <label for="number">Number upto which you want Fibbonacii Series</label><br>
+        <input type="text" id="number" name="number"><br><br>
+        <input type="submit" value="Calculate!"><br>
+    </form>
+    <div id="answerDiv"></div>
+</body>
+<script>
+    document.addEventListener('submit', (event) => {
+        event.preventDefault()
+        function fibb(first, second, target) {
+            third = first + second
+            if (third > target) {
+                return ''
+            }
+            else {
+                return third.toString() + ' ' + fibb(second, third, target).toString()
+            }
+        }
+        target = parseInt(document.getElementById('number').value)
+        if (target < 0) {
+            answerString = 'Invalid'
+        }
+        else if (target === 0) {
+            answerString = '0'
+        }
+        else if (target === 1) {
+            answerString = '0 1 '
+        }
+        else {
+            answerString = '0 ' + '1 ' + fibb(0, 1, target)
+        }
+        holder = document.getElementById('holder')
+        if (holder != null) {
+            holder.remove()
+        }
+        holder = document.createElement('p')
+        holder.id = 'holder'
+        answer = document.createTextNode(answerString)
+        holder.appendChild(answer)
+        answerDiv = document.getElementById('answerDiv')
+        answerDiv.appendChild(holder)
+    })
+</script>
+
+</html>

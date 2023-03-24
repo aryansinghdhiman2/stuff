@@ -101,30 +101,42 @@ def graph_plotter(matrix:np.matrix):
     return layout
 
 if(__name__ =="__main__"):
-    # n = int(input("Enter number of nodes: "))
-    # edge_list=create_directed_edge_list(n)
-    # matrix=create_cost_matrix(n,edge_list)
-    n=8
-    adj= [[0,0,0,0,0,0,0,0],
-    [300,0,0,0,0,0,0,0],
-    [1000,800,0,0,0,0,0,0],
-    [0,0,1200,0,0,0,0,0],
-    [0,0,0,1500,0,250,0,0],
-    [0,0,0,1000,0,0,900,1400],
-    [0,0,0,0,0,0,0,1000],
-    [1700,0,0,0,0,0,0,0]]
-    matrix=np.matrix(adj,dtype=np.int64)
-
-    layout = nx.spring_layout(nx.from_numpy_array(matrix))
+    n = int(input("Enter number of nodes: "))
+    edge_list=create_directed_edge_list(n)
+    matrix=create_cost_matrix(n,edge_list)
+    layout = nx.kamada_kawai_layout(nx.from_numpy_array(matrix))
     graph_plotter(matrix)
     replace_with_newmaxsize(matrix)
-    # kruskal(edge_list,matrix)
-    # source=int(input('Enter source vertex: '))
-    source = 4
+    source=int(input('Enter source vertex: '))
     if(source<0 or source>=n):
         print("Invalid source vertex")
         exit()
     distance=dijkastra(source,matrix)
     print('Distance Matrix is: ')
+    for i in range(0,len(distance)):
+        if(distance[i]==newmaxsize):
+            distance[i]='infinity'
     print(distance)
     replace_with_zeroes(matrix)
+
+
+    # adj= [[0,0,0,0,0,0,0,0],
+    # [300,0,0,0,0,0,0,0],
+    # [1000,800,0,0,0,0,0,0],
+    # [0,0,1200,0,0,0,0,0],
+    # [0,0,0,1500,0,250,0,0],
+    # [0,0,0,1000,0,0,900,1400],
+    # [0,0,0,0,0,0,0,1000],
+    # [1700,0,0,0,0,0,0,0]]
+    # print(f"Source is: {source}")
+    # from random import randint
+    # source = randint(0,n-1)
+    #     n=5
+    # adj= cost_matrix = cost_matrix = [
+    # [0, 11, 0, 0, 0],
+    # [16, 0, 0, 0, 19],
+    # [0, 10, 0, 10, 0],
+    # [19, 0, 19, 0, 0],
+    # [18, 0, 0, 0, 0]
+# ]
+# matrix=np.matrix(adj,dtype=np.int64)

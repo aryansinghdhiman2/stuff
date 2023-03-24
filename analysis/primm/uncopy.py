@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 import networkx as nx
 
 class undirectedEdge():
-    def __init__(self,source:int,destination:int,weight:int):
+    def __init__(self,source,destination,weight):
         self.source = source
         self.destination = destination
         self.weight = weight
@@ -15,7 +15,7 @@ class undirectedEdge():
             self.source = temp
         else: pass
 
-def replace_with_maxsize(matrix:np.matrix):
+def replace_with_maxsize(matrix):
     for i in range(0,matrix.shape[0]):
         for j in range(0,matrix.shape[1]):
             if(matrix[i,j]==0):
@@ -27,7 +27,7 @@ def replace_with_zeroes(matrix:np.matrix):
             if(matrix[i,j]==maxsize):
                 matrix[i,j]=0
 
-def create_edge_list(n:int)->list[undirectedEdge]:
+def create_edge_list(n):
     edge_list = []
     print('Get ready to enter edges: [Note that index of nodes starts from 0]')
     print("Enter edges in order of source weight destination")
@@ -56,7 +56,7 @@ def create_edge_list(n:int)->list[undirectedEdge]:
     
     return edge_list
         
-def create_cost_matrix(n,edge_list:list[undirectedEdge])->np.matrix:
+def create_cost_matrix(n,edge_list):
     matrix = np.matrix(np.zeros((n,n),dtype=np.int64))
 
     for edge in edge_list:
@@ -65,7 +65,7 @@ def create_cost_matrix(n,edge_list:list[undirectedEdge])->np.matrix:
 
     return matrix
 
-def get_next_edge_node(matrix:np.matrix,near:np.ndarray)->int:
+def get_next_edge_node(matrix,near):
     minimum = maxsize
     coordinate = 0
     for j in range(0,matrix.shape[0]):
@@ -75,14 +75,14 @@ def get_next_edge_node(matrix:np.matrix,near:np.ndarray)->int:
                 minimum = matrix[j,near[j]]
     return coordinate
 
-def graph_plotter(matrix:np.matrix):
+def graph_plotter(matrix):
     graph = nx.from_numpy_array(matrix)
     labels = nx.get_edge_attributes(graph, "weight")
     nx.draw(graph,pos=layout,with_labels=True,font_color='white',node_color='red')
     nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels)
     plt.show()
 
-def tree_plotter(matrix:np.matrix,tree:np.ndarray):
+def tree_plotter(matrix,tree):
     graph = nx.from_numpy_array(matrix)
     nx.draw(graph,pos=layout,with_labels=True,font_color='white',edge_color='white',node_color='red')
 
@@ -100,7 +100,7 @@ def tree_plotter(matrix:np.matrix,tree:np.ndarray):
     nx.draw_networkx_edge_labels(treeGraph,pos=layout,edge_labels=treeLabels)
     plt.show()\
 
-def primm(matrix:np.matrix):
+def primm(matrix):
     #Get edge with minimum cost
     l,k=np.unravel_index(matrix.argmin(),matrix.shape)
     minimumCost = matrix[l,k]
@@ -133,17 +133,9 @@ def primm(matrix:np.matrix):
     return {'Cost':minimumCost,'Tree':tree}
 
 if(__name__=="__main__"):
-    # n = int(input("Enter number of nodes: "))
-    # edge_list=create_edge_list(n)
-    # matrix=create_cost_matrix(n,edge_list)
-    adj= [[0,28,0,0,0,10,0],
-    [28,0,16,0,0,0,14],
-    [0,16,0,12,0,0,0],
-    [0,0,12,0,22,0,18],
-    [0,0,0,22,0,25,24],
-    [10,0,0,0,25,0,0],
-    [0,14,0,18,24,0,0]]
-    matrix=np.matrix(adj,dtype=np.int64)
+    n = int(input("Enter number of nodes: "))
+    edge_list=create_edge_list(n)
+    matrix=create_cost_matrix(n,edge_list)
     layout = nx.spring_layout(nx.from_numpy_array(matrix))
     graph_plotter(matrix)
     replace_with_maxsize(matrix)

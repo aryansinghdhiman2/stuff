@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Compare Two Strings
+        </title>
+    </head>
+    <body>
+        <h3>Enter two strings in the form below</h3>
+        <form id="myForm">
+            <label for="first">First String</label><br>
+            <input type="text" id="first" name="first"><br>
+            <label for="second">Second String</label><br>
+            <input type="text" id="second" name="second"><br><br>
+            <input type="submit" value="Press to compare lengths">
+        </form>
+        <div id="answerDiv"></div>
+    </body>
+    <script>
+        document.getElementById('myForm').addEventListener('submit',(event)=>{
+            event.preventDefault()
+            firstString=document.getElementById('first').value
+            secondString=document.getElementById('second').value
+            console.log(typeof(firstString))
+            valString = ''
+            if(firstString.length>secondString.length){
+                valString="First String is longer than Second number"
+            }
+            else if(firstString.length==secondString.length){
+                valString="Strings are equal in length"
+            }
+            else{
+                valString='Second string is longer than First string'
+            }
+            holder=document.getElementById('holder')
+            if(holder!=null){
+                holder.remove()
+            }
+            holder=document.createElement('p')
+            holder.id = 'holder'
+            answer=document.createTextNode(valString)
+            holder.appendChild(answer)
+            answerDiv=document.getElementById('answerDiv')
+            answerDiv.appendChild(holder)
+        })
+    </script>
+</html>

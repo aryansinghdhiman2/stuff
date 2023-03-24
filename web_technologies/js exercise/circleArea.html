@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Area of Circle</title>
+</head>
+
+<body>
+    <form>
+        <input type="submit" value="Click Me!">
+    </form>
+    <div id="answerDiv">
+        <p id="holder"></p>
+    </div>
+</body>
+<script>
+    document.addEventListener('submit', (event) => {
+        event.preventDefault()
+        function c_area() {
+            rad = parseInt(prompt("Enter Radius of Circle"))
+            return rad * rad * 3.14
+        }
+        area = c_area()
+        holder = document.getElementById('holder')
+        if (holder != null) {
+            holder.remove()
+        }
+        holder = document.createElement('p')
+        holder.id = 'holder'
+        answer = document.createTextNode('Area of Circle is: ' + area.toString())
+        holder.appendChild(answer)
+        answerDiv = document.getElementById('answerDiv')
+        answerDiv.appendChild(holder)
+    })
+
+</script>
+
+</html>
