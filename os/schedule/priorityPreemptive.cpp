@@ -14,25 +14,17 @@ class Process{
     int waiting_time=0;
     int previous_running_time=0;
     bool has_preempted = false;
+    int priority=0;
 };
 
-bool compareGreater(const Process& a,const Process& b){
-    if(a.burst>b.burst){
-        return true;
-    }
-    else if(a.arrival>b.arrival && a.burst==b.burst){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 bool compareLesser(const Process& a,const Process& b){
-    if(a.burst<b.burst){
+    if(a.priority<b.priority){
         return true;
     }
-    else if(a.arrival<b.arrival && a.burst==b.burst){
+    else if(a.arrival<b.arrival && a.priority==b.priority){
+        return true;
+    }
+    else if(a.arrival==b.arrival && a.priority==b.priority && a.burst<b.burst){
         return true;
     }
     else{
@@ -47,40 +39,70 @@ bool shouldPreempt(queue<Process> readyQueue,const Process currentProcess,const 
             temp.push_back(readyQueue.front());
             readyQueue.pop();
         }
-        auto mini=min_element(temp.begin(),temp.end(),compareLesser);
-        if(mini->id!=currentProcess.id 
-            and mini->arrival<=currentTime 
-            and not mini->has_preempted 
-            and mini->burst<currentProcess.burst){
-            return true;
+        sort(temp.begin(),temp.end(),compareLesser);
+        for(auto it=temp.begin();it!=temp.end();it++){
+            if(it->arrival<=currentTime
+                and it->id!=currentProcess.id
+                and not it->has_preempted
+                and it->priority<currentProcess.priority){
+                return true;
+            }
         }
-        else return false;
+        return false;
     }
     else return false;
 }
 
-void reorderQueue(queue<Process>& readyQueue,const Process& currentProcess,const int currentTime){
+void reorderQueue(queue<Process>& readyQueue,const int currentTime){
+    if(not readyQueue.empty()){
     vector<Process> temp;
-    while(!readyQueue.empty()){
-        temp.push_back(readyQueue.front());
-        readyQueue.pop();
+        while(!readyQueue.empty()){
+            temp.push_back(readyQueue.front());
+            readyQueue.pop();
+        }
+        sort(temp.begin(),temp.end(),compareLesser);
+        for(auto it=temp.begin();it!=temp.end();it++){
+            if(it->arrival<=currentTime){
+                readyQueue.push(*it);
+                temp.erase(it);
+                break;
+            }
+        }
+        reverse(temp.begin(),temp.end());
+        while(!temp.empty())
+        {
+            readyQueue.push(temp.back());
+            temp.pop_back();
+        }
     }
-    auto mini=min_element(temp.begin(),temp.end(),compareLesser);
-    Process preempter=*mini;
-    preempter.has_preempted=true;
-    temp.erase(mini);
-    reverse(temp.begin(),temp.end());
-    readyQueue.push(preempter);
-    while(!temp.empty())
-    {
-        readyQueue.push(temp.back());
-        temp.pop_back();
+    // readyQueue.push(currentProcess);5
+}
+
+void reorderQueue(queue<Process>& readyQueue,const int currentTime,const Process& currentProcess){
+    if(not readyQueue.empty()){
+    vector<Process> temp;
+        while(!readyQueue.empty()){
+            temp.push_back(readyQueue.front());
+            readyQueue.pop();
+        }
+        temp.push_back(currentProcess);
+        auto mini=min_element(temp.begin(),temp.end(),compareLesser);
+        Process preempter=*mini;
+        preempter.has_preempted=true;
+        temp.erase(mini);
+        reverse(temp.begin(),temp.end());
+        readyQueue.push(preempter);
+        while(!temp.empty())
+        {
+            readyQueue.push(temp.back());
+            temp.pop_back();
+        }
     }
-    readyQueue.push(currentProcess);
+    // readyQueue.push(currentProcess);5
 }
 
 
-pair<int,int> shortestJobFirst(vector<Process>& processes){
+pair<int,int> preemptivePriority(vector<Process>& processes){
         sort(processes.begin(),processes.end(),[](const Process& a,const Process& b){
         if(a.arrival>b.arrival){
             return true;
@@ -113,13 +135,14 @@ pair<int,int> shortestJobFirst(vector<Process>& processes){
         }
         p.previous_running_time=current_time;
         total_waiting_time+=p.waiting_time;
-        if(preempted){
-            reorderQueue(readyQueue,p,current_time);
+        if(preempted and p.burst){
+            reorderQueue(readyQueue,current_time,p);
         }
         else{
             p.turnaround=current_time-p.arrival;
             total_turnaround_time+=p.turnaround;
             processes.push_back(p);
+            reorderQueue(readyQueue,current_time);
         }
     }
     return pair<int,int>(total_turnaround_time,total_waiting_time);
@@ -151,16 +174,18 @@ vector<Process> getProcesses(){
     cout<<endl;
     for(int i=0;i<n;i++){
         Process p;
-        int at,bt;
+        int at,bt,pri;
         cout<<"Enter details for process "<<i<<": \n";
         cout<<"Enter Arrival Time: ";
         cin>>at;
         cout<<"Enter Burst Time: ";
         cin>>bt;
-        
+        cout<<"Enter Priority: ";
+        cin>>pri;
         p.arrival=at;
         p.burst=bt;
         p.id=i;
+        p.priority=pri;
         p.previous_running_time=p.arrival;
         processes.push_back(p);
     }
@@ -169,7 +194,7 @@ vector<Process> getProcesses(){
 
 int main(){
     auto pr=getProcesses();
-    auto results=shortestJobFirst(pr);
+    auto results=preemptivePriority(pr);
     display(pr,results);
 
 }

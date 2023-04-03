@@ -67,16 +67,16 @@ def getInput():
 def drawgraph(graph:nx.DiGraph):
     layout=nx.multipartite_layout(graph)
     labels = nx.get_edge_attributes(graph, "weight")
-    nx.draw(graph,pos=layout,with_labels=True)
-    nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels)
+    nx.draw(graph,pos=layout,with_labels=True,node_color='red',font_color='white')
+    nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels,label_pos=0.39)
     plt.show()
 
 def drawFinalGraph(graph:nx.DiGraph,pathList:list[int]):
     layout=nx.multipartite_layout(graph)
     labels = nx.get_edge_attributes(graph, "weight")
-    nx.draw(graph,pos=layout,with_labels=True)
+    nx.draw(graph,pos=layout,with_labels=True,font_color='white',node_color='red')
     nx.draw_networkx_edges(graph,pos=layout,edgelist=pathList,edge_color='red')
-    nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels,label_pos=0.35)
+    nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels,label_pos=0.39)
     plt.show()
 
 if(__name__=="__main__"):
@@ -84,3 +84,31 @@ if(__name__=="__main__"):
     drawgraph(graph)
     pathList=convert(fgraph(graph,layers))
     drawFinalGraph(graph,pathList)
+
+
+    # graph = nx.DiGraph()
+    # graph.add_node(0,subset=0)
+    # graph.add_node(1,subset=1)
+    # graph.add_node(2,subset=1)
+    # graph.add_node(3,subset=2)
+    # graph.add_node(4,subset=2)
+    # graph.add_node(5,subset=2)
+    # graph.add_node(6,subset=3)
+    # graph.add_node(7,subset=3)
+    # graph.add_node(8,subset=4)
+
+    # graph.add_edge(0,1,weight=5)
+    # graph.add_edge(0,2,weight=2)
+    # graph.add_edge(1,5,weight=3)
+    # graph.add_edge(1,3,weight=3)
+    # graph.add_edge(2,5,weight=8)
+    # graph.add_edge(2,4,weight=5)
+    # graph.add_edge(2,3,weight=6)
+    # graph.add_edge(3,6,weight=1)
+    # graph.add_edge(3,7,weight=4)
+    # graph.add_edge(4,6,weight=6)
+    # graph.add_edge(4,7,weight=2)
+    # graph.add_edge(5,6,weight=6)
+    # graph.add_edge(5,7,weight=2)
+    # graph.add_edge(6,8,weight=7)
+    # graph.add_edge(7,8,weight=3)

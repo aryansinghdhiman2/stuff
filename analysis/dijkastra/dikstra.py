@@ -1,30 +1,12 @@
 import numpy as np
-import heapq
 from sys import maxsize
 from matplotlib import pyplot as plt
 import networkx as nx
-# class directedEdge()
+import termtables as tt
 newmaxsize = maxsize/2-1
-class directedEdge():
-    def __init__(self,source:int,destination:int,weight:int):
-        self.source = source
-        self.destination = destination
-        self.weight = weight
 
-def replace_with_newmaxsize(matrix:np.matrix):
-    for i in range(0,matrix.shape[0]):
-        for j in range(0,matrix.shape[1]):
-            if(matrix[i,j]==0):
-                matrix[i,j]=newmaxsize
-
-def replace_with_zeroes(matrix:np.matrix):
-    for i in range(0,matrix.shape[0]):
-        for j in range(0,matrix.shape[1]):
-            if(matrix[i,j]==newmaxsize):
-                matrix[i,j]=0
-
-def create_directed_edge_list(n:int)->list[directedEdge]:
-    edge_list = []
+def getInput(n:int):
+    graph = nx.DiGraph()
     print('Get ready to enter edges: [Note that index of nodes starts from 0]')
     print("Enter directedEdges in order of source weight destination")
     while(True):
@@ -39,24 +21,11 @@ def create_directed_edge_list(n:int)->list[directedEdge]:
             print("Invalid")
             continue
 
-        edge = directedEdge(source,destination,weight)
-        exist = 0
-        for ele in edge_list:
-            if(ele==edge):
-                print("Already Exists")
-                exist = 1
-                break
-        if(not exist):
-            edge_list.append(edge)
+        if(graph.has_edge(source,destination)):
+            print("Already Exists")
+        else: graph.add_edge(source,destination,weight=weight)
     
-    return edge_list
-        
-def create_cost_matrix(n,edge_list:list[directedEdge])->np.matrix:
-    matrix = np.matrix(np.zeros((n,n),dtype=np.int64))
-
-    for edge in edge_list:
-        matrix[edge.source,edge.destination] = edge.weight
-    return matrix
+    return graph
 
 def select(processed:list,dist:list):
     minimum = newmaxsize
@@ -91,43 +60,41 @@ def dijkastra(source,cost:np.matrix):
     
     return dist
 
-def graph_plotter(matrix:np.matrix):
-    graph = nx.from_numpy_array(matrix,create_using=nx.DiGraph)
-    # layout = nx.kamada_kawai_layout(graph)
+
+def drawgraph(graph:nx.DiGraph):
     labels = nx.get_edge_attributes(graph, "weight")
-    nx.draw(graph,pos=layout,with_labels=True,font_color='white')
+    nx.draw(graph,pos=layout,with_labels=True,node_color='red',font_color='white')
     nx.draw_networkx_edge_labels(graph,pos=layout,edge_labels=labels)
     plt.show()
-    return layout
+
+def printSol(distance:list[int],source):
+    header=[i for i in range(0,len(distance))]
+    header=['']+header
+    for i in range(0,len(distance)):
+        if(distance[i]==newmaxsize):
+            distance[i]='inf'
+    distance=[source]+distance
+    fin = [header,distance]
+    tt.print(fin,style=tt.styles.rounded)
 
 if(__name__ =="__main__"):
-    n=8
-    # n = int(input("Enter number of nodes: "))
-    # edge_list=create_directed_edge_list(n)
-    adj= [[0,0,0,0,0,0,0,0],
-    [300,0,0,0,0,0,0,0],
-    [1000,800,0,0,0,0,0,0],
-    [0,0,1200,0,0,0,0,0],
-    [0,0,0,1500,0,250,0,0],
-    [0,0,0,1000,0,0,900,1400],
-    [0,0,0,0,0,0,0,1000],
-    [1700,0,0,0,0,0,0,0]]
-    matrix=np.matrix(adj,dtype=np.int64)
-    # matrix=create_cost_matrix(n,edge_list)
-    layout = nx.spring_layout(nx.from_numpy_array(matrix))
-    graph_plotter(matrix)
-    # replace_with_newmaxsize(matrix)
-    # source=int(input('Enter source vertex: '))
-    # if(source<0 or source>=n):
-    #     print("Invalid source vertex")
-    #     exit()
-    # distance=dijkastra(source,matrix)
+    n = int(input("Enter number of nodes: "))
+    graph=getInput(n)
+    matrix = nx.to_numpy_array(graph,dtype=np.int64,nonedge=newmaxsize)
+    layout = nx.spring_layout(nx.to_undirected(graph))
+    # drawgraph(graph)
+    source=int(input('Enter source vertex: '))
+    if(source<0 or source>=n):
+        print("Invalid source vertex")
+        exit()
+    distance=dijkastra(source,matrix)
+    printSol(distance,source)
+    
     # print('Distance Matrix is: ')
     # for i in range(0,len(distance)):
     #     if(distance[i]==newmaxsize):
     #         distance[i]='infinity'
     # print(distance)
-    # replace_with_zeroes(matrix)
 
 
     # adj= [[0,0,0,0,0,0,0,0],
@@ -150,3 +117,19 @@ if(__name__ =="__main__"):
     # [18, 0, 0, 0, 0]
 # ]
 # matrix=np.matrix(adj,dtype=np.int64)
+
+    # n=8
+    # graph = nx.DiGraph()
+    # for i in range(0,n):
+    #     graph.add_node(i)
+    # graph.add_edge(1,0,weight=300)
+    # graph.add_edge(2,1,weight=800)
+    # graph.add_edge(2,0,weight=1000)
+    # graph.add_edge(3,2,weight=1200)
+    # graph.add_edge(5,6,weight=900)
+    # graph.add_edge(6,7,weight=1000)
+    # graph.add_edge(7,0,weight=1700)
+    # graph.add_edge(4,3,weight=1500)
+    # graph.add_edge(4,5,weight=250)
+    # graph.add_edge(5,3,weight=1000)
+    # graph.add_edge(5,7,weight=1400)

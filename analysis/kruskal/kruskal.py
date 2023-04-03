@@ -82,14 +82,7 @@ def create_cost_matrix(n,edge_list:list[undirectedEdge])->np.matrix:
 
     return matrix
 
-def find_parent(parent:list[int],i:int)->int:
-    if(parent[i]==-1):
-        return i
-    else: return find_parent(parent,parent[i])
 
-def union(parent:list[int],edge:undirectedEdge):
-    edge.arrange()
-    parent[edge.destination]=edge.source
 
 def graph_plotter(matrix:np.matrix):
     graph = nx.from_numpy_array(matrix)
@@ -118,6 +111,15 @@ def tree_plotter(matrix:np.matrix,tree:np.ndarray):
     nx.draw(treeGraph,pos=layout,with_labels=True,font_color='white',node_color='red')
     nx.draw_networkx_edge_labels(treeGraph,pos=layout,edge_labels=treeLabels)
     plt.show()
+
+def find_parent(parent:list[int],i:int)->int:
+    if(parent[i]==-1):
+        return i
+    else: return find_parent(parent,parent[i])
+
+def union(parent:list[int],edge:undirectedEdge):
+    edge.arrange()
+    parent[edge.destination]=edge.source
 
 def kruskal(edge_list:list[undirectedEdge],cost_matrix:np.matrix):
     n = cost_matrix.shape[0]
