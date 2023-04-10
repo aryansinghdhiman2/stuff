@@ -58,8 +58,19 @@ def printSolution(allCost:np.matrix):
 
 
 if(__name__ =="__main__"):
-    n = int(input("Enter number of nodes: "))
-    graph=getInput(n)
+    # n = int(input("Enter number of nodes: "))
+    # graph=getInput(n)
+    n=6
+    graph=nx.DiGraph()
+    for i in range(0,n):
+        graph.add_node(i)
+    graph.add_edge(0,3,weight=14)
+    graph.add_edge(0,1,weight=43)
+    graph.add_edge(1,3,weight=23)
+    graph.add_edge(2,4,weight=24)
+    graph.add_edge(2,5,weight=35)
+    graph.add_edge(3,4,weight=42)
+    graph.add_edge(5,0,weight=34)
     matrix = nx.to_numpy_array(graph,dtype=np.int64,nonedge=newmaxsize)
     layout = nx.spring_layout(nx.to_undirected(graph))
     for i in range(0,matrix.shape[0]):

@@ -86,7 +86,17 @@ void reorderQueue(queue<Process>& readyQueue,const int currentTime,const Process
             readyQueue.pop();
         }
         temp.push_back(currentProcess);
-        auto mini=min_element(temp.begin(),temp.end(),compareLesser);
+        sort(temp.begin(),temp.end(),compareLesser);
+        vector<Process>::iterator mini;
+        for(auto it=temp.begin();it!=temp.end();it++){
+            if(it->arrival<=currentTime
+                and it->id!=currentProcess.id
+                and not it->has_preempted
+                and it->priority<currentProcess.priority){
+                mini=it;
+            }
+        }
+        // auto mini=min_element(temp.begin(),temp.end(),compareLesser);
         Process preempter=*mini;
         preempter.has_preempted=true;
         temp.erase(mini);
@@ -103,7 +113,7 @@ void reorderQueue(queue<Process>& readyQueue,const int currentTime,const Process
 
 
 pair<int,int> preemptivePriority(vector<Process>& processes){
-        sort(processes.begin(),processes.end(),[](const Process& a,const Process& b){
+    sort(processes.begin(),processes.end(),[](const Process& a,const Process& b){
         if(a.arrival>b.arrival){
             return true;
         }

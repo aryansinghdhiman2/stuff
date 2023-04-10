@@ -47,14 +47,15 @@ bool shouldPreempt(queue<Process> readyQueue,const Process currentProcess,const 
             temp.push_back(readyQueue.front());
             readyQueue.pop();
         }
-        auto mini=min_element(temp.begin(),temp.end(),compareLesser);
-        if(mini->id!=currentProcess.id 
-            and mini->arrival<=currentTime 
-            and not mini->has_preempted 
-            and mini->burst<currentProcess.burst){
-            return true;
+        sort(temp.begin(),temp.end(),compareLesser);
+        for(auto it=temp.begin();it!=temp.end();it++){
+            if(it->arrival<=currentTime
+                and it->id!=currentProcess.id
+                and not it->has_preempted){
+                return true;
+            }
         }
-        else return false;
+        return false;
     }
     else return false;
 }
@@ -65,7 +66,16 @@ void reorderQueue(queue<Process>& readyQueue,const Process& currentProcess,const
         temp.push_back(readyQueue.front());
         readyQueue.pop();
     }
-    auto mini=min_element(temp.begin(),temp.end(),compareLesser);
+    sort(temp.begin(),temp.end(),compareLesser);
+    vector<Process>::iterator mini;
+    for(auto it=temp.begin();it!=temp.end();it++){
+        if(it->arrival<=currentTime
+            and it->id!=currentProcess.id
+            and not it->has_preempted){
+            mini=it;
+        }
+    }
+    // auto mini=min_element(temp.begin(),temp.end(),compareLesser);
     Process preempter=*mini;
     preempter.has_preempted=true;
     temp.erase(mini);
