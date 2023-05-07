@@ -1,22 +1,27 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
-#include<queue>
 #include<utility>
 using namespace std;
 
-int fcfs(queue<int> diskQueue,int seekHeadPos){
-    // sort(queue.rbegin(),queue.rend());
-    int totalDistance = 0;
+int sstf(vector<int> diskQueue,int seekHeadPos){
+    int totalDistance=0;
+    auto closestToHead=[seekHeadPos](int a,int b){
+        if(abs(seekHeadPos-a)<abs(seekHeadPos-b)){
+            return true;
+        }
+        else return false;
+    };
     while(not diskQueue.empty()){
-        totalDistance+=abs((diskQueue.front())-seekHeadPos);
-        seekHeadPos=diskQueue.front();
-        diskQueue.pop();
-    }
+        auto request = min_element(diskQueue.begin(),diskQueue.end(),closestToHead);
+        totalDistance+=abs((*request)-seekHeadPos);
+        seekHeadPos=*request;
+        diskQueue.erase(request);
+    } 
     return totalDistance;
 }
 
-pair<queue<int>,int> getInput(){
+pair<vector<int>,int> getInput(){
     cout<<"Enter Last Cylinder Number: ";
     int lastCylinderNumber;
     cin>>lastCylinderNumber;
@@ -24,7 +29,7 @@ pair<queue<int>,int> getInput(){
     cout<<"Enter Number of disk requests: ";
     int n;
     cin>>n;
-    queue<int> diskQueue;
+    vector<int> diskQueue;
     while(n>0){
         int temp;
         cout<<"Enter Request: ";
@@ -33,7 +38,7 @@ pair<queue<int>,int> getInput(){
             cout<<"Invalid, enter again\n";
             continue;
         }
-        diskQueue.push(temp);
+        diskQueue.push_back(temp);
         n--;
     }
     bool correctInput = false;
@@ -49,5 +54,5 @@ pair<queue<int>,int> getInput(){
 
 int main(){
     auto dq=getInput();
-    cout<<"Total Distance Travelled: "<<fcfs(dq.first,dq.second)<<endl;
+    cout<<"Total Distance Travelled: "<<sstf(dq.first,dq.second);
 }

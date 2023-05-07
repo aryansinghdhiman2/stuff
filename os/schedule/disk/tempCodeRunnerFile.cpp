@@ -1,22 +1,4 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<queue>
-#include<utility>
-using namespace std;
-
-int fcfs(queue<int> diskQueue,int seekHeadPos){
-    // sort(queue.rbegin(),queue.rend());
-    int totalDistance = 0;
-    while(not diskQueue.empty()){
-        totalDistance+=abs((diskQueue.front())-seekHeadPos);
-        seekHeadPos=diskQueue.front();
-        diskQueue.pop();
-    }
-    return totalDistance;
-}
-
-pair<queue<int>,int> getInput(){
+pair<vector<int>,int> getInput(){
     cout<<"Enter Last Cylinder Number: ";
     int lastCylinderNumber;
     cin>>lastCylinderNumber;
@@ -24,7 +6,7 @@ pair<queue<int>,int> getInput(){
     cout<<"Enter Number of disk requests: ";
     int n;
     cin>>n;
-    queue<int> diskQueue;
+    vector<int> diskQueue;
     while(n>0){
         int temp;
         cout<<"Enter Request: ";
@@ -33,7 +15,7 @@ pair<queue<int>,int> getInput(){
             cout<<"Invalid, enter again\n";
             continue;
         }
-        diskQueue.push(temp);
+        diskQueue.push_back(temp);
         n--;
     }
     bool correctInput = false;
@@ -45,9 +27,4 @@ pair<queue<int>,int> getInput(){
         else correctInput=true;
     }
     return pair(diskQueue,seekHeadPos);
-}
-
-int main(){
-    auto dq=getInput();
-    cout<<"Total Distance Travelled: "<<fcfs(dq.first,dq.second)<<endl;
 }

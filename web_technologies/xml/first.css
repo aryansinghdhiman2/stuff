@@ -1,0 +1,28 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+students{
+    font-size: 12;
+    display: flex;
+    flex-direction: column;
+}
+
+student{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 2px;
+}
+
+usn{
+    color: orange;    
+}
+
+name,college,branch,email,yearOfJoining{
+    margin-left: 20px;
+}
+
+email{
+    color:blue;
+    font-style: italic;
+}

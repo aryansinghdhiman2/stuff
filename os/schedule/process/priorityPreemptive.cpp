@@ -96,7 +96,6 @@ void reorderQueue(queue<Process>& readyQueue,const int currentTime,const Process
                 mini=it;
             }
         }
-        // auto mini=min_element(temp.begin(),temp.end(),compareLesser);
         Process preempter=*mini;
         preempter.has_preempted=true;
         temp.erase(mini);
@@ -108,7 +107,6 @@ void reorderQueue(queue<Process>& readyQueue,const int currentTime,const Process
             temp.pop_back();
         }
     }
-    // readyQueue.push(currentProcess);5
 }
 
 

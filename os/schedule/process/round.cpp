@@ -14,9 +14,7 @@ class Process{
     int waiting_time=0;
     int previous_running_time=0;
 };
-// void reorderQueue(queue<Process>& readyQueue,const Process& currentProcess){
 
-// }
 pair<int,int> roundRobin(vector<Process>& processes,const int quantum){
     sort(processes.begin(),processes.end(),[](const Process& a,const Process& b){
         if(a.arrival>b.arrival){
@@ -122,5 +120,4 @@ int main(){
     cin>>quantum;
     auto results=roundRobin(pr,quantum);
     display(pr,results);
-
 }

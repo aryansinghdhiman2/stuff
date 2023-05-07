@@ -95,5 +95,4 @@ int main(){
     auto pr=getProcesses();
     auto results=firstComeFirstServe(pr);
     display(pr,results);
-
 }

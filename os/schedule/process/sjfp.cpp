@@ -16,18 +16,6 @@ class Process{
     bool has_preempted = false;
 };
 
-bool compareGreater(const Process& a,const Process& b){
-    if(a.burst>b.burst){
-        return true;
-    }
-    else if(a.arrival>b.arrival && a.burst==b.burst){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 bool compareLesser(const Process& a,const Process& b){
     if(a.burst<b.burst){
         return true;

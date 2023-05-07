@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<?xml-stylesheet href="fourth.css" type="text/css"?>
+
+<products>
+    <product>
+        <name>Apsara Pencils</name>
+        <price>100</price>
+        <quantity>500</quantity>
+        <stockList>
+            <location>Aisle 3, Shelf 4</location>
+            <location>Aisle 1, Shelf 2</location>
+        </stockList>
+    </product>
+    <product>
+        <name>Reynold Trimax</name>
+        <price>50</price>
+        <quantity>50</quantity>
+        <stockList>
+            <location>Aisle 2, Shelf 1</location>
+            <location>Aisle 1, Shelf 1</location>
+        </stockList>
+    </product>
+    <product>
+        <name>Notebooks</name>
+        <price>100</price>
+        <quantity>1000</quantity>
+        <stockList>
+            <location>Aisle 1, Shelf 3</location>
+        </stockList>
+    </product>
+</products>
