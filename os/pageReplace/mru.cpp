@@ -85,11 +85,11 @@ pair<size_t,vector<int>> getInput(){
 }
 
 int main(){
-    // auto inputPair = getInput();
-    // size_t bufferSize=inputPair.first;
-    // vector<int> requests=inputPair.second;
-    size_t bufferSize = 3;
-    vector<int> requests = {7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1};
+    auto inputPair = getInput();
+    size_t bufferSize=inputPair.first;
+    vector<int> requests=inputPair.second;
+    // size_t bufferSize = 3;
+    // vector<int> requests = {7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1};
     int count=mru(requests,bufferSize);        
     cout<<"Number of Page Faults are: "<<count<<endl;
 }

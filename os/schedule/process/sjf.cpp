@@ -26,8 +26,10 @@ class Process{
 void reorderQueue(queue<Process>& readyQueue,const int currentTime){
     if(not readyQueue.empty()){
         vector<Process> temp;
-        temp.push_back(readyQueue.front());
-        readyQueue.pop();
+        while(not readyQueue.empty()){
+            temp.push_back(readyQueue.front());
+            readyQueue.pop();
+        }
         sort(temp.begin(),temp.end());
         vector<Process>::iterator mini;
         for(auto it=temp.begin();it!=temp.end();it++){

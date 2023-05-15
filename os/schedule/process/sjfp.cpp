@@ -39,7 +39,8 @@ bool shouldPreempt(queue<Process> readyQueue,const Process currentProcess,const 
         for(auto it=temp.begin();it!=temp.end();it++){
             if(it->arrival<=currentTime
                 and it->id!=currentProcess.id
-                and not it->has_preempted){
+                and not it->has_preempted
+                and it->burst<currentProcess.burst){
                 return true;
             }
         }
@@ -59,8 +60,10 @@ void reorderQueue(queue<Process>& readyQueue,const Process& currentProcess,const
     for(auto it=temp.begin();it!=temp.end();it++){
         if(it->arrival<=currentTime
             and it->id!=currentProcess.id
-            and not it->has_preempted){
+            and not it->has_preempted
+            and it->burst<currentProcess.burst){
             mini=it;
+            break;
         }
     }
     // auto mini=min_element(temp.begin(),temp.end(),compareLesser);
@@ -77,6 +80,29 @@ void reorderQueue(queue<Process>& readyQueue,const Process& currentProcess,const
     readyQueue.push(currentProcess);
 }
 
+void reorderQueue(queue<Process>& readyQueue,const int currentTime){
+    if(not readyQueue.empty()){
+        vector<Process> temp;
+        while(not readyQueue.empty()){
+            temp.push_back(readyQueue.front());
+            readyQueue.pop();
+        }
+        sort(temp.begin(),temp.end(),compareLesser);
+        vector<Process>::iterator mini;
+        for(auto it=temp.begin();it!=temp.end();it++){
+            if(it->arrival<=currentTime){
+                mini=it;
+                break;
+            }
+        }
+        auto shortest = *mini;
+        temp.erase(mini);
+        readyQueue.push(shortest);
+        for(auto process:temp){
+            readyQueue.push(process);
+        }
+    }
+}
 
 pair<int,int> shortestJobFirst(vector<Process>& processes){
         sort(processes.begin(),processes.end(),[](const Process& a,const Process& b){
@@ -118,6 +144,7 @@ pair<int,int> shortestJobFirst(vector<Process>& processes){
             p.turnaround=current_time-p.arrival;
             total_turnaround_time+=p.turnaround;
             processes.push_back(p);
+            reorderQueue(readyQueue,current_time);
         }
     }
     return pair<int,int>(total_turnaround_time,total_waiting_time);

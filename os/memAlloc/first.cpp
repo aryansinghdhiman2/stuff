@@ -9,7 +9,7 @@ class block{
     int occupier;
     bool occupied;
     public:
-    block(int s,int e):start(s),end(e){}
+    block(int s,int e):start(s),end(e){this->occupied=false;}
     block(int s,int e,int o):start(e),end(e),occupier(o){this->occupied=true;}
     pair<block,block> divide(int mid){
         block b1 = block(this->start,mid);
@@ -35,8 +35,10 @@ class memory{
                 block temp=*itr;
                 auto block_pair=temp.divide(temp.start+size);
                 block_pair.first.addOccupier(id);
-                m.insert(itr,block_pair.first);
-                m.insert(itr,block_pair.second);
+                itr=m.insert(itr,block_pair.first);
+                itr++;
+                itr=m.insert(itr,block_pair.second);
+                itr++;
                 m.erase(itr);
                 return;
             }
@@ -57,19 +59,19 @@ class memory{
 };
 
 int main(){
-    vector<block> v;
-    block b(0,50);
-    auto bPair=b.divide(10);
-    v.push_back(bPair.first);
-    auto secondPair=bPair.second.divide(15);
-    secondPair.first.addOccupier(1);
-    v.push_back(secondPair.first);
-    v.push_back(secondPair.second);
-    memory m(v);
-    m.display();
-    cout<<"****************************************\n";
-    m.allocate(2,12);
-    m.display();
+    // vector<block> v;
+    // block b(0,50);
+    // auto bPair=b.divide(10);
+    // v.push_back(bPair.first);
+    // auto secondPair=bPair.second.divide(15);
+    // secondPair.first.addOccupier(1);
+    // v.push_back(secondPair.first);
+    // v.push_back(secondPair.second);
+    // memory m(v);
+    // m.display();
+    // cout<<"****************************************\n";
+    // m.allocate(2,12);
+    // m.display();
 
     memory* my_memory=nullptr;
     cout<<"Enter size of memory: ";
@@ -115,5 +117,6 @@ int main(){
     cout<<"Enter size of process: ";
     int alloc_size;
     cin>>alloc_size;
+    my_memory->allocate(alloc_id,alloc_size);
     my_memory->display();
 }

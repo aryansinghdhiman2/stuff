@@ -59,7 +59,7 @@ vector<Process> getProcesses(){
     cout<<"Enter number of processes: ";
     int n;
     cin>>n;
-    cout<<endl;
+    // cout<<endl;
     for(int i=0;i<n;i++){
         Process p;
         int at,bt;
@@ -88,7 +88,7 @@ void display(const vector<Process>& processes,pair<int,int> results){
     }
     cout<<"***************************************\n";
     cout<<"Total Waiting Time: "<<results.second<<endl;
-    cout<<"Total Turnaround Time"<<results.first<<endl;
+    cout<<"Total Turnaround Time: "<<results.first<<endl;
 }
 
 int main(){

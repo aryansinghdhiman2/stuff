@@ -27,7 +27,7 @@ int cscan(vector<int>& diskQueue,int seekHeadPos,int lastCylinder){
         prevPos=seekHeadPos+1;;
     }
     i = 2;
-    prevPos=52;
+    prevPos=55;
 
     bool hasChangedDirection = false;
     while(not diskQueue.empty()){
@@ -81,7 +81,6 @@ int cscan(vector<int>& diskQueue,int seekHeadPos,int lastCylinder){
 
 pair<vector<int>,int> getInput(int& lastCylinderNumber){
     cout<<"Enter Last Cylinder Number: ";
-    // int lastCylinderNumber;
     cin>>lastCylinderNumber;
 
     cout<<"Enter Number of disk requests: ";

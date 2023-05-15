@@ -83,7 +83,6 @@ int cscan(vector<int>& diskQueue,int seekHeadPos,int lastCylinder){
 
 pair<vector<int>,int> getInput(int& lastCylinderNumber){
     cout<<"Enter Last Cylinder Number: ";
-    // int lastCylinderNumber;
     cin>>lastCylinderNumber;
 
     cout<<"Enter Number of disk requests: ";
@@ -113,13 +112,13 @@ pair<vector<int>,int> getInput(int& lastCylinderNumber){
 }
 
 int main(){
-    // int lastCylinderNumber=0;
-    // pair<vector<int>,int> dq=getInput(lastCylinderNumber);
-    // vector<int> diskQueue=vector<int>(dq.first);
-    // int seekHeadPos = dq.second;
-    vector<int> diskQueue = {98, 183, 37, 122, 14, 124, 65, 67};
-    int seekHeadPos = 53;
-    int lastCylinderNumber = 199;
+    int lastCylinderNumber=0;
+    pair<vector<int>,int> dq=getInput(lastCylinderNumber);
+    vector<int> diskQueue=vector<int>(dq.first);
+    int seekHeadPos = dq.second;
+    // vector<int> diskQueue = {98, 183, 37, 122, 14, 124, 65, 67};
+    // int seekHeadPos = 53;
+    // int lastCylinderNumber = 199;
     auto a = cscan(diskQueue,seekHeadPos,lastCylinderNumber);
     cout<<"Total Distance is: "<<a;
 }

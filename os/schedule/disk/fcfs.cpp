@@ -6,7 +6,6 @@
 using namespace std;
 
 int fcfs(queue<int> diskQueue,int seekHeadPos){
-    // sort(queue.rbegin(),queue.rend());
     int totalDistance = 0;
     while(not diskQueue.empty()){
         totalDistance+=abs((diskQueue.front())-seekHeadPos);

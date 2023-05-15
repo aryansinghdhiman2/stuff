@@ -9,11 +9,9 @@ class requestBuffer{
     deque<int> internalBuffer;
     size_t bufferSize;
     int getLateUsed(const vector<int>& requestQueue,const int& currentIndex){
-        vector<int> dist={INT_MAX,INT_MAX,INT_MAX};
+        vector<int> dist=vector<int>(bufferSize,INT_MAX);
         for(size_t i=0;i<this->bufferSize;i++){
             for(size_t j=currentIndex-1;j>=0;j--){
-                // cout<<"i is: "<<i<<endl;
-                // cout<<"j is: "<<j<<endl;
                 if(requestQueue.at(j)==this->internalBuffer.at(i)){
                     dist.at(i)=abs(int(j-currentIndex));
                     break;
@@ -33,8 +31,9 @@ class requestBuffer{
             }
             else{
                 auto usedLater=this->getLateUsed(requestQueue,currentIndex);
-                this->internalBuffer.erase(this->internalBuffer.begin()+usedLater);
-                this->internalBuffer.push_back(page);
+                // this->internalBuffer.erase(this->internalBuffer.begin()+usedLater);
+                // this->internalBuffer.push_back(page);
+                this->internalBuffer.at(usedLater)=page;
             }
             return true;//Page Fault
         }

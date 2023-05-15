@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <memory>
-#include<string>
+#include <string>
 using namespace std;
 
 struct semaphore{
@@ -35,7 +35,7 @@ unique_ptr<int> numberOfItems;
 
 void reader(int waitTime,int readTime,int i){
     int numberOfItemsToRead = *numberOfItems;
-    string line = "Reader "+to_string(i)+" to string\n";
+    string line = "Reader "+to_string(i)+" is reading\n";
     while(numberOfItemsToRead>0){
         mutex->wait(waitTime);
         (*read_count)++;
