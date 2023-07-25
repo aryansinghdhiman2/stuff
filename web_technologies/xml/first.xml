@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 
 <?xml-stylesheet href="./first.css" type="text/css"?>
-
+<!DOCTYPE students SYSTEM "./first.dtd">
 <students>
     <student>
         <usn>UE213020</usn>

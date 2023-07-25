@@ -1,0 +1,8 @@
+<!ELEMENT students (student*)>
+<!ELEMENT student (usn,name,college,branch,yearOfJoining,email)>
+<!ELEMENT usn (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT college (#PCDATA)>
+<!ELEMENT branch (#PCDATA)>
+<!ELEMENT yearOfJoining (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
