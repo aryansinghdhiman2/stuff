@@ -3,11 +3,7 @@
 // the animation interesting, and arrow keys move the camera for even more
 // fun.
 
-#ifdef __APPLE_CC__
-#include <GLUT/glut.h>
-#else
-#include <GL/glut.h>
-#endif
+#include <GL/freeglut.h>
 #include <cmath>
 
 // Colors
