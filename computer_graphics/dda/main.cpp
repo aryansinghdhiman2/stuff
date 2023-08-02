@@ -3,11 +3,11 @@
 #include<utility>
 #include<cmath>
 #include <stdlib.h>
-#define POINT_PRECISION 0.001
+#define INTERPIXEL_DISTANCE 0.001
 
 bool floatAreSame(float a,float b)
 {
-    return std::fabs(a-b) < POINT_PRECISION;
+    return std::fabs(a-b) < INTERPIXEL_DISTANCE;
 }
 
 struct pointPair {
@@ -41,7 +41,7 @@ void dda(pointPair a,pointPair b)
     float delta_x = b.x-a.x;
     float delta_y = b.y-a.y;
 
-    float epsilon = POINT_PRECISION / (std::max(abs(delta_x),abs(delta_y)));
+    float epsilon = INTERPIXEL_DISTANCE / (std::max(abs(delta_x),abs(delta_y)));
 
     glBegin(GL_POINTS);
         glVertex2f(a.x,a.y);
