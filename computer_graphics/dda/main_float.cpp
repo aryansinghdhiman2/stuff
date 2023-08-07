@@ -58,12 +58,10 @@ void dda(pointPair a,pointPair b)
         glBegin(GL_POINTS);
             glVertex2f(currentPos.x,currentPos.y);
         glEnd();
-        // Sleep(5);
-        // glFlush();
     }
 }
 
-void mouse_callback(int button,int state,int x,int y)
+void mouseCallback(int button,int state,int x,int y)
 {
     
     static pointPair currentPos = {0,0};
@@ -82,19 +80,9 @@ void mouse_callback(int button,int state,int x,int y)
 
 void display()
 {
-    // glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    // glClear(GL_COLOR_BUFFER_BIT);
 
     drawAxes();
-    
-    // glColor3d(1.0f,1.0f,0.0f);
-    glPointSize(3);
-
-    // dda({0.75,0.25},{0.5,0.5});
-    // glColor3d(0.0f,0.0f,1.0f);
-    // dda({-1,-1},{1,1});
-
-
+    glPointSize(10);
     glFlush();
 }
 
@@ -105,7 +93,7 @@ int main(int argc, char **argv)
     glutInitWindowPosition(-1, -1);
     glutCreateWindow("OpenGL Setup Test");
     glutDisplayFunc(display);
-    glutMouseFunc(mouse_callback);
+    glutMouseFunc(mouseCallback);
     glutMainLoop();
     return 0;
 }
