@@ -1,17 +1,29 @@
 #include <GL/freeglut.h> // GLUT, includes glu.h and gl.h
 #include <GL/glui.h>
+#include <GL/glui.h>
 #include <iostream>
 #include <cmath>
 #include <vector>
 #include <bitset>
-
+#include <string>
 typedef std::bitset<4> pattern;
+
 
 int halfHeight;
 int halfWidth;
-float red_val = 1,blue_val = 1,green_val = 1;
+int red_val = 255,blue_val = 255,green_val = 255;
 int thickness = 1;
 pattern hex_pattern("1111");
+
+GLUI_Listbox* algorithm_box;
+
+GLUI_Rollout* color_rollout;
+GLUI_Spinner* red_spinner;
+GLUI_Spinner* blue_spinner;
+GLUI_Spinner* green_spinner;
+
+GLUI_EditText* pattern_box;
+GLUI_Spinner* thickness_box;
 
 struct pointPair {
     double x;
@@ -77,7 +89,6 @@ void simpleDDApattern(pointPair a,pointPair b)
     }
  
     glEnd();
-    glFlush();
 }
 
 void symmetericalDDAPattern(pointPair a,pointPair b)
@@ -114,7 +125,6 @@ void symmetericalDDAPattern(pointPair a,pointPair b)
     }
  
     glEnd();
-    glFlush();
 }
 
 void bresenhamPattern(pointPair a,pointPair b)
@@ -172,7 +182,6 @@ void bresenhamPattern(pointPair a,pointPair b)
         if(pattern_pos == -1) pattern_pos = hex_pattern.size()-1;
     }
     glEnd();
-    glFlush();
 
 }
 
@@ -180,8 +189,6 @@ linePair parallelPointGenerator(pointPair a,pointPair b,int distance)
 {
     double slope = (b.y-a.y)/(b.x-a.x);
     double angle = std::atan2(b.y-a.y,b.x-a.x);
-
-    double varvar = std::cos(angle + M_PI/2);
     double offset_x = (double(distance)/2) * std::cos(angle + M_PI/2);
     double offset_y = (double(distance)/2) * std::sin(angle + M_PI / 2);
 
@@ -193,7 +200,7 @@ linePair parallelPointGenerator(pointPair a,pointPair b,int distance)
 
 void anotherMouseCallback(int button,int state,int x,int y)
 {
-    glColor3d(red_val,green_val,blue_val);
+    glColor3d(red_val/255.0,green_val/255.0,blue_val/255.0);
     int adjusted_x = x - halfWidth;
     int adjusted_y = -(y - halfHeight);
     if(button == GLUT_LEFT_BUTTON and state == GLUT_DOWN)
@@ -228,8 +235,9 @@ void menuCallback(int choice)
 
 }
 
-void algorithmSelectCallback(const int choice)
+void algorithmSelectCallback(const int id)
 {
+    int choice = algorithm_box->get_int_val();
     switch (choice)
     {
     case 0:
@@ -245,68 +253,21 @@ void algorithmSelectCallback(const int choice)
     }
 }
 
-void colorSelectCallback(int choice)
-{
-    switch (choice)
+void patternSelectorCallback(const int id)
+{;
+    char code = char(std::toupper(pattern_box->get_text().back()));
+    if(not isxdigit(code))
     {
-    case 0:             //RED
-        red_val = 1;
-        green_val = 0;
-        blue_val = 0;
-        break;
-    case 1:             //GREEN
-        red_val = 0;
-        green_val = 1;
-        blue_val = 0;
-        break;
-    case 2:             //BLUE
-        red_val = 0;
-        green_val = 0;
-        blue_val = 1;
-        break;
-    case 3:
-        red_val = 1;
-        green_val = 1;
-        blue_val = 1;
-    default:
-        break;
+        return;
     }
+    std::string input = "0x" + std::string(1,code);
+    unsigned int converted = std::stoul(input,nullptr,16);
+    hex_pattern = pattern(converted);
 }
 
-void patternSelectorCallback(int choice)
+void thicknessSelectorCallback(int id)
 {
-    switch (choice)
-    {
-    case 0:
-        hex_pattern = pattern("0101");
-        break;
-    case 1:
-        hex_pattern = pattern("1001");
-        break;
-    case 2:
-        hex_pattern = pattern("1111");
-        break;
-    default:
-        break;
-    }
-}
 
-void thicknessSelectorCallback(int choice)
-{
-    switch (choice)
-    {
-    case 0:
-        thickness = 10;
-        break;
-    case 1:
-        thickness = 5;
-        break;
-    case 2:
-        thickness = 1;
-        break;
-    default:
-        break;
-    }
 }
 void display()
 {
@@ -319,7 +280,7 @@ int main(int argc, char **argv)
     algorithmFunc = simpleDDApattern;
 
     glutInit(&argc, argv);
-    glutInitWindowSize(600, 600);
+    glutInitWindowSize(800, 600);
     glutInitWindowPosition(250, 100);
     int main_window = glutCreateWindow("Simple DDA Mouse");
 
@@ -329,35 +290,42 @@ int main(int argc, char **argv)
     halfWidth = glutGet(GLUT_WINDOW_WIDTH)/2;
     gluOrtho2D(-halfWidth, halfWidth, -halfHeight, halfHeight);
 
-    int algo_sub_menu = glutCreateMenu(algorithmSelectCallback);
-    glutAddMenuEntry("Simple DDA",0);
-    glutAddMenuEntry("Symmetrical DDA",1);
-    glutAddMenuEntry("Bresenham",2);
+    GLUI_Master.set_glutIdleFunc(nullptr);
+    GLUI_Master.set_glutMouseFunc(anotherMouseCallback);
+    GLUI *gluiWindow = GLUI_Master.create_glui_subwindow(main_window,GLUI_SUBWINDOW_TOP);
+    gluiWindow->set_main_gfx_window(main_window);
 
-    int color_sub_menu = glutCreateMenu(colorSelectCallback);
-    glutAddMenuEntry("Red",0);
-    glutAddMenuEntry("Green",1);
-    glutAddMenuEntry("Blue",2);
-    glutAddMenuEntry("White",3);
+    gluiWindow->add_column(false);
 
-    int pattern_sub_menu = glutCreateMenu(patternSelectorCallback);
-    glutAddMenuEntry("0101",0);
-    glutAddMenuEntry("1001",1);
-    glutAddMenuEntry("1111",2);
+    algorithm_box = gluiWindow->add_listbox("Algorithm ",nullptr,-1,algorithmSelectCallback);
+    algorithm_box->add_item(0,"Simple DDA");
+    algorithm_box->add_item(1,"Symmeterical DDA");
+    algorithm_box->add_item(2,"Bresenham");
+    algorithm_box->add_item(2,"Midpoint");
 
-    int thickness_sub_menu = glutCreateMenu(thicknessSelectorCallback);
-    glutAddMenuEntry("10",0);
-    glutAddMenuEntry("5",1);
-    glutAddMenuEntry("1",2);
+    gluiWindow->add_column(true);
 
-    glutCreateMenu(menuCallback);
-    glutAddSubMenu("Algorithm",algo_sub_menu);
-    glutAddSubMenu("Color",color_sub_menu);
-    glutAddSubMenu("Pattern",pattern_sub_menu);
-    glutAddSubMenu("Thickness",thickness_sub_menu);
-    glutAttachMenu(GLUT_RIGHT_BUTTON);
+    color_rollout = gluiWindow->add_rollout("Color",false);
+    red_spinner = gluiWindow->add_spinner_to_panel(color_rollout,"Red",GLUI_SPINNER_INT,&red_val);
+    blue_spinner = gluiWindow->add_spinner_to_panel(color_rollout,"Blue",GLUI_SPINNER_INT,&blue_val);
+    green_spinner = gluiWindow->add_spinner_to_panel(color_rollout,"Green",GLUI_SPINNER_INT,&green_val);
+    red_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
+    blue_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
+    green_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
+
+    gluiWindow->add_column(true);
+
+    pattern_box = gluiWindow->add_edittext("Pattern",GLUI_EDITTEXT_TEXT,nullptr,-1,patternSelectorCallback);
+
+    gluiWindow->add_column(true);
+
+    thickness_box = gluiWindow->add_spinner("Thickness",GLUI_SPINNER_INT,&thickness);
+    // thickness_box->set_int_limits(0,50,GLUI_LIMIT_CLAMP);
+
     glutDisplayFunc(display);
-    glutMouseFunc(anotherMouseCallback);
     glutMainLoop();
     return 0;
 }
+
+
+

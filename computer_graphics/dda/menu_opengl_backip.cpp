@@ -1,32 +1,21 @@
 #include <GL/freeglut.h> // GLUT, includes glu.h and gl.h
-#include <GL/glui.h>
 #include <iostream>
 #include <cmath>
 #include <vector>
-#include <bitset>
-
-typedef std::bitset<4> pattern;
 
 int halfHeight;
 int halfWidth;
 float red_val = 1,blue_val = 1,green_val = 1;
-int thickness = 1;
-pattern hex_pattern("1111");
 
 struct pointPair {
-    double x;
-    double y;
-    pointPair(double a,double b): x(a),y(b) {}
-    pointPair(): x(0),y(0) {}
+    double x=0;
+    double y=0;
 };
 
 struct linePair {
     pointPair start;
     pointPair end;
     int number_of_points=0;
-    linePair(pointPair a,pointPair b): start(a),end(b) {}
-    linePair(pointPair a,pointPair b,int n): start(a),end(b),number_of_points(n) {}
-    linePair(): start(pointPair()),end(pointPair()) {}
 };
 
 std::vector<linePair> lines;
@@ -45,10 +34,8 @@ void drawAxes()
     glEnd();
 }
 
-void simpleDDApattern(pointPair a,pointPair b)
+void simpleDDA(pointPair a,pointPair b)
 {
-    int pattern_pos = hex_pattern.size()-1;
-
     float delta_x = b.x-a.x;
     float delta_y = b.y-a.y;
 
@@ -68,22 +55,15 @@ void simpleDDApattern(pointPair a,pointPair b)
     {
         currentPos.x += x_increment;
         currentPos.y += y_increment;
-        if(hex_pattern.test(pattern_pos))
-        {
-            glVertex2i(std::round(currentPos.x),std::round(currentPos.y));
-        }
-        pattern_pos--;
-        if(pattern_pos == -1 ) pattern_pos = hex_pattern.size()-1;
+        glVertex2i(std::round(currentPos.x),std::round(currentPos.y));
     }
  
     glEnd();
     glFlush();
 }
 
-void symmetericalDDAPattern(pointPair a,pointPair b)
+void symmetericalDDA(pointPair a,pointPair b)
 {
-    int pattern_pos = hex_pattern.size()-1;
-
     float delta_x = b.x-a.x;
     float delta_y = b.y-a.y;
 
@@ -105,22 +85,15 @@ void symmetericalDDAPattern(pointPair a,pointPair b)
     {
         currentPos.x += x_increment;
         currentPos.y += y_increment;
-        if(hex_pattern.test(pattern_pos))
-        {
-            glVertex2i(std::round(currentPos.x),std::round(currentPos.y));
-        }
-        pattern_pos--;
-        if(pattern_pos == -1) pattern_pos = hex_pattern.size()-1;
+        glVertex2i(std::round(currentPos.x),std::round(currentPos.y));
     }
  
     glEnd();
     glFlush();
 }
 
-void bresenhamPattern(pointPair a,pointPair b)
+void bresenham(pointPair a,pointPair b)
 {
-    int pattern_pos = hex_pattern.size()-1;
-
     float delta_x = b.x-a.x;
     float delta_y = b.y-a.y;
 
@@ -164,31 +137,11 @@ void bresenhamPattern(pointPair a,pointPair b)
             pk = pk + 2 * abs(smaller_delta);
         }
 
-        if(hex_pattern.test(pattern_pos))
-        {
-            glVertex2i(currentPoint.x,currentPoint.y);
-        }
-        pattern_pos--;
-        if(pattern_pos == -1) pattern_pos = hex_pattern.size()-1;
+        glVertex2i(currentPoint.x,currentPoint.y);
     }
     glEnd();
     glFlush();
 
-}
-
-linePair parallelPointGenerator(pointPair a,pointPair b,int distance)
-{
-    double slope = (b.y-a.y)/(b.x-a.x);
-    double angle = std::atan2(b.y-a.y,b.x-a.x);
-
-    double varvar = std::cos(angle + M_PI/2);
-    double offset_x = (double(distance)/2) * std::cos(angle + M_PI/2);
-    double offset_y = (double(distance)/2) * std::sin(angle + M_PI / 2);
-
-    pointPair new_x = pointPair(std::round(a.x + offset_x),std::round(a.y + offset_y));
-    pointPair new_y = pointPair(std::round(b.x + offset_x),std::round(b.y + offset_y));
-    linePair newLine(new_x,new_y);
-    return newLine;
 }
 
 void anotherMouseCallback(int button,int state,int x,int y)
@@ -213,11 +166,7 @@ void anotherMouseCallback(int button,int state,int x,int y)
         }
         if(lines.back().number_of_points == 2)
         {
-            for(int i = -thickness/2;i <= thickness/2;i++)
-            {
-                linePair newLine = parallelPointGenerator(lines.back().start,lines.back().end,i);
-                algorithmFunc(newLine.start,newLine.end);
-            }
+            algorithmFunc(lines.back().start,lines.back().end);
         }
     }
     glFlush();
@@ -233,13 +182,13 @@ void algorithmSelectCallback(const int choice)
     switch (choice)
     {
     case 0:
-        algorithmFunc = simpleDDApattern;
+        algorithmFunc = simpleDDA;
         break;
     case 1:
-        algorithmFunc = symmetericalDDAPattern;
+        algorithmFunc = symmetericalDDA;
         break;
     case 2:
-        algorithmFunc = bresenhamPattern;
+        algorithmFunc = bresenham;
     default:
         break;
     }
@@ -273,41 +222,6 @@ void colorSelectCallback(int choice)
     }
 }
 
-void patternSelectorCallback(int choice)
-{
-    switch (choice)
-    {
-    case 0:
-        hex_pattern = pattern("0101");
-        break;
-    case 1:
-        hex_pattern = pattern("1001");
-        break;
-    case 2:
-        hex_pattern = pattern("1111");
-        break;
-    default:
-        break;
-    }
-}
-
-void thicknessSelectorCallback(int choice)
-{
-    switch (choice)
-    {
-    case 0:
-        thickness = 10;
-        break;
-    case 1:
-        thickness = 5;
-        break;
-    case 2:
-        thickness = 1;
-        break;
-    default:
-        break;
-    }
-}
 void display()
 {
     drawAxes();
@@ -316,12 +230,10 @@ void display()
 
 int main(int argc, char **argv)
 {
-    algorithmFunc = simpleDDApattern;
-
     glutInit(&argc, argv);
     glutInitWindowSize(600, 600);
-    glutInitWindowPosition(250, 100);
-    int main_window = glutCreateWindow("Simple DDA Mouse");
+    glutInitWindowPosition(-1, -1);
+    glutCreateWindow("Simple DDA Mouse");
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -340,23 +252,15 @@ int main(int argc, char **argv)
     glutAddMenuEntry("Blue",2);
     glutAddMenuEntry("White",3);
 
-    int pattern_sub_menu = glutCreateMenu(patternSelectorCallback);
-    glutAddMenuEntry("0101",0);
-    glutAddMenuEntry("1001",1);
-    glutAddMenuEntry("1111",2);
-
-    int thickness_sub_menu = glutCreateMenu(thicknessSelectorCallback);
-    glutAddMenuEntry("10",0);
-    glutAddMenuEntry("5",1);
-    glutAddMenuEntry("1",2);
-
     glutCreateMenu(menuCallback);
     glutAddSubMenu("Algorithm",algo_sub_menu);
     glutAddSubMenu("Color",color_sub_menu);
-    glutAddSubMenu("Pattern",pattern_sub_menu);
-    glutAddSubMenu("Thickness",thickness_sub_menu);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
+    
+    algorithmFunc = simpleDDA;
+
     glutDisplayFunc(display);
+    // glutMouseFunc(mouseCallback);
     glutMouseFunc(anotherMouseCallback);
     glutMainLoop();
     return 0;
