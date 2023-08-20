@@ -25,6 +25,8 @@ GLUI_Spinner* green_spinner;
 GLUI_EditText* pattern_box;
 GLUI_Spinner* thickness_box;
 
+GLUI_Button* clear_screen_button;
+
 struct pointPair {
     double x;
     double y;
@@ -50,10 +52,10 @@ void drawAxes()
     glLineWidth(1.0f);
     glColor3d(1.0f,1.0f,1.0f);
     glBegin(GL_LINES);
-        glVertex2i(halfWidth,0);
-        glVertex2i(-halfWidth,0);
-        glVertex2i(0,halfHeight);
-        glVertex2i(0,-halfHeight);
+        glVertex2f(halfWidth,0);
+        glVertex2f(-halfWidth,0);
+        glVertex2f(0,halfHeight);
+        glVertex2f(0,-halfHeight);
     glEnd();
 }
 
@@ -73,8 +75,8 @@ void simpleDDApattern(pointPair a,pointPair b)
     
     glBegin(GL_POINTS);
  
-        glVertex2i(a.x,a.y);
-        glVertex2i(b.x,b.y);
+        // glVertex2f(a.x,a.y);
+        // glVertex2f(b.x,b.y);
  
     for(int i = 1; i<line_length_estimate;i++)
     {
@@ -82,7 +84,7 @@ void simpleDDApattern(pointPair a,pointPair b)
         currentPos.y += y_increment;
         if(hex_pattern.test(pattern_pos))
         {
-            glVertex2i(std::round(currentPos.x),std::round(currentPos.y));
+            glVertex2f(std::round(currentPos.x),std::round(currentPos.y));
         }
         pattern_pos--;
         if(pattern_pos == -1 ) pattern_pos = hex_pattern.size()-1;
@@ -109,8 +111,8 @@ void symmetericalDDAPattern(pointPair a,pointPair b)
     
     glBegin(GL_POINTS);
  
-        glVertex2i(a.x,a.y);
-        glVertex2i(b.x,b.y);
+    //     glVertex2f(a.x,a.y);
+    //     glVertex2f(b.x,b.y);
  
     for(int i = 1; i<line_length_estimate;i++)
     {
@@ -118,7 +120,7 @@ void symmetericalDDAPattern(pointPair a,pointPair b)
         currentPos.y += y_increment;
         if(hex_pattern.test(pattern_pos))
         {
-            glVertex2i(std::round(currentPos.x),std::round(currentPos.y));
+            glVertex2f(std::round(currentPos.x),std::round(currentPos.y));
         }
         pattern_pos--;
         if(pattern_pos == -1) pattern_pos = hex_pattern.size()-1;
@@ -150,8 +152,8 @@ void bresenhamPattern(pointPair a,pointPair b)
     pointPair currentPoint = a;
     glBegin(GL_POINTS);
 
-        glVertex2i(a.x,a.y);
-        glVertex2i(b.x,b.y);
+        // glVertex2f(a.x,a.y);
+        // glVertex2f(b.x,b.y);
 
     for(int i = 0; i < abs(int(bigger_delta));i++)
     {
@@ -176,7 +178,7 @@ void bresenhamPattern(pointPair a,pointPair b)
 
         if(hex_pattern.test(pattern_pos))
         {
-            glVertex2i(currentPoint.x,currentPoint.y);
+            glVertex2f(currentPoint.x,currentPoint.y);
         }
         pattern_pos--;
         if(pattern_pos == -1) pattern_pos = hex_pattern.size()-1;
@@ -185,22 +187,22 @@ void bresenhamPattern(pointPair a,pointPair b)
 
 }
 
-linePair parallelPointGenerator(pointPair a,pointPair b,int distance)
+linePair parallelPointGenerator(pointPair a,pointPair b,float distance)
 {
     double slope = (b.y-a.y)/(b.x-a.x);
     double angle = std::atan2(b.y-a.y,b.x-a.x);
-    double offset_x = (double(distance)/2) * std::cos(angle + M_PI/2);
-    double offset_y = (double(distance)/2) * std::sin(angle + M_PI / 2);
+    double offset_x = (double(distance)) * std::cos(angle + M_PI/2);
+    double offset_y = (double(distance)) * std::sin(angle + M_PI/2);
 
-    pointPair new_x = pointPair(std::round(a.x + offset_x),std::round(a.y + offset_y));
-    pointPair new_y = pointPair(std::round(b.x + offset_x),std::round(b.y + offset_y));
-    linePair newLine(new_x,new_y);
+    pointPair new_start = pointPair(a.x + offset_x,a.y + offset_y);
+    pointPair new_end = pointPair(b.x + offset_x,b.y + offset_y);
+    linePair newLine(new_start,new_end);
     return newLine;
 }
 
 void anotherMouseCallback(int button,int state,int x,int y)
 {
-    glColor3d(red_val/255.0,green_val/255.0,blue_val/255.0);
+    glColor3f(red_val/255.0,green_val/255.0,blue_val/255.0);
     int adjusted_x = x - halfWidth;
     int adjusted_y = -(y - halfHeight);
     if(button == GLUT_LEFT_BUTTON and state == GLUT_DOWN)
@@ -220,10 +222,14 @@ void anotherMouseCallback(int button,int state,int x,int y)
         }
         if(lines.back().number_of_points == 2)
         {
-            for(int i = -thickness/2;i <= thickness/2;i++)
+            // std::cout<<"Starting point: "<<lines.back().start.x<<' '<<lines.back().start.y<<' '<<lines.back().end.x<<' '<<lines.back().end.y<<std::endl;
+            float i = -float(std::abs(thickness/2));
+            while(std::trunc(i)<=float(std::abs(thickness/2)))
             {
                 linePair newLine = parallelPointGenerator(lines.back().start,lines.back().end,i);
+                // std::cout<<newLine.start.x<<" "<<newLine.start.y<<" "<<newLine.end.x<<' '<<newLine.end.y<<"\n";
                 algorithmFunc(newLine.start,newLine.end);
+                i+=0.1;
             }
         }
     }
@@ -265,9 +271,10 @@ void patternSelectorCallback(const int id)
     hex_pattern = pattern(converted);
 }
 
-void thicknessSelectorCallback(int id)
+void clearScreenCallback(int id)
 {
-
+    glClear(GL_COLOR_BUFFER_BIT);
+    glutPostRedisplay();
 }
 void display()
 {
@@ -282,12 +289,19 @@ int main(int argc, char **argv)
     glutInit(&argc, argv);
     glutInitWindowSize(800, 600);
     glutInitWindowPosition(250, 100);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     int main_window = glutCreateWindow("Simple DDA Mouse");
+
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_LIGHTING);
+    glDisable(GL_LINE_SMOOTH);
+    glDisable(GL_BLEND);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     halfHeight = glutGet(GLUT_WINDOW_HEIGHT)/2;
     halfWidth = glutGet(GLUT_WINDOW_WIDTH)/2;
+    glViewport(0, 0, halfWidth*2, halfHeight*2);
     gluOrtho2D(-halfWidth, halfWidth, -halfHeight, halfHeight);
 
     GLUI_Master.set_glutIdleFunc(nullptr);
@@ -300,12 +314,12 @@ int main(int argc, char **argv)
     algorithm_box = gluiWindow->add_listbox("Algorithm ",nullptr,-1,algorithmSelectCallback);
     algorithm_box->add_item(0,"Simple DDA");
     algorithm_box->add_item(1,"Symmeterical DDA");
-    algorithm_box->add_item(2,"Bresenham");
-    algorithm_box->add_item(2,"Midpoint");
+    algorithm_box->add_item(2,"Bresenham/Midpoint");
 
     gluiWindow->add_column(true);
 
     color_rollout = gluiWindow->add_rollout("Color",false);
+    color_rollout->set_w(163);
     red_spinner = gluiWindow->add_spinner_to_panel(color_rollout,"Red",GLUI_SPINNER_INT,&red_val);
     blue_spinner = gluiWindow->add_spinner_to_panel(color_rollout,"Blue",GLUI_SPINNER_INT,&blue_val);
     green_spinner = gluiWindow->add_spinner_to_panel(color_rollout,"Green",GLUI_SPINNER_INT,&green_val);
@@ -316,13 +330,19 @@ int main(int argc, char **argv)
     gluiWindow->add_column(true);
 
     pattern_box = gluiWindow->add_edittext("Pattern",GLUI_EDITTEXT_TEXT,nullptr,-1,patternSelectorCallback);
-
+    pattern_box->set_text("F");
     gluiWindow->add_column(true);
 
     thickness_box = gluiWindow->add_spinner("Thickness",GLUI_SPINNER_INT,&thickness);
-    // thickness_box->set_int_limits(0,50,GLUI_LIMIT_CLAMP);
 
+    gluiWindow->add_column(true);
+    gluiWindow->add_column(false);
+    clear_screen_button = gluiWindow->add_button("Clear",-1,clearScreenCallback);
+    clear_screen_button->set_w(20);
+    // thickness_box->set_int_limits(0,50,GLUI_LIMIT_CLAMP);
+    // glEnable(GL_BLEND);
     glutDisplayFunc(display);
+    // glutSwapBuffers();
     glutMainLoop();
     return 0;
 }

@@ -77,7 +77,7 @@ void simpleDDApattern(pointPair a,pointPair b)
     }
  
     glEnd();
-    glFlush();
+    // glFlush();
 }
 
 void symmetericalDDAPattern(pointPair a,pointPair b)
@@ -114,7 +114,7 @@ void symmetericalDDAPattern(pointPair a,pointPair b)
     }
  
     glEnd();
-    glFlush();
+    // glFlush();
 }
 
 void bresenhamPattern(pointPair a,pointPair b)
@@ -172,28 +172,26 @@ void bresenhamPattern(pointPair a,pointPair b)
         if(pattern_pos == -1) pattern_pos = hex_pattern.size()-1;
     }
     glEnd();
-    glFlush();
+    // glFlush();
 
 }
 
-linePair parallelPointGenerator(pointPair a,pointPair b,int distance)
+linePair parallelPointGenerator(pointPair a,pointPair b,float distance)
 {
     double slope = (b.y-a.y)/(b.x-a.x);
     double angle = std::atan2(b.y-a.y,b.x-a.x);
+    double offset_x = (double(distance)) * std::cos(angle + M_PI/2);
+    double offset_y = (double(distance)) * std::sin(angle + M_PI/2);
 
-    double varvar = std::cos(angle + M_PI/2);
-    double offset_x = (double(distance)/2) * std::cos(angle + M_PI/2);
-    double offset_y = (double(distance)/2) * std::sin(angle + M_PI / 2);
-
-    pointPair new_x = pointPair(std::round(a.x + offset_x),std::round(a.y + offset_y));
-    pointPair new_y = pointPair(std::round(b.x + offset_x),std::round(b.y + offset_y));
-    linePair newLine(new_x,new_y);
+    pointPair new_start = pointPair(a.x + offset_x,a.y + offset_y);
+    pointPair new_end = pointPair(b.x + offset_x,b.y + offset_y);
+    linePair newLine(new_start,new_end);
     return newLine;
 }
 
 void anotherMouseCallback(int button,int state,int x,int y)
 {
-    glColor3d(red_val,green_val,blue_val);
+    glColor3f(red_val,green_val,blue_val);
     int adjusted_x = x - halfWidth;
     int adjusted_y = -(y - halfHeight);
     if(button == GLUT_LEFT_BUTTON and state == GLUT_DOWN)
@@ -213,10 +211,14 @@ void anotherMouseCallback(int button,int state,int x,int y)
         }
         if(lines.back().number_of_points == 2)
         {
-            for(int i = -thickness/2;i <= thickness/2;i++)
+            // std::cout<<"Starting point: "<<lines.back().start.x<<' '<<lines.back().start.y<<' '<<lines.back().end.x<<' '<<lines.back().end.y<<std::endl;
+            float i = -float(std::abs(thickness/2));
+            while(std::trunc(i)<=float(std::abs(thickness/2)))
             {
                 linePair newLine = parallelPointGenerator(lines.back().start,lines.back().end,i);
+                // std::cout<<newLine.start.x<<" "<<newLine.start.y<<" "<<newLine.end.x<<' '<<newLine.end.y<<"\n";
                 algorithmFunc(newLine.start,newLine.end);
+                i+=0.1;
             }
         }
     }
