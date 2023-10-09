@@ -1,6 +1,5 @@
 #include <GL/freeglut.h> // GLUT, includes glu.h and gl.h
 #include <GL/glui.h>
-#include <GL/glui.h>
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -224,7 +223,7 @@ void anotherMouseCallback(int button,int state,int x,int y)
         {
             // std::cout<<"Starting point: "<<lines.back().start.x<<' '<<lines.back().start.y<<' '<<lines.back().end.x<<' '<<lines.back().end.y<<std::endl;
             float i = -float(std::abs(thickness/2));
-            while(std::trunc(i)<=float(std::abs(thickness/2)))
+            while((i)<=float(std::abs(thickness/2)))
             {
                 linePair newLine = parallelPointGenerator(lines.back().start,lines.back().end,i);
                 // std::cout<<newLine.start.x<<" "<<newLine.start.y<<" "<<newLine.end.x<<' '<<newLine.end.y<<"\n";
@@ -305,7 +304,7 @@ int main(int argc, char **argv)
     gluOrtho2D(-halfWidth, halfWidth, -halfHeight, halfHeight);
 
     GLUI_Master.set_glutIdleFunc(nullptr);
-    GLUI_Master.set_glutMouseFunc(anotherMouseCallback);
+    GLUI_Master.set_glutMouseFunc(anotherMouseCallback); 
     GLUI *gluiWindow = GLUI_Master.create_glui_subwindow(main_window,GLUI_SUBWINDOW_TOP);
     gluiWindow->set_main_gfx_window(main_window);
 

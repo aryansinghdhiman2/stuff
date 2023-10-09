@@ -1,5 +1,5 @@
 #include <GL/freeglut.h> // GLUT, includes glu.h and gl.h
-#include <GL/glui.h>
+// #include <GL/glui.h>
 #include <iostream>
 #include <cmath>
 #include <vector>
