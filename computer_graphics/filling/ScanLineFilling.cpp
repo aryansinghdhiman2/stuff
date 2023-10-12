@@ -30,25 +30,6 @@ GLUI_Spinner* red_spinner;
 GLUI_Spinner* blue_spinner;
 GLUI_Spinner* green_spinner;
 
-void drawLine(const pointPair& start,const pointPair& end)
-{
-    glBegin(GL_LINES);
-    glVertex2i(start.x,start.y);
-    glVertex2i(end.x,end.y);
-    glEnd();
-    glFlush();
-}
-
-void drawLine(const pointPair& start,const pointPair& end,const color& fill_color)
-{
-    glColor3f(fill_color.at(0),fill_color.at(1),fill_color.at(2));
-    glBegin(GL_LINES);
-    glVertex2i(start.x,start.y);
-    glVertex2i(end.x,end.y);
-    glEnd();
-    glFlush();
-}
-
 std::vector<pointPair> bresenham(pointPair a,pointPair b,color fill_color)
 {
     std::vector<pointPair> points;
@@ -101,9 +82,6 @@ std::vector<pointPair> bresenham(pointPair a,pointPair b,color fill_color)
         glDrawPixels(1,1,GL_RGB,GL_FLOAT,fill_color.data());
     }
 
-    // points.push_back(b);
-    // glRasterPos2i(b.x,b.y);
-    // glDrawPixels(1,1,GL_RGB,GL_FLOAT,fill_color.data());
     glFlush();
 
     return points;

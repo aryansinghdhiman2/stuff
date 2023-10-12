@@ -12,6 +12,5 @@ int main()
                      {2,3},
                      {4,5}});
 
-    myMatrix<2,2> c = m*a;
-    // m*a;
+    auto c = m*a;
 }

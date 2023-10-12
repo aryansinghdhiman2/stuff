@@ -6,7 +6,7 @@ Board = list[int]
 X = 3
 O = 5
 
-
+MAX_RATING = 25
 
 magic_square_to_board : dict[int,int] = {
     8 : 1,
@@ -160,35 +160,42 @@ def ratePosition(board:Board,O_X:int) -> int:
                 rating+=1
         return rating
 
-def minMax(board:Board,O_X:int,turn:int,depth:int,position:int) -> dict[str,Any]:
+def minMax(board:Board,O_X:int,turn:int,depth:int,position:int,alpha:int,beta:int) -> dict[str,Any]:
     if(depth<=0):
         return {
                 'path':[position],
-                'rating':ratePosition(board,O_X)
+                'beta':ratePosition(board,O_X),
+                'alpha':beta
                 }
     
     successors = generator(board,O_X)
     if(len(successors) == 0): 
         return {
                 'path':[position],
-                'rating':ratePosition(board,O_X)
+                'beta':ratePosition(board,O_X),
+                'alpha':beta
                 }
     else:
-        max_value = -25
         path:list[int] = [position,0]
         for successor,suc_pos in successors:
             marker = 2
             if(turn % 2 == 0): marker = O
             else: marker = X
-            result = minMax(successor,marker,turn+1,depth-1,suc_pos)
-            if(-result['rating'] > max_value):
-                max_value = -result['rating']
+            result = minMax(successor,marker,turn+1,depth-1,suc_pos,alpha,beta)
+            if(-result['beta'] > alpha):
+                beta = -result['beta']
                 path[-1] = suc_pos
-            displayBoard(successor)
-        print("--------------------------------------------------------------")
+            if(-result['alpha'] < beta):
+                beta = -result['alpha']
+            if(alpha >= beta):
+                path[-1] = suc_pos
+                break
+            # displayBoard(successor)
+        # print("--------------------------------------------------------------")
         return {
                 'path':path,
-                'rating':max_value
+                'alpha':beta,
+                'beta':alpha
                 }
 
 def computerMove(board:Board,turn:int,depth:int):
@@ -197,14 +204,16 @@ def computerMove(board:Board,turn:int,depth:int):
     else: marker = X
     
     successors = generator(board,marker)
-    max_value = -25
+    alpha = -MAX_RATING
+    beta = MAX_RATING
     path:list[int] = [0]
     for successor,suc_pos in successors:
-        result = minMax(successor,marker,turn+1,depth-1,suc_pos)
-        if(-result['rating'] > max_value):
-            max_value = -result['rating']
+        result = minMax(successor,marker,turn+1,depth-1,suc_pos,alpha,beta)
+        if(-result['beta'] > alpha):
+            beta = -result['beta']
             path[-1] = suc_pos
-
+        if(-result['alpha'] < beta):
+            beta = -result['alpha']
     go(board,path[0]+1,turn)
 
 
@@ -226,52 +235,52 @@ def displayBoard(board:Board):
 
 
 if(__name__ =="__main__"):
-    board = [O,2,2,2,X,2,2,2,X]
-    computerMove(board,4,4)
-    exit()
-    # moveFirst = int(input("Enter 0 if you want to move first: "))
-    # depth = int(input("Enter Depth of AI: "))
-    # turn = 1
-    # board = [2,2,2,2,2,2,2,2,2]
-    # if(moveFirst != 0):
-    #     while(True):
-    #         if(turn > 9): break
-    #         # print("Computer is moving")
-    #         computerMove(board,turn,depth)
-    #         if(checkWin(board,X)):
-    #             displayBoard(board)
-    #             print("Computer Win")
-    #             break
-    #         displayBoard(board)
-    #         print("Your Turn")
-    #         turn+=1
-    #         if(turn > 9): break
-    #         userMove(board,turn)
-    #         if(checkWin(board,O)):
-    #             displayBoard(board)
-    #             print("Human Win")
-    #             break
-    #         turn+=1
-    #         # displayBoard(board)
-    # else:
-    #     displayBoard(board)
-    #     while(True):
-    #         if(turn > 9): break
-    #         print("Your Turn")
-    #         userMove(board,turn)
-    #         if(checkWin(board,X)):
-    #             displayBoard(board)
-    #             print("Human Win")
-    #             break
-    #         turn+=1
-    #         if(turn > 9): break 
-    #         computerMove(board,turn,depth)
-    #         if(checkWin(board,O)):
-    #             displayBoard(board)
-    #             print("Computer Win")
-    #             break
-    #         displayBoard(board)
-    #         turn+=1
-    #         if(turn > 9): break 
-    # displayBoard(board)
-    # if(turn > 9):print("Draw")
+    # board = [O,2,2,2,X,2,2,2,X]
+    # computerMove(board,4,4)
+    # exit()
+    moveFirst = int(input("Enter 0 if you want to move first: "))
+    depth = int(input("Enter Depth of AI: "))
+    turn = 1
+    board = [2,2,2,2,2,2,2,2,2]
+    if(moveFirst != 0):
+        while(True):
+            if(turn > 9): break
+            # print("Computer is moving")
+            computerMove(board,turn,depth)
+            if(checkWin(board,X)):
+                displayBoard(board)
+                print("Computer Win")
+                break
+            displayBoard(board)
+            print("Your Turn")
+            turn+=1
+            if(turn > 9): break
+            userMove(board,turn)
+            if(checkWin(board,O)):
+                displayBoard(board)
+                print("Human Win")
+                break
+            turn+=1
+            # displayBoard(board)
+    else:
+        displayBoard(board)
+        while(True):
+            if(turn > 9): break
+            print("Your Turn")
+            userMove(board,turn)
+            if(checkWin(board,X)):
+                displayBoard(board)
+                print("Human Win")
+                break
+            turn+=1
+            if(turn > 9): break 
+            computerMove(board,turn,depth)
+            if(checkWin(board,O)):
+                displayBoard(board)
+                print("Computer Win")
+                break
+            displayBoard(board)
+            turn+=1
+            if(turn > 9): break 
+    displayBoard(board)
+    if(turn > 9):print("Draw")

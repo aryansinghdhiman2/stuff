@@ -5,13 +5,18 @@ template<unsigned int n,unsigned int m>
 class myMatrix
 {
     public:
-    std::array<std::array<int,m>,n> matrix;
-    myMatrix(std::initializer_list<std::array<int,m>> list)
+    std::array<std::array<double,m>,n> matrix;
+    myMatrix(std::initializer_list<std::array<double,m>> list)
     {
         assert((list.size()==this->matrix.size()));
         std::copy(list.begin(),list.end(),matrix.begin());
     }
     myMatrix(){};
+
+    std::array<double,m> at(unsigned i)
+    {
+        return this->matrix.at(i);
+    }
 
     template<unsigned int a,unsigned int b>
     myMatrix<n,b> operator*(const myMatrix<a,b>& other)
