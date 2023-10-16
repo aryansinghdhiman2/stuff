@@ -21,14 +21,18 @@ typedef std::array<float,3> color;
 
 int halfHeight;
 int halfWidth;
-int red_val = 255,blue_val = 255,green_val = 255;
+int red_val = 0,blue_val = 0,green_val = 0;
 bool draw = false;
+std::vector<linePair> polygon;
+std::vector<pointPair> polygon_points;
+
 
 GLUI_Listbox* algo_box;
 GLUI_Rollout* color_rollout;
 GLUI_Spinner* red_spinner;
 GLUI_Spinner* blue_spinner;
 GLUI_Spinner* green_spinner;
+GLUI_Button* clear_button;
 
 std::vector<pointPair> bresenham(pointPair a,pointPair b,color fill_color)
 {
@@ -87,7 +91,7 @@ std::vector<pointPair> bresenham(pointPair a,pointPair b,color fill_color)
     return points;
 }
 
-void boundaryFillStack(pointPair currentPoint,color boundary_color,color fill_color)
+void boundaryFillStack4(pointPair currentPoint,color boundary_color,color fill_color)
 {
     std::stack<pointPair> my_stack;
     currentPoint.x = int(currentPoint.x);
@@ -117,7 +121,41 @@ void boundaryFillStack(pointPair currentPoint,color boundary_color,color fill_co
     }
 }
 
-void floodFillStack(pointPair currentPoint,color old_color,color fill_color)
+void boundaryFillStack8(pointPair currentPoint,color boundary_color,color fill_color)
+{
+    std::stack<pointPair> my_stack;
+    currentPoint.x = int(currentPoint.x);
+    currentPoint.y = int(currentPoint.y);
+    my_stack.push(currentPoint);
+    float colors[3];
+    while(not my_stack.empty()){
+        pointPair point = my_stack.top();
+        my_stack.pop();
+        glReadPixels(point.x+halfWidth,point.y+halfHeight,1,1,GL_RGB,GL_FLOAT,colors);
+        if(
+            (colors[0]!=boundary_color.at(0) and colors[1]!=boundary_color.at(1) and colors[2]!=boundary_color.at(2))
+            or
+            (colors[0]!=fill_color.at(0) and colors[1]!=fill_color.at(1) and colors[2]!=fill_color.at(2))
+        )
+        {
+            glPointSize(1);
+            glColor3f(1,0,0);
+            glRasterPos2i(point.x,point.y);
+            glDrawPixels(1,1,GL_RGB,GL_FLOAT,fill_color.data());
+            glFlush();
+            my_stack.push({point.x,point.y-1});
+            my_stack.push({point.x,point.y+1});
+            my_stack.push({point.x-1,point.y});
+            my_stack.push({point.x+1,point.y});
+            my_stack.push({point.x+1,point.y+1});
+            my_stack.push({point.x+1,point.y-1});
+            my_stack.push({point.x-1,point.y+1});
+            my_stack.push({point.x-1,point.y-1});
+        }
+    }
+}
+
+void floodFillStack4(pointPair currentPoint,color old_color,color fill_color)
 {
     std::stack<pointPair> my_stack;
     currentPoint.x = int(currentPoint.x);
@@ -142,6 +180,39 @@ void floodFillStack(pointPair currentPoint,color old_color,color fill_color)
             my_stack.push({point.x,point.y+1});
             my_stack.push({point.x-1,point.y});
             my_stack.push({point.x+1,point.y});
+        }
+    }
+}
+
+void floodFillStack8(pointPair currentPoint,color old_color,color fill_color)
+{
+    std::stack<pointPair> my_stack;
+    currentPoint.x = int(currentPoint.x);
+    currentPoint.y = int(currentPoint.y);
+    my_stack.push(currentPoint);
+    float colors[3];
+
+    while(not my_stack.empty())
+    {
+        pointPair point = my_stack.top();
+        my_stack.pop();
+        glReadPixels(point.x+halfWidth,point.y+halfHeight,1,1,GL_RGB,GL_FLOAT,colors);
+
+        if(colors[0]==old_color.at(0) and colors[1]==old_color.at(1) and colors[2]==old_color.at(2))
+        {
+            glPointSize(1);
+            glColor3f(1,0,0);
+            glRasterPos2i(point.x,point.y);
+            glDrawPixels(1,1,GL_RGB,GL_FLOAT,fill_color.data());
+            glFlush();
+            my_stack.push({point.x,point.y-1});
+            my_stack.push({point.x,point.y+1});
+            my_stack.push({point.x-1,point.y});
+            my_stack.push({point.x+1,point.y});
+            my_stack.push({point.x+1,point.y+1});
+            my_stack.push({point.x+1,point.y-1});
+            my_stack.push({point.x-1,point.y+1});
+            my_stack.push({point.x-1,point.y-1});
         }
     }
 }
@@ -358,8 +429,6 @@ void mouseCallback(int button,int state,int x,int y)
     int adjusted_x = x - halfWidth;
     int adjusted_y = -(y - halfHeight);
     static pointPair previousPoint;
-    static std::vector<linePair> polygon;
-    static std::vector<pointPair> polygon_points;
     static color boundary_color;
     static color fill_color;
 
@@ -399,28 +468,46 @@ void mouseCallback(int button,int state,int x,int y)
         fill_color.at(2) = blue_spinner->get_float_val()/255.0;
 
         int control = algo_box->get_int_val();
-
+        color old_color;
         switch (control)
         {
         case 0:
             scanLinePolygon(polygon,polygon_points,fill_color);
             break;
         case 1:
-            boundaryFillStack({adjusted_x,adjusted_y},boundary_color,fill_color);
+            boundaryFillStack4({adjusted_x,adjusted_y},boundary_color,fill_color);
             break;
         case 2:
-            color old_color;
+            
             glReadPixels(adjusted_x+halfWidth,adjusted_y+halfWidth,1,1,GL_RGB,GL_FLOAT,old_color.data());
-            floodFillStack({adjusted_x,adjusted_y},old_color,fill_color);
+            floodFillStack4({adjusted_x,adjusted_y},old_color,fill_color);
             break;
+        // case 3:
+        //     boundaryFillStack8({adjusted_x,adjusted_y},boundary_color,fill_color);
+        //     break;
+        // case 4:
+        //     glReadPixels(adjusted_x+halfWidth,adjusted_y+halfWidth,1,1,GL_RGB,GL_FLOAT,old_color.data());
+        //     floodFillStack8({adjusted_x,adjusted_y},old_color,fill_color);
+        //     break;
         default:
             break;
         }
 
         polygon.clear();
         polygon_points.clear();
+        draw = false;
     }
     glFlush();
+}
+
+void clear_callback(const int i)
+{
+    // glClearColor(1,1,1,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+    polygon.clear();
+    polygon_points.clear();
+    draw = false;
+    glutPostRedisplay();
 }
 
 void display()
@@ -445,6 +532,8 @@ int main(int argc, char **argv)
     algo_box->add_item(0,"Scan Line");
     algo_box->add_item(1,"Boundary Fill");
     algo_box->add_item(2,"Flood Fill");
+    // algo_box->add_item(3,"Boundary Fill 8");
+    // algo_box->add_item(4,"Flood Fill 8");
 
     gluiWindow->add_column(1);
 
@@ -457,14 +546,17 @@ int main(int argc, char **argv)
     blue_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
     green_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
 
+    gluiWindow->add_column();
+
+    clear_button = gluiWindow->add_button("Clear",-1,clear_callback);
+
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     halfHeight = glutGet(GLUT_WINDOW_HEIGHT)/2;
     halfWidth = glutGet(GLUT_WINDOW_WIDTH)/2;
     gluOrtho2D(-halfWidth, halfWidth, -halfHeight, halfHeight);
-
-    glutDisplayFunc(display);
-    glutMouseFunc(mouseCallback);
+    // glClearColor(1,1,1,1);
+    // glClear(GL_COLOR_BUFFER_BIT);
     glutMainLoop();
     return 0;
 }

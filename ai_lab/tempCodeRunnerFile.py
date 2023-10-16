@@ -1,0 +1,2 @@
+r)
+        print(-result['rating'])

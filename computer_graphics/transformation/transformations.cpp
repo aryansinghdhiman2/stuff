@@ -26,9 +26,45 @@ int red_val = 255,blue_val = 255,green_val = 255;
 bool draw = false;
 
 std::vector<linePair> polygon;
-std::vector<pointPair> polygon_points;
+
+GLUI_Panel* color_panel;
+GLUI_Spinner* red_spinner;
+GLUI_Spinner* green_spinner;
+GLUI_Spinner* blue_spinner;
 
 GLUI_Button* translate_button;
+GLUI_Button* rotate_button;
+GLUI_Button* scale_button;
+GLUI_Button* clear_button;
+
+GLUI_Panel* translate_panel;
+GLUI_Panel* rotate_panel;
+GLUI_Panel* scale_panel;
+
+GLUI_EditText* tx_box;
+GLUI_EditText* ty_box;
+
+GLUI_Spinner* rotation_spinner;
+GLUI_EditText* r_pivot_x;
+GLUI_EditText* r_pivot_y;
+
+GLUI_EditText* x_scale;
+GLUI_EditText* y_scale;
+GLUI_Spinner* scaling_spinner;
+GLUI_EditText* s_pivot_x;
+GLUI_EditText* s_pivot_y;
+
+void drawAxes()
+{
+    glLineWidth(1.0f);
+    glColor3d(1.0f,1.0f,1.0f);
+    glBegin(GL_LINES);
+        glVertex2i(halfWidth,0);
+        glVertex2i(-halfWidth,0);
+        glVertex2i(0,halfHeight);
+        glVertex2i(0,-halfHeight);
+    glEnd();
+}
 
 std::vector<pointPair> bresenham(pointPair a,pointPair b)
 {
@@ -89,7 +125,6 @@ std::vector<pointPair> bresenham(pointPair a,pointPair b)
     return points;
 }
 
-
 void mouseCallback(int button,int state,int x,int y)
 {
     glColor3d(1.0f,1.0f,1.0f);
@@ -109,7 +144,6 @@ void mouseCallback(int button,int state,int x,int y)
             linePair line = {previousPoint,{(double)adjusted_x,(double)adjusted_y}};
             auto points = bresenham(line.start,line.end);
             polygon.push_back(line);
-            polygon_points.insert(polygon_points.end(),points.begin(),points.end());
         }
         previousPoint = {(double)adjusted_x,(double)adjusted_y};
     }
@@ -117,15 +151,14 @@ void mouseCallback(int button,int state,int x,int y)
     {
         auto points = bresenham(polygon.back().end,polygon.front().start);
         polygon.push_back({polygon.back().end,polygon.front().start});
-        polygon_points.insert(polygon_points.end(),points.begin(),points.end());
     }
     glFlush();
 }
 
 void translate_callback(const int i)
 {
-    double tx=0;
-    double ty=0;
+    double tx=tx_box->get_int_val();
+    double ty=ty_box->get_int_val();
 
     myMatrix<3,3> translation = {{1,0,tx},
                                  {0,1,ty},
@@ -154,16 +187,18 @@ void translate_callback(const int i)
 
 void rotate_callback(const int i)
 {
-    double rotation_angle = 30;
-    const double angle_rad = rotation_angle * M_PI / 180;
+    double rotation_angle = rotation_spinner->get_int_val();
     pointPair r_pivot;
+    r_pivot.x = r_pivot_x->get_int_val();
+    r_pivot.y = r_pivot_y->get_int_val();
 
+    const double angle_rad = rotation_angle * M_PI / 180;
     const double angle_cos = cos(angle_rad);
     const double angle_sin = sin(angle_rad);
 
-    myMatrix<3,3> rotation = {{angle_cos,angle_sin,r_pivot.x*(1-angle_cos)+r_pivot.y*angle_sin},
-                              {angle_sin,angle_cos,r_pivot.y*(1-angle_cos)-r_pivot.x*angle_sin},
-                              {0         ,0       ,1                                          }};
+    myMatrix<3,3> rotation = {{angle_cos,-angle_sin,r_pivot.x*(1-angle_cos)+r_pivot.y*angle_sin},
+                              {angle_sin,angle_cos ,r_pivot.y*(1-angle_cos)-r_pivot.x*angle_sin},
+                              {0         ,0        ,1                                          }};
     
     myMatrix<3,2> point_matrix = {{0},{0},{0}};
     for(linePair& line : polygon)
@@ -187,17 +222,19 @@ void rotate_callback(const int i)
 
 void scale_callback(const int i)
 {
-    double sx = 1;
-    double sy = 1;
-    double scaling_angle = 0;
-    
+    double sx = x_scale->get_int_val();
+    double sy = y_scale->get_int_val();
+    double scaling_angle = scaling_spinner->get_int_val();
+    pointPair s_pivot;
+    s_pivot.x = s_pivot_x->get_int_val();
+    s_pivot.y = s_pivot_y->get_int_val();
+
     const double angle_rad = scaling_angle * M_PI / 180;
     const double angle_cos = cos(angle_rad);
     const double angle_sin = sin(angle_rad);
     const double angle_cos2 = pow(angle_cos,2);
     const double angle_sin2 = pow(angle_sin,2);
     const double angle_cos_sin = angle_cos * angle_sin;
-    pointPair s_pivot;
 
     const double top_right = s_pivot.y*(sx-sy)*angle_cos_sin-sx*s_pivot.x*angle_cos2-sy*s_pivot.x*angle_sin2+s_pivot.x;
     const double middle_right = s_pivot.x*(sx-sy)*angle_cos_sin-sx*s_pivot.y*angle_sin2-sy*s_pivot.y*angle_cos2+s_pivot.y;
@@ -226,56 +263,17 @@ void scale_callback(const int i)
     glFlush();
 }
 
-void transform_callback(const int i)
+void clear_callback(const int i)
 {
-    double tx=0;
-    double ty=0;
-
-    double rotation_angle = 30;
-    double r_angle_rad = rotation_angle * M_PI / 180;
-    pointPair r_pivot;
-
-    double sx = 1;
-    double sy = 1;
-    double scaling_angle = 0;
-    double s_angle_rad = scaling_angle * M_PI / 180;
-
-    pointPair scaling_pivot_point;
-
-    myMatrix<3,3> translation = {{1,0,tx},
-                                 {0,1,ty},
-                                 {0,0,1}};
-
-    myMatrix<3,3> rotation = {{cos(r_angle_rad),-sin(r_angle_rad),r_pivot.x*(1-cos(r_angle_rad))+r_pivot.y*sin(r_angle_rad)},
-                              {sin(r_angle_rad),cos(r_angle_rad), r_pivot.y*(1-cos(r_angle_rad))-r_pivot.x*sin(r_angle_rad)},
-                              {0         ,0         , 1}};
-
-    myMatrix<3,3> scaling = {{sx,0,0},
-                             {0,sy,0},
-                             {0,0,1}};
-
-    myMatrix<3,2> point_matrix = {{0},{0},{0}};
-    for(linePair& line : polygon)
-    {
-        point_matrix = {{line.start.x,line.end.x},
-                        {line.start.y,line.end.y},
-                        {1.0         ,1.0       }};
-
-        point_matrix = point_matrix;
-
-        line.start.x = point_matrix.at(0).at(0);
-        line.start.y = point_matrix.at(1).at(0);
-
-        line.end.x = point_matrix.at(0).at(1);
-        line.end.y = point_matrix.at(1).at(1);
-        bresenham(line.start,line.end);
-    }
-
-    glFlush();
+    glClear(GL_COLOR_BUFFER_BIT);
+    polygon.clear();
+    draw = false;
+    glutPostRedisplay();
 }
 
 void display()
 {
+    drawAxes();
     glFlush();
 }
 
@@ -283,16 +281,47 @@ int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
     glutInitWindowSize(600, 600);
-    glutInitWindowPosition(-1, -1);
+    glutInitWindowPosition(480,100);
     int main_window = glutCreateWindow("Filling");
 
     GLUI_Master.set_glutIdleFunc(nullptr);
     GLUI_Master.set_glutMouseFunc(mouseCallback);
     GLUI_Master.set_glutDisplayFunc(display);
-    GLUI *gluiWindow = GLUI_Master.create_glui_subwindow(main_window,GLUI_SUBWINDOW_TOP);
+    GLUI *gluiWindow = GLUI_Master.create_glui("Transformations",0,290,100);
     gluiWindow->set_main_gfx_window(main_window);
 
-    translate_button = gluiWindow->add_button("Translate",-1,transform_callback);
+    translate_panel = gluiWindow->add_panel("Translate");
+    tx_box = gluiWindow->add_edittext_to_panel(translate_panel,"X Displacement",GLUI_EDITTEXT_INT);
+    ty_box = gluiWindow->add_edittext_to_panel(translate_panel,"Y Displacement",GLUI_EDITTEXT_INT);
+    translate_button = gluiWindow->add_button_to_panel(translate_panel,"Translate",-1,translate_callback);
+
+    
+    rotate_panel = gluiWindow->add_panel("Rotation");
+    rotation_spinner = gluiWindow->add_spinner_to_panel(rotate_panel,"Angle",GLUI_SPINNER_INT);
+    r_pivot_x = gluiWindow->add_edittext_to_panel(rotate_panel,"Pivot X",GLUI_EDITTEXT_INT);
+    r_pivot_y = gluiWindow->add_edittext_to_panel(rotate_panel,"Pivot Y",GLUI_EDITTEXT_INT);
+    rotate_button = gluiWindow->add_button_to_panel(rotate_panel,"Rotate",-1,rotate_callback);
+    rotation_spinner->set_int_limits(-360,360,GLUI_LIMIT_CLAMP);
+
+
+    scale_panel = gluiWindow->add_panel("Scaling");
+    x_scale = gluiWindow->add_edittext_to_panel(scale_panel,"X Scaling Factor",GLUI_EDITTEXT_FLOAT);
+    y_scale = gluiWindow->add_edittext_to_panel(scale_panel,"Y Scaling Factor",GLUI_EDITTEXT_FLOAT);
+    scaling_spinner = gluiWindow->add_spinner_to_panel(scale_panel,"Scaling Angle",GLUI_SPINNER_INT);
+    s_pivot_x = gluiWindow->add_edittext_to_panel(scale_panel,"Pivot X",GLUI_EDITTEXT_INT);
+    s_pivot_y = gluiWindow->add_edittext_to_panel(scale_panel,"Pivot Y",GLUI_EDITTEXT_INT);
+    scale_button = gluiWindow->add_button_to_panel(scale_panel,"Scale",-1,scale_callback);
+    scaling_spinner->set_int_limits(-360,360,GLUI_LIMIT_CLAMP);
+
+    color_panel = gluiWindow->add_panel("Color");
+    red_spinner = gluiWindow->add_spinner_to_panel(color_panel,"Red",GLUI_SPINNER_INT,&red_val);
+    green_spinner = gluiWindow->add_spinner_to_panel(color_panel,"Green",GLUI_SPINNER_INT,&green_val);
+    blue_spinner = gluiWindow->add_spinner_to_panel(color_panel,"Blue",GLUI_SPINNER_INT,&blue_val);
+    red_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
+    green_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
+    blue_spinner->set_int_limits(0,255,GLUI_LIMIT_WRAP);
+
+    clear_button = gluiWindow->add_button("Clear Screen",-1,clear_callback);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
