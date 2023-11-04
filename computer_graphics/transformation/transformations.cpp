@@ -222,8 +222,8 @@ void rotate_callback(const int i)
 
 void scale_callback(const int i)
 {
-    double sx = x_scale->get_int_val();
-    double sy = y_scale->get_int_val();
+    double sx = x_scale->get_float_val();
+    double sy = y_scale->get_float_val();
     double scaling_angle = scaling_spinner->get_int_val();
     pointPair s_pivot;
     s_pivot.x = s_pivot_x->get_int_val();

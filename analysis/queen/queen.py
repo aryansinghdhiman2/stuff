@@ -26,7 +26,7 @@ def queens(k:int,n:int,result:list[int]):
             result[k]=i
             if(k==n-1): 
                 printResult(result)
-                draw(result)
+                # draw(result)
                 count+=1
             else: queens(k+1,n,result)
 

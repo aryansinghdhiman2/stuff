@@ -6,7 +6,7 @@ Board = list[int]
 X = 3
 O = 5
 
-MAX_RATING = 25
+MAX_RATING = 100
 
 magic_square_to_board : dict[int,int] = {
     8 : 1,
@@ -127,15 +127,69 @@ def generator(board:Board,O_X:int) ->list[tuple[Board,int]]:
 
     return boards
 
+# def ratePosition(board:Board,O_X:int) -> int:
+#     if(checkWin(board,O_X)):
+#         return 100
+#     elif(checkWin(board,8-O_X)):
+#         return -100
+#     rating = 0
+#     if(numberOfposswin(board,O_X) > 0):
+#         rating+= (numberOfposswin(board,O_X) * (15))
+#     if(numberOfposswin(board,8-O_X)):
+#         rating+= (numberOfposswin(board,8-O_X) * (-5))
+
+#     if(board[4]==O_X):
+#         rating+=3
+#     if(board[4]==8-O_X):
+#         rating-=3
+
+#     if(board[0]==O_X):
+#         rating+=2
+#     if(board[2]==O_X):
+#         rating+=2
+#     if(board[6]==O_X):
+#         rating+=2
+#     if(board[8]==O_X):
+#         rating+=2
+#     if(board[1]==O_X):
+#         rating+=1
+#     if(board[3]==O_X):
+#         rating+=1
+#     if(board[5]==O_X):
+#         rating+=1
+#     if(board[7]==O_X):
+#         rating+=1
+
+#     if(board[0]==8-O_X):
+#         rating-=2
+#     if(board[2]==8-O_X):
+#         rating-=2
+#     if(board[6]==8-O_X):
+#         rating-=2
+#     if(board[8]==8-O_X):
+#         rating-=2
+#     if(board[1]==8-O_X):
+#         rating-=1
+#     if(board[3]==8-O_X):
+#         rating-=1
+#     if(board[5]==8-O_X):
+#         rating-=1
+#     if(board[7]==8-O_X):
+#         rating-=1
+
+#     return rating
+
 def ratePosition(board:Board,O_X:int) -> int:
     if(checkWin(board,O_X)):
-        return 25
+        return 100
     elif(checkWin(board,8-O_X)):
-        return -25
-    elif(numberOfposswin(board,8-O_X) > 0 or numberOfposswin(board,O_X) > 0):
-        return (numberOfposswin(board,8-O_X) * (-10)) + (numberOfposswin(board,O_X) * 10)
+        return -100
+    elif(numberOfposswin(board,O_X) > 0):
+        return (numberOfposswin(board,O_X) * (10))
+    elif(numberOfposswin(board,8-O_X)):
+        return (numberOfposswin(board,8-O_X) * (-10))
     elif(board[4]==O_X):
-        rating=1
+        rating=3
         if(board[0]==O_X):
             rating+=2
         if(board[2]==O_X):
@@ -160,61 +214,49 @@ def ratePosition(board:Board,O_X:int) -> int:
                 rating+=1
         return rating
 
-def minMax(board:Board,O_X:int,turn:int,depth:int,position:int,alpha:int,beta:int) -> dict[str,Any]:
+def minMaxAB(board:Board,player:int,depth:int,use_thresh:int,pass_thresh:int) -> dict[str,Any]:
+    minMaxAB.counter+=1
     if(depth<=0):
         return {
-                'path':[position],
-                'beta':ratePosition(board,O_X),
-                'alpha':beta
+                'path':None,
+                'value':ratePosition(board,player),
                 }
     
-    successors = generator(board,O_X)
+    successors = generator(board,player)
     if(len(successors) == 0): 
         return {
-                'path':[position],
-                'beta':ratePosition(board,O_X),
-                'alpha':beta
+                'path':None,
+                'value':ratePosition(board,player),
                 }
     else:
-        path:list[int] = [position,0]
+        path:list[int] = [0]
         for successor,suc_pos in successors:
-            marker = 2
-            if(turn % 2 == 0): marker = O
-            else: marker = X
-            result = minMax(successor,marker,turn+1,depth-1,suc_pos,alpha,beta)
-            if(-result['beta'] > alpha):
-                beta = -result['beta']
-                path[-1] = suc_pos
-            if(-result['alpha'] < beta):
-                beta = -result['alpha']
-            if(alpha >= beta):
-                path[-1] = suc_pos
-                break
+            result = minMaxAB(successor,8-player,depth-1,-pass_thresh,-use_thresh)
             # displayBoard(successor)
-        # print("--------------------------------------------------------------")
-        return {
-                'path':path,
-                'alpha':beta,
-                'beta':alpha
+            # print(f"Rating for player {player} {-result['value']}")
+            if(-result['value'] > pass_thresh):
+                pass_thresh = -result['value']
+                path = [suc_pos] if result['path'] is None else [suc_pos] + result['path']
+            if(pass_thresh >= use_thresh):
+                return {
+                    'value':pass_thresh,
+                    'path':path
                 }
 
+
+        return {
+                'value':pass_thresh,
+                'path':path
+            }
+
 def computerMove(board:Board,turn:int,depth:int):
-    marker = 2
-    if(turn % 2 == 0): marker = O
-    else: marker = X
+    player = 2
+    if(turn % 2 == 0): player = O
+    else: player = X
     
-    successors = generator(board,marker)
-    alpha = -MAX_RATING
-    beta = MAX_RATING
-    path:list[int] = [0]
-    for successor,suc_pos in successors:
-        result = minMax(successor,marker,turn+1,depth-1,suc_pos,alpha,beta)
-        if(-result['beta'] > alpha):
-            beta = -result['beta']
-            path[-1] = suc_pos
-        if(-result['alpha'] < beta):
-            beta = -result['alpha']
-    go(board,path[0]+1,turn)
+    result = minMaxAB(board,player,depth,MAX_RATING+1,-MAX_RATING-1)
+
+    go(board,result['path'][0]+1,turn)
 
 
 def displayBoard(board:Board):
@@ -235,9 +277,10 @@ def displayBoard(board:Board):
 
 
 if(__name__ =="__main__"):
-    # board = [O,2,2,2,X,2,2,2,X]
+    # board = [2,O,X,2,O,O,X,X,2]
     # computerMove(board,4,4)
     # exit()
+    minMaxAB.counter = 0
     moveFirst = int(input("Enter 0 if you want to move first: "))
     depth = int(input("Enter Depth of AI: "))
     turn = 1
@@ -252,6 +295,8 @@ if(__name__ =="__main__"):
                 print("Computer Win")
                 break
             displayBoard(board)
+            print(f"Number of Calls: {minMaxAB.counter}")
+            minMaxAB.counter = 0
             print("Your Turn")
             turn+=1
             if(turn > 9): break
@@ -280,6 +325,8 @@ if(__name__ =="__main__"):
                 print("Computer Win")
                 break
             displayBoard(board)
+            print(f"Number of Calls: {minMaxAB.counter}")
+            minMaxAB.counter = 0
             turn+=1
             if(turn > 9): break 
     displayBoard(board)
