@@ -5,10 +5,10 @@ using namespace std;
 
 int main()
 {
-    myMatrix<2,3> m({{1,2,2},
+    pointMatrix<2,3> m({{1,2,2},
                      {4,2,3}});
 
-    myMatrix<3,2> a({{1,2},
+    pointMatrix<3,2> a({{1,2},
                      {2,3},
                      {4,5}});
 

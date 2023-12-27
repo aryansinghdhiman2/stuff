@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(testproj)
-add_executable(test test.cpp) 
+add_executable(test test2.cpp) 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 find_package(glui CONFIG REQUIRED)

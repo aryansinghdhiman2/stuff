@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <array>
 
-
 struct pointPair {
     double x;
     double y;

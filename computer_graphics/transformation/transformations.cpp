@@ -22,7 +22,8 @@ typedef std::array<float,3> color;
 
 int halfHeight;
 int halfWidth;
-int red_val = 255,blue_val = 255,green_val = 255;
+// int red_val = 255,blue_val = 255,green_val = 255;
+int red_val = 0,blue_val = 0,green_val = 0;
 bool draw = false;
 
 std::vector<linePair> polygon;
@@ -38,26 +39,35 @@ GLUI_Button* scale_button;
 GLUI_Button* clear_button;
 
 GLUI_Panel* translate_panel;
-GLUI_Panel* rotate_panel;
-GLUI_Panel* scale_panel;
-
 GLUI_EditText* tx_box;
 GLUI_EditText* ty_box;
 
+GLUI_Panel* rotate_panel;
 GLUI_Spinner* rotation_spinner;
 GLUI_EditText* r_pivot_x;
 GLUI_EditText* r_pivot_y;
 
+GLUI_Panel* scale_panel;
 GLUI_EditText* x_scale;
 GLUI_EditText* y_scale;
 GLUI_Spinner* scaling_spinner;
 GLUI_EditText* s_pivot_x;
 GLUI_EditText* s_pivot_y;
 
+GLUI_Panel* shear_panel;
+GLUI_EditText* x_shear;
+GLUI_EditText* y_shear;
+GLUI_Button* shear_button;
+
+GLUI_Panel* reflect_panel;
+GLUI_Button* x_refl;
+GLUI_Button* y_refl;
+
 void drawAxes()
 {
     glLineWidth(1.0f);
-    glColor3d(1.0f,1.0f,1.0f);
+    // glColor3d(1.0f,1.0f,1.0f);
+    glColor3d(0.0f,0.0f,0.0f);
     glBegin(GL_LINES);
         glVertex2i(halfWidth,0);
         glVertex2i(-halfWidth,0);
@@ -160,11 +170,11 @@ void translate_callback(const int i)
     double tx=tx_box->get_int_val();
     double ty=ty_box->get_int_val();
 
-    myMatrix<3,3> translation = {{1,0,tx},
-                                 {0,1,ty},
-                                 {0,0,1}};
+    pointMatrix<3,3> translation = {{1,0,tx},
+                                    {0,1,ty},
+                                    {0,0,1}};
 
-    myMatrix<3,2> point_matrix = {{0},{0},{0}};
+    pointMatrix<3,2> point_matrix = {{0},{0},{0}};
     for(linePair& line : polygon)
     {
         point_matrix = {{line.start.x,line.end.x},
@@ -196,11 +206,11 @@ void rotate_callback(const int i)
     const double angle_cos = cos(angle_rad);
     const double angle_sin = sin(angle_rad);
 
-    myMatrix<3,3> rotation = {{angle_cos,-angle_sin,r_pivot.x*(1-angle_cos)+r_pivot.y*angle_sin},
-                              {angle_sin,angle_cos ,r_pivot.y*(1-angle_cos)-r_pivot.x*angle_sin},
-                              {0         ,0        ,1                                          }};
+    pointMatrix<3,3> rotation = {{angle_cos,-angle_sin,r_pivot.x*(1-angle_cos)+r_pivot.y*angle_sin},
+                                {angle_sin,angle_cos ,r_pivot.y*(1-angle_cos)-r_pivot.x*angle_sin},
+                                {0         ,0        ,1                                          }};
     
-    myMatrix<3,2> point_matrix = {{0},{0},{0}};
+    pointMatrix<3,2> point_matrix = {{0},{0},{0}};
     for(linePair& line : polygon)
     {
         point_matrix = {{line.start.x,line.end.x},
@@ -239,11 +249,11 @@ void scale_callback(const int i)
     const double top_right = s_pivot.y*(sx-sy)*angle_cos_sin-sx*s_pivot.x*angle_cos2-sy*s_pivot.x*angle_sin2+s_pivot.x;
     const double middle_right = s_pivot.x*(sx-sy)*angle_cos_sin-sx*s_pivot.y*angle_sin2-sy*s_pivot.y*angle_cos2+s_pivot.y;
 
-    myMatrix<3,3> scaling = {{sx*angle_cos2+sy*angle_sin2 ,(sy-sx)*angle_cos_sin      ,top_right   },
-                             {(sy-sx)*angle_cos_sin       ,sx*angle_sin2+sy*angle_cos2,middle_right},
-                             {0                           ,0                          ,1           }};
+    pointMatrix<3,3> scaling = {{sx*angle_cos2+sy*angle_sin2 ,(sy-sx)*angle_cos_sin      ,top_right   },
+                                {(sy-sx)*angle_cos_sin       ,sx*angle_sin2+sy*angle_cos2,middle_right},
+                                {0                           ,0                          ,1           }};
     
-    myMatrix<3,2> point_matrix = {{0},{0},{0}};
+    pointMatrix<3,2> point_matrix = {{0},{0},{0}};
     for(linePair& line : polygon)
     {
         point_matrix = {{line.start.x,line.end.x},
@@ -263,6 +273,79 @@ void scale_callback(const int i)
     glFlush();
 }
 
+void shear_callback(const int i)
+{
+    double shx = x_shear->get_float_val();
+    double shy = y_shear->get_float_val();
+
+    pointMatrix<3,3> shearing = {{1  ,shx,0},
+                                 {shy,1  ,0},
+                                 {0  ,0  ,1}};
+
+    pointMatrix<3,2> point_matrix = {{0},{0},{0}};
+    for(auto& line : polygon)
+    {
+        point_matrix = {{line.start.x,line.end.x},
+                        {line.start.y,line.end.y},
+                        {1.0         ,1.0       }};
+
+        point_matrix = shearing * point_matrix;
+
+        line.start.x = point_matrix.at(0).at(0);
+        line.start.y = point_matrix.at(1).at(0);
+
+        line.end.x = point_matrix.at(0).at(1);
+        line.end.y = point_matrix.at(1).at(1);
+        bresenham(line.start,line.end);
+    }
+}
+
+void reflect_around_x(const int i)
+{
+    pointMatrix<3,3> reflection_x = {{1,0,0},{0,-1,0},{0,0,1}};
+
+    pointMatrix<3,2> point_matrix = {{0},{0},{0}};
+
+    for(auto& line : polygon)
+    {
+        point_matrix = {{line.start.x,line.end.x},
+                        {line.start.y,line.end.y},
+                        {1.0         ,1.0       }};
+
+        point_matrix = reflection_x * point_matrix;
+
+        line.start.x = point_matrix.at(0).at(0);
+        line.start.y = point_matrix.at(1).at(0);
+
+        line.end.x = point_matrix.at(0).at(1);
+        line.end.y = point_matrix.at(1).at(1);
+        bresenham(line.start,line.end);
+    }
+}
+
+void reflect_around_y(const int i)
+{
+    pointMatrix<3,3> reflection_y = {{-1,0,0},{0,1,0},{0,0,1}};
+
+    pointMatrix<3,2> point_matrix = {{0},{0},{0}};
+
+    for(auto& line : polygon)
+    {
+        point_matrix = {{line.start.x,line.end.x},
+                        {line.start.y,line.end.y},
+                        {1.0         ,1.0       }};
+
+        point_matrix = reflection_y * point_matrix;
+
+        line.start.x = point_matrix.at(0).at(0);
+        line.start.y = point_matrix.at(1).at(0);
+
+        line.end.x = point_matrix.at(0).at(1);
+        line.end.y = point_matrix.at(1).at(1);
+        bresenham(line.start,line.end);
+    }
+}
+
 void clear_callback(const int i)
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -280,9 +363,9 @@ void display()
 int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
-    glutInitWindowSize(600, 600);
+    glutInitWindowSize(600, 667);
     glutInitWindowPosition(480,100);
-    int main_window = glutCreateWindow("Filling");
+    int main_window = glutCreateWindow("Transformation");
 
     GLUI_Master.set_glutIdleFunc(nullptr);
     GLUI_Master.set_glutMouseFunc(mouseCallback);
@@ -290,7 +373,7 @@ int main(int argc, char **argv)
     GLUI *gluiWindow = GLUI_Master.create_glui("Transformations",0,290,100);
     gluiWindow->set_main_gfx_window(main_window);
 
-    translate_panel = gluiWindow->add_panel("Translate");
+    translate_panel = gluiWindow->add_panel("Translation");
     tx_box = gluiWindow->add_edittext_to_panel(translate_panel,"X Displacement",GLUI_EDITTEXT_INT);
     ty_box = gluiWindow->add_edittext_to_panel(translate_panel,"Y Displacement",GLUI_EDITTEXT_INT);
     translate_button = gluiWindow->add_button_to_panel(translate_panel,"Translate",-1,translate_callback);
@@ -313,6 +396,15 @@ int main(int argc, char **argv)
     scale_button = gluiWindow->add_button_to_panel(scale_panel,"Scale",-1,scale_callback);
     scaling_spinner->set_int_limits(-360,360,GLUI_LIMIT_CLAMP);
 
+    shear_panel = gluiWindow->add_panel("Shearing");
+    x_shear = gluiWindow->add_edittext_to_panel(shear_panel,"X Shearing Factor",GLUI_EDITTEXT_FLOAT);
+    y_shear = gluiWindow->add_edittext_to_panel(shear_panel,"Y Shearing Factor",GLUI_EDITTEXT_FLOAT);
+    shear_button = gluiWindow->add_button_to_panel(shear_panel,"Shear",-1,shear_callback);
+
+    reflect_panel = gluiWindow->add_panel("Reflection");
+    x_refl = gluiWindow->add_button_to_panel(reflect_panel,"About X",-1,reflect_around_x);
+    y_refl = gluiWindow->add_button_to_panel(reflect_panel,"About Y",-1,reflect_around_y);
+
     color_panel = gluiWindow->add_panel("Color");
     red_spinner = gluiWindow->add_spinner_to_panel(color_panel,"Red",GLUI_SPINNER_INT,&red_val);
     green_spinner = gluiWindow->add_spinner_to_panel(color_panel,"Green",GLUI_SPINNER_INT,&green_val);
@@ -328,6 +420,9 @@ int main(int argc, char **argv)
     halfHeight = glutGet(GLUT_WINDOW_HEIGHT)/2;
     halfWidth = glutGet(GLUT_WINDOW_WIDTH)/2;
     gluOrtho2D(-halfWidth, halfWidth, -halfHeight, halfHeight);
+
+    glClearColor(1,1,1,1);
+    glClear(GL_COLOR_BUFFER_BIT);
 
     glutDisplayFunc(display);
     glutMouseFunc(mouseCallback);
