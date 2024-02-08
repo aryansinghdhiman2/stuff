@@ -1,7 +1,8 @@
-int a;
+#include <stdio.h>
 
 int main()
 {
-    a = 2 + 3;
-    char* p = "abc";
+    int b = 2 + 3;
+    int k = 5 + 5;
+    printf("%d %d",b,k);
 }

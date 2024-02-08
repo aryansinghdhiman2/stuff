@@ -1,9 +1,16 @@
+#include <set>
 #include <string>
 #include <iostream>
 #include <array>
 #include <algorithm>
 #include <cctype>
 #include <fstream>
+
+#include <boost/multi_index_container.hpp>
+#include <boost/multi_index/ordered_index.hpp>
+#include <boost/multi_index/identity.hpp>
+#include <boost/multi_index/member.hpp>
+#include <boost/multi_index/hashed_index.hpp>
 
 using namespace std;
 
@@ -13,8 +20,45 @@ struct lexeme
     string type;
     int line_number;
     int seq_number;
+    // size_t operator()(const lexeme& l) const noexcept
+    // {
+    //     return hash<string>()(l.id);
+    // }
+    // bool operator==(const lexeme& other) const
+    // {
+    //     return this->id == other.id;
+    // }
+    bool operator<(const lexeme& other) const
+    {
+        if(this->line_number < other.line_number)
+        {
+            return true;
+        }
+        else if(this->line_number == other.line_number and this->seq_number < other.seq_number)
+        {
+            return true;
+        }
+        else return false;
+    }
 };
 
+using boost::multi_index::multi_index_container;
+using boost::multi_index::indexed_by;
+using boost::multi_index::ordered_unique;
+using boost::multi_index::member;
+using boost::multi_index::ordered_non_unique;
+using boost::multi_index::identity;
+using boost::multi_index::hashed_unique;
+
+multi_index_container<
+    lexeme,
+    indexed_by<
+            hashed_unique<member<lexeme,std::string,&lexeme::id>>,
+            ordered_non_unique<identity<lexeme>>
+    >
+> tokens;
+
+// set<lexeme> tokens;
 
 const array<string,34> keywords = {"auto", "break", "case", "char", "const", "continue", "default", "do", "double", "else", "enum", "extern", "float", "for", "goto", "if", "inline", "int", "long", "register", "restrict", "return", "short", "signed", "sizeof", "static", "struct", "switch", "typedef", "union", "unsigned", "void", "volatile", "while"};
 const array<char,9> delimiters = {',',';','{','}','[',']','(',')',' '};
@@ -83,7 +127,7 @@ void processTokens(const string line,const int line_number)
             {
                 token.id = string(1,*current);
                 token.type = "Delimeter";
-                cout<<token.id<<'\t'<<token.type<<'\n';
+                tokens.insert(token);
             }
             current = next(current);
         }
@@ -99,8 +143,7 @@ void processTokens(const string line,const int line_number)
             literal_end = next(literal_end);
             token.id.resize(distance(current,literal_end));
             copy(current,literal_end,token.id.begin());
-
-            cout<<token.id<<'\t'<<token.type<<'\n';
+            tokens.insert(token);
 
             current = literal_end;
         }
@@ -117,9 +160,7 @@ void processTokens(const string line,const int line_number)
             token.type = "Numeric Literal";
             token.id.resize(distance(current,literal_end));
             copy(current,literal_end,token.id.begin());
-
-            cout<<token.id<<'\t'<<token.type<<'\n';
-
+            tokens.insert(token);
             current = next(literal_end);
         }
         else if(isOperator(*current))
@@ -131,7 +172,7 @@ void processTokens(const string line,const int line_number)
             if(distance(current,line.end())<=0)
             {
                 token.id = string(1,op);
-                cout<<token.id<<'\t'<<token.type<<'\n';
+                tokens.insert(token);
                 return;
             }
 
@@ -139,13 +180,13 @@ void processTokens(const string line,const int line_number)
             if(isCombinedOperator(combined))
             {
                 token.id = combined;
-                cout<<token.id<<'\t'<<token.type<<'\n';
+                tokens.insert(token);
                 current = next(current);
             }
             else
             {
                 token.id = string(1,op);
-                cout<<token.id<<'\t'<<token.type<<'\n';
+                tokens.insert(token);
             }
         }
         else if(*current == '#')
@@ -162,7 +203,7 @@ void processTokens(const string line,const int line_number)
 
             token.type = "Directive";
 
-            cout<<token.id<<'\t'<<token.type<<'\n';
+            tokens.insert(token);
 
             if(directive_end != line.end() and next(directive_end) != line.end())
             {
@@ -172,7 +213,7 @@ void processTokens(const string line,const int line_number)
                 token.id.insert(token.id.begin(),next(directive_end),line.end());
                 token.type = "Macro";
 
-                cout<<token.id<<'\t'<<token.type<<'\n';
+                tokens.insert(token);
 
                 current = line.end();
             }
@@ -192,7 +233,7 @@ void processTokens(const string line,const int line_number)
             {
                 token.type = "Identifier";
             }
-            cout<<token.id<<'\t'<<token.type<<'\n';
+            tokens.insert(token);
             current = end;
         }
     }
@@ -214,6 +255,10 @@ int main()
         }
         file.close();
 
+        for(auto token: tokens.get<1>())
+        {
+            cout<<token.type<<'\t'<<token.id<<'\n';
+        }
     }
     else cout<<"File Error";
 }

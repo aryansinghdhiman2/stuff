@@ -3,11 +3,22 @@
 
 int main()
 {
-    int i,j,k;
+    int arr[3];
     printf("Enter 3 numbers: ");
-    scanf("%d %d %d",&i,&j,&k);
-    int sum = add(i,j,k);
+    scanf("%d %d %d",&arr[0],&arr[1],&arr[2]);
+
+    printf("Inputted Characters are :");
+    for(int i=0;i<3;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+
+    int sum = add(arr[0],arr[1],arr[2]);
     printf("Sum of Numbers is: %d\n",sum);
-    int mult = MULTIPLY(i,j,k);
+    int mult = MULTIPLY(arr[0],arr[1],arr[2]);
     printf("Multiplication of numbers is: %d",mult);
 }
+
+
+
+
