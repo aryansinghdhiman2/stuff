@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//main function
 int main()
 {
     int b = 2 + 3;

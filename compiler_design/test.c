@@ -14,11 +14,7 @@ int main()
     }
 
     int sum = add(arr[0],arr[1],arr[2]);
-    printf("Sum of Numbers is: %d\n",sum);
+    printf("\nSum of Numbers is: %d\n",sum);
     int mult = MULTIPLY(arr[0],arr[1],arr[2]);
     printf("Multiplication of numbers is: %d",mult);
 }
-
-
-
-
