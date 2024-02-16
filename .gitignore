@@ -10,3 +10,12 @@ web_technologies/testproj - Shortcut.lnk
 *.pdb
 rust
 build
+data_modeling/OnlineRetail.csv
+compiler_design/test_op-test.i
+compiler_design/test_op-test.o
+compiler_design/test_op-test.s
+compiler_design/test.o
+compiler_design/test.s
+compiler_design/test2.ii
+compiler_design/test2.o
+compiler_design/test2.s

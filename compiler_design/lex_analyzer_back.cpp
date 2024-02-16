@@ -168,6 +168,12 @@ void processTokens(const string line,const int line_number)
             const char op = *current;
             current = next(current);
 
+            if(op == '/' and current != line.end() and (*current) == '/')
+            {
+                current = line.end();
+                continue;
+            }
+            
             token.type = "Operator";
             if(distance(current,line.end())<=0)
             {
