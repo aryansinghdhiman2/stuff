@@ -15,8 +15,8 @@ import seaborn as sns
 # plt.plot(t2, np.cos(2*np.pi*t2), 'r--') 
 # plt.show() 
 
-times = range(8)
-co2 = [250, 265, 272, 260, 300, 320, 389,403]
+# times = range(8)
+# co2 = [250, 265, 272, 260, 300, 320, 389,403]
 # plt.plot(times, co2)
 # plt.plot(times, co2, 'b--')
 # plt.title("Concentration of CO2 versus time")
@@ -71,7 +71,7 @@ co2 = [250, 265, 272, 260, 300, 320, 389,403]
 # plt.legend('ABCDEF', ncol=2, loc='upper left');
 # plt.show()
 
-sns.set_theme()
+# sns.set_theme()
 
 # plt.plot(x, y)
 # plt.legend('ABCDEF', ncol=2, loc='upper left')
@@ -82,7 +82,7 @@ sns.set_theme()
 # sns.pairplot(iris, hue='species', height=2.5)
 # plt.show()
 
-tips = sns.load_dataset('tips')
+# tips = sns.load_dataset('tips')
 # tips.head()
 # tips['tip_pct'] = 100 * tips['tip'] / tips['total_bill']
 
@@ -90,7 +90,68 @@ tips = sns.load_dataset('tips')
 # grid.map(plt.hist, "tip_pct", bins=np.linspace(0, 40, 15))
 # plt.show()
 
-with sns.axes_style(style='ticks'):
-    g = sns.catplot(x="day", y="total_bill", hue="sex", data=tips, kind="box")
-    g.set_axis_labels("Day", "Total Bill");
-    plt.show()
+# with sns.axes_style(style='ticks'):
+#     g = sns.catplot(x="day", y="total_bill", hue="sex", data=tips, kind="box")
+#     g.set_axis_labels("Day", "Total Bill");
+#     plt.show()
+
+
+# array = [1,2,3,1]
+
+# plt.hist(array,bins=2,density=False,facecolor='b',alpha=0.5,edgecolor='black')
+# plt.show()
+
+from datetime import datetime
+import csv
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+import pandas
+
+class Sales:
+    def __init__(self,year:int,month:int) -> None:
+        self.year = year
+        self.month = month
+        self.sales = 0
+    def __eq__(self, other: "Sales") -> bool:
+        if(self.year == other.year and self.month == other.month):
+            return True
+        else: return False
+
+
+sns.set_theme()
+
+
+with open('OnlineRetail.csv', newline='') as f:
+    reader = csv.reader(f)
+    sales: list[Sales] = []
+    next(reader)
+    dt = datetime.now()
+
+    for row in reader:
+        try:
+            dt = datetime.strptime(row[4].split(' ')[0],"%d-%m-%Y")
+        except:
+            dt = datetime.strptime(row[4].split(' ')[0],"%m/%d/%Y")
+
+        sale = Sales(dt.year,dt.month)
+
+        try:
+            sales[sales.index(sale)].sales+=1
+        except:
+            sale.sales+=1
+            sales.append(sale)
+
+        # if sale not in sales:
+        #     sale.sales+=1
+        #     sales.append(sale)
+        # else:
+        #     sales[sales.index(sale)].sales+=1
+    
+    # pandas.DataFrame.from_dict(sale)
+
+
+    # sns.barplot(dsales)
+    # plt.show()
+
+    
