@@ -29,6 +29,9 @@ int main() {
     Automata nfa = processRegEx(infixToPostfix(input));
 
     printAutomata(nfa,alphabets);
-    move(epsilonClosure(nfa.initial_state),'a');
+    
+    alphabets.pop_back();
+    auto dfa = convertToDFA(nfa.initial_state,alphabets);
+    printAutomata(dfa,alphabets);
 	return 0;
 }

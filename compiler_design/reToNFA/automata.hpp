@@ -11,6 +11,9 @@
 #include <list>
 #include <stack>
 #include <unordered_set>
+#include <set>
+#include <queue>
+#include <optional>
 #include "tabulate.hpp"
 
 using string = std::string;
@@ -24,38 +27,43 @@ struct CompareStateEqual;
 const char epsilon = '#';
 int id_counter = -1;
 
-// typedef std::list<std::weak_ptr<State>> transitionList;
-typedef std::unordered_set<std::weak_ptr<State>,HashState,CompareStateEqual> transitionSet;
+// typedef std::list<StateWeakPointer> transitionList;
+using StateSharedPointer = std::shared_ptr<State>;
+using StateWeakPointer = std::weak_ptr<State>;
+using TransitionSet = std::unordered_set<StateWeakPointer,HashState,CompareStateEqual>;
+using TransitionSetShared = std::unordered_set<StateSharedPointer,HashState,CompareStateEqual>;
 
 struct CompareStateLess
 {
-    bool operator()(const std::weak_ptr<State> a,const std::weak_ptr<State> b) const;
+    bool operator()(const StateWeakPointer a,const StateWeakPointer b) const;
 };
 
-auto compare_state_less = CompareStateLess();
+// auto compare_state_less = CompareStateLess();
 
 struct CompareStateEqual
 {
-    bool operator()(const std::weak_ptr<State> a,const std::weak_ptr<State> b) const;
+    bool operator()(const StateWeakPointer a,const StateWeakPointer b) const;
 };
 
 struct HashState
 {
-    size_t operator()(const std::weak_ptr<State>& s) const;
+    size_t operator()(const StateWeakPointer& s) const;
 };
 
 struct State
 {
     int id;
     bool is_accepting;
-    std::unordered_map<char,transitionSet> transitions;
+    std::optional<std::string> combined_id;
+    std::optional<TransitionSet> combined_set;
+    std::unordered_map<char,TransitionSet> transitions;
     State(int identifer,bool accept = false): id(identifer),is_accepting(accept){} 
 
-    void insertTransition(char alphabet,const std::shared_ptr<State>& s)
+    void insertTransition(char alphabet,const StateSharedPointer& s)
     {
         if(this->transitions.find(alphabet) == this->transitions.end())
         {
-            transitionSet l;
+            TransitionSet l;
             l.insert(std::weak_ptr(s));
             this->transitions.insert(make_pair(alphabet,l));
         }
@@ -70,15 +78,20 @@ struct State
     }
     bool operator==(const State& other)
     {
+        if(this->combined_id and other.combined_id)
+        {
+            return (this->combined_id.value() == other.combined_id.value()) or (this->id == other.id);
+
+        }
         return this->id == other.id;
     }
 };
 
 struct Automata
 {
-    std::shared_ptr<State> initial_state;
-    std::shared_ptr<State> final_state;
-    std::list<std::shared_ptr<State>> states;
+    StateSharedPointer initial_state;
+    StateSharedPointer final_state; //Only used with NFA
+    std::set<StateSharedPointer,CompareStateLess> states;
 
     Automata(){}
     Automata(char tran)
@@ -86,8 +99,8 @@ struct Automata
         this->initial_state = std::make_shared<State>(++id_counter);
         this->final_state = std::make_shared<State>(++id_counter);
         this->initial_state->insertTransition(tran,final_state);
-        this->states.push_back(initial_state);
-        this->states.push_back(final_state);
+        this->states.insert(initial_state);
+        this->states.insert(final_state);
     }
     Automata(const Automata& other)
     {
@@ -99,19 +112,24 @@ struct Automata
 
 
 
-bool CompareStateLess::operator()(const std::weak_ptr<State> a,const std::weak_ptr<State> b) const
+bool CompareStateLess::operator()(const StateWeakPointer a,const StateWeakPointer b) const
 {
-    return (*(std::shared_ptr<State>)a) < *((std::shared_ptr<State>)b);  
+    return (*(StateSharedPointer)a) < *((StateSharedPointer)b);  
 }
 
-bool CompareStateEqual::operator()(const std::weak_ptr<State> a,const std::weak_ptr<State> b) const
+bool CompareStateEqual::operator()(const StateWeakPointer a,const StateWeakPointer b) const
 {
-    return (*(std::shared_ptr<State>)a) == *((std::shared_ptr<State>)b);  
+    return (*(StateSharedPointer)a) == *((StateSharedPointer)b);  
 }
 
-size_t HashState::operator()(const std::weak_ptr<State>& s) const
+size_t HashState::operator()(const StateWeakPointer& s) const
 {
-    return std::hash<int>()(std::shared_ptr<State>(s)->id);
+    StateSharedPointer sh = StateSharedPointer(s);
+    if(sh->combined_id)
+    {
+        return std::hash<std::string>()(sh->combined_id.value());
+    }
+    return std::hash<int>()(sh->id);
 }
 
 Automata concatenation(Automata& first,Automata& second)
@@ -120,7 +138,7 @@ Automata concatenation(Automata& first,Automata& second)
 
     result.final_state->insertTransition(epsilon,second.initial_state);
     result.final_state = second.final_state;
-    result.states.merge(second.states,compare_state_less);
+    result.states.merge(second.states);
     
     return result;
 }
@@ -137,11 +155,11 @@ Automata _union(Automata& first,Automata& second)
     first.final_state->insertTransition(epsilon,result.final_state);
     second.final_state->insertTransition(epsilon,result.final_state);
 
-    result.states.push_back(result.initial_state);
-    result.states.push_back(result.final_state);
+    result.states.insert(result.initial_state);
+    result.states.insert(result.final_state);
 
-    result.states.merge(first.states,compare_state_less);
-    result.states.merge(second.states,compare_state_less);
+    result.states.merge(first.states);
+    result.states.merge(second.states);
 
     return result;
 }
@@ -159,10 +177,10 @@ Automata closure(Automata& first)
     first.final_state->insertTransition(epsilon,result.final_state);
     first.final_state->insertTransition(epsilon,first.initial_state);
 
-    result.states.push_back(result.initial_state);
-    result.states.push_back(result.final_state);
+    result.states.insert(result.initial_state);
+    result.states.insert(result.final_state);
     
-    result.states.merge(first.states,compare_state_less);
+    result.states.merge(first.states);
 
     return result;
 }
@@ -206,7 +224,7 @@ Automata processRegEx(const string& exp)
     return s.top();
 }
 
-void closureTraversal(const std::shared_ptr<State>& s,transitionSet& states)
+void closureTraversal(const StateSharedPointer& s,TransitionSet& states)
 {
     states.insert(s);
 
@@ -219,36 +237,45 @@ void closureTraversal(const std::shared_ptr<State>& s,transitionSet& states)
     {
         if(states.count(state)==0)
         {
-            closureTraversal(std::shared_ptr<State>(state),states);
+            closureTraversal(StateSharedPointer(state),states);
         }
     }
 
     return;
 }
 
-transitionSet epsilonClosure(const std::shared_ptr<State>& s)
+TransitionSet epsilonClosure(const StateSharedPointer& s)
 {
-    transitionSet states;
+    TransitionSet states;
     closureTraversal(s,states);
     return states;
 }
 
-transitionSet epsilonClosure(const transitionSet& s)
+TransitionSet epsilonClosure(const TransitionSet& s)
 {
-    transitionSet states;
+    TransitionSet states;
     for(const auto& state : s)
     {
-        closureTraversal(std::shared_ptr<State>(state),states);
+        closureTraversal(StateSharedPointer(state),states);
     }
     return states;
 }
 
-transitionSet move(const transitionSet& s,const char& alphabet)
+TransitionSet move(const StateSharedPointer& s,const char& alphabet)
 {
-    transitionSet states;
+    if(s->transitions.count(alphabet)!=0)
+    {
+        return s->transitions.at(alphabet);
+    }
+    else return TransitionSet();
+}
+
+TransitionSet move(const TransitionSet& s,const char& alphabet)
+{
+    TransitionSet states;
     for(const auto& state : s)
     {
-        auto shared_state = std::shared_ptr<State>(state);
+        auto shared_state = StateSharedPointer(state);
         if(shared_state->transitions.count(alphabet)!=0)
         {
             states.insert(shared_state->transitions.at(alphabet).begin(),shared_state->transitions.at(alphabet).end());
@@ -257,9 +284,102 @@ transitionSet move(const transitionSet& s,const char& alphabet)
     return states;
 }
 
+std::optional<std::string> makeCombinedId(TransitionSet s)
+{
+    std::string combined_id_str;
+    std::set<int> id_set;
 
+    for(const auto& state : s)
+    {
+        id_set.insert(StateSharedPointer(state)->id);
+    }
 
-void printAutomata(const Automata& input,std::vector<char> alphabets)
+    for(const auto& id : id_set)
+    {
+        combined_id_str += std::to_string(id) + ',';
+    }
+
+    return std::make_optional(combined_id_str);
+}
+
+Automata convertToDFA(const StateSharedPointer& nfa_start_state,const std::vector<char> alphabets)
+{
+    Automata dfa;
+    dfa.initial_state = std::make_shared<State>(*nfa_start_state);
+    
+    TransitionSetShared states;
+    states.insert(dfa.initial_state);
+
+    std::queue<StateSharedPointer> q;
+    q.push(dfa.initial_state);
+
+    while(not q.empty())
+    {
+        StateSharedPointer current_state = q.front();
+        q.pop();
+
+        TransitionSet closure_set;
+        if(current_state->combined_set)
+        {
+            closure_set = epsilonClosure(current_state->combined_set.value());
+        }
+        else
+        {
+            closure_set = epsilonClosure(current_state);
+        }
+
+        auto accepting_itr = std::find_if(closure_set.begin(),closure_set.end(),[](const StateWeakPointer& s){
+            if(StateSharedPointer(s)->is_accepting)
+            {
+                return true;
+            }
+            else return false;
+        });
+
+        if(accepting_itr!=closure_set.end())
+        {
+            current_state->is_accepting = true;
+        }
+
+        for(size_t i=0;i<alphabets.size();i++)
+        {
+            TransitionSet result_set = epsilonClosure(move(closure_set,alphabets.at(i)));   
+            
+            if(result_set.empty()) continue;
+
+            StateSharedPointer combined_state = std::make_shared<State>(++id_counter);
+            combined_state->combined_id = makeCombinedId(result_set);
+            combined_state->combined_set = std::make_optional(result_set);            
+
+            if(auto state_itr = states.find(combined_state); state_itr!=states.end())
+            {
+                combined_state = StateSharedPointer(*state_itr);
+                --id_counter;
+            }
+
+            if(current_state == dfa.initial_state)
+            {
+                current_state->transitions.erase(alphabets.at(i));
+            }
+            current_state->insertTransition(alphabets.at(i),combined_state);
+
+            if(states.insert(combined_state).second)
+            {
+                q.push(combined_state);
+            }
+        }
+
+        if(current_state == dfa.initial_state)
+        {
+            current_state->transitions.erase(epsilon);
+        }
+    }
+
+    dfa.states.insert(states.begin(),states.end());
+    return dfa;
+}
+
+void printAutomata(const Automata& input,const std::vector<char>& alphabets)
 {
     tabulate::Table table;
     using Row_t = tabulate::Table::Row_t;
@@ -290,6 +410,7 @@ void printAutomata(const Automata& input,std::vector<char> alphabets)
             auto itr = find(alphabets.cbegin(),alphabets.cend(),neighbours.first);
             if(itr == alphabets.end())
             {
+                std::cout<<"Illegal Character\n";
                 throw string("Illegal Character");
             }
             else
