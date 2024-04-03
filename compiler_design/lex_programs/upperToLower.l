@@ -1,5 +1,6 @@
 %{
 #include <ctype.h>
+#include <stdio.h>
 char* convertStringToLower(char* s)
 {
     for(int i=0; i<yyleng;i++ )
@@ -8,7 +9,7 @@ char* convertStringToLower(char* s)
     }
     return s;
 }
-
+FILE* yyin;
 %}
 
 
@@ -21,7 +22,8 @@ int yywrap(){return 0;}
 
 int main()
 {
-    printf("Enter Input: \n");
+    yyin = fopen("upperToLower.txt","r");
     yylex();
+    fclose(yyin);
     return 0;
 }

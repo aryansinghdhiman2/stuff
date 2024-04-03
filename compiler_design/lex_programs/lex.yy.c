@@ -362,8 +362,8 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[15] =
     {   0,
-        0,    0,    4,    2,    2,    2,    2,    0,    0,    0,
-        0,    0,    1,    0
+        0,    0,    4,    3,    2,    3,    0,    2,    0,    1,
+        1,    1,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -372,16 +372,16 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    1,    1,    1,
-        1,    1,    1,    1,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        1,    1,    1,    1,    1,    1,    5,    5,    5,    5,
+        1,    1,    1,    1,    1,    1,    3,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
 
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -398,33 +398,33 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[6] =
+static const YY_CHAR yy_meta[4] =
     {   0,
-        1,    1,    2,    1,    1
+        1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[18] =
+static const flex_int16_t yy_base[15] =
     {   0,
-        0,    0,   12,   13,    0,    3,    6,    0,    0,    0,
-        0,    0,   13,   13,    8,    7,    6
+        0,    0,   12,    3,   13,    8,    0,   13,    0,    6,
+        7,    0,    0,   13
     } ;
 
-static const flex_int16_t yy_def[18] =
+static const flex_int16_t yy_def[15] =
     {   0,
-       14,    1,   14,   14,   15,   14,    6,   16,   15,    6,
-        7,   17,   14,    0,   14,   14,   14
+       14,    1,   14,   14,   14,    4,    4,   14,    6,   14,
+       10,   10,   10,    0
     } ;
 
-static const flex_int16_t yy_nxt[19] =
+static const flex_int16_t yy_nxt[17] =
     {   0,
-        4,    4,    5,    6,    7,    9,   10,   13,   12,    8,
-       11,   14,    3,   14,   14,   14,   14,   14
+        4,    5,    6,    7,    8,    9,   11,    8,   12,   13,
+       10,   14,    3,   14,   14,   14
     } ;
 
-static const flex_int16_t yy_chk[19] =
+static const flex_int16_t yy_chk[17] =
     {   0,
-        1,    1,    1,    1,    1,    6,    6,   17,   16,   15,
-        7,    3,   14,   14,   14,   14,   14,   14
+        1,    1,    1,    4,    4,    4,   10,   10,   10,   11,
+        6,    3,   14,   14,   14,   14
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -441,8 +441,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "test.l"
-#line 445 "lex.yy.c"
+#line 1 "remove2.l"
+#line 2 "remove2.l"
+    // FILE* yyin;
+    // FILE* out = NULL;
+    // char* str = NULL;
+    int lineno=0;
+#line 450 "lex.yy.c"
+#line 451 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -659,9 +665,9 @@ YY_DECL
 		}
 
 	{
-#line 1 "test.l"
+#line 10 "remove2.l"
 
-#line 664 "lex.yy.c"
+#line 670 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -720,21 +726,21 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 2 "test.l"
-{ECHO; printf("\n");}
+#line 11 "remove2.l"
+{printf("Comment :%s",yytext);}
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 3 "test.l"
-;
+#line 12 "remove2.l"
+{lineno++;printf("%d: %s",lineno,yytext);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 4 "test.l"
+#line 14 "remove2.l"
 ECHO;
 	YY_BREAK
-#line 737 "lex.yy.c"
+#line 743 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1739,13 +1745,18 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 4 "test.l"
+#line 14 "remove2.l"
 
 
 int yywrap(){return 0;}
 
 int main()
 {
+    // yyin = fopen("removeComments.c","r+");
+    // out = fopen("remove2Out.c","w");
     yylex();
+    // fclose(yyin);
+    // fclose(out);
     return 0;
 }
+

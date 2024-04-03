@@ -14,6 +14,8 @@
 #include <set>
 #include <queue>
 #include <optional>
+#include <array>
+#include <cstdlib>
 #include "tabulate.hpp"
 
 using string = std::string;
@@ -27,7 +29,6 @@ struct CompareStateEqual;
 const char epsilon = '#';
 int id_counter = -1;
 
-// typedef std::list<StateWeakPointer> transitionList;
 using StateSharedPointer = std::shared_ptr<State>;
 using StateWeakPointer = std::weak_ptr<State>;
 using TransitionSet = std::unordered_set<StateWeakPointer,HashState,CompareStateEqual>;
@@ -287,14 +288,17 @@ TransitionSet move(const TransitionSet& s,const char& alphabet)
 std::optional<std::string> makeCombinedId(TransitionSet s)
 {
     std::string combined_id_str;
-    std::set<int> id_set;
+    std::vector<int> id_arr;
+    id_arr.reserve(s.size());
 
     for(const auto& state : s)
     {
-        id_set.insert(StateSharedPointer(state)->id);
+        id_arr.push_back(StateSharedPointer(state)->id);
     }
 
-    for(const auto& id : id_set)
+    std::sort(id_arr.begin(),id_arr.end());
+
+    for(const auto& id : id_arr)
     {
         combined_id_str += std::to_string(id) + ',';
     }
@@ -306,7 +310,8 @@ Automata convertToDFA(const StateSharedPointer& nfa_start_state,const std::vecto
 {
     Automata dfa;
     dfa.initial_state = std::make_shared<State>(*nfa_start_state);
-    
+    dfa.initial_state->id = ++id_counter;
+
     TransitionSetShared states;
     states.insert(dfa.initial_state);
 
@@ -411,7 +416,7 @@ void printAutomata(const Automata& input,const std::vector<char>& alphabets)
             if(itr == alphabets.end())
             {
                 std::cout<<"Illegal Character\n";
-                throw string("Illegal Character");
+                std::abort();
             }
             else
             {
@@ -448,14 +453,15 @@ void printAutomata(const Automata& input,const std::vector<char>& alphabets)
     table.row(1).format().border_top("-").corner("-");
     table.row(table.size()-1).format().border_bottom("-").corner_bottom_left("-").corner_bottom_right("-");
     table.column(0).format().font_align(tabulate::FontAlign::right);
-    table.row(start_idx).cell(0).format().font_background_color(tabulate::Color::blue);
 
     for(auto index : final_idx)
     {
         table.row(index).cell(0).format().font_background_color(tabulate::Color::green);
     }
 
-    std::cout<<table<<std::endl;
+    table.row(start_idx).cell(0).format().font_color(tabulate::Color::red);
+    
+    std::cout<<table<<'\n';
 }
 
 
