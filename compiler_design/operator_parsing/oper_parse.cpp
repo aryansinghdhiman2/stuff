@@ -51,18 +51,25 @@ void parse(const vector<operators> expression)
                     cout<<"Reduce by E -> id\n";
                 }
                 else
-                    if((popped_symbols.top()!=operators::id) and (*next(it) == operators::id))
+                {
+                    auto popped = popped_symbols.top();
+                    popped_symbols.pop();
+
+                    if((popped_symbols.top()==operators::id) and (popped == operators::id))
                     {
                         cout<<"Reduce by E -> E "<<OpToChar.at(op1)<<" E\n";
-                        popped_symbols.pop();
-                        
                     }
                     else 
                     {
+                        popped_symbols.push(popped);
                         cout<<"Error\n";
                         return;
                     }
-                popped_symbols.push(s.top());
+                }
+                if(s.top()==operators::id)
+                {
+                    popped_symbols.push(s.top());
+                }
                 s.pop();
 
                 while(table.at(s.top()).at(popped_symbols.top()) != '<')
@@ -94,8 +101,8 @@ void parse(const vector<operators> expression)
 int main()
 {
     //                                +   -   *   id  $     
-    table.at(operators::plus) =     {'>','>','<','<','>'};
-    table.at(operators::minus) =    {'<','>','<','<','>'};
+    table.at(operators::plus) =     {'>','<','<','<','>'};
+    table.at(operators::minus) =    {'>','>','<','<','>'};
     table.at(operators::multiply) = {'>','>','>','<','>'};
     table.at(operators::id) =       {'>','>','>',' ','>'};
     table.at(operators::dollar) =   {'<','<','<','<',' '};

@@ -40,7 +40,7 @@ public:
     }
     int coinChange(vector<int>& coins, int amount) {
         sort(coins.begin(),coins.end());
-        vector<int> memo(amount+1,INT_MIN);
+        vector<int> memo(amount+1,INT_MAX);
         int count = dfs(coins,amount,0,memo);
         return count;
     }

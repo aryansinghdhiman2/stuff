@@ -18,7 +18,7 @@ FILE* yyin;
 .\n ;
 %%
 
-int yywrap(){return 0;}
+int yywrap(){return 1;}
 
 int main()
 {
