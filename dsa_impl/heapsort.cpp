@@ -47,20 +47,72 @@ void heapsort(vector<int>& arr)
     }
 }
 
+inline int parent(int i)
+{
+    if((i % 2)==0)
+    {
+        return (i / 2) - 1;
+    }
+    else return (i / 2);
+}
+
+void push(vector<int>& arr,int val)
+{
+    arr.push_back(val);
+    int i = arr.size() - 1;
+    while(parent(i)>=0 && arr[parent(i)] < arr[i])
+    {
+        swap(arr[parent(i)],arr[i]);
+        i = parent(i);
+    }
+}
+
+void pop(vector<int>& arr)
+{
+    swap(arr.front(),arr.back());
+    arr.pop_back();
+    heapify(arr,0,arr.size());
+}
+
+inline int top(const vector<int>& arr)
+{
+    return arr.front();
+}
+
+void print(const vector<int>& arr)
+{
+    for(const int num : arr)
+    {
+        cout<<num<<' ';
+    }
+    cout<<'\n'; 
+}
+
 int main()
 {
     vector<int> arr = {1,8,4,2,6,9,10};
-    for(const int num : arr)
-    {
-        cout<<num<<' ';
-    }
-    cout<<'\n';
+    print(arr);
 
     heapsort(arr);
 
+    print(arr);
+
+    buildHeap(arr);
+    print(arr);
+
+    push(arr,25);
+    print(arr);
+
+    cout<<top(arr)<<'\n';
+
+    pop(arr);
+    print(arr);
+
+    vector<int> another;
     for(const int num : arr)
     {
-        cout<<num<<' ';
+        push(another,num);
     }
-    cout<<'\n';
+    print(another);
+
 }
