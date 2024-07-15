@@ -150,6 +150,7 @@ if(__name__=="__main__"):
     result=primm(matrix)
     replace_with_zeroes(matrix)
     plt.show()
+    print(result)
 
 
 
