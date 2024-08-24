@@ -1,0 +1,15 @@
+Script started on 2023-04-24 18:40:51+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/testdir[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/testdir[00m$ clear[3Plsecho "Hello"ls[Kexitsudo man script[1Pcat typescript[8Pscriptecho "This would be in script"ls[Kexitman ts[2Pexit[2Pls
+[0m[01;32manother.sh[0m  [01;32mfile1[0m  [01;32mfile3[0m  [01;32mfile5[0m  [01;32mfile7[0m  [01;32mgrep[0m     [01;32mnew.sh[0m     [01;32mscr.sh[0m  [01;32mt.py[0m
+[01;32mcomma[0m       [01;32mfile2[0m  [01;32mfile4[0m  [01;32mfile6[0m  [01;32mfile8[0m  [01;32mlog.txt[0m  [01;32mnohup.out[0m  [01;32msu[0m      [01;32mtypescript[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/testdir[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/testdir[00m$ lsclear[3Plsecho "Hello"ls[Kexitsudo man script[1Pcat typescript[8Pscriptecho "This would be in script"
+This would be in script
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/testdir[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/testdir[00m$ exit
+
+Script done on 2023-04-24 18:41:05+05:30 [COMMAND_EXIT_CODE="0"]
+Script started on 2023-04-24 18:41:31+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/testdir[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/testdir[00m$ cat "[K[K[K[K[Kecho "Thi [Ks is [K[K[Kwill be appedn[K[Knde [Kd to teh [K[K[Khe typescript"
+This will be appended to the typescript
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/testdir[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/testdir[00m$ exit
+
+Script done on 2023-04-24 18:41:59+05:30 [COMMAND_EXIT_CODE="0"]

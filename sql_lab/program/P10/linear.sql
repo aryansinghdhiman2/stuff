@@ -1,0 +1,22 @@
+DECLARE
+    I NUMBER;
+    TYPE NUM_ARRAY IS VARRAY(10) OF NUMBER;
+    INPUT NUM_ARRAY;
+    TO_FIND NUMBER;
+    RES NUMBER;
+BEGIN
+    INPUT := NUM_ARRAY(&ARRAY);
+    TO_FIND :=&TO_FIND;
+    FOR I IN 1 .. INPUT.COUNT LOOP
+        IF TO_FIND = INPUT(I)
+            THEN 
+                RES := I;
+                EXIT;
+        ELSE
+            RES := -1;
+        END IF;
+    END LOOP;
+    IF RES <> -1 THEN DBMS_OUTPUT.PUT_LINE('REQUESTED NUMBER IS AT: ' || RES);
+    ELSE DBMS_OUTPUT.PUT_LINE('NOT FOUND');
+    END IF;
+END;

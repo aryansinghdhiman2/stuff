@@ -1,0 +1,11 @@
+DECLARE
+YEAR NUMBER(4);
+RM NUMBER(1);
+BEGIN
+YEAR:=&YEAR;
+IF MOD(YEAR,4)=0 THEN 
+    DBMS_OUTPUT.PUT_LINE('Year '||YEAR||' is leap year');
+ELSE 
+    DBMS_OUTPUT.PUT_LINE('Year '||YEAR||' is not leap year');
+END IF;
+END;

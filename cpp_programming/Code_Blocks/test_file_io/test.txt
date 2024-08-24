@@ -1,0 +1,7 @@
+Hello World!
+This is a new line.
+L
+find
+L
+hello.
+w

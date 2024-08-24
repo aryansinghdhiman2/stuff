@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Limit Number</title>
+    </head>
+    <body>
+        <h3>Count Length</h3>
+        <form id="myform">
+            <label for="num">Enter Number not greater than 42</label><br>
+            <input type="text" id="num" name="num" oninput="check()"><br><br>
+            <input id='btn' type="button" value="Reset">
+        </form>
+        <div id="div1"></div>
+    </body>
+    <script>
+        btn=document.getElementById('btn')
+        btn.addEventListener('click',(event)=>{
+            document.getElementById('num').disabled=false
+            document.getElementById('num').value=''
+        })
+        function check(){
+            holder=document.getElementById('holder')
+            if(holder!=null){
+                holder.remove()
+            }
+            if(Number.isNaN(parseInt(document.forms['myform']['num'].value))){
+                alert('Number Not a Number')
+                document.getElementById('num').disabled=true
+            }
+            else{
+            }
+            if(parseInt(document.forms['myform']['num'].value)>42){
+                document.getElementById('num').disabled=true
+            }
+            else{
+                holder=document.createElement('p')
+                holder.id='holder'
+                answer=document.createTextNode('Length of input is: '+document.forms['myform']['num'].value.length.toString())
+                holder.appendChild(answer)
+                holderdiv=document.getElementById('div1')
+                holderdiv.appendChild(holder)
+            }
+        }
+    </script>
+</html>

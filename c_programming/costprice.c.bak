@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    float sellingPrice[15],profit[15];
+    float totalSellingPrice=0,totalProfit=0,costPrice;
+	int i;
+    for(i=0;i<15;i++)
+    {
+        printf("Please enter the selling price of item number: %d\n",i+1);
+        scanf("%f",&sellingPrice[i]);
+        printf("Please enter profit on item number: %d\n",i+1);
+        scanf("%f",&profit[i]);
+        
+    }
+    for(i=0;i<15;i++)
+    {
+        totalSellingPrice=totalSellingPrice+sellingPrice[i];
+        totalProfit=totalProfit+profit[i];
+    }
+    costPrice=(totalSellingPrice-totalProfit)/15;
+    printf("\nCost price is %f",costPrice);
+
+    return 0;
+}

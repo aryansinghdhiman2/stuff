@@ -1,0 +1,13 @@
+echo -n "Enter String: "
+        read str
+        echo "Enter 1 for upper case"
+        echo "Enter 2 for lower case"
+        read anotherchoice
+        case anotherchoice in
+        1) echo "$str" | tr '[:lower:]' '[:upper:]'
+        ;;
+        2) echo "$str" | tr '[:upper:]' '[:lower:]'
+        ;;
+        *) echo "Invalid case"
+        ;;
+        esac

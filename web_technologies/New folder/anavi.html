@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to Online Railways Booking !!!</h1>
+    <form>
+        <div class="train-info">
+        <table cellspacing="20">
+            <tr> 
+                <td>
+                    <label>Journey From : </label>
+                    <input type="text" placeholder="Journey-from">
+                </td>
+                <td>
+                    <label>Journey To : </label>
+                    <input type="text" placeholder="Journey-to">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Travel Date : </label>
+                    <input type="date" required>
+                </td>
+                <td>
+                    <label for="classes">Class : </label>
+                    <select name="classes" id="classes">
+                        <option>First A/C Class</option>
+                        <option>Second A/C Class</option>
+                        <option>Sleeper Class</option>
+                        <option>General Class</option>
+                        <option>Economy Class</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="person-type">Type: </label>
+                    <select name="person-type" id="classes">
+                        <option>General</option>
+                        <option>Ladies</option>
+                        <option>Lower Berth/Senior Citizen</option>
+                        <option>Person with Disability</option>
+                        <option>Tatkal</option>
+                        <option>Premium Tatkal</option>
+                    </select>
+                </td>
+            </tr>
+    </table>
+    </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <form>
+    <div class="person-info">
+    <table cellspacing="20">
+        <tr>
+            <td>
+                <label>Passenger's First Name : </label>
+                <input type="text" placeholder="First Name">
+            </td>
+            <td>
+                <label>Last Name</label>
+                <input type="text" placeholder="Second Name">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label>Gender : </label>
+                <input type="radio" name="gender">
+                <label>Female</label>
+                <input type="radio" name="gender">
+                <label>Male</label>
+                <input type="radio" name="gender">
+                <label>Other</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Phone Number : </label>
+                <input type="tel">
+            </td>
+            <td>
+                <label>Email : </label>
+                <input type="mail">
+            </td>
+        </tr>
+    </table>
+    </div
+    <br>    
+    </form>
+    <br>
+    <br> 
+    <button type="submit">Book</button>
+</body>
+</html>

@@ -1,0 +1,217 @@
+Script started on 2023-02-14 11:55:01+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="40"]
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ tty
+/dev/pts/1
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+You do not have permission to use at.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo batch
+[sudo] password for aryan:
+warning: commands will be executed using /bin/sh
+at> touch batch.txt
+at> echo "BATCH" > /dev/pts/1
+at> <EOT>
+job 26 at Tue Feb 14 11:55:00 2023
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ BATCH
+
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo at
+Garbled time
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo at now +1 minutes
+warning: commands will be executed using /bin/sh
+at> echo "BBBB" > /dev/pts/1
+at> <EOT>
+job 27 at Tue Feb 14 11:57:00 2023
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ BBBB
+
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ cat commandsexec
+* * * * * echo "Hello" > /dev/pts/0
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ crontab commandsexec
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ crontab -l
+* * * * * echo "Hello" > /dev/pts/0
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ crontab -r
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ exit
+
+Script done on 2023-02-14 12:00:18+05:30 [COMMAND_EXIT_CODE="0"]
+Script started on 2023-02-14 09:48:56+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="40"]
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man ps
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps
+  PID TTY          TIME CMD
+   30 pts/1    00:00:00 bash
+   53 pts/1    00:00:00 ps
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 09:45 ?        00:00:00 /init
+root         4     1  0 09:45 ?        00:00:00 plan9 --control-socket 5 --log-level 4 --server-fd 6 --pipe-fd 8 --log-truncate
+root         7     1  0 09:45 ?        00:00:00 /init
+root         8     7  0 09:45 ?        00:00:00 /init
+aryan        9     8  0 09:45 pts/0    00:00:00 -bash
+aryan       29     9  0 09:48 pts/0    00:00:00 script
+aryan       30    29  0 09:48 pts/1    00:00:00 bash -i
+aryan       54    30  0 09:50 pts/1    00:00:00 ps -ef
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps -T
+  PID  SPID TTY          TIME CMD
+   30    30 pts/1    00:00:00 bash
+   55    55 pts/1    00:00:00 ps
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps -e
+  PID TTY          TIME CMD
+    1 ?        00:00:00 init
+    4 ?        00:00:00 init
+    7 ?        00:00:00 init
+    8 ?        00:00:00 init
+    9 pts/0    00:00:00 bash
+   29 pts/0    00:00:00 script
+   30 pts/1    00:00:00 bash
+   56 pts/1    00:00:00 ps
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 09:45 ?        00:00:00 /init
+root         4     1  0 09:45 ?        00:00:00 plan9 --control-socket 5 --log-level 4 --server-fd 6 --pipe-fd 8 --log-truncate
+root         7     1  0 09:45 ?        00:00:00 /init
+root         8     7  0 09:45 ?        00:00:00 /init
+aryan        9     8  0 09:45 pts/0    00:00:00 -bash
+aryan       29     9  0 09:48 pts/0    00:00:00 script
+aryan       30    29  0 09:48 pts/1    00:00:00 bash -i
+aryan       57    30  0 09:50 pts/1    00:00:00 ps -ef
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man nohup
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man nohup
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ nohup echo "Hello"
+nohup: ignoring input and appending output to 'nohup.out'
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ls
+nohup.out  typescript
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ cat nohup.out
+Hello
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps
+  PID TTY          TIME CMD
+   30 pts/1    00:00:00 bash
+   95 pts/1    00:00:00 ps
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man nice
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ mice
+
+Command 'mice' not found, did you mean:
+
+  command 'rice' from deb golang-rice (1.0.0+git20191102.d954009-1)
+  command 'nice' from deb coreutils (8.30-3ubuntu2)
+
+Try: sudo apt install <deb name>
+
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ nice
+0
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man nice
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man nice
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man nice --adjustment=20 echo "This process is very nice"
+No manual entry for --adjustment=20
+^[[A--Man-- next: echo(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+^C
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ nice --adjustment=20 echo "This process is very nice"
+This process is very nice
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ nice --adjustment=-19 echo "This process is not very nice"
+nice: cannot set niceness: Permission denied
+This process is not very nice
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo nice --adjustment=-19 echo "This process is not very nice"
+[sudo] password for aryan:
+This process is not very nice
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo nice --adjustment=-19 echo "This process is not very nice"
+This process is not very nice
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ nice
+0
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ tty
+/dev/pts/1
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World"
+at> whatis batch
+at> whereis batch
+at>
+at> <EOT>
+at> EOT
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World"
+at> whatis batch
+at> whereis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World"
+at> whatis batch
+at> whereis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World" > /dev/pts/1
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> whatis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo batch
+warning: commands will be executed using /bin/sh
+at> whatis batch
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> whatis batch >> temp.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps -o
+error: format specification must follow -o
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello" >> bt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ man at
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ ps -e
+  PID TTY          TIME CMD
+    1 ?        00:00:00 init
+    4 ?        00:00:00 init
+    7 ?        00:00:00 init
+    8 ?        00:00:00 init
+    9 pts/0    00:00:00 bash
+   29 pts/0    00:00:00 script
+   30 pts/1    00:00:00 bash
+  217 pts/1    00:00:00 ps
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo service atd start
+[sudo] password for aryan:
+ * Starting deferred execution scheduler atd                                                                           [fail]
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World in Batch" >> /dev/pts/1
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World" >> bt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ sudo batch
+warning: commands will be executed using /bin/sh
+at> echo "Hello World" >> bt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ at now +5 seconds
+syntax error. Last token seen: s
+Garbled time
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ at now +5 minutes
+warning: commands will be executed using /bin/sh
+at> touch attt.txt
+at> <EOT>
+Cannot give away file: Operation not permitted
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3$ exit
+
+Script done on 2023-02-14 10:34:32+05:30 [COMMAND_EXIT_CODE="1"]

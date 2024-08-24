@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1642777683 source:c:\users\licar\desktop\aryan programming\c++ programming\dummy\main.cpp
+	<iostream>
+
+1653120570 source:e:\programming\cpp_programming\code_blocks\dummy\main.cpp
+	<iostream>
+	<cstring>
+	<ctime>
+

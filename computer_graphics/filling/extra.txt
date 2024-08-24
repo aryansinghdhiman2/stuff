@@ -1,0 +1,19 @@
+void boundaryFill(pointPair currentPoint)
+{
+    currentPoint.x = int(currentPoint.x);
+    currentPoint.y = int(currentPoint.y);
+    float colors[3];
+    glReadPixels(currentPoint.x+halfWidth,currentPoint.y+halfHeight,1,1,GL_RGB,GL_FLOAT,&colors);
+    if((colors[0]!=1 or colors[1]!=1 or colors[2]!=1) and (colors[0]!=1 or colors[1]!=0 or colors[2]!=0))
+    {
+        glPointSize(1);
+        glColor3f(1,0,0);
+        glRasterPos2i(currentPoint.x,currentPoint.y);
+        glDrawPixels(1,1,GL_RGB,GL_FLOAT,fill_color.data());
+        glFlush();
+        boundaryFill({currentPoint.x+1,currentPoint.y});
+        boundaryFill({currentPoint.x-1,currentPoint.y});
+        boundaryFill({currentPoint.x,currentPoint.y+1});
+        boundaryFill({currentPoint.x,currentPoint.y-1});
+    }
+}

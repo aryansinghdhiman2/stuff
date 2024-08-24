@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1643890294 source:c:\users\licar\desktop\aryan programming\c programming\longest_name.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

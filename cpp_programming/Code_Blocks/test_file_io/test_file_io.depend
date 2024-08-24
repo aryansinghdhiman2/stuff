@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1653120715 source:e:\programming\cpp_programming\code_blocks\test_file_io\main.cpp
+	<iostream>
+	<file.h>
+
+1650724954 e:\programming\cpp_programming\code_blocks\test_file_io\include\file.h
+	<fstream>
+	<string>
+	<memory>
+
+1650724910 source:e:\programming\cpp_programming\code_blocks\test_file_io\src\file.cpp
+	"file.h"
+	<iostream>
+

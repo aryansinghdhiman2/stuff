@@ -1,0 +1,28 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<?xml-stylesheet href="second.css" type="text/css"?>
+<courses>
+    <course>
+    <number>1</number>
+    <course_title>Computer Architecture and Organization</course_title>
+    <term>4th Semester</term>
+    <teacher_title>Proffesor</teacher_title>
+    <user>
+        <uid>UE213020</uid>
+        <firstName>Aryan</firstName>
+        <lastName>Dhiman</lastName>
+        <username>aryandhiman</username>
+    </user>
+    </course>
+    <course>
+    <number>2</number>
+    <course_title>Operating System</course_title>
+    <term>4th Semester</term>
+    <teacher_title>Proffesor</teacher_title>
+    <user>
+        <uid>UE213020</uid>
+        <firstName>Aryan</firstName>
+        <lastName>Dhiman</lastName>
+        <username>aryandhiman</username>
+    </user>
+    </course>
+</courses>

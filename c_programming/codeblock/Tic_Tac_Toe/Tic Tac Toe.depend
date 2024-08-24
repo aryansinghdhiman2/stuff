@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1639150767 source:c:\users\licar\desktop\aryan programming\codeblock\tic tac toe\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1639150767 source:c:\users\licar\desktop\aryan programming\sync\codeblock\tic tac toe\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

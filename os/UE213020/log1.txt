@@ -1,0 +1,350 @@
+Script started on 2023-01-24 09:42:55+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="100" LINES="39"]
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ man script
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ echo "First Session"
+First Session
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ man echo
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ echo 'First Session'
+First Session
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ echo ~cat
+~cat
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ echo '~cat'
+~cat
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ man echo
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ echo ~ cat
+/home/aryan cat
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ echo ~
+/home/aryan
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ tty
+/dev/pts/1
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ mkdir UE213020
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ cd UE213020
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat > myfile
+My first Linux File.aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat >> myfile
+
+New Line Appended
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile
+My first Linux File.
+New Line Appended
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls
+myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat >> anotherfile
+Data in anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat anotherfile >> myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile
+My first Linux File.
+New Line Appended
+Data in anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat anotherfile > secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls
+anotherfile  myfile  secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile
+Data in anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile >> anotherfile >> myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile
+Data in anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat anotherfile
+Data in anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile
+My first Linux File.
+New Line Appended
+Data in anotherfile.
+Data in anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat >> secondfile
+Data in secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile >> anotherfile >> myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile
+Data in anotherfile.
+Data in secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat anotherfile
+Data in anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile
+My first Linux File.
+New Line Appended
+Data in anotherfile.
+Data in anotherfile.
+Data in anotherfile.
+Data in secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ rm secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ rm anotherfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ rm myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat > myfile
+This is myfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat > anotherfile
+This is anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat > secondfile
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile >> anotherfile >> myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile
+This is myfile.
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat anotherfile
+This is anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ echo "Second File was appendede to myfile"
+Second File was appendede to myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ echo "Second File was appended to myfile"
+Second File was appended to myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat > thirdfile >> secondfile >> anotherfile
+This is thirdfile.
+This should be appended to anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat anotherfile
+This is anotherfile.
+This is thirdfile.
+This should be appended to anotherfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat thirdfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls
+anotherfile  myfile  secondfile  thirdfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ rm thirdfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls -ll
+total 0
+-rwxrwxrwx 1 aryan aryan 80 Jan 24 09:58 anotherfile
+-rwxrwxrwx 1 aryan aryan 36 Jan 24 09:56 myfile
+-rwxrwxrwx 1 aryan aryan 20 Jan 24 09:55 secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls -l
+total 0
+-rwxrwxrwx 1 aryan aryan 80 Jan 24 09:58 anotherfile
+-rwxrwxrwx 1 aryan aryan 36 Jan 24 09:56 myfile
+-rwxrwxrwx 1 aryan aryan 20 Jan 24 09:55 secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ touch secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls -l
+total 0
+-rwxrwxrwx 1 aryan aryan 80 Jan 24 09:58 anotherfile
+-rwxrwxrwx 1 aryan aryan 36 Jan 24 09:56 myfile
+-rwxrwxrwx 1 aryan aryan 20 Jan 24 10:02 secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ echo "Timestamp of secondfile changed"
+Timestamp of secondfile changed
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls -a
+.  ..  anotherfile  myfile  secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis cat
+cat (1)              - concatenate files and print on the standard output
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ type cat
+cat is hashed (/usr/bin/cat)
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man whatis
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man type
+No manual entry for type
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis type
+type: nothing appropriate.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ type type
+type is a shell builtin
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whereis cat
+cat: /usr/bin/cat /usr/share/man/man1/cat.1.gz
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ find cat
+find: ‘cat’: No such file or directory
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis echo
+echo (1)             - display a line of text
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ type echo
+echo is a shell builtin
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whereis echo
+echo: /usr/bin/echo /usr/share/man/man1/echo.1.gz
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis find
+find (1)             - search for files in a directory hierarchy
+
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man wc
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls
+anotherfile  myfile  secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile
+This is myfile.
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ wc -l myfile
+2 myfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ wc -m anotherfile
+80 anotherfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ wc -b secondfile
+wc: invalid option -- 'b'
+Try 'wc --help' for more information.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man wc
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ wc -c secondfile
+20 secondfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile | wc -l
+2
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis tee
+tee (1)              - read from standard input and write to standard output and files
+tee (2)              - duplicating pipe content
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ tee myfile2
+This is added using tee.
+This is added using tee.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile2
+This is added using tee.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ touch newfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat newfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat >> newfile
+NEWFILE!!!!!
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat newfile
+NEWFILE!!!!!
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ wc -l *
+  3 anotherfile
+  2 myfile
+  1 myfile2
+  1 newfile
+  1 secondfile
+  8 total
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ wc -l * | cat > Total_lines
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat Total_lines
+  0 Total_lines
+  3 anotherfile
+  2 myfile
+  1 myfile2
+  1 newfile
+  1 secondfile
+  8 total
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat myfile
+This is myfile.
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat secondfile
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis cmp
+cmp (1)              - (unknown subject)
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man cmp
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cmp myfile secondfile
+myfile secondfile differ: byte 9, line 1
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis comm
+comm (1)             - compare two sorted files line by line
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis diff
+diff (1)             - (unknown subject)
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man diff
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ diff myfile secondfile
+1d0
+< This is myfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man diff
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat > fourthfile
+1
+2
+3
+8
+9
+5
+4
+0
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ sort fourthfile
+0
+1
+2
+3
+4
+5
+8
+9
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat >> fourthfile
+6
+7
+10
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ sort fourthfile
+0
+1
+10
+2
+3
+4
+5
+6
+7
+8
+9
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ type tty
+tty is hashed (/usr/bin/tty)
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis tty
+tty (1)              - print the file name of the terminal connected to standard input
+tty (4)              - controlling terminal
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis comm
+myfile secondfile differ: byte 9, line 1d files line by line                ; diff myfile secondfile
+1d0
+< This is myfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ sort -o sortedfile fourthfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ cat sortedfile
+0
+1
+10
+2
+3
+4
+5
+6
+7
+8
+9
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man sleep
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ sleep 2
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ sleep 10
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ sleep 10
+
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man sleep
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ man sort
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis pwd
+pwd (1)              - print name of current/working directory
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ pwd
+/mnt/e/Programming/os/UE213020
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ mkdir toremove
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls
+Total_lines  anotherfile  fourthfile  myfile  myfile2  newfile  secondfile  sortedfile  toremove
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ rmdir toremove
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls
+Total_lines  anotherfile  fourthfile  myfile  myfile2  newfile  secondfile  sortedfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whoami
+aryan
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ who
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whoami
+aryan
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis cp
+cp (1)               - copy files and directories
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ du
+0       .
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ df
+Filesystem      1K-blocks      Used Available Use% Mounted on
+none              1474548         4   1474544   1% /mnt/wsl
+drivers         184202236 135395440  48806796  74% /usr/lib/wsl/drivers
+none              1474548         0   1474548   0% /usr/lib/wsl/lib
+/dev/sdc       1055762868   4298508 997760888   1% /
+none              1474548       156   1474392   1% /mnt/wslg
+rootfs            1471304      1896   1469408   1% /init
+none              1471332         0   1471332   0% /dev
+none              1474548         4   1474544   1% /run
+none              1474548         0   1474548   0% /run/lock
+none              1474548         0   1474548   0% /run/shm
+none              1474548         0   1474548   0% /run/user
+tmpfs             1474548         0   1474548   0% /sys/fs/cgroup
+none              1474548      1136   1473412   1% /mnt/wslg/versions.txt
+none              1474548      1136   1473412   1% /mnt/wslg/doc
+drvfs           184202236 135395440  48806796  74% /mnt/c
+drvfs           157285372 144223436  13061936  92% /mnt/d
+drvfs           157286396  17831132 139455264  12% /mnt/e
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ what is du
+
+Command 'what' not found, did you mean:
+
+  command 'chat' from deb ppp (2.4.7-2+4.1ubuntu5.1)
+  command 'wcat' from deb sac (1.9b5-3build1)
+  command 'jhat' from deb openjdk-8-jdk-headless (8u352-ga-1~20.04)
+  command 'phat' from deb phat-utils (1.5-3build2)
+  command 'wham' from deb wham-align (0.1.5-2build1)
+
+Try: sudo apt install <deb name>
+
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis du
+du (1)               - estimate file space usage
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ whatis free
+free (1)             - Display amount of free and used memory in the system
+free (3)             - allocate and free dynamic memory
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ free
+              total        used        free      shared  buff/cache   available
+Mem:        2949096      315912     1495308        3704     1137876     2455964
+Swap:       1048576           0     1048576
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ head myfile
+This is myfile.
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ tail myfile
+This is myfile.
+This is secondfile.
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ exit
+
+Script done on 2023-01-24 10:41:41+05:30 [COMMAND_EXIT_CODE="0"]
+Script started on 2023-01-24 11:04:41+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ cp typescript UE213020/log
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os$ cd UE213020
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ ls
+Total_lines  anotherfile  fourthfile  log  myfile  myfile2  newfile  secondfile  sortedfile
+aryan@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/UE213020$ exit
+
+Script done on 2023-01-24 11:05:29+05:30 [COMMAND_EXIT_CODE="0"]

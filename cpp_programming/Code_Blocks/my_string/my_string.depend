@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1648039265 source:c:\users\licar\desktop\aryan programming\c++ programming\my_string\main.cpp
+	<iostream>
+	<My_string.h>
+
+1648039035 source:c:\users\licar\desktop\aryan programming\c++ programming\my_string\src\my_string.cpp
+	"My_string.h"
+	<cstring>
+	<iostream>
+	<cctype>
+
+1648039249 c:\users\licar\desktop\aryan programming\c++ programming\my_string\include\my_string.h
+	<iostream>
+

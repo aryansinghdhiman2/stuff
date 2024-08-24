@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <title>
+        Railway Reservation System
+    </title>
+</head>
+
+<body>
+    <div id="mainBar">
+        Railway Reservation System
+    </div>
+    <div id="formContainer">
+        <div id="header">
+            Book Your Train Here!
+        </div>
+        <div id="formHead">
+            <center>
+                <form>
+                    <table>
+                        <tr>
+                            <div id="FROM">
+                                <th>
+                                    <label for="FROM" class="LabelClass">From</label>
+                                </th>
+                                <th>
+                                    <select name="FROM" class="selectClass">
+                                        <option value="Select Location">Select Location</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Banglore">Banglore</option>
+                                        <option value="Chennai">Chennai</option>
+                                    </select>
+                                </th>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div id="TO">
+                                <th>
+                                    <label for="TO" class="LabelClass">To</label>
+                                </th>
+                                <th>
+                                    <select name="TO" class="selectClass">
+                                        <option value="Select Location">Select Location</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Banglore">Banglore</option>
+                                        <option value="Chennai">Chennai</option>
+                                    </select>
+                                </th>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div id="time">
+                                <th>
+                                    <label for="time" class="LabelClass">Time</label>
+                                </th>
+                                <th>
+                                    <select name="time" class="selectClass">
+                                        <option value="Select Location" class="selectClass">Select Time</option>
+                                        <option>9:00pm</option>
+                                        <option>5:00pm</option>
+                                        <option>9:00am</option>
+                                        <option>6:00am</option>
+                                    </select>
+                                </th>
+                            </div>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="classes" class="LabelClass">Class</label>
+                            </th>
+                            <th>
+                                <select name="classes" class="selectClass">
+                                    <option>Select Class</option>
+                                    <option value="eco">Economy</option>
+                                    <option value="busi">Business</option>
+                                    <option value="ac">A/C</option>
+                                    <option value="non ac">Non A/C</option>
+                                </select>
+                            </th>
+                        </tr>
+                    </table>
+                </form>
+                <button type="submit" class="blue-round-button">
+                    Book
+                </button>
+            </center>
+        </div>
+    </div>
+</body>

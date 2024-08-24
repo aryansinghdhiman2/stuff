@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1647683239 source:c:\users\licar\desktop\aryan programming\c++ programming\class_practice\main.cpp
+	<iostream>
+	<string>
+	"player.h"
+
+1647683382 source:c:\users\licar\desktop\aryan programming\c++ programming\class_practice\src\player.cpp
+	"player.h"
+
+1647683122 c:\users\licar\desktop\aryan programming\c++ programming\class_practice\include\player.h
+	<string>
+

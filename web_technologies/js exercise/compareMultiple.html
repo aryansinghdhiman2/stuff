@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Compare Two Numbers
+        </title>
+    </head>
+    <body>
+        <h3>Enter two numbers in the form below</h3>
+        <form id="myForm">
+            <label for="first">First Number</label><br>
+            <input type="text" id="first" name="first"><br>
+            <label for="second">Second Number</label><br>
+            <input type="text" id="second" name="second"><br><br>
+            <input type="submit" value="Press to compare">
+        </form>
+        <div id="answerDiv"></div>
+    </body>
+    <script>
+        document.getElementById('myForm').addEventListener('submit',(event)=>{
+            event.preventDefault()
+            firstNumber=parseInt(document.getElementById('first').value)
+            secondNumber=parseInt(document.getElementById('second').value)
+
+            valString = ''
+            if(firstNumber%secondNumber===0){
+                valString="First Number is multiple of Second number"
+            }
+            else if(secondNumber%firstNumber===0){
+                valString='Second Number is multiple of First number'
+            }
+            else{
+                valString="No multiple"
+            }
+            holder=document.getElementById('holder')
+            if(holder!=null){
+                holder.remove()
+            }
+            holder=document.createElement('p')
+            holder.id = 'holder'
+            answer=document.createTextNode(valString)
+            holder.appendChild(answer)
+            answerDiv=document.getElementById('answerDiv')
+            answerDiv.appendChild(holder)
+        })
+    </script>
+</html>

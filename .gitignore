@@ -1,0 +1,26 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+.vs
+.vscode
+web_technologies/testproj - Shortcut.lnk
+*.exe
+*.pdb
+rust
+build
+data_modeling/OnlineRetail.csv
+compiler_design/test_op-test.i
+compiler_design/test_op-test.o
+compiler_design/test_op-test.s
+compiler_design/test.o
+compiler_design/test.s
+compiler_design/test2.ii
+compiler_design/test2.o
+compiler_design/test2.s
+data_modeling/Apriori_new.ipynb
+business intelligence/27dbe36f-114f-4ce3-8c92-f7992b9719bb_Data.csv
+url_shortener/.venv/
+url_shortener/__pycache__/
+business intelligence/Country_population_2023.csv

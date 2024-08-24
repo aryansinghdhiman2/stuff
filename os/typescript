@@ -1,0 +1,873 @@
+Script started on 2023-02-07 10:20:56+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ cat typescriptd os[Kat typescriptlear[Kat typescriptd os[Kat typescript[Kcd lab2
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat myfile2 | grep old
+This is the [01;31m[Kold[m[K file that will have [01;31m[Kold[m[K replaced in it.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cal 2023
+                            2023
+      January               February               March          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+ 1  2  3  4  5  6  7            1  2  3  4            1  2  3  4  
+ 8  9 10 11 12 13 14   5  6 [7m 7[27m  8  9 10 11   5  6  7  8  9 10 11  
+15 16 17 18 19 20 21  12 13 14 15 16 17 18  12 13 14 15 16 17 18  
+22 23 24 25 26 27 28  19 20 21 22 23 24 25  19 20 21 22 23 24 25  
+29 30 31              26 27 28              26 27 28 29 30 31     
+                                                                  
+
+       April                  May                   June          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+                   1      1  2  3  4  5  6               1  2  3  
+ 2  3  4  5  6  7  8   7  8  9 10 11 12 13   4  5  6  7  8  9 10  
+ 9 10 11 12 13 14 15  14 15 16 17 18 19 20  11 12 13 14 15 16 17  
+16 17 18 19 20 21 22  21 22 23 24 25 26 27  18 19 20 21 22 23 24  
+23 24 25 26 27 28 29  28 29 30 31           25 26 27 28 29 30     
+30                                                                
+
+        July                 August              September        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+                   1         1  2  3  4  5                  1  2  
+ 2  3  4  5  6  7  8   6  7  8  9 10 11 12   3  4  5  6  7  8  9  
+ 9 10 11 12 13 14 15  13 14 15 16 17 18 19  10 11 12 13 14 15 16  
+16 17 18 19 20 21 22  20 21 22 23 24 25 26  17 18 19 20 21 22 23  
+23 24 25 26 27 28 29  27 28 29 30 31        24 25 26 27 28 29 30  
+30 31                                                             
+
+      October               November              December        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+ 1  2  3  4  5  6  7            1  2  3  4                  1  2  
+ 8  9 10 11 12 13 14   5  6  7  8  9 10 11   3  4  5  6  7  8  9  
+15 16 17 18 19 20 21  12 13 14 15 16 17 18  10 11 12 13 14 15 16  
+22 23 24 25 26 27 28  19 20 21 22 23 24 25  17 18 19 20 21 22 23  
+29 30 31              26 27 28 29 30        24 25 26 27 28 29 30  
+                                            31                    
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ncal
+    February 2023     
+Su     5 12 19 26   
+Mo     6 13 20 27   
+Tu    [7m 7[27m 14 21 28   
+We  1  8 15 22      
+Th  2  9 16 23      
+Fr  3 10 17 24      
+Sa  4 11 18 25      
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ umask
+0022
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ [K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man i[Kumask
+[?1049h[22;0;0t[?1h=UMASK(2)                                                        Linux Programmer's Manual                                                       UMASK(2)[m
+[m
+[1mNAME[0m[m
+       umask - set file mode creation mask[m
+[m
+[1mSYNOPSIS[0m[m
+       [1m#include[0m [1m<sys/types.h>[0m[m
+       [1m#include[0m [1m<sys/stat.h>[0m[m
+[m
+       [1mmode_t[0m [1mumask(mode_t[0m [4mmask[24m[1m);[0m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1mumask[0m() sets the calling process's file mode creation mask (umask) to [4mmask[24m & 0777 (i.e., only the file permission bits of [4mmask[24m are used), and re‐[m
+       turns the previous value of the mask.[m
+[m
+       The umask is used by [1mopen[0m(2), [1mmkdir[0m(2), and other system calls that create files to modify the permissions placed on newly created files  or  di‐[m
+       rectories.  Specifically, permissions in the umask are turned off from the [4mmode[24m argument to [1mopen[0m(2) and [1mmkdir[0m(2).[m
+[m
+       Alternatively,  if  the  parent directory has a default ACL (see [1macl[0m(5)), the umask is ignored, the default ACL is inherited, the permission bits[m
+       are set based on the inherited ACL, and permission bits absent in the [4mmode[24m argument are turned off.  For example, the following  default  ACL  is[m
+       equivalent to a umask of 022:[m
+[m
+           u::rwx,g::r-x,o::r-x[m
+[m
+       Combining the effect of this default ACL with a [4mmode[24m argument of 0666 (rw-rw-rw-), the resulting file permissions would be 0644 (rw-r--r--).[m
+[m
+       The constants that should be used to specify [4mmask[24m are described in [1minode[0m(7).[m
+[m
+       The typical default value for the process umask is [4mS_IWGRP[24m [4m|[24m [4mS_IWOTH[24m (octal 022).  In the usual case where the [4mmode[24m argument to [1mopen[0m(2) is speci‐[m
+       fied as:[m
+[m
+           S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH[m
+[m
+       (octal 0666) when creating a new file, the permissions on the resulting file will be:[m
+[m
+           S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH[m
+[m
+       (because 0666 & ~022 = 0644; i.e., rw-r--r--).[m
+[m
+[7m Manual page umask(2) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man umask[K[K[K[K[Kchmod
+[?1049h[22;0;0t[?1h=CHMOD(1)                                                              User Commands                                                             CHMOD(1)[m
+[m
+[1mNAME[0m[m
+       chmod - change file mode bits[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mchmod[0m [[4mOPTION[24m]... [4mMODE[24m[[4m,MODE[24m]... [4mFILE[24m...[m
+       [1mchmod[0m [[4mOPTION[24m]... [4mOCTAL-MODE[24m [4mFILE[24m...[m
+       [1mchmod[0m [[4mOPTION[24m]... [4m--reference=RFILE[24m [4mFILE[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       This  manual page documents the GNU version of [1mchmod[0m.  [1mchmod[0m changes the file mode bits of each given file according to [4mmode[24m, which can be either[m
+       a symbolic representation of changes to make, or an octal number representing the bit pattern for the new mode bits.[m
+[m
+       The format of a symbolic mode is [[1mugoa[0m...][[[1m-+=[0m][[4mperms[24m...]...], where [4mperms[24m is either zero or more letters from the set [1mrwxXst[0m, or a single  let‐[m
+       ter from the set [1mugo[0m.  Multiple symbolic modes can be given, separated by commas.[m
+[m
+       A  combination  of the letters [1mugoa[0m controls which users' access to the file will be changed: the user who owns it ([1mu[0m), other users in the file's[m
+       group ([1mg[0m), other users not in the file's group ([1mo[0m), or all users ([1ma[0m).  If none of these are given, the effect is as if ([1ma[0m) were given,  but  bits[m
+       that are set in the umask are not affected.[m
+[m
+       The  operator  [1m+[0m  causes  the selected file mode bits to be added to the existing file mode bits of each file; [1m-[0m causes them to be removed; and [1m=[0m[m
+       causes them to be added and causes unmentioned bits to be removed except that a directory's unmentioned set user and group ID bits  are  not  af‐[m
+       fected.[m
+[m
+       The  letters  [1mrwxXst[0m  select  file mode bits for the affected users: read ([1mr[0m), write ([1mw[0m), execute (or search for directories) ([1mx[0m), execute/search[m
+       only if the file is a directory or already has execute permission for some user ([1mX[0m), set user or group ID on execution ([1ms[0m),  restricted  deletion[m
+       flag  or sticky bit ([1mt[0m).  Instead of one or more of these letters, you can specify exactly one of the letters [1mugo[0m: the permissions granted to the[m
+       user who owns the file ([1mu[0m), the permissions granted to other users who are members of the file's group ([1mg[0m), and the permissions granted to  users[m
+       that are in neither of the two preceding categories ([1mo[0m).[m
+[m
+       A  numeric  mode is from one to four octal digits (0-7), derived by adding up the bits with values 4, 2, and 1.  Omitted digits are assumed to be[m
+       leading zeros.  The first digit selects the set user ID (4) and set group ID (2) and restricted deletion or sticky (1)  attributes.   The  second[m
+       digit  selects permissions for the user who owns the file: read (4), write (2), and execute (1); the third selects permissions for other users in[m
+       the file's group, with the same values; and the fourth for other users not in the file's group, with the same values.[m
+[m
+       [1mchmod[0m never changes the permissions of symbolic links; the [1mchmod[0m system call cannot change their permissions.  This is not a  problem  since  the[m
+       permissions  of  symbolic links are never used.  However, for each symbolic link listed on the command line, [1mchmod[0m changes the permissions of the[m
+       pointed-to file.  In contrast, [1mchmod[0m ignores symbolic links encountered during recursive directory traversals.[m
+[7m Manual page chmod(1) line 1 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 2 (press h for help or q to quit)[27m[K[K[1mSETUID[0m [1mAND[0m [1mSETGID[0m [1mBITS[0m[m
+[7m Manual page chmod(1) line 3 (press h for help or q to quit)[27m[K[K       [1mchmod[0m clears the set-group-ID bit of a regular file if the file's group ID does not match the user's effective group ID or one of the user's sup‐[m
+[7m Manual page chmod(1) line 4 (press h for help or q to quit)[27m[K[K       plementary  group  IDs,  unless  the user has appropriate privileges.  Additional restrictions may cause the set-user-ID and set-group-ID bits of[m
+[7m Manual page chmod(1) line 5 (press h for help or q to quit)[27m[K[K       [4mMODE[24m or [4mRFILE[24m to be ignored.  This behavior depends on the policy and functionality of the underlying [1mchmod[0m system call.  When  in  doubt,  check[m
+[7m Manual page chmod(1) line 6 (press h for help or q to quit)[27m[K[K       the underlying system behavior.[m
+[7m Manual page chmod(1) line 7 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 8 (press h for help or q to quit)[27m[K[K       For  directories  [1mchmod[0m  preserves set-user-ID and set-group-ID bits unless you explicitly specify otherwise.  You can set or clear the bits with[m
+[7m Manual page chmod(1) line 9 (press h for help or q to quit)[27m[K[K       symbolic modes like [1mu+s[0m and [1mg-s[0m.  To clear these bits for directories with a numeric mode requires an additional leading zero, or leading =  like[m
+[7m Manual page chmod(1) line 10 (press h for help or q to quit)[27m[K[K       [1m00755[0m , or [1m=755[0m[m
+[7m Manual page chmod(1) line 11 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 12 (press h for help or q to quit)[27m[K[K[1mRESTRICTED[0m [1mDELETION[0m [1mFLAG[0m [1mOR[0m [1mSTICKY[0m [1mBIT[0m[m
+[7m Manual page chmod(1) line 13 (press h for help or q to quit)[27m[K[K       The restricted deletion flag or sticky bit is a single bit, whose interpretation depends on the file type.  For directories, it prevents unprivi‐[m
+[7m Manual page chmod(1) line 14 (press h for help or q to quit)[27m[K[K       leged users from removing or renaming a file in the directory unless they own the file or the directory; this is called the  [4mrestricted[24m  [4mdeletion[24m[m
+[7m Manual page chmod(1) line 15 (press h for help or q to quit)[27m[K[K       [4mflag[24m  for  the  directory, and is commonly found on world-writable directories like [1m/tmp[0m.  For regular files on some older systems, the bit saves[m
+[7m Manual page chmod(1) line 16 (press h for help or q to quit)[27m[K[K       the program's text image on the swap device so it will load more quickly when run; this is called the [4msticky[24m [4mbit[24m.[m
+[7m Manual page chmod(1) line 17 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 18 (press h for help or q to quit)[27m[K[K[1mOPTIONS[0m[m
+[7m Manual page chmod(1) line 19 (press h for help or q to quit)[27m[K[K       Change the mode of each FILE to MODE.  With [1m--reference[0m, change the mode of each FILE to that of RFILE.[m
+[7m Manual page chmod(1) line 20 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 21 (press h for help or q to quit)[27m[K[K       [1m-c[0m, [1m--changes[0m[m
+[7m Manual page chmod(1) line 22 (press h for help or q to quit)[27m[K[K              like verbose but report only when a change is made[m
+[7m Manual page chmod(1) line 23 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 24 (press h for help or q to quit)[27m[K[K       [1m-f[0m, [1m--silent[0m, [1m--quiet[0m[m
+[7m Manual page chmod(1) line 25 (press h for help or q to quit)[27m[K[K              suppress most error messages[m
+[7m Manual page chmod(1) line 26 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 27 (press h for help or q to quit)[27m[K[K       [1m-v[0m, [1m--verbose[0m[m
+[7m Manual page chmod(1) line 28 (press h for help or q to quit)[27m[K[K              output a diagnostic for every file processed[m
+[7m Manual page chmod(1) line 29 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 30 (press h for help or q to quit)[27m[K[K       [1m--no-preserve-root[0m[m
+[7m Manual page chmod(1) line 31 (press h for help or q to quit)[27m[K[K              do not treat '/' specially (the default)[m
+[7m Manual page chmod(1) line 32 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 33 (press h for help or q to quit)[27m[K[K       [1m--preserve-root[0m[m
+[7m Manual page chmod(1) line 34 (press h for help or q to quit)[27m[K[K              fail to operate recursively on '/'[m
+[7m Manual page chmod(1) line 35 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 36 (press h for help or q to quit)[27m[K[K       [1m--reference[0m=[4mRFILE[24m[m
+[7m Manual page chmod(1) line 37 (press h for help or q to quit)[27m[K[K              use RFILE's mode instead of MODE values[m
+[7m Manual page chmod(1) line 38 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 39 (press h for help or q to quit)[27m[K[K       [1m-R[0m, [1m--recursive[0m[m
+[7m Manual page chmod(1) line 40 (press h for help or q to quit)[27m[K[K              change files and directories recursively[m
+[7m Manual page chmod(1) line 41 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 42 (press h for help or q to quit)[27m[K[K       [1m--help[0m display this help and exit[m
+[7m Manual page chmod(1) line 43 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 44 (press h for help or q to quit)[27m[K[K       [1m--version[0m[m
+[7m Manual page chmod(1) line 45 (press h for help or q to quit)[27m[K[K              output version information and exit[m
+[7m Manual page chmod(1) line 46 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 47 (press h for help or q to quit)[27m[K[K       Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.[m
+[7m Manual page chmod(1) line 48 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 49 (press h for help or q to quit)[27m[K[K[1mAUTHOR[0m[m
+[7m Manual page chmod(1) line 50 (press h for help or q to quit)[27m[K[K       Written by David MacKenzie and Jim Meyering.[m
+[7m Manual page chmod(1) line 51 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 52 (press h for help or q to quit)[27m[K[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page chmod(1) line 53 (press h for help or q to quit)[27m[K[K       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page chmod(1) line 54 (press h for help or q to quit)[27m[K[K       Report chmod translation bugs to <https://translationproject.org/team/>[m
+[7m Manual page chmod(1) line 55 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 56 (press h for help or q to quit)[27m[K[K[1mCOPYRIGHT[0m[m
+[7m Manual page chmod(1) line 57 (press h for help or q to quit)[27m[K[K       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page chmod(1) line 58 (press h for help or q to quit)[27m[K[K       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[7m Manual page chmod(1) line 59 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 60 (press h for help or q to quit)[27m[K[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page chmod(1) line 61 (press h for help or q to quit)[27m[K[K       chmod(2)[m
+[7m Manual page chmod(1) line 62 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 63 (press h for help or q to quit)[27m[K[K       Full documentation at: <https://www.gnu.org/software/coreutils/chmod>[m
+[7m Manual page chmod(1) line 64 (press h for help or q to quit)[27m[K[K       or available locally via: info '(coreutils) chmod invocation'[m
+[7m Manual page chmod(1) line 65 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 66 (press h for help or q to quit)[27m[K[KGNU coreutils 8.30                                                   September 2019                                                             CHMOD(1)[m
+[7m Manual page chmod(1) line 67 (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page chmod(1) line 67/105 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mconvfile[0m  [01;32mlog.txt[0m  [01;32mmyfile[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls -l
+total 8
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:15 [0m[01;32mconvfile[0m
+-rwxrwxrwx 1 aryan aryan 8160 Feb  7 10:18 [01;32mlog.txt[0m
+-rwxrwxrwx 1 aryan aryan    8 Feb  2 14:24 [01;32mmyfile[0m
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:13 [01;32mmyfile2[0m
+-rwxrwxrwx 1 aryan aryan   18 Feb  2 14:24 [01;32mxaa[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxab[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxac[0m
+-rwxrwxrwx 1 aryan aryan   22 Feb  2 14:24 [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls -l[K
+[0m[01;32mconvfile[0m  [01;32mlog.txt[0m  [01;32mmyfile[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls -l[Kman chmod
+[?1049h[22;0;0t[?1h=CHMOD(1)                                                              User Commands                                                             CHMOD(1)[m
+[m
+[1mNAME[0m[m
+       chmod - change file mode bits[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mchmod[0m [[4mOPTION[24m]... [4mMODE[24m[[4m,MODE[24m]... [4mFILE[24m...[m
+       [1mchmod[0m [[4mOPTION[24m]... [4mOCTAL-MODE[24m [4mFILE[24m...[m
+       [1mchmod[0m [[4mOPTION[24m]... [4m--reference=RFILE[24m [4mFILE[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       This  manual page documents the GNU version of [1mchmod[0m.  [1mchmod[0m changes the file mode bits of each given file according to [4mmode[24m, which can be either[m
+       a symbolic representation of changes to make, or an octal number representing the bit pattern for the new mode bits.[m
+[m
+       The format of a symbolic mode is [[1mugoa[0m...][[[1m-+=[0m][[4mperms[24m...]...], where [4mperms[24m is either zero or more letters from the set [1mrwxXst[0m, or a single  let‐[m
+       ter from the set [1mugo[0m.  Multiple symbolic modes can be given, separated by commas.[m
+[m
+       A  combination  of the letters [1mugoa[0m controls which users' access to the file will be changed: the user who owns it ([1mu[0m), other users in the file's[m
+       group ([1mg[0m), other users not in the file's group ([1mo[0m), or all users ([1ma[0m).  If none of these are given, the effect is as if ([1ma[0m) were given,  but  bits[m
+       that are set in the umask are not affected.[m
+[m
+       The  operator  [1m+[0m  causes  the selected file mode bits to be added to the existing file mode bits of each file; [1m-[0m causes them to be removed; and [1m=[0m[m
+       causes them to be added and causes unmentioned bits to be removed except that a directory's unmentioned set user and group ID bits  are  not  af‐[m
+       fected.[m
+[m
+       The  letters  [1mrwxXst[0m  select  file mode bits for the affected users: read ([1mr[0m), write ([1mw[0m), execute (or search for directories) ([1mx[0m), execute/search[m
+       only if the file is a directory or already has execute permission for some user ([1mX[0m), set user or group ID on execution ([1ms[0m),  restricted  deletion[m
+       flag  or sticky bit ([1mt[0m).  Instead of one or more of these letters, you can specify exactly one of the letters [1mugo[0m: the permissions granted to the[m
+       user who owns the file ([1mu[0m), the permissions granted to other users who are members of the file's group ([1mg[0m), and the permissions granted to  users[m
+       that are in neither of the two preceding categories ([1mo[0m).[m
+[m
+       A  numeric  mode is from one to four octal digits (0-7), derived by adding up the bits with values 4, 2, and 1.  Omitted digits are assumed to be[m
+       leading zeros.  The first digit selects the set user ID (4) and set group ID (2) and restricted deletion or sticky (1)  attributes.   The  second[m
+       digit  selects permissions for the user who owns the file: read (4), write (2), and execute (1); the third selects permissions for other users in[m
+       the file's group, with the same values; and the fourth for other users not in the file's group, with the same values.[m
+[m
+       [1mchmod[0m never changes the permissions of symbolic links; the [1mchmod[0m system call cannot change their permissions.  This is not a  problem  since  the[m
+       permissions  of  symbolic links are never used.  However, for each symbolic link listed on the command line, [1mchmod[0m changes the permissions of the[m
+       pointed-to file.  In contrast, [1mchmod[0m ignores symbolic links encountered during recursive directory traversals.[m
+[7m Manual page chmod(1) line 1 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 2 (press h for help or q to quit)[27m[K[K[1mSETUID[0m [1mAND[0m [1mSETGID[0m [1mBITS[0m[m
+[7m Manual page chmod(1) line 3 (press h for help or q to quit)[27m[K[K       [1mchmod[0m clears the set-group-ID bit of a regular file if the file's group ID does not match the user's effective group ID or one of the user's sup‐[m
+[7m Manual page chmod(1) line 4 (press h for help or q to quit)[27m[K[K       plementary  group  IDs,  unless  the user has appropriate privileges.  Additional restrictions may cause the set-user-ID and set-group-ID bits of[m
+[7m Manual page chmod(1) line 5 (press h for help or q to quit)[27m[K[K       [4mMODE[24m or [4mRFILE[24m to be ignored.  This behavior depends on the policy and functionality of the underlying [1mchmod[0m system call.  When  in  doubt,  check[m
+[7m Manual page chmod(1) line 6 (press h for help or q to quit)[27m[K[K       the underlying system behavior.[m
+[7m Manual page chmod(1) line 7 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 8 (press h for help or q to quit)[27m[K[K       For  directories  [1mchmod[0m  preserves set-user-ID and set-group-ID bits unless you explicitly specify otherwise.  You can set or clear the bits with[m
+[7m Manual page chmod(1) line 9 (press h for help or q to quit)[27m[K[K       symbolic modes like [1mu+s[0m and [1mg-s[0m.  To clear these bits for directories with a numeric mode requires an additional leading zero, or leading =  like[m
+[7m Manual page chmod(1) line 10 (press h for help or q to quit)[27m[K[K       [1m00755[0m , or [1m=755[0m[m
+[7m Manual page chmod(1) line 11 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 12 (press h for help or q to quit)[27m[K[K[1mRESTRICTED[0m [1mDELETION[0m [1mFLAG[0m [1mOR[0m [1mSTICKY[0m [1mBIT[0m[m
+[7m Manual page chmod(1) line 13 (press h for help or q to quit)[27m[K[K       The restricted deletion flag or sticky bit is a single bit, whose interpretation depends on the file type.  For directories, it prevents unprivi‐[m
+[7m Manual page chmod(1) line 14 (press h for help or q to quit)[27m[K[K       leged users from removing or renaming a file in the directory unless they own the file or the directory; this is called the  [4mrestricted[24m  [4mdeletion[24m[m
+[7m Manual page chmod(1) line 15 (press h for help or q to quit)[27m[K[K       [4mflag[24m  for  the  directory, and is commonly found on world-writable directories like [1m/tmp[0m.  For regular files on some older systems, the bit saves[m
+[7m Manual page chmod(1) line 16 (press h for help or q to quit)[27m[K[K       the program's text image on the swap device so it will load more quickly when run; this is called the [4msticky[24m [4mbit[24m.[m
+[7m Manual page chmod(1) line 17 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 18 (press h for help or q to quit)[27m[K[K[1mOPTIONS[0m[m
+[7m Manual page chmod(1) line 19 (press h for help or q to quit)[27m[K[K       Change the mode of each FILE to MODE.  With [1m--reference[0m, change the mode of each FILE to that of RFILE.[m
+[7m Manual page chmod(1) line 20 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 21 (press h for help or q to quit)[27m[K[K       [1m-c[0m, [1m--changes[0m[m
+[7m Manual page chmod(1) line 22 (press h for help or q to quit)[27m[K[K              like verbose but report only when a change is made[m
+[7m Manual page chmod(1) line 23 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 24 (press h for help or q to quit)[27m[K[K       [1m-f[0m, [1m--silent[0m, [1m--quiet[0m[m
+[7m Manual page chmod(1) line 25 (press h for help or q to quit)[27m[K[K              suppress most error messages[m
+[7m Manual page chmod(1) line 26 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 27 (press h for help or q to quit)[27m[K[K       [1m-v[0m, [1m--verbose[0m[m
+[7m Manual page chmod(1) line 28 (press h for help or q to quit)[27m[K[K              output a diagnostic for every file processed[m
+[7m Manual page chmod(1) line 29 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page chmod(1) line 30 (press h for help or q to quit)[27m[K[K       [1m--no-preserve-root[0m[m
+[7m Manual page chmod(1) line 31 (press h for help or q to quit)[27m[K[K              do not treat '/' specially (the default)[m
+[7m Manual page chmod(1) line 32 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ chmod 100 myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ chmod 100 myfile[7Pman chmodls[K -l
+total 8
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:15 [0m[01;32mconvfile[0m
+-rwxrwxrwx 1 aryan aryan 8160 Feb  7 10:18 [01;32mlog.txt[0m
+-r-xr-xr-x 1 aryan aryan    8 Feb  2 14:24 [01;32mmyfile[0m
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:13 [01;32mmyfile2[0m
+-rwxrwxrwx 1 aryan aryan   18 Feb  2 14:24 [01;32mxaa[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxab[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxac[0m
+-rwxrwxrwx 1 aryan aryan   22 Feb  2 14:24 [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls -lchmod 100 myfile[C[1P myfile[1P myfile[1P myfileu myfile= myfiler myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ chmod u=r myfilels -l[K
+total 8
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:15 [0m[01;32mconvfile[0m
+-rwxrwxrwx 1 aryan aryan 8160 Feb  7 10:18 [01;32mlog.txt[0m
+-r-xr-xr-x 1 aryan aryan    8 Feb  2 14:24 [01;32mmyfile[0m
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:13 [01;32mmyfile2[0m
+-rwxrwxrwx 1 aryan aryan   18 Feb  2 14:24 [01;32mxaa[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxab[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxac[0m
+-rwxrwxrwx 1 aryan aryan   22 Feb  2 14:24 [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ca[K[Kexh[K[Kch [Ko "This should fail"
+This should fail
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cat >> myfile
+bash: myfile: Permission denied
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ chmod 777 myfl[Kile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ chmod 777 myfile[3Pat >>[C[C[C[C[C[C[Cecho "This should fail"ls -l[K
+total 8
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:15 [0m[01;32mconvfile[0m
+-rwxrwxrwx 1 aryan aryan 8160 Feb  7 10:18 [01;32mlog.txt[0m
+-rwxrwxrwx 1 aryan aryan    8 Feb  2 14:24 [01;32mmyfile[0m
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:13 [01;32mmyfile2[0m
+-rwxrwxrwx 1 aryan aryan   18 Feb  2 14:24 [01;32mxaa[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxab[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxac[0m
+-rwxrwxrwx 1 aryan aryan   22 Feb  2 14:24 [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man gzi[K[K[K[K[K[K[Kls -lchmod 777 myfile[3Pat >>[C[C[C[C[C[C[Cecho "This should fail"[10Pcat >> myfile
+It works now
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man gzip
+[?1049h[22;0;0t[?1h=GZIP(1)                                                          General Commands Manual                                                         GZIP(1)[m
+[m
+[1mNAME[0m[m
+       gzip, gunzip, zcat - compress or expand files[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mgzip[0m [ [1m-acdfhklLnNrtvV19[0m ] [[1m-S[0m [1msuffix[0m] [ [4mname[24m [4m...[24m  ][m
+       [1mgunzip[0m [ [1m-acfhklLnNrtvV[0m ] [[1m-S[0m [1msuffix[0m] [ [4mname[24m [4m...[24m  ][m
+       [1mzcat[0m [ [1m-fhLV[0m ] [ [4mname[24m [4m...[24m  ][m
+[m
+[1mDESCRIPTION[0m[m
+       [4mGzip[24m reduces the size of the named files using Lempel-Ziv coding (LZ77).  Whenever possible, each file is replaced by one with the extension [1m.gz[0m,[m
+       while keeping the same ownership modes, access and modification times.  (The default extension is [1mz[0m for MSDOS,  OS/2  FAT,  Windows  NT  FAT  and[m
+       Atari.)  If no files are specified, or if a file name is "-", the standard input is compressed to the standard output.  [4mGzip[24m will only attempt to[m
+       compress regular files.  In particular, it will ignore symbolic links.[m
+[m
+       If the compressed file name is too long for its file system, [4mgzip[24m truncates it.  [4mGzip[24m attempts to truncate only the parts of the file name longer[m
+       than  3  characters.   (A  part is delimited by dots.) If the name consists of small parts only, the longest parts are truncated. For example, if[m
+       file names are limited to 14 characters, gzip.msdos.exe is compressed to gzi.msd.exe.gz.  Names are not truncated on systems which do not have  a[m
+       limit on file name length.[m
+[m
+       By  default,  [4mgzip[24m  keeps the original file name and timestamp in the compressed file. These are used when decompressing the file with the [1m-N[0m op‐[m
+       tion. This is useful when the compressed file name was truncated or when the timestamp was not preserved after a file transfer.[m
+[m
+       Compressed files can be restored to their original form using [4mgzip[24m [4m-d[24m or [4mgunzip[24m or [4mzcat[24m.  If the original name saved in the  compressed  file  is[m
+       not suitable for its file system, a new name is constructed from the original one to make it legal.[m
+[m
+       [4mgunzip[24m  takes  a  list of files on its command line and replaces each file whose name ends with .gz, -gz, .z, -z, or _z (ignoring case) and which[m
+       begins with the correct magic number with an uncompressed file without the original extension.  [4mgunzip[24m also  recognizes  the  special  extensions[m
+       [1m.tgz[0m and [1m.taz[0m as shorthands for [1m.tar.gz[0m and [1m.tar.Z[0m respectively.  When compressing, [4mgzip[24m uses the [1m.tgz[0m extension if necessary instead of truncat‐[m
+       ing a file with a [1m.tar[0m extension.[m
+[m
+       [4mgunzip[24m can currently decompress files created by [4mgzip[24m, [4mzip[24m, [4mcompress[24m, [4mcompress[24m [4m-H[24m or [4mpack[24m.  The detection of the input format is automatic.  When[m
+       using the first two formats, [4mgunzip[24m checks a 32 bit CRC. For [4mpack[24m and [4mgunzip[24m checks the uncompressed length. The standard [4mcompress[24m format was not[m
+       designed to allow consistency checks. However [4mgunzip[24m is sometimes able to detect a bad .Z file. If you get an error when uncompressing a .Z file,[m
+       do not assume that the .Z file is correct simply because the standard [4muncompress[24m does not complain. This generally means that the standard [4muncom‐[24m[m
+       [4mpress[24m does not check its input, and happily generates garbage output.  The SCO compress -H format (lzh compression method) does not include a CRC[m
+       but also allows some consistency checks.[m
+[m
+[7m Manual page gzip(1) line 1 (press h for help or q to quit)[27m[K[K       Files  created  by [4mzip[24m can be uncompressed by gzip only if they have a single member compressed with the 'deflation' method. This feature is only[m
+[7m Manual page gzip(1) line 2 (press h for help or q to quit)[27m[K[K       intended to help conversion of tar.zip files to the tar.gz format.  To extract a [4mzip[24m file with  a  single  member,  use  a  command  like  [4mgunzip[24m[m
+[7m Manual page gzip(1) line 3 (press h for help or q to quit)[27m[K[K       [4m<foo.zip[24m or [4mgunzip[24m [4m-S[24m [4m.zip[24m [4mfoo.zip[24m.  To extract zip files with several members, use [4munzip[24m instead of [4mgunzip[24m.[m
+[7m Manual page gzip(1) line 4 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page gzip(1) line 5 (press h for help or q to quit)[27m[K[K       [4mzcat[24m  is identical to [4mgunzip[24m [1m-c[0m.  (On some systems, [4mzcat[24m may be installed as [4mgzcat[24m to preserve the original link to [4mcompress[24m.)  [4mzcat[24m uncompresses[m
+[7m Manual page gzip(1) line 6 (press h for help or q to quit)[27m[K[K       either a list of files on the command line or its standard input and writes the uncompressed data on standard output.  [4mzcat[24m will uncompress files[m
+[7m Manual page gzip(1) line 7 (press h for help or q to quit)[27m[K[K       that have the correct magic number whether they have a [1m.gz[0m suffix or not.[m
+[7m Manual page gzip(1) line 8 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page gzip(1) line 9 (press h for help or q to quit)[27m[K[K       [4mGzip[24m  uses the Lempel-Ziv algorithm used in [4mzip[24m and PKZIP.  The amount of compression obtained depends on the size of the input and the distribu‐[m
+[7m Manual page gzip(1) line 10 (press h for help or q to quit)[27m[K[K       tion of common substrings.  Typically, text such as source code or English is reduced by 60-70%.  Compression is generally much better than  that[m
+[7m Manual page gzip(1) line 11 (press h for help or q to quit)[27m[K[K       achieved by LZW (as used in [4mcompress[24m), Huffman coding (as used in [4mpack[24m), or adaptive Huffman coding ([4mcompact[24m).[m
+[7m Manual page gzip(1) line 12 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page gzip(1) line 13 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ gzip myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mconvfile[0m  [01;32mlog.txt[0m  [01;32mmyfile.gz[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ lsgzip myfilels[K -ll
+total 8
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:15 [0m[01;32mconvfile[0m
+-rwxrwxrwx 1 aryan aryan 8160 Feb  7 10:18 [01;32mlog.txt[0m
+-rwxrwxrwx 1 aryan aryan   48 Feb  7 10:33 [01;32mmyfile.gz[0m
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:13 [01;32mmyfile2[0m
+-rwxrwxrwx 1 aryan aryan   18 Feb  2 14:24 [01;32mxaa[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxab[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxac[0m
+-rwxrwxrwx 1 aryan aryan   22 Feb  2 14:24 [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls -ll[Kgzip myfile[K[K[K[K[K[Klog.txt
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ gzip log.txt[6Pls -ll
+total 4
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:15 [0m[01;32mconvfile[0m
+-rwxrwxrwx 1 aryan aryan 1326 Feb  7 10:18 [01;32mlog.txt.gz[0m
+-rwxrwxrwx 1 aryan aryan   48 Feb  7 10:33 [01;32mmyfile.gz[0m
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:13 [01;32mmyfile2[0m
+-rwxrwxrwx 1 aryan aryan   18 Feb  2 14:24 [01;32mxaa[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxab[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxac[0m
+-rwxrwxrwx 1 aryan aryan   22 Feb  2 14:24 [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cp log.txt.gz log.gz
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ gzip -d log.gz
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mconvfile[0m  [01;32mlog[0m  [01;32mlog.txt.gz[0m  [01;32mmyfile.gz[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ mv log log.txt
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mconvfile[0m  [01;32mlog.txt[0m  [01;32mlog.txt.gz[0m  [01;32mmyfile.gz[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ lsmv log log.txtls[Kgzip -d log.gz[6@cp log.txt.gz[C[C[C[C[C[C[Cls -ll[Kgzip log.txt[6Pls -ll
+total 12
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:15 [0m[01;32mconvfile[0m
+-rwxrwxrwx 1 aryan aryan 8160 Feb  7 10:35 [01;32mlog.txt[0m
+-rwxrwxrwx 1 aryan aryan 1326 Feb  7 10:18 [01;32mlog.txt.gz[0m
+-rwxrwxrwx 1 aryan aryan   48 Feb  7 10:33 [01;32mmyfile.gz[0m
+-rwxrwxrwx 1 aryan aryan   56 Feb  7 10:13 [01;32mmyfile2[0m
+-rwxrwxrwx 1 aryan aryan   18 Feb  2 14:24 [01;32mxaa[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxab[0m
+-rwxrwxrwx 1 aryan aryan   19 Feb  2 14:24 [01;32mxac[0m
+-rwxrwxrwx 1 aryan aryan   22 Feb  2 14:24 [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man tar
+[?1049h[22;0;0t[?1h=TAR(1)                                                               GNU TAR Manual                                                               TAR(1)[m
+[m
+[1mNAME[0m[m
+       tar - an archiving utility[m
+[m
+[1mSYNOPSIS[0m[m
+   [1mTraditional[0m [1musage[0m[m
+       [1mtar[0m {[1mA[0m|[1mc[0m|[1md[0m|[1mr[0m|[1mt[0m|[1mu[0m|[1mx[0m}[[1mGnSkUWOmpsMBiajJzZhPlRvwo[0m] [[4mARG[24m...][m
+[m
+   [1mUNIX-style[0m [1musage[0m[m
+       [1mtar[0m [1m-A[0m [[4mOPTIONS[24m] [4mARCHIVE[24m [4mARCHIVE[24m[m
+[m
+       [1mtar[0m [1m-c[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-d[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-t[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+       [1mtar[0m [1m-r[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-u[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-x[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+   [1mGNU-style[0m [1musage[0m[m
+       [1mtar[0m {[1m--catenate[0m|[1m--concatenate[0m} [[4mOPTIONS[24m] [4mARCHIVE[24m [4mARCHIVE[24m[m
+[m
+       [1mtar[0m [1m--create[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m {[1m--diff[0m|[1m--compare[0m} [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m--delete[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+       [1mtar[0m [1m--append[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m--list[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+       [1mtar[0m [1m--test-label[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mLABEL[24m...][m
+[m
+[7m Manual page tar(1) line 1 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--update[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[7m Manual page tar(1) line 2 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 3 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--update[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[7m Manual page tar(1) line 4 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 5 (press h for help or q to quit)[27m[K[K       [1mtar[0m {[1m--extract[0m|[1m--get[0m} [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[7m Manual page tar(1) line 6 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 7 (press h for help or q to quit)[27m[K[K[1mNOTE[0m[m
+[7m Manual page tar(1) line 8 (press h for help or q to quit)[27m[K[K       This  manpage  is  a short description of GNU [1mtar[0m.  For a detailed discussion, including examples and usage recommendations, refer to the [1mGNU[0m [1mTar[0m[m
+[7m Manual page tar(1) line 9 (press h for help or q to quit)[27m[K[K       [1mManual[0m available in texinfo format.  If the [1minfo[0m reader and the tar documentation are properly installed on your system, the command[m
+[7m Manual page tar(1) line 10 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 11 (press h for help or q to quit)[27m[K[K           [1minfo[0m [1mtar[0m[m
+[7m Manual page tar(1) line 12 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 13 (press h for help or q to quit)[27m[K[K       should give you access to the complete manual.[m
+[7m Manual page tar(1) line 14 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 15 (press h for help or q to quit)[27m[K[K       You can also view the manual using the info mode in [1memacs[0m(1), or find it in various formats online at[m
+[7m Manual page tar(1) line 16 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 17 (press h for help or q to quit)[27m[K[K           [1mhttp://www.gnu.org/software/tar/manual[0m[m
+[7m Manual page tar(1) line 18 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 19 (press h for help or q to quit)[27m[K[K       If any discrepancies occur between this manpage and the [1mGNU[0m [1mTar[0m [1mManual[0m, the later shall be considered the authoritative source.[m
+[7m Manual page tar(1) line 20 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 21 (press h for help or q to quit)[27m[K[K[1mDESCRIPTION[0m[m
+[7m Manual page tar(1) line 22 (press h for help or q to quit)[27m[K[K       GNU [1mtar[0m is an archiving program designed to store multiple files in a single file (an [1marchive[0m), and to manipulate such archives.  The archive can[m
+[7m Manual page tar(1) line 23 (press h for help or q to quit)[27m[K[K       be either a regular file or a device (e.g. a tape drive, hence the name of the program, which stands for [1mt[0mape [1mar[0mchiver), which can be located ei‐[m
+[7m Manual page tar(1) line 24 (press h for help or q to quit)[27m[K[K       ther on the local or on a remote machine.[m
+[7m Manual page tar(1) line 25 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 26 (press h for help or q to quit)[27m[K[K   [1mOption[0m [1mstyles[0m[m
+[7m Manual page tar(1) line 27 (press h for help or q to quit)[27m[K[K       Options to GNU [1mtar[0m can be given in three different styles.  In [1mtraditional[0m [1mstyle[0m, the first argument is a cluster of option letters and all  sub‐[m
+[7m Manual page tar(1) line 28 (press h for help or q to quit)[27m[K[K       sequent arguments supply arguments to those options that require them.  The arguments are read in the same order as the option letters.  Any com‐[m
+[7m Manual page tar(1) line 29 (press h for help or q to quit)[27m[K[K       mand line words that remain after all options has been processed are treated as non-optional arguments: file or archive member names.[m
+[7m Manual page tar(1) line 30 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 31 (press h for help or q to quit)[27m[K[K       For example, the [1mc[0m option requires creating the archive, the [1mv[0m option requests the verbose operation, and the [1mf[0m option  takes  an  argument  that[m
+[7m Manual page tar(1) line 32 (press h for help or q to quit)[27m[K[K       sets the name of the archive to operate upon.  The following command, written in the traditional style, instructs tar to store all files from the[m
+[7m Manual page tar(1) line 33 (press h for help or q to quit)[27m[K[K       directory [1m/etc[0m into the archive file [1metc.tar[0m verbosely listing the files being archived:[m
+[7m Manual page tar(1) line 34 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 35 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1mcfv[0m [1ma.tar[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 36 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 37 (press h for help or q to quit)[27m[K[K       In [1mUNIX[0m or [1mshort-option[0m [1mstyle[0m, each option letter is prefixed with a single dash, as in other command line utilities.  If an option  takes  argu‐[m
+[7m Manual page tar(1) line 38 (press h for help or q to quit)[27m[K[K       ment,  the argument follows it, either as a separate command line word, or immediately following the option.  However, if the option takes an [1mop‐[0m[m
+[7m Manual page tar(1) line 39 (press h for help or q to quit)[27m[K[K       [1mtional[0m argument, the argument must follow the option letter without any intervening whitespace, as in [1m-g/tmp/snar.db[0m.[m
+[7m Manual page tar(1) line 40 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 41 (press h for help or q to quit)[27m[K[K       Any number of options not taking arguments can be clustered together after a single dash, e.g. [1m-vkp[0m.  Options that take arguments (whether manda‐[m
+[7m Manual page tar(1) line 42 (press h for help or q to quit)[27m[K[K       tory or optional), can appear at the end of such a cluster, e.g. [1m-vkpf[0m [1ma.tar[0m.[m
+[7m Manual page tar(1) line 43 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 44 (press h for help or q to quit)[27m[K[K       The example command above written in the [1mshort-option[0m [1mstyle[0m could look like:[m
+[7m Manual page tar(1) line 45 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 46 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m-cvf[0m [1ma.tar[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 47 (press h for help or q to quit)[27m[K[K       or[m
+[7m Manual page tar(1) line 48 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m-c[0m [1m-v[0m [1m-f[0m [1ma.tar[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 49 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 50 (press h for help or q to quit)[27m[K[K       In  [1mGNU[0m  or  [1mlong-option[0m  [1mstyle[0m, each option begins with two dashes and has a meaningful name, consisting of lower-case letters and dashes.  When[m
+[7m Manual page tar(1) line 51 (press h for help or q to quit)[27m[K[K       used, the long option can be abbreviated to its initial letters, provided that this does not create ambiguity.  Arguments  to  long  options  are[m
+[7m Manual page tar(1) line 52 (press h for help or q to quit)[27m[K[K       supplied  either as a separate command line word, immediately following the option, or separated from the option by an equals sign with no inter‐[m
+[7m Manual page tar(1) line 53 (press h for help or q to quit)[27m[K[K       vening whitespace.  Optional arguments must always use the latter method.[m
+[7m Manual page tar(1) line 54 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 55 (press h for help or q to quit)[27m[K[K       Here are several ways of writing the example command in this style:[m
+[7m Manual page tar(1) line 56 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 57 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--create[0m [1m--file[0m [1ma.tar[0m [1m--verbose[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 58 (press h for help or q to quit)[27m[K[K       or (abbreviating some options):[m
+[7m Manual page tar(1) line 59 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--cre[0m [1m--file=a.tar[0m [1m--verb[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 60 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 59 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       If any discrepancies occur between this manpage and the [1mGNU[0m [1mTar[0m [1mManual[0m, the later shall be considered the authoritative source.[m
+[40;1H[K[7m Manual page tar(1) line 58 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 57 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM           [1mhttp://www.gnu.org/software/tar/manual[0m[m
+[40;1H[K[7m Manual page tar(1) line 56 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 55 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       You can also view the manual using the info mode in [1memacs[0m(1), or find it in various formats online at[m
+[40;1H[K[7m Manual page tar(1) line 54 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 53 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       should give you access to the complete manual.[m
+[40;1H[K[7m Manual page tar(1) line 52 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 51 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM           [1minfo[0m [1mtar[0m[m
+[40;1H[K[7m Manual page tar(1) line 50 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 49 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mManual[0m available in texinfo format.  If the [1minfo[0m reader and the tar documentation are properly installed on your system, the command[m
+[40;1H[K[7m Manual page tar(1) line 48 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       This  manpage  is  a short description of GNU [1mtar[0m.  For a detailed discussion, including examples and usage recommendations, refer to the [1mGNU[0m [1mTar[0m[m
+[40;1H[K[7m Manual page tar(1) line 47 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mNOTE[0m[m
+[40;1H[K[7m Manual page tar(1) line 46 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 45 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m {[1m--extract[0m|[1m--get[0m} [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[40;1H[K[7m Manual page tar(1) line 44 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 43 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m--update[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 42 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m--update[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m--test-label[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mLABEL[24m...][m
+[40;1H[K[7m Manual page tar(1) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m--list[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[40;1H[K[7m Manual page tar(1) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m--append[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m--delete[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[40;1H[K[7m Manual page tar(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m {[1m--diff[0m|[1m--compare[0m} [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m--create[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m {[1m--catenate[0m|[1m--concatenate[0m} [[4mOPTIONS[24m] [4mARCHIVE[24m [4mARCHIVE[24m[m
+[40;1H[K[7m Manual page tar(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM   [1mGNU-style[0m [1musage[0m[m
+[40;1H[K[7m Manual page tar(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m-x[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[40;1H[K[7m Manual page tar(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m-u[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m-r[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m-t[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[40;1H[K[7m Manual page tar(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m-d[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m-c[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[40;1H[K[7m Manual page tar(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m [1m-A[0m [[4mOPTIONS[24m] [4mARCHIVE[24m [4mARCHIVE[24m[m
+[40;1H[K[7m Manual page tar(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM   [1mUNIX-style[0m [1musage[0m[m
+[40;1H[K[7m Manual page tar(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtar[0m {[1mA[0m|[1mc[0m|[1md[0m|[1mr[0m|[1mt[0m|[1mu[0m|[1mx[0m}[[1mGnSkUWOmpsMBiajJzZhPlRvwo[0m] [[4mARG[24m...][m
+[40;1H[K[7m Manual page tar(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM   [1mTraditional[0m [1musage[0m[m
+[40;1H[K[7m Manual page tar(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mSYNOPSIS[0m[m
+[40;1H[K[7m Manual page tar(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       tar - an archiving utility[m
+[40;1H[K[7m Manual page tar(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mNAME[0m[m
+[40;1H[K[7m Manual page tar(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[40;1H[K[7m Manual page tar(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HMTAR(1)                                                               GNU TAR Manual                                                               TAR(1)[m
+[40;1H[K[7m Manual page tar(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page tar(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page tar(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page tar(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page tar(1) line 1 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--update[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[7m Manual page tar(1) line 2 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 3 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--update[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[7m Manual page tar(1) line 4 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 5 (press h for help or q to quit)[27m[K[K       [1mtar[0m {[1m--extract[0m|[1m--get[0m} [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[7m Manual page tar(1) line 6 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 7 (press h for help or q to quit)[27m[K[K[1mNOTE[0m[m
+[7m Manual page tar(1) line 8 (press h for help or q to quit)[27m[K[K       This  manpage  is  a short description of GNU [1mtar[0m.  For a detailed discussion, including examples and usage recommendations, refer to the [1mGNU[0m [1mTar[0m[m
+[7m Manual page tar(1) line 9 (press h for help or q to quit)[27m[K[K       [1mManual[0m available in texinfo format.  If the [1minfo[0m reader and the tar documentation are properly installed on your system, the command[m
+[7m Manual page tar(1) line 10 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 11 (press h for help or q to quit)[27m[K[K           [1minfo[0m [1mtar[0m[m
+[7m Manual page tar(1) line 12 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 13 (press h for help or q to quit)[27m[K[K       should give you access to the complete manual.[m
+[7m Manual page tar(1) line 14 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 15 (press h for help or q to quit)[27m[K[K       You can also view the manual using the info mode in [1memacs[0m(1), or find it in various formats online at[m
+[7m Manual page tar(1) line 16 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 17 (press h for help or q to quit)[27m[K[K           [1mhttp://www.gnu.org/software/tar/manual[0m[m
+[7m Manual page tar(1) line 18 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 19 (press h for help or q to quit)[27m[K[K       If any discrepancies occur between this manpage and the [1mGNU[0m [1mTar[0m [1mManual[0m, the later shall be considered the authoritative source.[m
+[7m Manual page tar(1) line 20 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 21 (press h for help or q to quit)[27m[K[K[1mDESCRIPTION[0m[m
+[7m Manual page tar(1) line 22 (press h for help or q to quit)[27m[K[K       GNU [1mtar[0m is an archiving program designed to store multiple files in a single file (an [1marchive[0m), and to manipulate such archives.  The archive can[m
+[7m Manual page tar(1) line 23 (press h for help or q to quit)[27m[K[K       be either a regular file or a device (e.g. a tape drive, hence the name of the program, which stands for [1mt[0mape [1mar[0mchiver), which can be located ei‐[m
+[7m Manual page tar(1) line 24 (press h for help or q to quit)[27m[K[K       ther on the local or on a remote machine.[m
+[7m Manual page tar(1) line 25 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 26 (press h for help or q to quit)[27m[K[K   [1mOption[0m [1mstyles[0m[m
+[7m Manual page tar(1) line 27 (press h for help or q to quit)[27m[K[K       Options to GNU [1mtar[0m can be given in three different styles.  In [1mtraditional[0m [1mstyle[0m, the first argument is a cluster of option letters and all  sub‐[m
+[7m Manual page tar(1) line 28 (press h for help or q to quit)[27m[K[K       sequent arguments supply arguments to those options that require them.  The arguments are read in the same order as the option letters.  Any com‐[m
+[7m Manual page tar(1) line 29 (press h for help or q to quit)[27m[K[K       mand line words that remain after all options has been processed are treated as non-optional arguments: file or archive member names.[m
+[7m Manual page tar(1) line 30 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 31 (press h for help or q to quit)[27m[K[K       For example, the [1mc[0m option requires creating the archive, the [1mv[0m option requests the verbose operation, and the [1mf[0m option  takes  an  argument  that[m
+[7m Manual page tar(1) line 32 (press h for help or q to quit)[27m[K[K       sets the name of the archive to operate upon.  The following command, written in the traditional style, instructs tar to store all files from the[m
+[7m Manual page tar(1) line 33 (press h for help or q to quit)[27m[K[K       directory [1m/etc[0m into the archive file [1metc.tar[0m verbosely listing the files being archived:[m
+[7m Manual page tar(1) line 34 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 35 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1mcfv[0m [1ma.tar[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 36 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 37 (press h for help or q to quit)[27m[K[K       In [1mUNIX[0m or [1mshort-option[0m [1mstyle[0m, each option letter is prefixed with a single dash, as in other command line utilities.  If an option  takes  argu‐[m
+[7m Manual page tar(1) line 38 (press h for help or q to quit)[27m[K[K       ment,  the argument follows it, either as a separate command line word, or immediately following the option.  However, if the option takes an [1mop‐[0m[m
+[7m Manual page tar(1) line 39 (press h for help or q to quit)[27m[K[K       [1mtional[0m argument, the argument must follow the option letter without any intervening whitespace, as in [1m-g/tmp/snar.db[0m.[m
+[7m Manual page tar(1) line 40 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 41 (press h for help or q to quit)[27m[K[K       Any number of options not taking arguments can be clustered together after a single dash, e.g. [1m-vkp[0m.  Options that take arguments (whether manda‐[m
+[7m Manual page tar(1) line 42 (press h for help or q to quit)[27m[K[K       tory or optional), can appear at the end of such a cluster, e.g. [1m-vkpf[0m [1ma.tar[0m.[m
+[7m Manual page tar(1) line 43 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 44 (press h for help or q to quit)[27m[K[K       The example command above written in the [1mshort-option[0m [1mstyle[0m could look like:[m
+[7m Manual page tar(1) line 45 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 46 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m-cvf[0m [1ma.tar[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 47 (press h for help or q to quit)[27m[K[K       or[m
+[7m Manual page tar(1) line 48 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m-c[0m [1m-v[0m [1m-f[0m [1ma.tar[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 49 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 50 (press h for help or q to quit)[27m[K[K       In  [1mGNU[0m  or  [1mlong-option[0m  [1mstyle[0m, each option begins with two dashes and has a meaningful name, consisting of lower-case letters and dashes.  When[m
+[7m Manual page tar(1) line 51 (press h for help or q to quit)[27m[K[K       used, the long option can be abbreviated to its initial letters, provided that this does not create ambiguity.  Arguments  to  long  options  are[m
+[7m Manual page tar(1) line 52 (press h for help or q to quit)[27m[K[K       supplied  either as a separate command line word, immediately following the option, or separated from the option by an equals sign with no inter‐[m
+[7m Manual page tar(1) line 53 (press h for help or q to quit)[27m[K[K       vening whitespace.  Optional arguments must always use the latter method.[m
+[7m Manual page tar(1) line 54 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 55 (press h for help or q to quit)[27m[K[K       Here are several ways of writing the example command in this style:[m
+[7m Manual page tar(1) line 56 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 57 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--create[0m [1m--file[0m [1ma.tar[0m [1m--verbose[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 58 (press h for help or q to quit)[27m[K[K       or (abbreviating some options):[m
+[7m Manual page tar(1) line 59 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--cre[0m [1m--file=a.tar[0m [1m--verb[0m [1m/etc[0m[m
+[7m Manual page tar(1) line 60 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 61 (press h for help or q to quit)[27m[K[K       The options in all three styles can be intermixed, although doing so with old options is not encouraged.[m
+[7m Manual page tar(1) line 62 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 63 (press h for help or q to quit)[27m[K[K   [1mOperation[0m [1mmode[0m[m
+[7m Manual page tar(1) line 64 (press h for help or q to quit)[27m[K[K       The options listed in the table below tell GNU [1mtar[0m what operation it is to perform.  Exactly one of them must be given.  Meaning of  non-optional[m
+[7m Manual page tar(1) line 65 (press h for help or q to quit)[27m[K[K       arguments depends on the operation mode requested.[m
+[7m Manual page tar(1) line 66 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 67 (press h for help or q to quit)[27m[K[K       [1m-A[0m, [1m--catenate[0m, [1m--concatenate[0m[m
+[7m Manual page tar(1) line 68 (press h for help or q to quit)[27m[K[K              Append  archive to the end of another archive.  The arguments are treated as the names of archives to append.  All archives must be of the[m
+[7m Manual page tar(1) line 69 (press h for help or q to quit)[27m[K[K              same format as the archive they are appended to, otherwise the resulting archive might be unusable with non-GNU  implementations  of  [1mtar[0m.[m
+[7m Manual page tar(1) line 70 (press h for help or q to quit)[27m[K[K              Notice also that when more than one archive is given, the members from archives other than the first one will be accessible in the result‐[m
+[7m Manual page tar(1) line 71 (press h for help or q to quit)[27m[K[K              ing archive only if using the [1m-i[0m ([1m--ignore-zeros[0m) option.[m
+[7m Manual page tar(1) line 72 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 73 (press h for help or q to quit)[27m[K[K              Compressed archives cannot be concatenated.[m
+[7m Manual page tar(1) line 74 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 75 (press h for help or q to quit)[27m[K[K       [1m-c[0m, [1m--create[0m[m
+[7m Manual page tar(1) line 76 (press h for help or q to quit)[27m[K[K              Create a new archive.  Arguments supply the names of the files to be archived.  Directories are archived recursively, unless the  [1m--no-re‐[0m[m
+[7m Manual page tar(1) line 77 (press h for help or q to quit)[27m[K[K              [1mcursion[0m option is given.[m
+[7m Manual page tar(1) line 78 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 79 (press h for help or q to quit)[27m[K[K       [1m-d[0m, [1m--diff[0m, [1m--compare[0m[m
+[7m Manual page tar(1) line 80 (press h for help or q to quit)[27m[K[K              Find  differences  between archive and file system.  The arguments are optional and specify archive members to compare.  If not given, the[m
+[7m Manual page tar(1) line 81 (press h for help or q to quit)[27m[K[K              current working directory is assumed.[m
+[7m Manual page tar(1) line 82 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page tar(1) line 83 (press h for help or q to quit)[27m[K[K       [1m--delete[0m[m
+[7m Manual page tar(1) line 84 (press h for help or q to quit)[27m[K[K              Delete from the archive.  The arguments supply names of the archive members to be removed.  At least one argument must be given.[m
+[7m Manual page tar(1) line 85 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tar -c *
+tar: Refusing to write archive contents to terminal (missing -f option?)
+tar: Error is not recoverable: exiting now
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tar -c *[Klog.txt
+tar: Refusing to write archive contents to terminal (missing -f option?)
+tar: Error is not recoverable: exiting now
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tar -c log.txt*[K[1Pman tar
+[?1049h[22;0;0t[?1h=TAR(1)                                                               GNU TAR Manual                                                               TAR(1)[m
+[m
+[1mNAME[0m[m
+       tar - an archiving utility[m
+[m
+[1mSYNOPSIS[0m[m
+   [1mTraditional[0m [1musage[0m[m
+       [1mtar[0m {[1mA[0m|[1mc[0m|[1md[0m|[1mr[0m|[1mt[0m|[1mu[0m|[1mx[0m}[[1mGnSkUWOmpsMBiajJzZhPlRvwo[0m] [[4mARG[24m...][m
+[m
+   [1mUNIX-style[0m [1musage[0m[m
+       [1mtar[0m [1m-A[0m [[4mOPTIONS[24m] [4mARCHIVE[24m [4mARCHIVE[24m[m
+[m
+       [1mtar[0m [1m-c[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-d[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-t[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+       [1mtar[0m [1m-r[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-u[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m-x[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+   [1mGNU-style[0m [1musage[0m[m
+       [1mtar[0m {[1m--catenate[0m|[1m--concatenate[0m} [[4mOPTIONS[24m] [4mARCHIVE[24m [4mARCHIVE[24m[m
+[m
+       [1mtar[0m [1m--create[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m {[1m--diff[0m|[1m--compare[0m} [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m--delete[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+       [1mtar[0m [1m--append[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[m
+       [1mtar[0m [1m--list[0m [[1m-f[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mMEMBER[24m...][m
+[m
+       [1mtar[0m [1m--test-label[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mLABEL[24m...][m
+[m
+[7m Manual page tar(1) line 1 (press h for help or q to quit)[27m[K[K       [1mtar[0m [1m--update[0m [[1m--file[0m [4mARCHIVE[24m] [[4mOPTIONS[24m] [[4mFILE[24m...][m
+[7m Manual page tar(1) line 2 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man tartar -c log.txt*[K-*f* *f*o*l*d*e*r* *
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mconvfile[0m  [01;32mfolder[0m  [01;32mlog.txt[0m  [01;32mlog.txt.gz[0m  [01;32mmyfile.gz[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ lstar -c -f folder *. *t *a *r *
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tar -c -f folder.tar * | mv folder.tar ../folder.tar
+mv: cannot stat 'folder.tar': No such file or directory
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mconvfile[0m  [01;32mfolder.tar[0m  [01;32mlog.txt[0m  [01;32mlog.txt.gz[0m  [01;32mmyfile.gz[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ lstar -c -f folder.tar * | mv folder.tar ../folder.tar'[C'../folder.tar'
+tar: folder.tar: file is the archive; not dumped
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ rm folder.tar
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ rm folder.tartar -c -f folder.tar * | mv folder.tar '../folder.tar'
+mv: cannot stat 'folder.tar': No such file or directory
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ tar -c -f folder.tar * | mv folder.tar '../folder.tar'[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ ls
+[0m[01;32mconvfile[0m  [01;32mlog.txt[0m  [01;32mlog.txt.gz[0m  [01;32mmyfile.gz[0m  [01;32mmyfile2[0m  [01;32mxaa[0m  [01;32mxab[0m  [01;32mxac[0m  [01;32mxad[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ cd ..
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ ls
+[0m[34;42mUE213020[0m  [01;32mfolder.tar[0m  [34;42mlab2[0m  [01;32mtypescript[0m  [01;32mtypescript2[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ cd lab2
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ whatis adduser
+adduser (8)          - add a user or group to the system
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ waht[K[K[Khatis useradd
+useradd (8)          - create a new user or update default new user information
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ adduser
+adduser: Only root may add a user or group to the system.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ sud[K[K[Kman adduser
+[?1049h[22;0;0t[?1h=ADDUSER(8)                                                       System Manager's Manual                                                      ADDUSER(8)[m
+[m
+[1mNAME[0m[m
+       adduser, addgroup - add a user or group to the system[m
+[m
+[1mSYNOPSIS[0m[m
+       [1madduser[0m  [options] [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID] [--firstuid ID] [--lastuid ID] [--ingroup GROUP | --gid ID] [--dis‐[m
+       abled-password] [--disabled-login] [--gecos GECOS] [--add_extra_groups] [--encrypt-home] user[m
+[m
+       [1madduser[0m --system [options] [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID] [--group | --ingroup GROUP |  --gid  ID]  [--disabled-pass‐[m
+       word] [--disabled-login] [--gecos GECOS] user[m
+[m
+       [1maddgroup[0m [options] [--gid ID] group[m
+[m
+       [1maddgroup[0m --system [options] [--gid ID] group[m
+[m
+       [1madduser[0m [options] user group[m
+[m
+   [1mCOMMON[0m [1mOPTIONS[0m[m
+       [--quiet] [--debug] [--force-badname] [--help|-h] [--version] [--conf FILE][m
+[m
+[1mDESCRIPTION[0m[m
+       [1madduser[0m  and  [1maddgroup[0m  add  users and groups to the system according to command line options and configuration information in [4m/etc/adduser.conf[24m.[m
+       They are friendlier front ends to the low level tools like [1museradd,[0m [1mgroupadd[0m and [1musermod[0m programs, by default choosing Debian  policy  conformant[m
+       UID and GID values, creating a home directory with skeletal configuration, running a custom script, and other features.  [1madduser[0m and [1maddgroup[0m can[m
+       be run in one of five modes:[m
+[m
+   [1mAdd[0m [1ma[0m [1mnormal[0m [1muser[0m[m
+       If called with one non-option argument and without the [1m--system[0m or [1m--group[0m options, [1madduser[0m will add a normal user.[m
+[m
+       [1madduser[0m will choose the first available UID from the range specified for normal users in the configuration file.  The UID can be overridden  with[m
+       the [1m--uid[0m option.[m
+[m
+       The range specified in the configuration file may be overridden with the [1m--firstuid[0m and [1m--lastuid[0m options.[m
+[m
+       By  default,  each user in Debian GNU/Linux is given a corresponding group with the same name.  Usergroups allow group writable directories to be[m
+       easily maintained by placing the appropriate users in the new group, setting the set-group-ID bit in the directory, and ensuring that  all  users[m
+       use  a  umask of 002.  If this option is turned off by setting [1mUSERGROUPS[0m to [4mno[24m, all users' GIDs are set to [1mUSERS_GID[0m.  Users' primary groups can[m
+       also be overridden from the command line with the [1m--gid[0m or [1m--ingroup[0m options to set the group by id or name, respectively.  Also,  users  can  be[m
+[7m Manual page adduser(8) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ sudo adduser newguy
+[sudo] password for aryan: 
+Adding user `newguy' ...
+Adding new group `newguy' (1002) ...
+Adding new user `newguy' (1001) with group `newguy' ...
+Creating home directory `/home/newguy' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for newguy
+Enter the new value, or press ENTER for the default
+	Full Name []: Guy
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] Y
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ su -newgyu[K[Kuy
+su: invalid option -- 'n'
+Try 'su --help' for more information.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ su -newguy newguy
+Password: 
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.15.79.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Feb  7 10:44:30 IST 2023
+
+  System load:  0.01                Processes:             13
+  Usage of /:   0.4% of 1006.85GB   Users logged in:       0
+  Memory usage: 11%                 IPv4 address for eth0: 172.22.234.101
+  Swap usage:   0%
+
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+This message is shown once a day. To disable it please create the
+/home/newguy/.hushlogin file.
+]0;newguy@LAPTOP-LQ8VM2NN: ~[01;32mnewguy@LAPTOP-LQ8VM2NN[00m:[01;34m~[00m$ whoami
+newguy
+]0;newguy@LAPTOP-LQ8VM2NN: ~[01;32mnewguy@LAPTOP-LQ8VM2NN[00m:[01;34m~[00m$ exit
+logout
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ deluser
+/usr/sbin/deluser: Only root may remove a user or group from the system.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ sudo deluser
+Enter a user name to remove: newgyu  uy
+Removing user `newguy' ...
+Warning: group `newguy' has no more members.
+Done.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ sudo deluser[5Pdelusersu - newguy
+su: user newguy does not exist
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ man ulimit
+[?1049h[22;0;0t[?1h=ULIMIT(3)                                                       Linux Programmer's Manual                                                      ULIMIT(3)[m
+[m
+[1mNAME[0m[m
+       ulimit - get and set user limits[m
+[m
+[1mSYNOPSIS[0m[m
+       [1m#include[0m [1m<ulimit.h>[0m[m
+[m
+       [1mlong[0m [1mulimit(int[0m [4mcmd[24m[1m,[0m [1mlong[0m [4mnewlimit[24m[1m);[0m[m
+[m
+[1mDESCRIPTION[0m[m
+       Warning: this routine is obsolete.  Use [1mgetrlimit[0m(2), [1msetrlimit[0m(2), and [1msysconf[0m(3) instead.  For the shell command [1mulimit[0m(), see [1mbash[0m(1).[m
+[m
+       The [1mulimit[0m() call will get or set some limit for the calling process.  The [4mcmd[24m argument can have one of the following values.[m
+[m
+       [1mUL_GETFSIZE[0m[m
+              Return the limit on the size of a file, in units of 512 bytes.[m
+[m
+       [1mUL_SETFSIZE[0m[m
+              Set the limit on the size of a file.[m
+[m
+       [1m3[0m      (Not implemented for Linux.)  Return the maximum possible address of the data segment.[m
+[m
+       [1m4[0m      (Implemented but no symbolic constant provided.)  Return the maximum number of files that the calling process can open.[m
+[m
+[1mRETURN[0m [1mVALUE[0m[m
+       On success, [1mulimit[0m() returns a nonnegative value.  On error, -1 is returned, and [4merrno[24m is set appropriately.[m
+[m
+[1mERRORS[0m[m
+       [1mEPERM[0m  An unprivileged process tried to increase a limit.[m
+[m
+[1mATTRIBUTES[0m[m
+       For an explanation of the terms used in this section, see [1mattributes[0m(7).[m
+[m
+       ┌──────────┬───────────────┬─────────┐[m
+       │[1mInterface[0m │ [1mAttribute[0m     │ [1mValue[0m   │[m
+       ├──────────┼───────────────┼─────────┤[m
+       │[1mulimit[0m()  │ Thread safety │ MT-Safe │[m
+       └──────────┴───────────────┴─────────┘[m
+[7m Manual page ulimit(3) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab2[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab2[00m$ exit
+
+Script done on 2023-02-07 10:46:36+05:30 [COMMAND_EXIT_CODE="0"]

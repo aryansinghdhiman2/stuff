@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+//Complete the following function.
+
+
+void calculate_the_maximum(int n, int k) {
+  //Write your code here.
+  int temp;
+  int i=1,j=2,m,and[50],f=0;
+  int or[50],xor[50],count=0,count2=0;
+  for(;i<=n;i++)
+  {
+      for(;j<=n;j++)
+      {
+          m=(i&j);
+          if(m<k)
+          {
+              and[f]=m;
+              f++;
+          }
+          m=(i|j);
+          if(m<k)
+          {
+              or[count]=m;
+              count++;
+          }
+          m=(i^j);
+          if(m<k)
+          {
+              xor[count2]=m;
+              count2++;
+          }
+      }
+      j=i+2;
+  }
+  for(i=0;i<f-1;i++)
+  {
+      if((and[i]>and[i+1]))
+      {
+          temp=and[i];
+          and[i]=and[i+1];
+          and[i+1]=temp;
+          i=-1;
+      }
+  }
+  for(i=0;i<count-1;i++)
+  {
+      if((or[i]>or[i+1]))
+      {
+          temp=or[i];
+          or[i]=or[i+1];
+          or[i+1]=temp;
+          i=-1;
+      }
+  }
+  for(i=0;i<count2-1;i++)
+  {
+      if((xor[i]>xor[i+1]))
+      {
+          temp=xor[i];
+          xor[i]=xor[i+1];
+          xor[i+1]=temp;
+          i=-1;
+      }
+  }
+  printf("%d\n",and[f-1]);
+  printf("%d\n",or[count-1]);
+  printf("%d\n",xor[count2-1]);
+}
+
+int main() {
+    int n, k;
+  
+    scanf("%d %d", &n, &k);
+    calculate_the_maximum(n, k);
+ 
+    return 0;
+}

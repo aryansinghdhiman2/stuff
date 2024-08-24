@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>
+        Validate
+    </title>
+</head>
+
+<body>
+    <h3>Enter Data</h3>
+    <form id="myform">
+        <label for="num">Enter Number</label><br>
+        <input type="text" id="num" name="num"><br>
+        <label for="str">Enter String</label><br>
+        <input type="text" id="str" name="str"><br><br>
+        <input type="submit" value="Validate">
+    </form>
+    <div id="div1"></div>
+</body>
+<script>
+    document.addEventListener('submit', (event) => {
+        event.preventDefault()
+        holder=document.getElementById('holder')
+        if(holder!=null){
+            holder.remove()
+        }
+        err=false
+        number=parseInt(document.forms['myform']['num'].value)
+        if(Number.isNaN(number)){
+            alert('Number Not a Number')
+            err=true
+        }
+        stri=document.forms['myform']['str'].value
+        if(stri===''){
+            alert("String is Empty")
+            err=true
+        }
+        if(!err){
+            holder=document.createElement('p')
+            holder.id='holder'
+            success=document.createTextNode('Correct Form')
+            holder.append(success)
+            holderDiv=document.getElementById('div1')
+            holderDiv.append(holder)
+        }
+    })
+</script>
+
+</html>

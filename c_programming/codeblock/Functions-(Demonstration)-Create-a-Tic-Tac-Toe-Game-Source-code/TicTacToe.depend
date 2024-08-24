@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1510949670 source:c:\users\licar\desktop\aryan programming\codeblock\functions-(demonstration)-create-a-tic-tac-toe-game-source-code\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1640863386 source:c:\users\licar\desktop\aryan programming\sync\codeblock\functions-(demonstration)-create-a-tic-tac-toe-game-source-code\main.c
+	<stdio.h>
+	<stdlib.h>
+	"conio.h"
+

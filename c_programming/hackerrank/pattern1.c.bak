@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+
+    int n;
+    scanf("%d", &n);
+  	// Complete the code to print the pattern.
+      int numberOfRows=(2*n-1);
+      int i,j,count,temp=1;
+      for(i=0;i<numberOfRows;i++)
+      {
+          for(j=n,count=0,temp=1;count<numberOfRows;count++)
+          {
+              if(count<i)
+              {
+                  printf("%d ",j);
+                  j=j-temp;
+              }
+              else if(count>=(numberOfRows-i))
+              {
+                  j=j-temp;
+                  printf("%d ",j);
+              }
+              else {
+              printf("%d ",j);
+              }
+              if(count==n)
+              {
+                  temp=-temp;
+              }
+          }
+          printf("\n");
+      }
+      
+    return 0;
+}

@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE LINEAR_SEARCH(INPUT IN NUM_VARRAY,TO_FIND IN NUMBER,RES OUT NUMBER) AS
+    I NUMBER;
+BEGIN
+    FOR I IN 1 .. INPUT.COUNT LOOP
+        IF TO_FIND = INPUT(I)
+            THEN 
+                RES := I;
+                EXIT;
+        ELSE
+            RES := -1;
+        END IF;
+    END LOOP;
+END LINEAR_SEARCH;

@@ -1,0 +1,13 @@
+DECLARE
+    INP VARCHAR2(10);
+    REV VARCHAR2(10);
+BEGIN
+    INP := '&INP';
+    REV := UTL_RAW.CAST_TO_VARCHAR2( UTL_RAW.REVERSE( UTL_RAW.CAST_TO_RAW(INP)));
+
+    IF INP = REV THEN DBMS_OUTPUT.PUT_LINE('String is Palindrome');
+    ELSE DBMS_OUTPUT.PUT_LINE('String is NOT Palindrome');
+    END IF;
+END;
+        
+

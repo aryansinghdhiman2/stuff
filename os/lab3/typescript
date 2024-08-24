@@ -1,0 +1,167 @@
+Script started on 2023-02-14 12:00:38+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="40"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ top
+[?1h=[?25l[H[2J(B[mtop - 12:00:40 up  1:23,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+Tasks:(B[m[39;49m[1m  11 (B[m[39;49mtotal,(B[m[39;49m[1m   1 (B[m[39;49mrunning,(B[m[39;49m[1m  10 (B[m[39;49msleeping,(B[m[39;49m[1m   0 (B[m[39;49mstopped,(B[m[39;49m[1m   0 (B[m[39;49mzombie(B[m[39;49m(B[m[39;49m[K
+%Cpu(s):(B[m[39;49m[1m  0.0 (B[m[39;49mus,(B[m[39;49m[1m  0.0 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m100.0 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+MiB Mem :(B[m[39;49m[1m   2880.0 (B[m[39;49mtotal,(B[m[39;49m[1m   2233.9 (B[m[39;49mfree,(B[m[39;49m[1m    299.5 (B[m[39;49mused,(B[m[39;49m[1m    346.6 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+MiB Swap:(B[m[39;49m[1m   1024.0 (B[m[39;49mtotal,(B[m[39;49m[1m   1024.0 (B[m[39;49mfree,(B[m[39;49m[1m      0.0 (B[m[39;49mused.(B[m[39;49m[1m   2426.7 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+[7m  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                (B[m[39;49m[K
+(B[m    1 root      20   0    2280   1740   1636 S   0.0   0.1   0:00.02 init                                                                                   (B[m[39;49m[K
+(B[m    4 root      20   0    2276      4      0 S   0.0   0.0   0:00.00 init                                                                                   (B[m[39;49m[K
+(B[m    8 root      20   0    2300    108      0 S   0.0   0.0   0:00.42 init                                                                                   (B[m[39;49m[K
+(B[m  178 root      20   0    8544   2452   2176 S   0.0   0.1   0:00.01 cron                                                                                   (B[m[39;49m[K
+(B[m 1094 daemon    20   0    3800   1608   1416 S   0.0   0.1   0:00.00 atd                                                                                    (B[m[39;49m[K
+(B[m 1468 root      20   0    2284    104      0 S   0.0   0.0   0:00.00 init                                                                                   (B[m[39;49m[K
+(B[m 1469 root      20   0    2300    108      0 S   0.0   0.0   0:00.07 init                                                                                   (B[m[39;49m[K
+(B[m 1470 aryan     20   0   10172   5068   3292 S   0.0   0.2   0:00.09 bash                                                                                   (B[m[39;49m[K
+(B[m 1545 aryan     20   0    7360   2228   2088 S   0.0   0.1   0:00.00 script                                                                                 (B[m[39;49m[K
+(B[m 1546 aryan     20   0   10004   5000   3348 S   0.0   0.2   0:00.01 bash                                                                                   (B[m[39;49m[K
+(B[m[1m 1552 aryan     20   0   10892   3728   3196 R   0.0   0.1   0:00.00 top                                                                                    (B[m[39;49m[K
+[J[H(B[mtop - 12:00:43 up  1:23,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+
+
+
+
+[K
+
+
+
+
+
+
+
+
+
+
+
+
+[J[H(B[mtop - 12:00:46 up  1:23,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+
+
+
+
+[K
+
+
+
+
+
+
+
+
+
+
+
+
+[J[H(B[mtop - 12:00:49 up  1:23,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+
+%Cpu(s):(B[m[39;49m[1m  0.0 (B[m[39;49mus,(B[m[39;49m[1m  0.1 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m 99.9 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+
+
+[K
+
+
+
+
+
+
+
+
+
+
+
+
+[J[H(B[mtop - 12:00:52 up  1:23,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+
+%Cpu(s):(B[m[39;49m[1m  0.0 (B[m[39;49mus,(B[m[39;49m[1m  0.0 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m100.0 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+
+
+[K
+
+
+
+
+
+
+
+
+
+
+
+
+[J[H(B[mtop - 12:00:55 up  1:23,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+
+
+
+
+[K
+
+
+
+
+
+
+
+
+
+
+
+
+[J[?1l>[41;1H
+[?12l[?25h[K]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nice --adjustment /usr/bin/bash
+nice: invalid adjustment ‘/usr/bin/bash’
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ nice --adjustment /usr/bin/bash= /usr/bin/bash- /usr/bin/bash1 /usr/bin/bash7 /usr/bin/bash
+nice: cannot set niceness: Permission denied
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ crontab -rlcommandsexec-l[Kr[K nice --adjustment=-17 /usr/bin/bash[C[1P[1@s[1@u[1@d[1@o[1@ 
+[sudo] password for aryan: 
+]0;root@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3root@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3# top
+[?1h=[?25l[H[2J(B[mtop - 12:02:59 up  1:25,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+Tasks:(B[m[39;49m[1m  14 (B[m[39;49mtotal,(B[m[39;49m[1m   1 (B[m[39;49mrunning,(B[m[39;49m[1m  13 (B[m[39;49msleeping,(B[m[39;49m[1m   0 (B[m[39;49mstopped,(B[m[39;49m[1m   0 (B[m[39;49mzombie(B[m[39;49m(B[m[39;49m[K
+%Cpu(s):(B[m[39;49m[1m  0.0 (B[m[39;49mus,(B[m[39;49m[1m  0.0 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m100.0 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+MiB Mem :(B[m[39;49m[1m   2880.0 (B[m[39;49mtotal,(B[m[39;49m[1m   2229.4 (B[m[39;49mfree,(B[m[39;49m[1m    303.9 (B[m[39;49mused,(B[m[39;49m[1m    346.7 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+MiB Swap:(B[m[39;49m[1m   1024.0 (B[m[39;49mtotal,(B[m[39;49m[1m   1024.0 (B[m[39;49mfree,(B[m[39;49m[1m      0.0 (B[m[39;49mused.(B[m[39;49m[1m   2422.3 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+[7m  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                (B[m[39;49m[K
+(B[m    1 root      20   0    2280   1740   1636 S   0.0   0.1   0:00.02 init                                                                                   (B[m[39;49m[K
+(B[m    4 root      20   0    2276      4      0 S   0.0   0.0   0:00.00 init                                                                                   (B[m[39;49m[K
+(B[m    8 root      20   0    2300    108      0 S   0.0   0.0   0:00.42 init                                                                                   (B[m[39;49m[K
+(B[m  178 root      20   0    8544   2452   2176 S   0.0   0.1   0:00.01 cron                                                                                   (B[m[39;49m[K
+(B[m 1094 daemon    20   0    3800   1608   1416 S   0.0   0.1   0:00.00 atd                                                                                    (B[m[39;49m[K
+(B[m 1468 root      20   0    2284    104      0 S   0.0   0.0   0:00.00 init                                                                                   (B[m[39;49m[K
+(B[m 1469 root      20   0    2300    108      0 S   0.0   0.0   0:00.09 init                                                                                   (B[m[39;49m[K
+(B[m 1470 aryan     20   0   10172   5068   3292 S   0.0   0.2   0:00.09 bash                                                                                   (B[m[39;49m[K
+(B[m 1545 aryan     20   0    7360   2228   2088 S   0.0   0.1   0:00.01 script                                                                                 (B[m[39;49m[K
+(B[m 1546 aryan     20   0   10004   5044   3348 S   0.0   0.2   0:00.02 bash                                                                                   (B[m[39;49m[K
+(B[m 1554 aryan     20   0   10004   5032   3380 S   0.0   0.2   0:00.02 bash                                                                                   (B[m[39;49m[K
+(B[m 1560 root      20   0   11088   4532   3828 S   0.0   0.2   0:00.01 sudo                                                                                   (B[m[39;49m[K
+(B[m 1561 root       3 -17    8964   3836   3300 S   0.0   0.1   0:00.01 bash                                                                                   (B[m[39;49m[K
+(B[m[1m 1568 root       3 -17   10892   3732   3196 R   0.0   0.1   0:00.00 top                                                                                    (B[m[39;49m[K
+[J[H(B[mtop - 12:03:02 up  1:25,  0 users,  load average: 0.00, 0.00, 0.00(B[m[39;49m(B[m[39;49m[K
+
+%Cpu(s):(B[m[39;49m[1m  0.0 (B[m[39;49mus,(B[m[39;49m[1m  0.1 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m 99.9 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+MiB Mem :(B[m[39;49m[1m   2880.0 (B[m[39;49mtotal,(B[m[39;49m[1m   2229.2 (B[m[39;49mfree,(B[m[39;49m[1m    304.1 (B[m[39;49mused,(B[m[39;49m[1m    346.7 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+MiB Swap:(B[m[39;49m[1m   1024.0 (B[m[39;49mtotal,(B[m[39;49m[1m   1024.0 (B[m[39;49mfree,(B[m[39;49m[1m      0.0 (B[m[39;49mused.(B[m[39;49m[1m   2422.0 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+
+(B[m 1545 aryan     20   0    7360   2228   2088 S   0.3   0.1   0:00.02 script                                                                                 (B[m[39;49m[K
+(B[m    1 root      20   0    2280   1740   1636 S   0.0   0.1   0:00.02 init                                                                                   (B[m[39;49m[K
+(B[m    4 root      20   0    2276      4      0 S   0.0   0.0   0:00.00 init                                                                                   (B[m[39;49m[K
+(B[m    8 root      20   0    2300    108      0 S   0.0   0.0   0:00.42 init                                                                                   (B[m[39;49m[K
+(B[m  178 root      20   0    8544   2452   2176 S   0.0   0.1   0:00.01 cron                                                                                   (B[m[39;49m[K
+(B[m 1094 daemon    20   0    3800   1608   1416 S   0.0   0.1   0:00.00 atd                                                                                    (B[m[39;49m[K
+(B[m 1468 root      20   0    2284    104      0 S   0.0   0.0   0:00.00 init                                                                                   (B[m[39;49m[K
+(B[m 1469 root      20   0    2300    108      0 S   0.0   0.0   0:00.09 init                                                                                   (B[m[39;49m[K
+(B[m 1470 aryan     20   0   10172   5068   3292 S   0.0   0.2   0:00.09 bash                                                                                   (B[m[39;49m[K
+
+
+
+
+
+[J[?1l>[41;1H
+[?12l[?25h[K]0;root@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3root@LAPTOP-LQ8VM2NN:/mnt/e/Programming/os/lab3# exit
+exit
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ exit
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ exit
+
+Script done on 2023-02-14 12:03:12+05:30 [COMMAND_EXIT_CODE="0"]

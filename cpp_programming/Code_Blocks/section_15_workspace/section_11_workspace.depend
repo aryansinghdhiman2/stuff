@@ -1,0 +1,82 @@
+# depslib dependency file v1.0
+1648909181 source:e:\programming\c++ programming\code blocks\section_11_workspace\account.cpp
+	"Account.h"
+
+1648909181 e:\programming\c++ programming\code blocks\section_11_workspace\account.h
+	<iostream>
+	<string>
+
+1648912293 source:e:\programming\c++ programming\code blocks\section_11_workspace\account_util.cpp
+	<iostream>
+	"Account_Util.h"
+
+1648912540 e:\programming\c++ programming\code blocks\section_11_workspace\account_util.h
+	<vector>
+	"Account.h"
+	"Savings_Account.h"
+	"Checking.h"
+
+1648909182 e:\programming\c++ programming\code blocks\section_11_workspace\savings_account.h
+	"Account.h"
+
+1648913493 e:\programming\c++ programming\code blocks\section_11_workspace\checking.h
+	"Account.h"
+
+1648913607 source:e:\programming\c++ programming\code blocks\section_11_workspace\checking.cpp
+	"Checking.h"
+
+1648909182 source:e:\programming\c++ programming\code blocks\section_11_workspace\savings_account.cpp
+	"Savings_Account.h"
+
+1648969221 source:e:\programming\c++ programming\code blocks\section_11_workspace\section_15_workspace.cpp
+	<iostream>
+	<vector>
+	"Account.h"
+	"Checking.h"
+	"Account_Util.h"
+
+1648909181 source:e:\programming\c++ programming\code blocks\section_15_workspace\account.cpp
+	"Account.h"
+
+1648909181 e:\programming\c++ programming\code blocks\section_15_workspace\account.h
+	<iostream>
+	<string>
+
+1648973865 source:e:\programming\c++ programming\code blocks\section_15_workspace\account_util.cpp
+	<iostream>
+	"Account_Util.h"
+
+1648973358 e:\programming\c++ programming\code blocks\section_15_workspace\account_util.h
+	<vector>
+	"Account.h"
+	"Savings_Account.h"
+	"Checking.h"
+	"Trust_Account.h"
+
+1648909182 e:\programming\c++ programming\code blocks\section_15_workspace\savings_account.h
+	"Account.h"
+
+1648984428 e:\programming\c++ programming\code blocks\section_15_workspace\checking.h
+	"Account.h"
+
+1648984428 source:e:\programming\c++ programming\code blocks\section_15_workspace\checking.cpp
+	"Checking.h"
+
+1648909182 source:e:\programming\c++ programming\code blocks\section_15_workspace\savings_account.cpp
+	"Savings_Account.h"
+
+1648985002 source:e:\programming\c++ programming\code blocks\section_15_workspace\section_15_workspace.cpp
+	<iostream>
+	<vector>
+	"Account.h"
+	"Savings_Account.h"
+	"Checking.h"
+	"Trust_Account.h"
+	"Account_Util.h"
+
+1648973637 e:\programming\c++ programming\code blocks\section_15_workspace\include\trust_account.h
+	"../Savings_Account.h"
+
+1648974426 source:e:\programming\c++ programming\code blocks\section_15_workspace\src\trust_account.cpp
+	"Trust_Account.h"
+

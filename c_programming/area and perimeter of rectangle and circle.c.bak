@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float const pi=3.14159;
+    float area,perimeter,width,height,radius;
+
+    printf("Enter width\n");
+    scanf("%f", &width);
+    printf("Enter height\n");
+    scanf("%f", &height);
+    printf("Enter radius\n");
+    scanf("%f",&radius);
+
+    area= width*height;
+    perimeter= 2*(width+height);
+
+    printf("Area of rectangle is %.2f\n", area);
+    printf("Perimeter of rectangle is %.2f\n\n", perimeter);
+    
+    area=pi*radius*radius;
+    perimeter=2*pi*radius;
+    
+    printf("Area of circle is %f\n", area);
+    printf("Perimeter of circle is %f\n", perimeter);
+    return 0;
+}

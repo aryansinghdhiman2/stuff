@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1648049177 source:c:\users\licar\desktop\aryan programming\c++ programming\section_13(movie)\main.cpp
+	<iostream>
+	"movie.h"
+	"movies.h"
+
+1648049147 source:c:\users\licar\desktop\aryan programming\c++ programming\section_13(movie)\src\movie.cpp
+	"movie.h"
+	<iostream>
+
+1648049116 c:\users\licar\desktop\aryan programming\c++ programming\section_13(movie)\include\movie.h
+	<string>
+
+1648049194 source:c:\users\licar\desktop\aryan programming\c++ programming\section_13(movie)\src\movies.cpp
+	"movies.h"
+	<iostream>
+
+1648049159 c:\users\licar\desktop\aryan programming\c++ programming\section_13(movie)\include\movies.h
+	<vector>
+	"movie.h"
+

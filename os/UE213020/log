@@ -1,0 +1,1261 @@
+Script started on 2023-01-24 09:42:55+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="100" LINES="39"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ man script
+[?1049h[22;0;0t[?1h=SCRIPT(1)                                 User Commands                                 SCRIPT(1)[m
+[m
+[1mNAME[0m[m
+       script - make typescript of terminal session[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mscript[0m [options] [[4mfile[24m][m
+[m
+[1mDESCRIPTION[0m[m
+       [1mscript[0m makes a typescript of everything displayed on your terminal.  It is useful for stu‐[m
+       dents who need a hardcopy record of an interactive session as proof of an  assignment,  as[m
+       the typescript file can be printed out later with [1mlpr[0m(1).[m
+[m
+       If  the argument [4mfile[24m is given, [1mscript[0m saves the dialogue in this [4mfile[24m.  If no filename is[m
+       given, the dialogue is saved in the file [1mtypescript[0m.[m
+[m
+[1mOPTIONS[0m[m
+       Below, the [4msize[24m argument may be followed by the multiplicative suffixes KiB  (=1024),  MiB[m
+       (=1024*1024),  and  so  on for GiB, TiB, PiB, EiB, ZiB and YiB (the "iB" is optional, e.g.[m
+       "K" has the same meaning as "KiB"), or the suffixes KB (=1000), MB (=1000*1000), and so on[m
+       for GB, TB, PB, EB, ZB and YB.[m
+[m
+       [1m-a[0m, [1m--append[0m[m
+              Append the output to [4mfile[24m or to [1mtypescript[0m, retaining the prior contents.[m
+[m
+       [1m-c[0m, [1m--command[0m [4mcommand[24m[m
+              Run  the [4mcommand[24m rather than an interactive shell.  This makes it easy for a script[m
+              to capture the output of a program that behaves differently when its stdout is  not[m
+              a tty.[m
+[m
+       [1m-e[0m, [1m--return[0m[m
+              Return  the  exit code of the child process.  Uses the same format as bash termina‐[m
+              tion on signal termination exit code is 128+n.  The exit code of the child  process[m
+              is always stored in type script file too.[m
+[m
+       [1m-f[0m, [1m--flush[0m[m
+              Flush  output  after each write.  This is nice for telecooperation: one person does[m
+              `mkfifo foo; script -f foo', and another can supervise real-time what is being done[m
+[7m Manual page script(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ echo "First Session"
+First Session
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ man echo
+[?1049h[22;0;0t[?1h=ECHO(1)                                   User Commands                                   ECHO(1)[m
+[m
+[1mNAME[0m[m
+       echo - display a line of text[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mecho[0m [[4mSHORT-OPTION[24m]... [[4mSTRING[24m]...[m
+       [1mecho[0m [4mLONG-OPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Echo the STRING(s) to standard output.[m
+[m
+       [1m-n[0m     do not output the trailing newline[m
+[m
+       [1m-e[0m     enable interpretation of backslash escapes[m
+[m
+       [1m-E[0m     disable interpretation of backslash escapes (default)[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       If [1m-e[0m is in effect, the following sequences are recognized:[m
+[m
+       \\     backslash[m
+[m
+       \a     alert (BEL)[m
+[m
+       \b     backspace[m
+[m
+       \c     produce no further output[m
+[m
+       \e     escape[m
+[m
+       \f     form feed[m
+[m
+       \n     new line[m
+[7m Manual page echo(1) line 1 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 2 (press h for help or q to quit)[27m[K[K       \r     carriage return[m
+[7m Manual page echo(1) line 3 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 4 (press h for help or q to quit)[27m[K[K       \t     horizontal tab[m
+[7m Manual page echo(1) line 5 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 6 (press h for help or q to quit)[27m[K[K       \v     vertical tab[m
+[7m Manual page echo(1) line 7 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 8 (press h for help or q to quit)[27m[K[K       \0NNN  byte with octal value NNN (1 to 3 digits)[m
+[7m Manual page echo(1) line 9 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 10 (press h for help or q to quit)[27m[K[K       \xHH   byte with hexadecimal value HH (1 to 2 digits)[m
+[7m Manual page echo(1) line 11 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 12 (press h for help or q to quit)[27m[K[K       NOTE:  your  shell  may have its own version of echo, which usually supersedes the version[m
+[7m Manual page echo(1) line 13 (press h for help or q to quit)[27m[K[K       described here.  Please refer to your shell's documentation for details about the  options[m
+[7m Manual page echo(1) line 14 (press h for help or q to quit)[27m[K[K       it supports.[m
+[7m Manual page echo(1) line 15 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 16 (press h for help or q to quit)[27m[K[K[1mAUTHOR[0m[m
+[7m Manual page echo(1) line 17 (press h for help or q to quit)[27m[K[K       Written by Brian Fox and Chet Ramey.[m
+[7m Manual page echo(1) line 18 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 19 (press h for help or q to quit)[27m[K[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page echo(1) line 20 (press h for help or q to quit)[27m[K[K       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page echo(1) line 21 (press h for help or q to quit)[27m[K[K       Report echo translation bugs to <https://translationproject.org/team/>[m
+[7m Manual page echo(1) line 22 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 23 (press h for help or q to quit)[27m[K[K[1mCOPYRIGHT[0m[m
+[7m Manual page echo(1) line 24 (press h for help or q to quit)[27m[K[K       Copyright  ©  2018  Free  Software  Foundation, Inc.  License GPLv3+: GNU GPL version 3 or[m
+[7m Manual page echo(1) line 25 (press h for help or q to quit)[27m[K[K       later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page echo(1) line 26 (press h for help or q to quit)[27m[K[K       This is free software: you are free to change and redistribute it.  There is NO  WARRANTY,[m
+[7m Manual page echo(1) line 27 (press h for help or q to quit)[27m[K[K       to the extent permitted by law.[m
+[7m Manual page echo(1) line 28 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 29 (press h for help or q to quit)[27m[K[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page echo(1) line 30 (press h for help or q to quit)[27m[K[K       Full documentation at: <https://www.gnu.org/software/coreutils/echo>[m
+[7m Manual page echo(1) line 31 (press h for help or q to quit)[27m[K[K       or available locally via: info '(coreutils) echo invocation'[m
+[7m Manual page echo(1) line 32 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 33 (press h for help or q to quit)[27m[K[KGNU coreutils 8.30                        September 2019                                  ECHO(1)[m
+[7m Manual page echo(1) line 34 (press h for help or q to quit)[27m[K[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 33/71 96% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       \c     produce no further output[m
+[39;1H[K[7m Manual page echo(1) line 32/71 96% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 31/71 93% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       \b     backspace[m
+[39;1H[K[7m Manual page echo(1) line 30/71 89% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 29/71 88% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       \a     alert (BEL)[m
+[39;1H[K[7m Manual page echo(1) line 28/71 88% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 27/71 86% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       \\     backslash[m
+[39;1H[K[7m Manual page echo(1) line 26/71 82% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 25/71 80% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       If [1m-e[0m is in effect, the following sequences are recognized:[m
+[39;1H[K[7m Manual page echo(1) line 24/71 75% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 23/71 74% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM              output version information and exit[m
+[39;1H[K[7m Manual page echo(1) line 22/71 74% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m--version[0m[m
+[39;1H[K[7m Manual page echo(1) line 21/71 71% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 20/71 67% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m--help[0m display this help and exit[m
+[39;1H[K[7m Manual page echo(1) line 19/71 66% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 18/71 65% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-E[0m     disable interpretation of backslash escapes (default)[m
+[39;1H[K[7m Manual page echo(1) line 17/71 64% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 16/71 63% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-e[0m     enable interpretation of backslash escapes[m
+[39;1H[K[7m Manual page echo(1) line 15/71 63% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 14/71 62% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-n[0m     do not output the trailing newline[m
+[39;1H[K[7m Manual page echo(1) line 13/71 57% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 12/71 53% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       Echo the STRING(s) to standard output.[m
+[39;1H[K[7m Manual page echo(1) line 11/71 53% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mDESCRIPTION[0m[m
+[39;1H[K[7m Manual page echo(1) line 10/71 50% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 9/71 50% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mecho[0m [4mLONG-OPTION[24m[m
+[39;1H[K[7m Manual page echo(1) line 8/71 48% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mecho[0m [[4mSHORT-OPTION[24m]... [[4mSTRING[24m]...[m
+[39;1H[K[7m Manual page echo(1) line 7/71 48% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mSYNOPSIS[0m[m
+[39;1H[K[7m Manual page echo(1) line 6/71 47% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[39;1H[K[7m Manual page echo(1) line 5/71 46% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 6/71 47% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       \v     vertical tab[m
+[7m Manual page echo(1) line 7/71 48% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 8/71 48% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       \0NNN  byte with octal value NNN (1 to 3 digits)[m
+[7m Manual page echo(1) line 9/71 50% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 10/71 50% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       \xHH   byte with hexadecimal value HH (1 to 2 digits)[m
+[7m Manual page echo(1) line 11/71 53% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 12/71 53% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       NOTE:  your  shell  may have its own version of echo, which usually supersedes the version[m
+[7m Manual page echo(1) line 13/71 57% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       described here.  Please refer to your shell's documentation for details about the  options[m
+[7m Manual page echo(1) line 14/71 62% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       it supports.[m
+[7m Manual page echo(1) line 15/71 63% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 16/71 63% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mAUTHOR[0m[m
+[7m Manual page echo(1) line 17/71 64% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Written by Brian Fox and Chet Ramey.[m
+[7m Manual page echo(1) line 18/71 65% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 19/71 66% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page echo(1) line 20/71 67% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page echo(1) line 21/71 71% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Report echo translation bugs to <https://translationproject.org/team/>[m
+[7m Manual page echo(1) line 22/71 74% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 23/71 74% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOPYRIGHT[0m[m
+[7m Manual page echo(1) line 24/71 75% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Copyright  ©  2018  Free  Software  Foundation, Inc.  License GPLv3+: GNU GPL version 3 or[m
+[7m Manual page echo(1) line 25/71 80% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page echo(1) line 26/71 82% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This is free software: you are free to change and redistribute it.  There is NO  WARRANTY,[m
+[7m Manual page echo(1) line 27/71 86% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       to the extent permitted by law.[m
+[7m Manual page echo(1) line 28/71 88% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 29/71 88% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page echo(1) line 30/71 89% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Full documentation at: <https://www.gnu.org/software/coreutils/echo>[m
+[7m Manual page echo(1) line 31/71 93% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       or available locally via: info '(coreutils) echo invocation'[m
+[7m Manual page echo(1) line 32/71 96% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page echo(1) line 33/71 96% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[KGNU coreutils 8.30                        September 2019                                  ECHO(1)[m
+[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page echo(1) line 34/71 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ man echoecho "First Session"[K'[2@^?[2P[C[1P[1@'
+First Session
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ echo 'First Session'[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K~cat
+~cat
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ echo ~cat'~cat[C[C[C[C'
+~cat
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ echo '~cat'[2P~cat'First Session'[12Pman echo
+[?1049h[22;0;0t[?1h=ECHO(1)                                   User Commands                                   ECHO(1)[m
+[m
+[1mNAME[0m[m
+       echo - display a line of text[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mecho[0m [[4mSHORT-OPTION[24m]... [[4mSTRING[24m]...[m
+       [1mecho[0m [4mLONG-OPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Echo the STRING(s) to standard output.[m
+[m
+       [1m-n[0m     do not output the trailing newline[m
+[m
+       [1m-e[0m     enable interpretation of backslash escapes[m
+[m
+       [1m-E[0m     disable interpretation of backslash escapes (default)[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       If [1m-e[0m is in effect, the following sequences are recognized:[m
+[m
+       \\     backslash[m
+[m
+       \a     alert (BEL)[m
+[m
+       \b     backspace[m
+[m
+       \c     produce no further output[m
+[m
+       \e     escape[m
+[m
+       \f     form feed[m
+[m
+       \n     new line[m
+[7m Manual page echo(1) line 1 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 2 (press h for help or q to quit)[27m[K[K       \r     carriage return[m
+[7m Manual page echo(1) line 3 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 4 (press h for help or q to quit)[27m[K[K       \t     horizontal tab[m
+[7m Manual page echo(1) line 5 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 6 (press h for help or q to quit)[27m[K[K       \v     vertical tab[m
+[7m Manual page echo(1) line 7 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 8 (press h for help or q to quit)[27m[K[K       \0NNN  byte with octal value NNN (1 to 3 digits)[m
+[7m Manual page echo(1) line 9 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 10 (press h for help or q to quit)[27m[K[K       \xHH   byte with hexadecimal value HH (1 to 2 digits)[m
+[7m Manual page echo(1) line 11 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 12 (press h for help or q to quit)[27m[K[K       NOTE:  your  shell  may have its own version of echo, which usually supersedes the version[m
+[7m Manual page echo(1) line 13 (press h for help or q to quit)[27m[K[K       described here.  Please refer to your shell's documentation for details about the  options[m
+[7m Manual page echo(1) line 14 (press h for help or q to quit)[27m[K[K       it supports.[m
+[7m Manual page echo(1) line 15 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 16 (press h for help or q to quit)[27m[K[K[1mAUTHOR[0m[m
+[7m Manual page echo(1) line 17 (press h for help or q to quit)[27m[K[K       Written by Brian Fox and Chet Ramey.[m
+[7m Manual page echo(1) line 18 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page echo(1) line 19 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ echo ~ cat
+/home/aryan cat
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ echo ~ cat[K[K[K[K
+/home/aryan
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ tty
+/dev/pts/1
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ mkdir UE213020
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ cd UE213020
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat > myfile
+My first Linux File.]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> myfile
+
+New Line Appended
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile
+My first Linux File.
+New Line Appended
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls
+[0m[01;32mmyfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> anotherfile
+Data in anotehr   her fil    file.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile >> anotherfile[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kao[Knotherfile >> myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile
+My first Linux File.
+New Line Appended
+Data in anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat secondfile >[K[K[K[K[K[K[K[K[K[K[K[Kanotherfile > secondfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls
+[0m[01;32manotherfile[0m  [01;32mmyfile[0m  [01;32msecondfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat secondfile
+Data in anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat seconf[Kdfile >> anotherfile >> myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat secondfile
+Data in anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat anotherfile
+Data in anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile
+My first Linux File.
+New Line Appended
+Data in anotherfile.
+Data in anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> secondfile
+Data in secondfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> secondfile[7Pmyfileanotherfile[1Psecondfile >> anotherfile >> myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat secondfile
+Data in anotherfile.
+Data in secondfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat anotherfile
+Data in anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile
+My first Linux File.
+New Line Appended
+Data in anotherfile.
+Data in anotherfile.
+Data in anotherfile.
+Data in secondfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ rm secondfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ rm another [Kfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ rm myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat > myfile
+M Thi si   s is myfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat > myfile[K[K[K[K[K[Kanotherfile
+This is anotehr     her fil    file.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat > seconf[Kdfile
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> seceo[K[Kondfile >> [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K secondfile >> anotherfile >>m[K myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myd[Kfile
+This is myfile.
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat anotherfile
+This is anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ echo "Second File was appendede to myfile"
+Second File was appendede to myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ echo "Second File was appendede to myfile"[1P
+Second File was appended to myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat > thirdfile >> anothe[K[K[K[K[K[K[K secondfile >> anotherfile
+This is thirdfile.
+This should n be appended to anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat anotherfile
+This is anotherfile.
+This is thirdfile.
+This should be appended to anotherfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat thirdfie[Kle
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat seconf[Kdfile
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls
+[0m[01;32manotherfile[0m  [01;32mmyfile[0m  [01;32msecondfile[0m  [01;32mthirdfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ rm thirdfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls -ll
+total 0
+-rwxrwxrwx 1 aryan aryan 80 Jan 24 09:58 [0m[01;32manotherfile[0m
+-rwxrwxrwx 1 aryan aryan 36 Jan 24 09:56 [01;32mmyfile[0m
+-rwxrwxrwx 1 aryan aryan 20 Jan 24 09:55 [01;32msecondfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls -ll[K
+total 0
+-rwxrwxrwx 1 aryan aryan 80 Jan 24 09:58 [0m[01;32manotherfile[0m
+-rwxrwxrwx 1 aryan aryan 36 Jan 24 09:56 [01;32mmyfile[0m
+-rwxrwxrwx 1 aryan aryan 20 Jan 24 09:55 [01;32msecondfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ touch secondfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ touch secondfilels -l[K
+total 0
+-rwxrwxrwx 1 aryan aryan 80 Jan 24 09:58 [0m[01;32manotherfile[0m
+-rwxrwxrwx 1 aryan aryan 36 Jan 24 09:56 [01;32mmyfile[0m
+-rwxrwxrwx 1 aryan aryan 20 Jan 24 10:02 [01;32msecondfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ echo "Timestamp of secondfile cahng[K[K[K[Khanged"
+Timestamp of secondfile changed
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ las [K[K[Ks -a
+[0m[34;42m.[0m  [34;42m..[0m  [01;32manotherfile[0m  [01;32mmyfile[0m  [01;32msecondfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what [Kis cat
+cat (1)              - concatenate files and print on the standard output
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ type cat
+cat is hashed (/usr/bin/cat)
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man whatis
+[?1049h[22;0;0t[?1h=WHATIS(1)                               Manual pager utils                              WHATIS(1)[m
+[m
+[1mNAME[0m[m
+       whatis - display one-line manual page descriptions[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwhatis[0m  [[1m-dlv?V[0m]  [[1m-r[0m|[1m-w[0m] [[1m-s[0m [4mlist[24m] [[1m-m[0m [4msystem[24m[,...]] [[1m-M[0m [4mpath[24m] [[1m-L[0m [4mlocale[24m] [[1m-C[0m [4mfile[24m] [4mname[24m[m
+       ...[m
+[m
+[1mDESCRIPTION[0m[m
+       Each manual page has a short description available within it.  [1mwhatis[0m searches the  manual[m
+       page names and displays the manual page descriptions of any [4mname[24m matched.[m
+[m
+       [4mname[24m  may contain wildcards ([1m-w[0m) or be a regular expression ([1m-r[0m).  Using these options, it[m
+       may be necessary to quote the [4mname[24m or escape (\) the special characters to stop the  shell[m
+       from interpreting them.[m
+[m
+       [1mindex[0m databases are used during the search, and are updated by the [1mmandb[0m program.  Depend‐[m
+       ing on your installation, this may be run by a periodic cron job, or may need  to  be  run[m
+       manually  after new manual pages have been installed.  To produce an old style text [1mwhatis[0m[m
+       database from the relative [1mindex[0m database, issue the command:[m
+[m
+       [1mwhatis[0m [1m-M[0m [4mmanpath[24m [1m-w[0m [1m'*'[0m [1m|[0m [1msort[0m [1m>[0m [4mmanpath/whatis[24m[m
+[m
+       where [4mmanpath[24m is a manual page hierarchy such as [4m/usr/man[24m.[m
+[m
+[1mOPTIONS[0m[m
+       [1m-d[0m, [1m--debug[0m[m
+              Print debugging information.[m
+[m
+       [1m-v[0m, [1m--verbose[0m[m
+              Print verbose warning messages.[m
+[m
+       [1m-r[0m, [1m--regex[0m[m
+              Interpret each [4mname[24m as a regular expression.  If a [4mname[24m matches any part of a  page[m
+              name, a match will be made.  This option causes [1mwhatis[0m to be somewhat slower due to[m
+              the nature of database searches.[m
+[m
+[7m Manual page whatis(1) line 1 (press h for help or q to quit)[27m[K[K       [1m-w[0m, [1m--wildcard[0m[m
+[7m Manual page whatis(1) line 2 (press h for help or q to quit)[27m[K[K              Interpret each [4mname[24m as a pattern containing shell style wildcards.  For a match  to[m
+[7m Manual page whatis(1) line 3 (press h for help or q to quit)[27m[K[K              be  made,  an  expanded  [4mname[24m  must match the entire page name.  This option causes[m
+[7m Manual page whatis(1) line 4 (press h for help or q to quit)[27m[K[K              [1mwhatis[0m to be somewhat slower due to the nature of database searches.[m
+[7m Manual page whatis(1) line 5 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 6 (press h for help or q to quit)[27m[K[K       [1m-l[0m, [1m--long[0m[m
+[7m Manual page whatis(1) line 7 (press h for help or q to quit)[27m[K[K              Do not trim output to the terminal width.  Normally, output will  be  truncated  to[m
+[7m Manual page whatis(1) line 8 (press h for help or q to quit)[27m[K[K              the terminal width to avoid ugly results from poorly-written [1mNAME[0m sections.[m
+[7m Manual page whatis(1) line 9 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 10 (press h for help or q to quit)[27m[K[K       [1m-s[0m [4mlist[24m, [1m--sections=[0m[4mlist[24m, [1m--section=[0m[4mlist[24m[m
+[7m Manual page whatis(1) line 11 (press h for help or q to quit)[27m[K[K              Search only the given manual sections.  [4mlist[24m is a colon- or comma-separated list of[m
+[7m Manual page whatis(1) line 12 (press h for help or q to quit)[27m[K[K              sections.  If an entry in [4mlist[24m is a simple section, for example "3", then the  dis‐[m
+[7m Manual page whatis(1) line 13 (press h for help or q to quit)[27m[K[K              played  list of descriptions will include pages in sections "3", "3perl", "3x", and[m
+[7m Manual page whatis(1) line 14 (press h for help or q to quit)[27m[K[K              so on; while if an entry in [4mlist[24m has an extension, for example  "3perl",  then  the[m
+[7m Manual page whatis(1) line 15 (press h for help or q to quit)[27m[K[K              list will only include pages in that exact part of the manual section.[m
+[7m Manual page whatis(1) line 16 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 17 (press h for help or q to quit)[27m[K[K       [1m-m[0m [4msystem[24m[,...], [1m--systems=[0m[4msystem[24m[,...][m
+[7m Manual page whatis(1) line 18 (press h for help or q to quit)[27m[K[K              If  this  system has access to other operating system's manual page names, they can[m
+[7m Manual page whatis(1) line 19 (press h for help or q to quit)[27m[K[K              be accessed using this option.  To search NewOS's manual page names, use the option[m
+[7m Manual page whatis(1) line 20 (press h for help or q to quit)[27m[K[K              [1m-m[0m [1mNewOS[0m.[m
+[7m Manual page whatis(1) line 21 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 22 (press h for help or q to quit)[27m[K[K              The  [4msystem[24m  specified  can  be  a  combination of comma delimited operating system[m
+[7m Manual page whatis(1) line 23 (press h for help or q to quit)[27m[K[K              names.  To include a search of the native operating system's manual page names, in‐[m
+[7m Manual page whatis(1) line 24 (press h for help or q to quit)[27m[K[K              clude  the  system  name [1mman[0m in the argument string.  This option will override the[m
+[7m Manual page whatis(1) line 25 (press h for help or q to quit)[27m[K[K              $[1mSYSTEM[0m environment variable.[m
+[7m Manual page whatis(1) line 26 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 27 (press h for help or q to quit)[27m[K[K       [1m-M[0m [4mpath[24m, [1m--manpath=[0m[4mpath[24m[m
+[7m Manual page whatis(1) line 28 (press h for help or q to quit)[27m[K[K              Specify an alternate set of colon-delimited manual page hierarchies to search.   By[m
+[7m Manual page whatis(1) line 29 (press h for help or q to quit)[27m[K[K              default,  [1mwhatis[0m  uses the $[1mMANPATH[0m environment variable, unless it is empty or un‐[m
+[7m Manual page whatis(1) line 30 (press h for help or q to quit)[27m[K[K              set, in which case it will determine an appropriate manpath based on your $[1mPATH[0m en‐[m
+[7m Manual page whatis(1) line 31 (press h for help or q to quit)[27m[K[K              vironment variable.  This option overrides the contents of $[1mMANPATH[0m.[m
+[7m Manual page whatis(1) line 32 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 33 (press h for help or q to quit)[27m[K[K       [1m-L[0m [4mlocale[24m, [1m--locale=[0m[4mlocale[24m[m
+[7m Manual page whatis(1) line 34 (press h for help or q to quit)[27m[K[K              [1mwhatis[0m will normally determine your current locale by a call to the C function [1mset‐[0m[m
+[7m Manual page whatis(1) line 35 (press h for help or q to quit)[27m[K[K              [1mlocale[0m(3) which interrogates  various  environment  variables,  possibly  including[m
+[7m Manual page whatis(1) line 36 (press h for help or q to quit)[27m[K[K              $[1mLC_MESSAGES[0m and $[1mLANG[0m.  To temporarily override the determined value, use this op‐[m
+[7m Manual page whatis(1) line 37 (press h for help or q to quit)[27m[K[K              tion to supply a [4mlocale[24m string directly to [1mwhatis[0m.  Note that it will not take  ef‐[m
+[7m Manual page whatis(1) line 38 (press h for help or q to quit)[27m[K[K              fect  until  the search for pages actually begins.  Output such as the help message[m
+[7m Manual page whatis(1) line 39 (press h for help or q to quit)[27m[K[K              will always be displayed in the initially determined locale.[m
+[7m Manual page whatis(1) line 40 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 41 (press h for help or q to quit)[27m[K[K       [1m-C[0m [4mfile[24m, [1m--config-file=[0m[4mfile[24m[m
+[7m Manual page whatis(1) line 42 (press h for help or q to quit)[27m[K[K              Use this user configuration file rather than the default of [4m~/.manpath[24m.[m
+[7m Manual page whatis(1) line 43 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 44 (press h for help or q to quit)[27m[K[K       [1m-?[0m, [1m--help[0m[m
+[7m Manual page whatis(1) line 45 (press h for help or q to quit)[27m[K[K              Print a help message and exit.[m
+[7m Manual page whatis(1) line 46 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 47 (press h for help or q to quit)[27m[K[K       [1m--usage[0m[m
+[7m Manual page whatis(1) line 48 (press h for help or q to quit)[27m[K[K              Print a short usage message and exit.[m
+[7m Manual page whatis(1) line 49 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 50 (press h for help or q to quit)[27m[K[K       [1m-V[0m, [1m--version[0m[m
+[7m Manual page whatis(1) line 51 (press h for help or q to quit)[27m[K[K              Display version information.[m
+[7m Manual page whatis(1) line 52 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 53 (press h for help or q to quit)[27m[K[K[1mEXIT[0m [1mSTATUS[0m[m
+[7m Manual page whatis(1) line 54 (press h for help or q to quit)[27m[K[K       [1m0[0m      Successful program execution.[m
+[7m Manual page whatis(1) line 55 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 56 (press h for help or q to quit)[27m[K[K       [1m1[0m      Usage, syntax or configuration file error.[m
+[7m Manual page whatis(1) line 57 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 58 (press h for help or q to quit)[27m[K[K       [1m2[0m      Operational error.[m
+[7m Manual page whatis(1) line 59 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 60 (press h for help or q to quit)[27m[K[K       [1m16[0m     Nothing was found that matched the criteria specified.[m
+[7m Manual page whatis(1) line 61 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 62 (press h for help or q to quit)[27m[K[K[1mENVIRONMENT[0m[m
+[7m Manual page whatis(1) line 63 (press h for help or q to quit)[27m[K[K       [1mSYSTEM[0m If $[1mSYSTEM[0m is set, it will have the same effect as if it had been specified as  the[m
+[7m Manual page whatis(1) line 64 (press h for help or q to quit)[27m[K[K              argument to the [1m-m[0m option.[m
+[7m Manual page whatis(1) line 65 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page whatis(1) line 66 (press h for help or q to quit)[27m[K[K       [1mMANPATH[0m[m
+[7m Manual page whatis(1) line 67 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man type
+No manual entry for type
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ty[K[Kwhatis type
+type: nothing appropriate.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ type ytt[K[K[Ktype
+type is a shell builtin
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whereis cat
+cat: /usr/bin/cat /usr/share/man/man1/cat.1.gz
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ find cat
+find: ‘cat’: No such file or directory
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whatis echi[Ko
+echo (1)             - display a line of text
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ type echo
+echo is a shell builtin
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whereis echo
+echo: /usr/bin/echo /usr/share/man/man1/echo.1.gz
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ find ec[K[K[K[K[K[K[Kwhta[K[Katis find
+\ find (1)             - search for files in a directory hierarchy
+
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ 
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man wc
+[?1049h[22;0;0t[?1h=WC(1)                                     User Commands                                     WC(1)[m
+[m
+[1mNAME[0m[m
+       wc - print newline, word, and byte counts for each file[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwc[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+       [1mwc[0m [[4mOPTION[24m]... [4m--files0-from=F[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Print newline, word, and byte counts for each FILE, and a total line if more than one FILE[m
+       is specified.  A word is a non-zero-length  sequence  of  characters  delimited  by  white[m
+       space.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       The  options below may be used to select which counts are printed, always in the following[m
+       order: newline, word, character, byte, maximum line length.[m
+[m
+       [1m-c[0m, [1m--bytes[0m[m
+              print the byte counts[m
+[m
+       [1m-m[0m, [1m--chars[0m[m
+              print the character counts[m
+[m
+       [1m-l[0m, [1m--lines[0m[m
+              print the newline counts[m
+[m
+       [1m--files0-from[0m=[4mF[24m[m
+              read input from the files specified by NUL-terminated names in file F; If  F  is  -[m
+              then read names from standard input[m
+[m
+       [1m-L[0m, [1m--max-line-length[0m[m
+              print the maximum display width[m
+[m
+       [1m-w[0m, [1m--words[0m[m
+              print the word counts[m
+[m
+[7m Manual page wc(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls
+[0m[01;32manotherfile[0m  [01;32mmyfile[0m  [01;32msecondfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile | [K[K[K[K[K[Kile
+This is myfile.
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ wc -l myfile
+2 myfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ wc -l [K[Km anotehr[K[K[Kherfile
+80 anotherfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ wc -b secondfile
+wc: invalid option -- 'b'
+Try 'wc --help' for more information.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man wc
+[?1049h[22;0;0t[?1h=WC(1)                                     User Commands                                     WC(1)[m
+[m
+[1mNAME[0m[m
+       wc - print newline, word, and byte counts for each file[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwc[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+       [1mwc[0m [[4mOPTION[24m]... [4m--files0-from=F[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Print newline, word, and byte counts for each FILE, and a total line if more than one FILE[m
+       is specified.  A word is a non-zero-length  sequence  of  characters  delimited  by  white[m
+       space.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       The  options below may be used to select which counts are printed, always in the following[m
+       order: newline, word, character, byte, maximum line length.[m
+[m
+       [1m-c[0m, [1m--bytes[0m[m
+              print the byte counts[m
+[m
+       [1m-m[0m, [1m--chars[0m[m
+              print the character counts[m
+[m
+       [1m-l[0m, [1m--lines[0m[m
+              print the newline counts[m
+[m
+       [1m--files0-from[0m=[4mF[24m[m
+              read input from the files specified by NUL-terminated names in file F; If  F  is  -[m
+              then read names from standard input[m
+[m
+       [1m-L[0m, [1m--max-line-length[0m[m
+              print the maximum display width[m
+[m
+       [1m-w[0m, [1m--words[0m[m
+              print the word counts[m
+[m
+[7m Manual page wc(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man wcwc -b secondfile[1P secondfilec secondfile
+20 secondfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile | wc -l
+2
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what is[K[K[Kis tee
+tee (1)              - read from standard input and write to standard output and files
+tee (2)              - duplicating pipe content
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ tee myfile2
+This is added using tee.
+This is added using tee.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfiel[K[Kle2
+This is added using tee.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ touch nef[Kwfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat newfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> newfile
+NEWFILE. !!!!!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> newfile[3Pnewfile
+NEWFILE!!!!!
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat newfile[K[K[K[K[K[K[K[K[K[K[Kwc -l *
+  3 anotherfile
+  2 myfile
+  1 myfile2
+  1 newfile
+  1 secondfile
+  8 total
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ wc -l * | cat > myfeil[K[K[K[K[K[KCount[K[K[K[K[KNu[K[KTotall[K_lines
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat Toya[K[Ktal_lines
+  0 Total_lines
+  3 anotherfile
+  2 myfile
+  1 myfile2
+  1 newfile
+  1 secondfile
+  8 total
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat myfile
+This is myfile.
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat secondfile
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cmp myf[K[K[K[K[K[K[Kwhatisc [K[K cmp
+cmp (1)              - (unknown subject)
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ mann [K[K[K [Kn amc[K[K[Kcmp
+[?1049h[22;0;0t[?1h=GNU(1)                                    User Commands                                    GNU(1)[m
+[m
+[1mNAME[0m[m
+       GNU cmp - compare two files byte by byte[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mcmp[0m [[4mOPTION[24m]... [4mFILE1[24m [[4mFILE2[24m [[4mSKIP1[24m [[4mSKIP2[24m]]][m
+[m
+[1mDESCRIPTION[0m[m
+       Compare two files byte by byte.[m
+[m
+       The  optional SKIP1 and SKIP2 specify the number of bytes to skip at the beginning of each[m
+       file (zero by default).[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-b[0m, [1m--print-bytes[0m[m
+              print differing bytes[m
+[m
+       [1m-i[0m, [1m--ignore-initial[0m=[4mSKIP[24m[m
+              skip first SKIP bytes of both inputs[m
+[m
+       [1m-i[0m, [1m--ignore-initial[0m=[4mSKIP1[24m:SKIP2[m
+              skip first SKIP1 bytes of FILE1 and first SKIP2 bytes of FILE2[m
+[m
+       [1m-l[0m, [1m--verbose[0m[m
+              output byte numbers and differing byte values[m
+[m
+       [1m-n[0m, [1m--bytes[0m=[4mLIMIT[24m[m
+              compare at most LIMIT bytes[m
+[m
+       [1m-s[0m, [1m--quiet[0m, [1m--silent[0m[m
+              suppress all normal output[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m-v[0m, [1m--version[0m[m
+              output version information and exit[m
+[7m Manual page cmp(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cmp myfeil[K[K[Kke[K[Kile scon[K[K[Kecondfile
+myfile secondfile differ: byte 9, line 1
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ hwt[K[K[Kwhta[K[Katis comm
+comm (1)             - compare two sorted files line by line
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what is[K[K[Kis diff
+diff (1)             - (unknown subject)
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man diff
+[?1049h[22;0;0t[?1h=GNU(1)                                    User Commands                                    GNU(1)[m
+[m
+[1mNAME[0m[m
+       GNU diff - compare files line by line[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mdiff[0m [[4mOPTION[24m]... [4mFILES[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Compare FILES line by line.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m--normal[0m[m
+              output a normal diff (the default)[m
+[m
+       [1m-q[0m, [1m--brief[0m[m
+              report only when files differ[m
+[m
+       [1m-s[0m, [1m--report-identical-files[0m[m
+              report when two files are the same[m
+[m
+       [1m-c[0m, [1m-C[0m NUM, [1m--context[0m[=[4mNUM[24m][m
+              output NUM (default 3) lines of copied context[m
+[m
+       [1m-u[0m, [1m-U[0m NUM, [1m--unified[0m[=[4mNUM[24m][m
+              output NUM (default 3) lines of unified context[m
+[m
+       [1m-e[0m, [1m--ed[0m[m
+              output an ed script[m
+[m
+       [1m-n[0m, [1m--rcs[0m[m
+              output an RCS format diff[m
+[m
+       [1m-y[0m, [1m--side-by-side[0m[m
+              output in two columns[m
+[m
+       [1m-W[0m, [1m--width[0m=[4mNUM[24m[m
+[7m Manual page diff(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ma[K[Kdiff myfile secondfile
+1d0
+< This is myfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ diff myfile secondfile[14Pman diff
+[?1049h[22;0;0t[?1h=GNU(1)                                    User Commands                                    GNU(1)[m
+[m
+[1mNAME[0m[m
+       GNU diff - compare files line by line[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mdiff[0m [[4mOPTION[24m]... [4mFILES[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Compare FILES line by line.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m--normal[0m[m
+              output a normal diff (the default)[m
+[m
+       [1m-q[0m, [1m--brief[0m[m
+              report only when files differ[m
+[m
+       [1m-s[0m, [1m--report-identical-files[0m[m
+              report when two files are the same[m
+[m
+       [1m-c[0m, [1m-C[0m NUM, [1m--context[0m[=[4mNUM[24m][m
+              output NUM (default 3) lines of copied context[m
+[m
+       [1m-u[0m, [1m-U[0m NUM, [1m--unified[0m[=[4mNUM[24m][m
+              output NUM (default 3) lines of unified context[m
+[m
+       [1m-e[0m, [1m--ed[0m[m
+              output an ed script[m
+[m
+       [1m-n[0m, [1m--rcs[0m[m
+              output an RCS format diff[m
+[m
+       [1m-y[0m, [1m--side-by-side[0m[m
+              output in two columns[m
+[m
+       [1m-W[0m, [1m--width[0m=[4mNUM[24m[m
+[7m Manual page diff(1) line 1 (press h for help or q to quit)[27m[K[K              output at most NUM (default 130) print columns[m
+[7m Manual page diff(1) line 2 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 3 (press h for help or q to quit)[27m[K[K       [1m--left-column[0m[m
+[7m Manual page diff(1) line 4 (press h for help or q to quit)[27m[K[K              output only the left column of common lines[m
+[7m Manual page diff(1) line 5 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 6 (press h for help or q to quit)[27m[K[K       [1m--suppress-common-lines[0m[m
+[7m Manual page diff(1) line 7 (press h for help or q to quit)[27m[K[K              do not output common lines[m
+[7m Manual page diff(1) line 8 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 9 (press h for help or q to quit)[27m[K[K       [1m-p[0m, [1m--show-c-function[0m[m
+[7m Manual page diff(1) line 10 (press h for help or q to quit)[27m[K[K              show which C function each change is in[m
+[7m Manual page diff(1) line 11 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 12 (press h for help or q to quit)[27m[K[K       [1m-F[0m, [1m--show-function-line[0m=[4mRE[24m[m
+[7m Manual page diff(1) line 13 (press h for help or q to quit)[27m[K[K              show the most recent line matching RE[m
+[7m Manual page diff(1) line 14 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 15 (press h for help or q to quit)[27m[K[K       [1m--label[0m LABEL[m
+[7m Manual page diff(1) line 16 (press h for help or q to quit)[27m[K[K              use LABEL instead of file name and timestamp (can be repeated)[m
+[7m Manual page diff(1) line 17 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 18 (press h for help or q to quit)[27m[K[K       [1m-t[0m, [1m--expand-tabs[0m[m
+[7m Manual page diff(1) line 19 (press h for help or q to quit)[27m[K[K              expand tabs to spaces in output[m
+[7m Manual page diff(1) line 20 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 21 (press h for help or q to quit)[27m[K[K       [1m-T[0m, [1m--initial-tab[0m[m
+[7m Manual page diff(1) line 22 (press h for help or q to quit)[27m[K[K              make tabs line up by prepending a tab[m
+[7m Manual page diff(1) line 23 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 24 (press h for help or q to quit)[27m[K[K       [1m--tabsize[0m=[4mNUM[24m[m
+[7m Manual page diff(1) line 25 (press h for help or q to quit)[27m[K[K              tab stops every NUM (default 8) print columns[m
+[7m Manual page diff(1) line 26 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 27 (press h for help or q to quit)[27m[K[K       [1m--suppress-blank-empty[0m[m
+[7m Manual page diff(1) line 28 (press h for help or q to quit)[27m[K[K              suppress space or tab before empty output lines[m
+[7m Manual page diff(1) line 29 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 30 (press h for help or q to quit)[27m[K[K       [1m-l[0m, [1m--paginate[0m[m
+[7m Manual page diff(1) line 31 (press h for help or q to quit)[27m[K[K              pass output through 'pr' to paginate it[m
+[7m Manual page diff(1) line 32 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 33 (press h for help or q to quit)[27m[K[K       [1m-r[0m, [1m--recursive[0m[m
+[7m Manual page diff(1) line 34 (press h for help or q to quit)[27m[K[K              recursively compare any subdirectories found[m
+[7m Manual page diff(1) line 35 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 36 (press h for help or q to quit)[27m[K[K       [1m--no-dereference[0m[m
+[7m Manual page diff(1) line 37 (press h for help or q to quit)[27m[K[K              don't follow symbolic links[m
+[7m Manual page diff(1) line 38 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 39 (press h for help or q to quit)[27m[K[K       [1m-N[0m, [1m--new-file[0m[m
+[7m Manual page diff(1) line 40 (press h for help or q to quit)[27m[K[K              treat absent files as empty[m
+[7m Manual page diff(1) line 41 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 42 (press h for help or q to quit)[27m[K[K       [1m--unidirectional-new-file[0m[m
+[7m Manual page diff(1) line 43 (press h for help or q to quit)[27m[K[K              treat absent first files as empty[m
+[7m Manual page diff(1) line 44 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 45 (press h for help or q to quit)[27m[K[K       [1m--ignore-file-name-case[0m[m
+[7m Manual page diff(1) line 46 (press h for help or q to quit)[27m[K[K              ignore case when comparing file names[m
+[7m Manual page diff(1) line 47 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 48 (press h for help or q to quit)[27m[K[K       [1m--no-ignore-file-name-case[0m[m
+[7m Manual page diff(1) line 49 (press h for help or q to quit)[27m[K[K              consider case when comparing file names[m
+[7m Manual page diff(1) line 50 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 51 (press h for help or q to quit)[27m[K[K       [1m-x[0m, [1m--exclude[0m=[4mPAT[24m[m
+[7m Manual page diff(1) line 52 (press h for help or q to quit)[27m[K[K              exclude files that match PAT[m
+[7m Manual page diff(1) line 53 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 54 (press h for help or q to quit)[27m[K[K       [1m-X[0m, [1m--exclude-from[0m=[4mFILE[24m[m
+[7m Manual page diff(1) line 55 (press h for help or q to quit)[27m[K[K              exclude files that match any pattern in FILE[m
+[7m Manual page diff(1) line 56 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 57 (press h for help or q to quit)[27m[K[K       [1m-S[0m, [1m--starting-file[0m=[4mFILE[24m[m
+[7m Manual page diff(1) line 58 (press h for help or q to quit)[27m[K[K              start with FILE when comparing directories[m
+[7m Manual page diff(1) line 59 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 60 (press h for help or q to quit)[27m[K[K       [1m--from-file[0m=[4mFILE1[24m[m
+[7m Manual page diff(1) line 61 (press h for help or q to quit)[27m[K[K              compare FILE1 to all operands; FILE1 can be a directory[m
+[7m Manual page diff(1) line 62 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 63 (press h for help or q to quit)[27m[K[K       [1m--to-file[0m=[4mFILE2[24m[m
+[7m Manual page diff(1) line 64 (press h for help or q to quit)[27m[K[K              compare all operands to FILE2; FILE2 can be a directory[m
+[7m Manual page diff(1) line 65 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 66 (press h for help or q to quit)[27m[K[K       [1m-i[0m, [1m--ignore-case[0m[m
+[7m Manual page diff(1) line 67 (press h for help or q to quit)[27m[K[K              ignore case differences in file contents[m
+[7m Manual page diff(1) line 68 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 69 (press h for help or q to quit)[27m[K[K       [1m-E[0m, [1m--ignore-tab-expansion[0m[m
+[7m Manual page diff(1) line 70 (press h for help or q to quit)[27m[K[K              ignore changes due to tab expansion[m
+[7m Manual page diff(1) line 71 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 72 (press h for help or q to quit)[27m[K[K       [1m-Z[0m, [1m--ignore-trailing-space[0m[m
+[7m Manual page diff(1) line 73 (press h for help or q to quit)[27m[K[K              ignore white space at line end[m
+[7m Manual page diff(1) line 74 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 75 (press h for help or q to quit)[27m[K[K       [1m-b[0m, [1m--ignore-space-change[0m[m
+[7m Manual page diff(1) line 76 (press h for help or q to quit)[27m[K[K              ignore changes in the amount of white space[m
+[7m Manual page diff(1) line 77 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 78 (press h for help or q to quit)[27m[K[K       [1m-w[0m, [1m--ignore-all-space[0m[m
+[7m Manual page diff(1) line 79 (press h for help or q to quit)[27m[K[K              ignore all white space[m
+[7m Manual page diff(1) line 80 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 81 (press h for help or q to quit)[27m[K[K       [1m-B[0m, [1m--ignore-blank-lines[0m[m
+[7m Manual page diff(1) line 82 (press h for help or q to quit)[27m[K[K              ignore changes where lines are all blank[m
+[7m Manual page diff(1) line 83 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 84 (press h for help or q to quit)[27m[K[K       [1m-I[0m, [1m--ignore-matching-lines[0m=[4mRE[24m[m
+[7m Manual page diff(1) line 85 (press h for help or q to quit)[27m[K[K              ignore changes where all lines match RE[m
+[7m Manual page diff(1) line 86 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 87 (press h for help or q to quit)[27m[K[K       [1m-a[0m, [1m--text[0m[m
+[7m Manual page diff(1) line 88 (press h for help or q to quit)[27m[K[K              treat all files as text[m
+[7m Manual page diff(1) line 89 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 90 (press h for help or q to quit)[27m[K[K       [1m--strip-trailing-cr[0m[m
+[7m Manual page diff(1) line 91 (press h for help or q to quit)[27m[K[K              strip trailing carriage return on input[m
+[7m Manual page diff(1) line 92 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 93 (press h for help or q to quit)[27m[K[K       [1m-D[0m, [1m--ifdef[0m=[4mNAME[24m[m
+[7m Manual page diff(1) line 94 (press h for help or q to quit)[27m[K[K              output merged file with '#ifdef NAME' diffs[m
+[7m Manual page diff(1) line 95 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 96 (press h for help or q to quit)[27m[K[K       [1m--GTYPE-group-format[0m=[4mGFMT[24m[m
+[7m Manual page diff(1) line 97 (press h for help or q to quit)[27m[K[K              format GTYPE input groups with GFMT[m
+[7m Manual page diff(1) line 98 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 99 (press h for help or q to quit)[27m[K[K       [1m--line-format[0m=[4mLFMT[24m[m
+[7m Manual page diff(1) line 100 (press h for help or q to quit)[27m[K[K              format all input lines with LFMT[m
+[7m Manual page diff(1) line 101 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 102 (press h for help or q to quit)[27m[K[K       [1m--LTYPE-line-format[0m=[4mLFMT[24m[m
+[7m Manual page diff(1) line 103 (press h for help or q to quit)[27m[K[K              format LTYPE input lines with LFMT[m
+[7m Manual page diff(1) line 104 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 105 (press h for help or q to quit)[27m[K[K              These format options provide fine-grained control over the output[m
+[7m Manual page diff(1) line 106 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 107 (press h for help or q to quit)[27m[K[K              of diff, generalizing [1m-D[0m/--ifdef.[m
+[7m Manual page diff(1) line 108 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 109 (press h for help or q to quit)[27m[K[K       LTYPE is 'old', 'new', or 'unchanged'.[m
+[7m Manual page diff(1) line 110 (press h for help or q to quit)[27m[K[K              GTYPE is LTYPE or 'changed'.[m
+[7m Manual page diff(1) line 111 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 112 (press h for help or q to quit)[27m[K[K              GFMT (only) may contain:[m
+[7m Manual page diff(1) line 113 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 114 (press h for help or q to quit)[27m[K[K       %<     lines from FILE1[m
+[7m Manual page diff(1) line 115 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 116 (press h for help or q to quit)[27m[K[K       %>     lines from FILE2[m
+[7m Manual page diff(1) line 117 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 118 (press h for help or q to quit)[27m[K[K       %=     lines common to FILE1 and FILE2[m
+[7m Manual page diff(1) line 119 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 120 (press h for help or q to quit)[27m[K[K       %[-][WIDTH][.[PREC]]{doxX}LETTER[m
+[7m Manual page diff(1) line 121 (press h for help or q to quit)[27m[K[K              printf-style spec for LETTER[m
+[7m Manual page diff(1) line 122 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 123 (press h for help or q to quit)[27m[K[K              LETTERs are as follows for new group, lower case for old group:[m
+[7m Manual page diff(1) line 124 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 125 (press h for help or q to quit)[27m[K[K       F      first line number[m
+[7m Manual page diff(1) line 126 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 127 (press h for help or q to quit)[27m[K[K       L      last line number[m
+[7m Manual page diff(1) line 128 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 129 (press h for help or q to quit)[27m[K[K       N      number of lines = L-F+1[m
+[7m Manual page diff(1) line 130 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 131 (press h for help or q to quit)[27m[K[K       E      F-1[m
+[7m Manual page diff(1) line 132 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 133 (press h for help or q to quit)[27m[K[K       M      L+1[m
+[7m Manual page diff(1) line 134 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 135 (press h for help or q to quit)[27m[K[K       %(A=B?T:E)[m
+[7m Manual page diff(1) line 136 (press h for help or q to quit)[27m[K[K              if A equals B then T else E[m
+[7m Manual page diff(1) line 137 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 138 (press h for help or q to quit)[27m[K[K              LFMT (only) may contain:[m
+[7m Manual page diff(1) line 139 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 140 (press h for help or q to quit)[27m[K[K       %L     contents of line[m
+[7m Manual page diff(1) line 141 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 142 (press h for help or q to quit)[27m[K[K       %l     contents of line, excluding any trailing newline[m
+[7m Manual page diff(1) line 143 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 144 (press h for help or q to quit)[27m[K[K       %[-][WIDTH][.[PREC]]{doxX}n[m
+[7m Manual page diff(1) line 145 (press h for help or q to quit)[27m[K[K              printf-style spec for input line number[m
+[7m Manual page diff(1) line 146 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 147 (press h for help or q to quit)[27m[K[K              Both GFMT and LFMT may contain:[m
+[7m Manual page diff(1) line 148 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 149 (press h for help or q to quit)[27m[K[K       %%     %[m
+[7m Manual page diff(1) line 150 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 151 (press h for help or q to quit)[27m[K[K       %c'C'  the single character C[m
+[7m Manual page diff(1) line 152 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 153 (press h for help or q to quit)[27m[K[K       %c'\OOO'[m
+[7m Manual page diff(1) line 154 (press h for help or q to quit)[27m[K[K              the character with octal code OOO[m
+[7m Manual page diff(1) line 155 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 156 (press h for help or q to quit)[27m[K[K       C      the character C (other characters represent themselves)[m
+[7m Manual page diff(1) line 157 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 158 (press h for help or q to quit)[27m[K[K       [1m-d[0m, [1m--minimal[0m[m
+[7m Manual page diff(1) line 159 (press h for help or q to quit)[27m[K[K              try hard to find a smaller set of changes[m
+[7m Manual page diff(1) line 160 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 161 (press h for help or q to quit)[27m[K[K       [1m--horizon-lines[0m=[4mNUM[24m[m
+[7m Manual page diff(1) line 162 (press h for help or q to quit)[27m[K[K              keep NUM lines of the common prefix and suffix[m
+[7m Manual page diff(1) line 163 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 164 (press h for help or q to quit)[27m[K[K       [1m--speed-large-files[0m[m
+[7m Manual page diff(1) line 165 (press h for help or q to quit)[27m[K[K              assume large files and many scattered small changes[m
+[7m Manual page diff(1) line 166 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 167 (press h for help or q to quit)[27m[K[K       [1m--color[0m[=[4mWHEN[24m][m
+[7m Manual page diff(1) line 168 (press h for help or q to quit)[27m[K[K              colorize the output; WHEN can be 'never', 'always', or 'auto' (the default)[m
+[7m Manual page diff(1) line 169 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 170 (press h for help or q to quit)[27m[K[K       [1m--palette[0m=[4mPALETTE[24m[m
+[7m Manual page diff(1) line 171 (press h for help or q to quit)[27m[K[K              the colors to use when [1m--color[0m is active; PALETTE is a colon-separated list of ter‐[m
+[7m Manual page diff(1) line 172 (press h for help or q to quit)[27m[K[K              minfo capabilities[m
+[7m Manual page diff(1) line 173 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 174 (press h for help or q to quit)[27m[K[K       [1m--help[0m display this help and exit[m
+[7m Manual page diff(1) line 175 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 176 (press h for help or q to quit)[27m[K[K       [1m-v[0m, [1m--version[0m[m
+[7m Manual page diff(1) line 177 (press h for help or q to quit)[27m[K[K              output version information and exit[m
+[7m Manual page diff(1) line 178 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 179 (press h for help or q to quit)[27m[K[K       FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE' or 'FILE  DIR'.   If  [1m--from-file[0m  or[m
+[7m Manual page diff(1) line 180 (press h for help or q to quit)[27m[K[K       [1m--to-file[0m is given, there are no restrictions on FILE(s).  If a FILE is '-', read standard[m
+[7m Manual page diff(1) line 181 (press h for help or q to quit)[27m[K[K       input.  Exit status is 0 if inputs are the same, 1 if different, 2 if trouble.[m
+[7m Manual page diff(1) line 182 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 183 (press h for help or q to quit)[27m[K[K[1mAUTHOR[0m[m
+[7m Manual page diff(1) line 184 (press h for help or q to quit)[27m[K[K       Written by Paul Eggert, Mike Haertel, David Hayes, Richard Stallman, and Len Tower.[m
+[7m Manual page diff(1) line 185 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 186 (press h for help or q to quit)[27m[K[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page diff(1) line 187 (press h for help or q to quit)[27m[K[K       Report bugs to: bug-diffutils@gnu.org[m
+[7m Manual page diff(1) line 188 (press h for help or q to quit)[27m[K[K       GNU diffutils home page: <https://www.gnu.org/software/diffutils/>[m
+[7m Manual page diff(1) line 189 (press h for help or q to quit)[27m[K[K       General help using GNU software: <https://www.gnu.org/gethelp/>[m
+[7m Manual page diff(1) line 190 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 191 (press h for help or q to quit)[27m[K[K[1mCOPYRIGHT[0m[m
+[7m Manual page diff(1) line 192 (press h for help or q to quit)[27m[K[K       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+:  GNU  GPL  version  3  or[m
+[7m Manual page diff(1) line 193 (press h for help or q to quit)[27m[K[K       later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page diff(1) line 194 (press h for help or q to quit)[27m[K[K       This  is free software: you are free to change and redistribute it.  There is NO WARRANTY,[m
+[7m Manual page diff(1) line 195 (press h for help or q to quit)[27m[K[K       to the extent permitted by law.[m
+[7m Manual page diff(1) line 196 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 197 (press h for help or q to quit)[27m[K[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page diff(1) line 198 (press h for help or q to quit)[27m[K[K       wdiff(1), cmp(1), diff3(1), sdiff(1), patch(1)[m
+[7m Manual page diff(1) line 199 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 200 (press h for help or q to quit)[27m[K[K       The full documentation for [1mGNU[0m is maintained as a Texinfo manual.  If  the  [1minfo[0m  and  [1mGNU[0m[m
+[7m Manual page diff(1) line 201 (press h for help or q to quit)[27m[K[K       programs are properly installed at your site, the command[m
+[7m Manual page diff(1) line 202 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 203 (press h for help or q to quit)[27m[K[K              [1minfo[0m [1mGNU[0m[m
+[7m Manual page diff(1) line 204 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 205 (press h for help or q to quit)[27m[K[K       should give you access to the complete manual.[m
+[7m Manual page diff(1) line 206 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page diff(1) line 207 (press h for help or q to quit)[27m[K[Kdiffutils 3.7                             December 2018                                    GNU(1)[m
+[7m Manual page diff(1) line 208 (press h for help or q to quit)[27m[K[K[K[7m Manual page diff(1) line 208/245 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page diff(1) line 208/245 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page diff(1) line 208/245 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page diff(1) line 208/245 (END) (press h for help or q to quit)[27m[K[K[K[7m Manual page diff(1) line 208/245 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >>>[K [K[K th[K[Kfouth[K[Krthfile
+1
+2
+3
+8
+9
+5
+4
+0
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ sort fourthfile
+0
+1
+2
+3
+4
+5
+8
+9
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> fourthfile
+6
+7
+10
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat >> fourthfile[2Psort[C[C[C[C[C[C[C[C[C[C[C
+0
+1
+10
+2
+3
+4
+5
+6
+7
+8
+9
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what[K[K[K[Ktype tty
+tty is hashed (/usr/bin/tty)
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what i[K[Kis tty
+tty (1)              - print the file name of the terminal connected to standard input
+tty (4)              - controlling terminal
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whatis comm
+comm (1)             - compare two sorted files line by line
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cmp myfile secondfile | commm [K[K[K[K[K[Kdiff myfile secondfile  |[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K; com[K[K[Kf[Kdiff myd[Kfilesecondfiel[K[Kle[C secondfile [A]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+myfile secondfile differ: byte 9, line 1
+1d0
+< This is myfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ sort -o sortedfile fourthfile
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ cat sortedfile
+0
+1
+10
+2
+3
+4
+5
+6
+7
+8
+9
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ sleep [K[K[K[K[K[Kman sleep
+[?1049h[22;0;0t[?1h=SLEEP(1)                                  User Commands                                  SLEEP(1)[m
+[m
+[1mNAME[0m[m
+       sleep - delay for a specified amount of time[m
+[m
+[1mSYNOPSIS[0m[m
+       [1msleep[0m [4mNUMBER[24m[[4mSUFFIX[24m]...[m
+       [1msleep[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Pause  for  NUMBER seconds.  SUFFIX may be 's' for seconds (the default), 'm' for minutes,[m
+       'h' for hours or 'd' for days.  Unlike most implementations that require NUMBER be an  in‐[m
+       teger,  here  NUMBER  may  be an arbitrary floating point number.  Given two or more argu‐[m
+       ments, pause for the amount of time specified by the sum of their values.[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+[1mAUTHOR[0m[m
+       Written by Jim Meyering and Paul Eggert.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report sleep translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+:  GNU  GPL  version  3  or[m
+       later <https://gnu.org/licenses/gpl.html>.[m
+       This  is free software: you are free to change and redistribute it.  There is NO WARRANTY,[m
+       to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       sleep(3)[m
+[m
+       Full documentation at: <https://www.gnu.org/software/coreutils/sleep>[m
+       or available locally via: info '(coreutils) sleep invocation'[m
+[7m Manual page sleep(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ sleep 2
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ sleep 2[K10
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ sleep 10
+      
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$       
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man sleep
+[?1049h[22;0;0t[?1h=SLEEP(1)                                  User Commands                                  SLEEP(1)[m
+[m
+[1mNAME[0m[m
+       sleep - delay for a specified amount of time[m
+[m
+[1mSYNOPSIS[0m[m
+       [1msleep[0m [4mNUMBER[24m[[4mSUFFIX[24m]...[m
+       [1msleep[0m [4mOPTION[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Pause  for  NUMBER seconds.  SUFFIX may be 's' for seconds (the default), 'm' for minutes,[m
+       'h' for hours or 'd' for days.  Unlike most implementations that require NUMBER be an  in‐[m
+       teger,  here  NUMBER  may  be an arbitrary floating point number.  Given two or more argu‐[m
+       ments, pause for the amount of time specified by the sum of their values.[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+[1mAUTHOR[0m[m
+       Written by Jim Meyering and Paul Eggert.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report sleep translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+:  GNU  GPL  version  3  or[m
+       later <https://gnu.org/licenses/gpl.html>.[m
+       This  is free software: you are free to change and redistribute it.  There is NO WARRANTY,[m
+       to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       sleep(3)[m
+[m
+       Full documentation at: <https://www.gnu.org/software/coreutils/sleep>[m
+       or available locally via: info '(coreutils) sleep invocation'[m
+[7m Manual page sleep(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ man sort
+[?1049h[22;0;0t[?1h=SORT(1)                                   User Commands                                   SORT(1)[m
+[m
+[1mNAME[0m[m
+       sort - sort lines of text files[m
+[m
+[1mSYNOPSIS[0m[m
+       [1msort[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+       [1msort[0m [[4mOPTION[24m]... [4m--files0-from=F[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Write sorted concatenation of all FILE(s) to standard output.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       Mandatory  arguments  to  long  options are mandatory for short options too.  Ordering op‐[m
+       tions:[m
+[m
+       [1m-b[0m, [1m--ignore-leading-blanks[0m[m
+              ignore leading blanks[m
+[m
+       [1m-d[0m, [1m--dictionary-order[0m[m
+              consider only blanks and alphanumeric characters[m
+[m
+       [1m-f[0m, [1m--ignore-case[0m[m
+              fold lower case to upper case characters[m
+[m
+       [1m-g[0m, [1m--general-numeric-sort[0m[m
+              compare according to general numerical value[m
+[m
+       [1m-i[0m, [1m--ignore-nonprinting[0m[m
+              consider only printable characters[m
+[m
+       [1m-M[0m, [1m--month-sort[0m[m
+              compare (unknown) < 'JAN' < ... < 'DEC'[m
+[m
+       [1m-h[0m, [1m--human-numeric-sort[0m[m
+              compare human readable numbers (e.g., 2K 1G)[m
+[m
+[7m Manual page sort(1) line 1 (press h for help or q to quit)[27m[K[K       [1m-n[0m, [1m--numeric-sort[0m[m
+[7m Manual page sort(1) line 2 (press h for help or q to quit)[27m[K[K              compare according to string numerical value[m
+[7m Manual page sort(1) line 3 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 4 (press h for help or q to quit)[27m[K[K       [1m-R[0m, [1m--random-sort[0m[m
+[7m Manual page sort(1) line 5 (press h for help or q to quit)[27m[K[K              shuffle, but group identical keys.  See shuf(1)[m
+[7m Manual page sort(1) line 6 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 7 (press h for help or q to quit)[27m[K[K       [1m--random-source[0m=[4mFILE[24m[m
+[7m Manual page sort(1) line 8 (press h for help or q to quit)[27m[K[K              get random bytes from FILE[m
+[7m Manual page sort(1) line 9 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 10 (press h for help or q to quit)[27m[K[K       [1m-r[0m, [1m--reverse[0m[m
+[7m Manual page sort(1) line 11 (press h for help or q to quit)[27m[K[K              reverse the result of comparisons[m
+[7m Manual page sort(1) line 12 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 13 (press h for help or q to quit)[27m[K[K       [1m--sort[0m=[4mWORD[24m[m
+[7m Manual page sort(1) line 14 (press h for help or q to quit)[27m[K[K              sort according to WORD: general-numeric [1m-g[0m, human-numeric [1m-h[0m, month [1m-M[0m, numeric [1m-n[0m,[m
+[7m Manual page sort(1) line 15 (press h for help or q to quit)[27m[K[K              random [1m-R[0m, version [1m-V[0m[m
+[7m Manual page sort(1) line 16 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 17 (press h for help or q to quit)[27m[K[K       [1m-V[0m, [1m--version-sort[0m[m
+[7m Manual page sort(1) line 18 (press h for help or q to quit)[27m[K[K              natural sort of (version) numbers within text[m
+[7m Manual page sort(1) line 19 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 20 (press h for help or q to quit)[27m[K[K       Other options:[m
+[7m Manual page sort(1) line 21 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 22 (press h for help or q to quit)[27m[K[K       [1m--batch-size[0m=[4mNMERGE[24m[m
+[7m Manual page sort(1) line 23 (press h for help or q to quit)[27m[K[K              merge at most NMERGE inputs at once; for more use temp files[m
+[7m Manual page sort(1) line 24 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 25 (press h for help or q to quit)[27m[K[K       [1m-c[0m, [1m--check[0m, [1m--check[0m=[4mdiagnose-first[24m[m
+[7m Manual page sort(1) line 26 (press h for help or q to quit)[27m[K[K              check for sorted input; do not sort[m
+[7m Manual page sort(1) line 27 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 28 (press h for help or q to quit)[27m[K[K       [1m-C[0m, [1m--check[0m=[4mquiet[24m, [1m--check[0m=[4msilent[24m[m
+[7m Manual page sort(1) line 29 (press h for help or q to quit)[27m[K[K              like [1m-c[0m, but do not report first bad line[m
+[7m Manual page sort(1) line 30 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 31 (press h for help or q to quit)[27m[K[K       [1m--compress-program[0m=[4mPROG[24m[m
+[7m Manual page sort(1) line 32 (press h for help or q to quit)[27m[K[K              compress temporaries with PROG; decompress them with PROG [1m-d[0m[m
+[7m Manual page sort(1) line 33 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 34 (press h for help or q to quit)[27m[K[K       [1m--debug[0m[m
+[7m Manual page sort(1) line 35 (press h for help or q to quit)[27m[K[K              annotate  the  part  of the line used to sort, and warn about questionable usage to[m
+[7m Manual page sort(1) line 36 (press h for help or q to quit)[27m[K[K              stderr[m
+[7m Manual page sort(1) line 37 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 38 (press h for help or q to quit)[27m[K[K       [1m--files0-from[0m=[4mF[24m[m
+[7m Manual page sort(1) line 39 (press h for help or q to quit)[27m[K[K              read input from the files specified by NUL-terminated names in file F; If  F  is  -[m
+[7m Manual page sort(1) line 40 (press h for help or q to quit)[27m[K[K              then read names from standard input[m
+[7m Manual page sort(1) line 41 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 42 (press h for help or q to quit)[27m[K[K       [1m-k[0m, [1m--key[0m=[4mKEYDEF[24m[m
+[7m Manual page sort(1) line 43 (press h for help or q to quit)[27m[K[K              sort via a key; KEYDEF gives location and type[m
+[7m Manual page sort(1) line 44 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 45 (press h for help or q to quit)[27m[K[K       [1m-m[0m, [1m--merge[0m[m
+[7m Manual page sort(1) line 46 (press h for help or q to quit)[27m[K[K              merge already sorted files; do not sort[m
+[7m Manual page sort(1) line 47 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 48 (press h for help or q to quit)[27m[K[K       [1m-o[0m, [1m--output[0m=[4mFILE[24m[m
+[7m Manual page sort(1) line 49 (press h for help or q to quit)[27m[K[K              write result to FILE instead of standard output[m
+[7m Manual page sort(1) line 50 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 51 (press h for help or q to quit)[27m[K[K       [1m-s[0m, [1m--stable[0m[m
+[7m Manual page sort(1) line 52 (press h for help or q to quit)[27m[K[K              stabilize sort by disabling last-resort comparison[m
+[7m Manual page sort(1) line 53 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 54 (press h for help or q to quit)[27m[K[K       [1m-S[0m, [1m--buffer-size[0m=[4mSIZE[24m[m
+[7m Manual page sort(1) line 55 (press h for help or q to quit)[27m[K[K              use SIZE for main memory buffer[m
+[7m Manual page sort(1) line 56 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 57 (press h for help or q to quit)[27m[K[K       [1m-t[0m, [1m--field-separator[0m=[4mSEP[24m[m
+[7m Manual page sort(1) line 58 (press h for help or q to quit)[27m[K[K              use SEP instead of non-blank to blank transition[m
+[7m Manual page sort(1) line 59 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 60 (press h for help or q to quit)[27m[K[K       [1m-T[0m, [1m--temporary-directory[0m=[4mDIR[24m[m
+[7m Manual page sort(1) line 61 (press h for help or q to quit)[27m[K[K              use DIR for temporaries, not $TMPDIR or [4m/tmp[24m; multiple options specify multiple di‐[m
+[7m Manual page sort(1) line 62 (press h for help or q to quit)[27m[K[K              rectories[m
+[7m Manual page sort(1) line 63 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 64 (press h for help or q to quit)[27m[K[K       [1m--parallel[0m=[4mN[24m[m
+[7m Manual page sort(1) line 65 (press h for help or q to quit)[27m[K[K              change the number of sorts run concurrently to N[m
+[7m Manual page sort(1) line 66 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 67 (press h for help or q to quit)[27m[K[K       [1m-u[0m, [1m--unique[0m[m
+[7m Manual page sort(1) line 68 (press h for help or q to quit)[27m[K[K              with [1m-c[0m, check for strict ordering; without [1m-c[0m, output only the first of  an  equal[m
+[7m Manual page sort(1) line 69 (press h for help or q to quit)[27m[K[K              run[m
+[7m Manual page sort(1) line 70 (press h for help or q to quit)[27m[K[K[m
+[7m Manual page sort(1) line 71 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whatis pwd
+pwd (1)              - print name of current/working directory
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ pws[Kd
+/mnt/e/Programming/os/UE213020
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ mkdrir[K[K[Kir toremove
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls
+[0m[01;32mTotal_lines[0m  [01;32manotherfile[0m  [01;32mfourthfile[0m  [01;32mmyfile[0m  [01;32mmyfile2[0m  [01;32mnewfile[0m  [01;32msecondfile[0m  [01;32msortedfile[0m  [34;42mtoremove[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ rmdir to [Kremove
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls
+[0m[01;32mTotal_lines[0m  [01;32manotherfile[0m  [01;32mfourthfile[0m  [01;32mmyfile[0m  [01;32mmyfile2[0m  [01;32mnewfile[0m  [01;32msecondfile[0m  [01;32msortedfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whoami
+aryan
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ who
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whoami
+aryan
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what [Ksi[K[Kis cp
+cp (1)               - copy files and directories
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ du
+0	.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ df
+Filesystem      1K-blocks      Used Available Use% Mounted on
+none              1474548         4   1474544   1% /mnt/wsl
+drivers         184202236 135395440  48806796  74% /usr/lib/wsl/drivers
+none              1474548         0   1474548   0% /usr/lib/wsl/lib
+/dev/sdc       1055762868   4298508 997760888   1% /
+none              1474548       156   1474392   1% /mnt/wslg
+rootfs            1471304      1896   1469408   1% /init
+none              1471332         0   1471332   0% /dev
+none              1474548         4   1474544   1% /run
+none              1474548         0   1474548   0% /run/lock
+none              1474548         0   1474548   0% /run/shm
+none              1474548         0   1474548   0% /run/user
+tmpfs             1474548         0   1474548   0% /sys/fs/cgroup
+none              1474548      1136   1473412   1% /mnt/wslg/versions.txt
+none              1474548      1136   1473412   1% /mnt/wslg/doc
+drvfs           184202236 135395440  48806796  74% /mnt/c
+drvfs           157285372 144223436  13061936  92% /mnt/d
+drvfs           157286396  17831132 139455264  12% /mnt/e
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what is du
+
+Command 'what' not found, did you mean:
+
+  command 'chat' from deb ppp (2.4.7-2+4.1ubuntu5.1)
+  command 'wcat' from deb sac (1.9b5-3build1)
+  command 'jhat' from deb openjdk-8-jdk-headless (8u352-ga-1~20.04)
+  command 'phat' from deb phat-utils (1.5-3build2)
+  command 'wham' from deb wham-align (0.1.5-2build1)
+
+Try: sudo apt install <deb name>
+
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ what is du[1P
+du (1)               - estimate file space usage
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ whatis free
+free (1)             - Display amount of free and used memory in the system
+free (3)             - allocate and free dynamic memory
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ free
+              total        used        free      shared  buff/cache   available
+Mem:        2949096      315912     1495308        3704     1137876     2455964
+Swap:       1048576           0     1048576
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ head myfile
+This is myfile.
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ tail myfile
+This is myfile.
+This is secondfile.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ exit
+
+Script done on 2023-01-24 10:41:41+05:30 [COMMAND_EXIT_CODE="0"]
+Script started on 2023-01-24 11:04:41+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ cp typescript UEW[K213020/log
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os[00m$ cd UE2123[K[K3020
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ ls
+[0m[01;32mTotal_lines[0m  [01;32manotherfile[0m  [01;32mfourthfile[0m  [01;32mlog[0m  [01;32mmyfile[0m  [01;32mmyfile2[0m  [01;32mnewfile[0m  [01;32msecondfile[0m  [01;32msortedfile[0m
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/UE213020[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/UE213020[00m$ exit
+
+Script done on 2023-01-24 11:05:29+05:30 [COMMAND_EXIT_CODE="0"]

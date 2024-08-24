@@ -1,0 +1,1 @@
+wsl --exec cat linear_2.py

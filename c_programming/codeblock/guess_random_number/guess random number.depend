@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1638872933 source:c:\users\licar\desktop\aryan programming\codeblock\guess random number\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

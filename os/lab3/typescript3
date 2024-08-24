@@ -1,0 +1,33 @@
+Script started on 2023-02-14 11:55:01+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="40"]
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ tty
+/dev/pts/1
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ batch
+You do not have permission to use at.
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo batch
+[sudo] password for aryan: 
+warning: commands will be executed using /bin/sh
+at> sud   touch batch.txt
+at> echo "BATCH" > /dev/pts/1
+at> <EOT>
+job 26 at Tue Feb 14 11:55:00 2023
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ BATCH
+
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ at[K[Ksudo at
+Garbled time
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ sudo at now +1 minutes
+warning: commands will be executed using /bin/sh
+at> echo "BBBB" > /dev/pts/1
+at> <EOT>
+job 27 at Tue Feb 14 11:57:00 2023
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ BBBB
+
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ cat comma[K[K[K[K[K[K[K[K[Kcat commandsexec
+* * * * * echo "Hello" > /dev/pts/0
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ crontab commandsexec
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ 
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ crontab -l
+* * * * * echo "Hello" > /dev/pts/0
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ crontab -l[Kr
+]0;aryan@LAPTOP-LQ8VM2NN: /mnt/e/Programming/os/lab3[01;32maryan@LAPTOP-LQ8VM2NN[00m:[01;34m/mnt/e/Programming/os/lab3[00m$ exit
+
+Script done on 2023-02-14 12:00:18+05:30 [COMMAND_EXIT_CODE="0"]

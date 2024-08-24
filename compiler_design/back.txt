@@ -1,0 +1,70 @@
+namespace keywords
+{
+const string AUTO = "auto";
+const string DOUBLE = "double";	
+const string INT = "int";	
+const string STRUCT = "struct";
+const string BREAK = "break";	
+const string ELSE = "else";	
+const string LONG = "long";	
+const string SWITCH = "switch";
+const string CASE = "case";	
+const string ENUM = "enum";	
+const string REGISTER = "register";	
+const string TYPEDEF = "typedef";
+const string CHAR = "char";	
+const string EXTERN = "extern";	
+const string RETURN = "return";	
+const string UNION = "union";
+const string CONTINUE = "continue";	
+const string s = "for";	
+const string s = "signed";	
+const string s = "void";
+const string s = "do";	
+const string s = "if";	
+const string s = "static";	
+const string s = "while";
+const string s = "default";	
+const string s = "goto";	
+const string s = "sizeof";	
+const string s = "volatile";
+const string s = "const";	
+const string s = "float";	
+const string s = "short";	
+const string s = "unsigned";
+}
+
+“auto”,
+ “break”,
+  “case”,
+   “char”,
+    “const”, 
+    “continue”, 
+    “default”,
+     “do”,
+      “double”,
+       “else”, 
+       “enum”,
+        “extern”,
+         “float”,
+          “for”, 
+          “goto”, 
+          “if”,
+           “inline”,
+            “int”
+            , “long”,
+             “register”, 
+             “restrict”, 
+             “return”, 
+             “short”,
+              “signed”, 
+              “sizeof”, 
+              “static”, 
+              “struct”,
+               “switch”,
+                “typedef”,
+                 “union”,
+                  “unsigned”,
+                   “void”,
+                    “volatile”,
+                     “while”

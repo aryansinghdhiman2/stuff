@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1649936414 source:e:\programming\cpp_programming\code_blocks\section_16_challenge\src\account_util.cpp
+	<iostream>
+	"Account_Util.h"
+
+1649935878 e:\programming\cpp_programming\code_blocks\section_16_challenge\include\account_util.h
+	<vector>
+	"Account.h"
+
+1649929671 e:\programming\cpp_programming\code_blocks\section_16_challenge\include\account.h
+	<iostream>
+	<string>
+	"I_Printable.h"
+
+1649929559 e:\programming\cpp_programming\code_blocks\section_16_challenge\include\savings_account.h
+	"Account.h"
+
+1649929559 e:\programming\cpp_programming\code_blocks\section_16_challenge\include\checking_account.h
+	<iostream>
+	<string>
+	"Account.h"
+
+1649930145 e:\programming\cpp_programming\code_blocks\section_16_challenge\include\trust_account.h
+	"Savings_Account.h"
+
+1649929628 e:\programming\cpp_programming\code_blocks\section_16_challenge\include\i_printable.h
+	<iostream>
+
+1649935202 source:e:\programming\cpp_programming\code_blocks\section_16_challenge\main.cpp
+	<iostream>
+	<memory>
+	"Account.h"
+	"Checking_Account.h"
+	"Savings_Account.h"
+	"Trust_Account.h"
+	"Account_Util.h"
+
+1649929559 source:e:\programming\cpp_programming\code_blocks\section_16_challenge\src\account.cpp
+	"Account.h"
+
+1649929948 source:e:\programming\cpp_programming\code_blocks\section_16_challenge\src\checking_account.cpp
+	"Checking_Account.h"
+
+1649930019 source:e:\programming\cpp_programming\code_blocks\section_16_challenge\src\i_printable.cpp
+	"I_Printable.h"
+
+1649930037 source:e:\programming\cpp_programming\code_blocks\section_16_challenge\src\savings_account.cpp
+	"Savings_Account.h"
+
+1649930058 source:e:\programming\cpp_programming\code_blocks\section_16_challenge\src\trust_account.cpp
+	"Trust_Account.h"
+

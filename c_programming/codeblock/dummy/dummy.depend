@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1638536903 source:c:\users\licar\desktop\aryan programming\codeblock\dummy\main.c
+	<stdio.h>
+
+1642934706 source:c:\users\licar\desktop\aryan programming\c programming\codeblock\dummy\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

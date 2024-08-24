@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<?xml-stylesheet href="./first.css" type="text/css"?>
+<!DOCTYPE students SYSTEM "./first.dtd">
+<students>
+    <student>
+        <usn>UE213020</usn>
+        <name>Aryan Singh Dhiman</name>
+        <college>University Institute of Engineering and Technology</college>
+        <branch>CSE</branch>
+        <yearOfJoining>2021</yearOfJoining>
+        <email>capboyaryan@gmail.com</email>
+    </student>
+    <student>
+        <usn>UE213045</usn>
+        <name>Himanshu Kaushal</name>
+        <college>University Institute of Engineering and Technology</college>
+        <branch>CSE</branch>
+        <yearOfJoining>2021</yearOfJoining>
+        <email>himanshu@gmail.com</email>
+    </student>
+    <student>
+        <usn>UE213041</usn>
+        <name>Hargun Kaur</name>
+        <college>University Institute of Engineering and Technology</college>
+        <branch>CSE</branch>
+        <yearOfJoining>2021</yearOfJoining>
+        <email>hargun@gmail.com</email>
+    </student>
+</students>

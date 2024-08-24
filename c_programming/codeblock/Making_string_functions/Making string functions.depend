@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1639319898 source:c:\users\licar\desktop\aryan programming\codeblock\making string functions\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
