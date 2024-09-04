@@ -2,9 +2,9 @@ import numpy as np
 
 class PittsBase:
     @classmethod
-    def linear_threshold_gate(cls,dot: int, T: float) -> int:
+    def linear_threshold_gate(cls,dot: int) -> int:
         '''Returns the binary threshold output'''
-        if dot >= T:
+        if dot >= cls.T:
             return 1
         else:
             return 0
@@ -15,7 +15,7 @@ class PittsAND(PittsBase):
 
     @classmethod
     def activate(cls,A : int, B : int) -> int:
-        return cls.linear_threshold_gate([A,B] @ cls.weights,cls.T)
+        return cls.linear_threshold_gate([A,B] @ cls.weights)
     
 class PittsOR(PittsBase):
     T = 1
@@ -23,7 +23,7 @@ class PittsOR(PittsBase):
 
     @classmethod
     def activate(cls,A : int, B : int) -> int:
-        return cls.linear_threshold_gate([A,B] @ cls.weights,cls.T)
+        return cls.linear_threshold_gate([A,B] @ cls.weights)
     
 class PittsNOT(PittsBase):
     T = 0
@@ -31,7 +31,7 @@ class PittsNOT(PittsBase):
 
     @classmethod
     def activate(cls,A : int) -> int:
-        return cls.linear_threshold_gate([A] @ cls.weights,cls.T)
+        return cls.linear_threshold_gate([A] @ cls.weights)
     
 class PittsXOR(PittsBase):
 
@@ -57,11 +57,6 @@ def parity(number : int) -> int:
         bits = ['0'] * (4 - len(bits)) + bits
     
     bits = list(map(int,bits))
-
-    # par = bits[0]
-    # for i in range(1,len(bits)):
-    #     par = PittsXOR.activate(par,bits[i])
-    # return par
 
     return PittsXOR.activate(
                 PittsXOR.activate(bits[0],bits[1]),

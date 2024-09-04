@@ -1,4 +1,5 @@
 import numpy as np
+from matplotlib import pyplot as plt
 
 def linear_threshold_gate(dot: int, T: float) -> int:
     '''Returns the binary threshold output'''
@@ -29,6 +30,19 @@ if(__name__ == "__main__"):
         activation = linear_threshold_gate(dot_products[i], T)
         print(f'Activation: {activation}')
 
+    plt.plot([1,0],[0,1],"black",label="Decision Boundary")
+    plt.legend()
+    plt.plot(1,1,"go")
+    plt.plot(1,0,"go")
+    plt.plot(0,1,"go")
+    plt.plot(0,0,"ro")
+    plt.annotate("(0,0)",[0,0])
+    plt.annotate("(1,0)",[1,0])
+    plt.annotate("(0,1)",[0,1])
+    plt.annotate("(1,1)",[1,1])
+    axes = plt.gca()
+    plt.show()
+
     print('—' * 65)
     print("Implementing NOR gate using McCulloch-Pitts Artificial Neuron\n")
     input_table = np.array([
@@ -49,6 +63,20 @@ if(__name__ == "__main__"):
     for i in range(0,4):
         activation = linear_threshold_gate(dot_products[i], T)
         print(f'Activation: {activation}')
+
+    plt.plot([-1,1],[1,-1],"black",label="Decision Boundary")
+    plt.legend()
+    plt.plot(1,1,"ro")
+    plt.plot(1,0,"ro")
+    plt.plot(0,1,"ro")
+    plt.plot(0,0,"go")
+    plt.annotate("(0,0)",[0,0])
+    plt.annotate("(1,0)",[1,0])
+    plt.annotate("(0,1)",[0,1])
+    plt.annotate("(1,1)",[1,1])
+    plt.xlim((-0.5, 1.05))
+    plt.ylim((-0.5, 1.05))
+    plt.show()
 
     print('—' * 65)
     print("Implementing NOT gate using McCulloch-Pitts Artificial Neuron\n")
