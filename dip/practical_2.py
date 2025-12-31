@@ -20,9 +20,9 @@ for i in range(0,height):
 
 pseudo_colored_2 = cv2.applyColorMap(gray,cv2.COLORMAP_OCEAN)
 
-cv2.imshow("Manual Pseudo Colored",pseudo_colored)
-cv2.imshow("Automatic Pseudo Coloring",pseudo_colored_2)
-cv2.imshow("Original Image",image)
-cv2.imshow("Monochrome Image",gray)
+cv2.imshow("Manual Pseudo Colored",cv2.resize(pseudo_colored,(640, 640)))
+cv2.imshow("Automatic Pseudo Coloring",cv2.resize(pseudo_colored_2,(640, 640)))
+cv2.imshow("Original Image",cv2.resize(image,(640, 640)))
+cv2.imshow("Monochrome Image",cv2.resize(gray,(640, 640)))
 
 cv2.waitKey(0)

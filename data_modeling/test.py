@@ -1,6 +1,6 @@
-from matplotlib import pyplot as plt
-import numpy as np
-import seaborn as sns
+# from matplotlib import pyplot as plt
+# import numpy as np
+# import seaborn as sns
 
 # def f(t): 
 #     return np.exp(-t) * np.cos(2*np.pi*t) 
@@ -101,57 +101,64 @@ import seaborn as sns
 # plt.hist(array,bins=2,density=False,facecolor='b',alpha=0.5,edgecolor='black')
 # plt.show()
 
-from datetime import datetime
-import csv
+# from datetime import datetime
+# import csv
+# import numpy as np
+# from matplotlib import pyplot as plt
+# import seaborn as sns
+# import pandas
+
+# class Sales:
+#     def __init__(self,year:int,month:int) -> None:
+#         self.year = year
+#         self.month = month
+#         self.sales = 0
+#     def __eq__(self, other: "Sales") -> bool:
+#         if(self.year == other.year and self.month == other.month):
+#             return True
+#         else: return False
+
+
+# sns.set_theme()
+
+
+# with open('OnlineRetail.csv', newline='') as f:
+#     reader = csv.reader(f)
+#     sales: list[Sales] = []
+#     next(reader)
+#     dt = datetime.now()
+
+#     for row in reader:
+#         try:
+#             dt = datetime.strptime(row[4].split(' ')[0],"%d-%m-%Y")
+#         except:
+#             dt = datetime.strptime(row[4].split(' ')[0],"%m/%d/%Y")
+
+#         sale = Sales(dt.year,dt.month)
+
+#         try:
+#             sales[sales.index(sale)].sales+=1
+#         except:
+#             sale.sales+=1
+#             sales.append(sale)
+
+#         # if sale not in sales:
+#         #     sale.sales+=1
+#         #     sales.append(sale)
+#         # else:
+#         #     sales[sales.index(sale)].sales+=1
+    
+#     # pandas.DataFrame.from_dict(sale)
+
+
+#     # sns.barplot(dsales)
+#     # plt.show()
+
 import numpy as np
-from matplotlib import pyplot as plt
-import seaborn as sns
-import pandas
+from numpy.random import randn
 
-class Sales:
-    def __init__(self,year:int,month:int) -> None:
-        self.year = year
-        self.month = month
-        self.sales = 0
-    def __eq__(self, other: "Sales") -> bool:
-        if(self.year == other.year and self.month == other.month):
-            return True
-        else: return False
+arr = randn(5,5)
 
-
-sns.set_theme()
-
-
-with open('OnlineRetail.csv', newline='') as f:
-    reader = csv.reader(f)
-    sales: list[Sales] = []
-    next(reader)
-    dt = datetime.now()
-
-    for row in reader:
-        try:
-            dt = datetime.strptime(row[4].split(' ')[0],"%d-%m-%Y")
-        except:
-            dt = datetime.strptime(row[4].split(' ')[0],"%m/%d/%Y")
-
-        sale = Sales(dt.year,dt.month)
-
-        try:
-            sales[sales.index(sale)].sales+=1
-        except:
-            sale.sales+=1
-            sales.append(sale)
-
-        # if sale not in sales:
-        #     sale.sales+=1
-        #     sales.append(sale)
-        # else:
-        #     sales[sales.index(sale)].sales+=1
-    
-    # pandas.DataFrame.from_dict(sale)
-
-
-    # sns.barplot(dsales)
-    # plt.show()
-
-    
+print(arr)
+print(arr > 0)
+print(arr[arr > 0].shape)

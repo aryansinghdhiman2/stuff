@@ -1,20 +1,8 @@
 import numpy as np
-from matplotlib import cm, pyplot as plt
+from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
 
 class Neuron:
-    # weight = np.array([
-    #     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    #     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-    #     [0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
-    # ])
     weight = np.array([
         [ 1,  1,  1,  1, 1, 1,  1,  1,  1,  1],
         [ 1,  1,  1,  1, 1, 1,  1,  1,  1,  1],
