@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="struct_automata" kind="struct" language="C++" prot="public">
+    <compoundname>Automata</compoundname>
+    <includes refid="automata_8hpp" local="no">automata.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_automata_1a3048a6f9b701c702965f43f9db1b0c41" prot="public" static="no" mutable="no">
+        <type>StateSharedPointer</type>
+        <definition>StateSharedPointer Automata::initial_state</definition>
+        <argsstring></argsstring>
+        <name>initial_state</name>
+        <qualifiedname>Automata::initial_state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Entry <ref refid="struct_state" kindref="compound">State</ref> of the FA </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/automata.hpp" line="140" column="24" bodyfile="E:/Projects/retonfa_only_doxygen/automata.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_automata_1a5eb6c13a974aefaca6459b9bac557398" prot="public" static="no" mutable="no">
+        <type>StateSharedPointer</type>
+        <definition>StateSharedPointer Automata::final_state</definition>
+        <argsstring></argsstring>
+        <name>final_state</name>
+        <qualifiedname>Automata::final_state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Final <ref refid="struct_state" kindref="compound">State</ref> of NFA. Only used with NFA </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/automata.hpp" line="141" column="24" bodyfile="E:/Projects/retonfa_only_doxygen/automata.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_automata_1a4e1e0da5c43828bb1bfe8de7b36c5dca" prot="public" static="no" mutable="no">
+        <type>std::set&lt; StateSharedPointer, <ref refid="struct_compare_state_less" kindref="compound">CompareStateLess</ref> &gt;</type>
+        <definition>std::set&lt;StateSharedPointer,CompareStateLess&gt; Automata::states</definition>
+        <argsstring></argsstring>
+        <name>states</name>
+        <qualifiedname>Automata::states</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Contains all the States in the Finite <ref refid="struct_automata" kindref="compound">Automata</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/automata.hpp" line="148" column="14" bodyfile="E:/Projects/retonfa_only_doxygen/automata.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_automata_1ae13e4a7c4d7f0291c80b252a2510ebff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Automata::Automata</definition>
+        <argsstring>()</argsstring>
+        <name>Automata</name>
+        <qualifiedname>Automata::Automata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default Constructor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/automata.hpp" line="153" column="5" bodyfile="E:/Projects/retonfa_only_doxygen/automata.hpp" bodystart="153" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_automata_1af4b45726eeed50477afc67f58b707a87" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Automata::Automata</definition>
+        <argsstring>(char tran)</argsstring>
+        <name>Automata</name>
+        <qualifiedname>Automata::Automata</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>tran</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an <ref refid="struct_automata" kindref="compound">Automata</ref> having a transition on tran</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tran</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character on which <ref refid="struct_automata" kindref="compound">Automata</ref> has a transition </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/automata.hpp" line="160" column="5" bodyfile="E:/Projects/retonfa_only_doxygen/automata.hpp" bodystart="160" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_automata_1a616a9af82140773f0ab88692a51433fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Automata::Automata</definition>
+        <argsstring>(const Automata &amp;other)</argsstring>
+        <name>Automata</name>
+        <qualifiedname>Automata::Automata</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_automata" kindref="compound">Automata</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy Constructor</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="struct_automata" kindref="compound">Automata</ref> to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/automata.hpp" line="174" column="5" bodyfile="E:/Projects/retonfa_only_doxygen/automata.hpp" bodystart="174" bodyend="179"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Used to represent an <ref refid="struct_automata" kindref="compound">Automata</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa_only_doxygen/automata.hpp" line="138" column="1" bodyfile="E:/Projects/retonfa_only_doxygen/automata.hpp" bodystart="139" bodyend="180"/>
+    <listofallmembers>
+      <member refid="struct_automata_1ae13e4a7c4d7f0291c80b252a2510ebff" prot="public" virt="non-virtual"><scope>Automata</scope><name>Automata</name></member>
+      <member refid="struct_automata_1af4b45726eeed50477afc67f58b707a87" prot="public" virt="non-virtual"><scope>Automata</scope><name>Automata</name></member>
+      <member refid="struct_automata_1a616a9af82140773f0ab88692a51433fb" prot="public" virt="non-virtual"><scope>Automata</scope><name>Automata</name></member>
+      <member refid="struct_automata_1a5eb6c13a974aefaca6459b9bac557398" prot="public" virt="non-virtual"><scope>Automata</scope><name>final_state</name></member>
+      <member refid="struct_automata_1a3048a6f9b701c702965f43f9db1b0c41" prot="public" virt="non-virtual"><scope>Automata</scope><name>initial_state</name></member>
+      <member refid="struct_automata_1a4e1e0da5c43828bb1bfe8de7b36c5dca" prot="public" virt="non-virtual"><scope>Automata</scope><name>states</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

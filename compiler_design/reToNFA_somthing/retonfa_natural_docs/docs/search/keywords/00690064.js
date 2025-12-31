@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("id",["Variable"],[["id",,[["State",,,,0,"File:automata.hpp:State.id","CClass:State:id"]]]]);

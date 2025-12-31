@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("inf",["Function"],[["infixToPostfix",,[[,,,,0,"File:parse.h:infixToPostfix"]]]]);

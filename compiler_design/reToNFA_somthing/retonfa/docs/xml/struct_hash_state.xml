@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="struct_hash_state" kind="struct" language="C++" prot="public">
+    <compoundname>HashState</compoundname>
+    <includes refid="automata_8hpp" local="no">automata.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_hash_state_1a096b0186d6f6854201bf0429d15f79a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t HashState::operator()</definition>
+        <argsstring>(const StateWeakPointer &amp;s) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>HashState::operator()</qualifiedname>
+        <param>
+          <type>const StateWeakPointer &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="69" column="12" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="194" bodyend="202"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Used to compute Hash of a <ref refid="struct_state" kindref="compound">State</ref> </para>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa/automata.hpp" line="67" column="1" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="68" bodyend="70"/>
+    <listofallmembers>
+      <member refid="struct_hash_state_1a096b0186d6f6854201bf0429d15f79a1" prot="public" virt="non-virtual"><scope>HashState</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

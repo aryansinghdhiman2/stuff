@@ -1,0 +1,477 @@
+\doxysection{E\+:/\+Projects/retonfa/automata.hpp}
+\hypertarget{automata_8hpp_source}{}\label{automata_8hpp_source}\mbox{\hyperlink{automata_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ \_\_AUTOMATA\_\_HPP\_\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_AUTOMATA\_\_HPP\_\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}tabulate.hpp"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ }string\ =\ std::string;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_state}{State}};}
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_automata}{Automata}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_compare_state_less}{CompareStateLess}};}
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_hash_state}{HashState}};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_compare_state_equal}{CompareStateEqual}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ epsilon\ =\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ id\_counter\ =\ -\/1;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{using\ }StateSharedPointer\ =\ std::shared\_ptr<State>;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{using\ }StateWeakPointer\ =\ std::weak\_ptr<State>;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{using\ }TransitionSet\ =\ std::unordered\_set<StateWeakPointer,HashState,CompareStateEqual>;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ }TransitionSetShared\ =\ std::unordered\_set<StateSharedPointer,HashState,CompareStateEqual>;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_compare_state_less}{CompareStateLess}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator()(\textcolor{keyword}{const}\ StateWeakPointer\ a,\textcolor{keyword}{const}\ StateWeakPointer\ b)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ auto\ compare\_state\_less\ =\ CompareStateLess();}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_compare_state_equal}{CompareStateEqual}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator()(\textcolor{keyword}{const}\ StateWeakPointer\ a,\textcolor{keyword}{const}\ StateWeakPointer\ b)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_hash_state}{HashState}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ operator()(\textcolor{keyword}{const}\ StateWeakPointer\&\ s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_state}{State}}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_state_abc172088da8328c72ae3425df8b06e1a}{id}};\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_state_a372b1589568bc651959ed9c57808da69}{is\_accepting}};\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::optional<std::string>\ \mbox{\hyperlink{struct_state_adf88281590f518419ff664abe5a1da96}{combined\_id}};\ }
+\DoxyCodeLine{00080\ \ \ \ \ std::optional<TransitionSet>\ \mbox{\hyperlink{struct_state_ac555f06b6fed114b38754ad5d3fb6c42}{combined\_set}};}
+\DoxyCodeLine{00081\ \ \ \ \ std::unordered\_map<char,TransitionSet>\ \mbox{\hyperlink{struct_state_a48d6f46a23969d2770f915087e86f735}{transitions}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{struct_state_a4e5dd8c6ee44f840b310d7b326fab7f5}{State}}(\textcolor{keywordtype}{int}\ identifer,\textcolor{keywordtype}{bool}\ accept\ =\ \textcolor{keyword}{false}):\ \mbox{\hyperlink{struct_state_abc172088da8328c72ae3425df8b06e1a}{id}}(identifer),\mbox{\hyperlink{struct_state_a372b1589568bc651959ed9c57808da69}{is\_accepting}}(accept)\{\}\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_state_a3a61c5abd69242fee0983d4bfac2aec4}{insertTransition}}(\textcolor{keywordtype}{char}\ alphabet,\textcolor{keyword}{const}\ StateSharedPointer\&\ s)}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>transitions.find(alphabet)\ ==\ this-\/>transitions.end())}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ TransitionSet\ l;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ l.insert(std::weak\_ptr(s));}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>transitions.insert(make\_pair(alphabet,l));}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>transitions.at(alphabet).insert(std::weak\_ptr(s));}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_state_ada270d0f994dca9e13d09e7d88c6bc1f}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_state}{State}}\&\ other)}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\textcolor{keywordtype}{id}\ <\ other.\mbox{\hyperlink{struct_state_abc172088da8328c72ae3425df8b06e1a}{id}};}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_state_adb2136a330eddafe1e9e7e852a1af7d4}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_state}{State}}\&\ other)}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>combined\_id\ and\ other.\mbox{\hyperlink{struct_state_adf88281590f518419ff664abe5a1da96}{combined\_id}})}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>combined\_id.value()\ ==\ other.\mbox{\hyperlink{struct_state_adf88281590f518419ff664abe5a1da96}{combined\_id}}.value())\ or\ (this-\/>\textcolor{keywordtype}{id}\ ==\ other.\mbox{\hyperlink{struct_state_abc172088da8328c72ae3425df8b06e1a}{id}});}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\textcolor{keywordtype}{id}\ ==\ other.\mbox{\hyperlink{struct_state_abc172088da8328c72ae3425df8b06e1a}{id}};}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_automata}{Automata}}}
+\DoxyCodeLine{00139\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ StateSharedPointer\ \mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}};\ }
+\DoxyCodeLine{00141\ \ \ \ \ StateSharedPointer\ \mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}};\ }
+\DoxyCodeLine{00148\ \ \ \ \ std::set<StateSharedPointer,CompareStateLess>\ \mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{struct_automata_ae13e4a7c4d7f0291c80b252a2510ebff}{Automata}}()\{\}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{struct_automata_af4b45726eeed50477afc67f58b707a87}{Automata}}(\textcolor{keywordtype}{char}\ tran)}
+\DoxyCodeLine{00161\ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ this-\/>initial\_state\ =\ std::make\_shared<State>(++id\_counter);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ this-\/>final\_state\ =\ std::make\_shared<State>(++id\_counter);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ this-\/>initial\_state-\/>insertTransition(tran,\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ this-\/>states.insert(\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ this-\/>states.insert(\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{struct_automata_a616a9af82140773f0ab88692a51433fb}{Automata}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_automata}{Automata}}\&\ other)}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ this-\/>initial\_state\ =\ other.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ this-\/>final\_state\ =\ other.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ this-\/>states\ =\ other.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}};}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{keywordtype}{bool}\ CompareStateLess::operator()(\textcolor{keyword}{const}\ StateWeakPointer\ a,\textcolor{keyword}{const}\ StateWeakPointer\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00185\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{return}\ (*(StateSharedPointer)a)\ <\ *((StateSharedPointer)b);\ \ }
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{bool}\ CompareStateEqual::operator()(\textcolor{keyword}{const}\ StateWeakPointer\ a,\textcolor{keyword}{const}\ StateWeakPointer\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00190\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{return}\ (*(StateSharedPointer)a)\ ==\ *((StateSharedPointer)b);\ \ }
+\DoxyCodeLine{00192\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{size\_t}\ HashState::operator()(\textcolor{keyword}{const}\ StateWeakPointer\&\ s)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00195\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00196\ \ \ \ \ StateSharedPointer\ sh\ =\ StateSharedPointer(s);}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{if}(sh-\/>combined\_id)}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<std::string>()(sh-\/>combined\_id.value());}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<int>()(sh-\/>id);}
+\DoxyCodeLine{00202\ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00213\ \mbox{\hyperlink{struct_automata}{Automata}}\ \mbox{\hyperlink{automata_8hpp_a4ca5a2d02e5317ff20d302dc1536957b}{concatenation}}(\mbox{\hyperlink{struct_automata}{Automata}}\&\ first,\mbox{\hyperlink{struct_automata}{Automata}}\&\ second)}
+\DoxyCodeLine{00214\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ result(first);}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}-\/>insertTransition(epsilon,second.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00218\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}\ =\ second.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}};}
+\DoxyCodeLine{00219\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.merge(second.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}});}
+\DoxyCodeLine{00220\ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00222\ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \mbox{\hyperlink{struct_automata}{Automata}}\ \_union(\mbox{\hyperlink{struct_automata}{Automata}}\&\ first,\mbox{\hyperlink{struct_automata}{Automata}}\&\ second)}
+\DoxyCodeLine{00225\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ result;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}\ =\ std::make\_shared<State>(++id\_counter);}
+\DoxyCodeLine{00229\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}-\/>insertTransition(epsilon,first.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00230\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}-\/>insertTransition(epsilon,second.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}\ =\ std::make\_shared<State>(++id\_counter);}
+\DoxyCodeLine{00233\ \ \ \ \ first.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}-\/>insertTransition(epsilon,result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00234\ \ \ \ \ second.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}-\/>insertTransition(epsilon,result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.insert(result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00237\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.insert(result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.merge(first.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}});}
+\DoxyCodeLine{00240\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.merge(second.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}});}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00243\ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \mbox{\hyperlink{struct_automata}{Automata}}\ closure(\mbox{\hyperlink{struct_automata}{Automata}}\&\ first)}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ result;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}\ =\ std::make\_shared<State>(++id\_counter);}
+\DoxyCodeLine{00250\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}\ =\ std::make\_shared<State>(++id\_counter);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}-\/>insertTransition(epsilon,result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00253\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}-\/>insertTransition(epsilon,first.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ first.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}-\/>insertTransition(epsilon,result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00256\ \ \ \ \ first.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}-\/>insertTransition(epsilon,first.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.insert(result.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00259\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.insert(result.\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}});}
+\DoxyCodeLine{00260\ \ \ \ \ }
+\DoxyCodeLine{00261\ \ \ \ \ result.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.merge(first.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}});}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00264\ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \mbox{\hyperlink{struct_automata}{Automata}}\ processRegEx(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ exp)}
+\DoxyCodeLine{00267\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ std::stack<Automata>\ s;}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ alphabet\ :\ exp)}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(alphabet\ ==\ \textcolor{charliteral}{'*'})}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ a\ =\ s.top();}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ s.pop();}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ closure(a);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ s.push(a);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(alphabet\ ==\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ second\ \ =\ s.top();}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ s.pop();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ first\ =\ s.top();}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ s.pop();}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ s.push(\mbox{\hyperlink{automata_8hpp_a4ca5a2d02e5317ff20d302dc1536957b}{concatenation}}(first,second));}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(alphabet\ ==\ \textcolor{charliteral}{'|'})}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ second\ \ =\ s.top();}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ s.pop();}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ first\ =\ s.top();}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ s.pop();}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ s.push(\_union(first,second));}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ s.emplace(alphabet);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ s.top().\mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\_state}}-\/>is\_accepting\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{return}\ s.top();}
+\DoxyCodeLine{00303\ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \textcolor{keywordtype}{void}\ closureTraversal(\textcolor{keyword}{const}\ StateSharedPointer\&\ s,TransitionSet\&\ states)}
+\DoxyCodeLine{00306\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ states.insert(s);}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordflow}{if}(s-\/>transitions.count(epsilon)==0)}
+\DoxyCodeLine{00310\ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ state\ :\ s-\/>transitions.at(epsilon))}
+\DoxyCodeLine{00315\ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(states.count(state)==0)}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ closureTraversal(StateSharedPointer(state),states);}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00323\ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ TransitionSet\ epsilonClosure(\textcolor{keyword}{const}\ StateSharedPointer\&\ s)}
+\DoxyCodeLine{00326\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ TransitionSet\ states;}
+\DoxyCodeLine{00328\ \ \ \ \ closureTraversal(s,states);}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordflow}{return}\ states;}
+\DoxyCodeLine{00330\ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ TransitionSet\ epsilonClosure(\textcolor{keyword}{const}\ TransitionSet\&\ s)}
+\DoxyCodeLine{00333\ \{}
+\DoxyCodeLine{00334\ \ \ \ \ TransitionSet\ states;}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ state\ :\ s)}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ closureTraversal(StateSharedPointer(state),states);}
+\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{return}\ states;}
+\DoxyCodeLine{00340\ \}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ TransitionSet\ move(\textcolor{keyword}{const}\ StateSharedPointer\&\ s,\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ alphabet)}
+\DoxyCodeLine{00343\ \{}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{if}(s-\/>transitions.count(alphabet)!=0)}
+\DoxyCodeLine{00345\ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s-\/>transitions.at(alphabet);}
+\DoxyCodeLine{00347\ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ TransitionSet();}
+\DoxyCodeLine{00349\ \}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ TransitionSet\ move(\textcolor{keyword}{const}\ TransitionSet\&\ s,\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ alphabet)}
+\DoxyCodeLine{00352\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ TransitionSet\ states;}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ state\ :\ s)}
+\DoxyCodeLine{00355\ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ shared\_state\ =\ StateSharedPointer(state);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(shared\_state-\/>transitions.count(alphabet)!=0)}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ states.insert(shared\_state-\/>transitions.at(alphabet).begin(),shared\_state-\/>transitions.at(alphabet).end());}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordflow}{return}\ states;}
+\DoxyCodeLine{00363\ \}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ std::optional<std::string>\ makeCombinedId(TransitionSet\ s)}
+\DoxyCodeLine{00366\ \{}
+\DoxyCodeLine{00367\ \ \ \ \ std::string\ combined\_id\_str;}
+\DoxyCodeLine{00368\ \ \ \ \ std::vector<int>\ id\_arr;}
+\DoxyCodeLine{00369\ \ \ \ \ id\_arr.reserve(s.size());}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ state\ :\ s)}
+\DoxyCodeLine{00372\ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ id\_arr.push\_back(StateSharedPointer(state)-\/>\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00374\ \ \ \ \ \}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ std::sort(id\_arr.begin(),id\_arr.end());}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \textcolor{keywordtype}{id}\ :\ id\_arr)}
+\DoxyCodeLine{00379\ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ combined\_id\_str\ +=\ std::to\_string(\textcolor{keywordtype}{id})\ +\ \textcolor{charliteral}{','};}
+\DoxyCodeLine{00381\ \ \ \ \ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_optional(combined\_id\_str);}
+\DoxyCodeLine{00384\ \}}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \mbox{\hyperlink{struct_automata}{Automata}}\ convertToDFA(\textcolor{keyword}{const}\ StateSharedPointer\&\ nfa\_start\_state,\textcolor{keyword}{const}\ std::vector<char>\ alphabets)}
+\DoxyCodeLine{00387\ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \mbox{\hyperlink{struct_automata}{Automata}}\ dfa;}
+\DoxyCodeLine{00389\ \ \ \ \ dfa.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}\ =\ std::make\_shared<State>(*nfa\_start\_state);}
+\DoxyCodeLine{00390\ \ \ \ \ dfa.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}}-\/>id\ =\ ++id\_counter;}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \ \ \ \ TransitionSetShared\ states;}
+\DoxyCodeLine{00393\ \ \ \ \ states.insert(dfa.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ std::queue<StateSharedPointer>\ q;}
+\DoxyCodeLine{00396\ \ \ \ \ q.push(dfa.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}});}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordflow}{while}(not\ q.empty())}
+\DoxyCodeLine{00399\ \ \ \ \ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ StateSharedPointer\ current\_state\ =\ q.front();}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ TransitionSet\ closure\_set;}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\_state-\/>combined\_set)}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ closure\_set\ =\ epsilonClosure(current\_state-\/>combined\_set.value());}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ closure\_set\ =\ epsilonClosure(current\_state);}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ accepting\_itr\ =\ std::find\_if(closure\_set.begin(),closure\_set.end(),[](\textcolor{keyword}{const}\ StateWeakPointer\&\ s)\{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ if(StateSharedPointer(s)-\/>is\_accepting)}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ true;}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(accepting\_itr!=closure\_set.end())}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ current\_state-\/>is\_accepting\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i=0;i<alphabets.size();i++)}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ TransitionSet\ result\_set\ =\ epsilonClosure(move(closure\_set,alphabets.at(i)));\ \ \ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result\_set.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ StateSharedPointer\ combined\_state\ =\ std::make\_shared<State>(++id\_counter);}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ combined\_state-\/>combined\_id\ =\ makeCombinedId(result\_set);}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ combined\_state-\/>combined\_set\ =\ std::make\_optional(result\_set);\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{auto}\ state\_itr\ =\ states.find(combined\_state);\ state\_itr!=states.end())}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combined\_state\ =\ StateSharedPointer(*state\_itr);}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/id\_counter;}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\_state\ ==\ dfa.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}})}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_state-\/>transitions.erase(alphabets.at(i));}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ current\_state-\/>insertTransition(alphabets.at(i),combined\_state);}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(states.insert(combined\_state).second)}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.push(combined\_state);}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(current\_state\ ==\ dfa.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}})}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ current\_state-\/>transitions.erase(epsilon);}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \ \ \ \ \}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ dfa.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.insert(states.begin(),states.end());}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordflow}{return}\ dfa;}
+\DoxyCodeLine{00462\ \}}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \textcolor{keywordtype}{void}\ printAutomata(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_automata}{Automata}}\&\ input,\textcolor{keyword}{const}\ std::vector<char>\&\ alphabets)}
+\DoxyCodeLine{00465\ \{}
+\DoxyCodeLine{00466\ \ \ \ \ tabulate::Table\ table;}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keyword}{using\ }Row\_t\ =\ tabulate::Table::Row\_t;}
+\DoxyCodeLine{00468\ \ \ \ \ Row\_t\ header;}
+\DoxyCodeLine{00469\ \ \ \ \ header.push\_back(\textcolor{stringliteral}{"{}State"{}});}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ c\ :\ alphabets)}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ header.push\_back(\textcolor{keywordtype}{string}(1,c));}
+\DoxyCodeLine{00473\ \ \ \ \ \}}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ table.add\_row(header);}
+\DoxyCodeLine{00476\ \ }
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\_idx;}
+\DoxyCodeLine{00478\ \ \ \ \ std::vector<size\_t>\ final\_idx;}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ state\ =\ input.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.begin();state!=input.\mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}.end();state++)}
+\DoxyCodeLine{00480\ \ \ \ \ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id}\ =\ std::to\_string(state-\/>get()-\/>id);}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ Row\_t\ row;}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ row.resize(alphabets.size()+1);}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ neighbours\ :\ state-\/>get()-\/>transitions)}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ row\_str;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ neighbour\ :\ neighbours.second)}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\_str\ +=\ std::to\_string(std::shared\_ptr(neighbour)-\/>\textcolor{keywordtype}{id})\ +\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr\ =\ find(alphabets.cbegin(),alphabets.cend(),neighbours.first);}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr\ ==\ alphabets.end())}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}Illegal\ Character\(\backslash\)n"{}};}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::abort();}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptrdiff\_t\ k\ =\ std::distance(alphabets.cbegin(),itr);}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k+=1;}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row.at(k)\ =\ row\_str;}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((*state)\ ==\ input.\mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\_state}})}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ row.at(0)\ =\ \textcolor{stringliteral}{"{}-\/>"{}}+id;}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ table.add\_row(row);}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ start\_idx\ =\ table.size()-\/1;}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ row.at(0)\ =\ id;}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ table.add\_row(row);}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(state-\/>get()-\/>is\_accepting)}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ final\_idx.push\_back(table.size()-\/1);}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00523\ \ \ \ \ \}}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00525\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ r\ :\ table)}
+\DoxyCodeLine{00526\ \ \ \ \ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ r.format().border\_top(\textcolor{stringliteral}{"{}"{}}).border\_bottom(\textcolor{stringliteral}{"{}"{}}).corner(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00528\ \ \ \ \ \}}
+\DoxyCodeLine{00529\ \ \ \ \ table.row(0).format().show\_border().border\_top(\textcolor{stringliteral}{"{}-\/"{}}).corner(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{00530\ \ \ \ \ table.row(1).format().border\_top(\textcolor{stringliteral}{"{}-\/"{}}).corner(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{00531\ \ \ \ \ table.row(table.size()-\/1).format().border\_bottom(\textcolor{stringliteral}{"{}-\/"{}}).corner\_bottom\_left(\textcolor{stringliteral}{"{}-\/"{}}).corner\_bottom\_right(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{00532\ \ \ \ \ table.column(0).format().font\_align(tabulate::FontAlign::right);}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ index\ :\ final\_idx)}
+\DoxyCodeLine{00535\ \ \ \ \ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ table.row(index).cell(0).format().font\_background\_color(tabulate::Color::green);}
+\DoxyCodeLine{00537\ \ \ \ \ \}}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ table.row(start\_idx).cell(0).format().font\_color(tabulate::Color::red);}
+\DoxyCodeLine{00540\ \ \ \ \ }
+\DoxyCodeLine{00541\ \ \ \ \ std::cout<<table<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00542\ \}}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

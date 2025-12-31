@@ -1,0 +1,122 @@
+\doxysection{E\+:/\+Projects/retonfa/automata.hpp File Reference}
+\hypertarget{automata_8hpp}{}\label{automata_8hpp}\index{E:/Projects/retonfa/automata.hpp@{E:/Projects/retonfa/automata.hpp}}
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include "{}tabulate.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_compare_state_less}{Compare\+State\+Less}}
+\item 
+struct \mbox{\hyperlink{struct_compare_state_equal}{Compare\+State\+Equal}}
+\item 
+struct \mbox{\hyperlink{struct_hash_state}{Hash\+State}}
+\item 
+struct \mbox{\hyperlink{struct_state}{State}}
+\begin{DoxyCompactList}\small\item\em Used to represent a \doxylink{struct_state}{State} in NFA. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_automata}{Automata}}
+\begin{DoxyCompactList}\small\item\em Used to represent an \doxylink{struct_automata}{Automata}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{automata_8hpp_a83b41470f1b1387653cf244d336379a0}\label{automata_8hpp_a83b41470f1b1387653cf244d336379a0} 
+using {\bfseries string} = std\+::string
+\item 
+\Hypertarget{automata_8hpp_ac783fd7ee1d2bd9c357fb450338fd5e3}\label{automata_8hpp_ac783fd7ee1d2bd9c357fb450338fd5e3} 
+using {\bfseries State\+Shared\+Pointer} = std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_state}{State}}$>$
+\item 
+\Hypertarget{automata_8hpp_aacdad06e14569b84ae0f853d94be247a}\label{automata_8hpp_aacdad06e14569b84ae0f853d94be247a} 
+using {\bfseries State\+Weak\+Pointer} = std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_state}{State}}$>$
+\item 
+\Hypertarget{automata_8hpp_a6ce49703f05e8e1ae991d1048a368bda}\label{automata_8hpp_a6ce49703f05e8e1ae991d1048a368bda} 
+using {\bfseries Transition\+Set} = std\+::unordered\+\_\+set$<$State\+Weak\+Pointer,\mbox{\hyperlink{struct_hash_state}{Hash\+State}},\mbox{\hyperlink{struct_compare_state_equal}{Compare\+State\+Equal}}$>$
+\item 
+\Hypertarget{automata_8hpp_af1a4c959d439458339e86ab8feecb1d7}\label{automata_8hpp_af1a4c959d439458339e86ab8feecb1d7} 
+using {\bfseries Transition\+Set\+Shared} = std\+::unordered\+\_\+set$<$State\+Shared\+Pointer,\mbox{\hyperlink{struct_hash_state}{Hash\+State}},\mbox{\hyperlink{struct_compare_state_equal}{Compare\+State\+Equal}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_automata}{Automata}} \mbox{\hyperlink{automata_8hpp_a4ca5a2d02e5317ff20d302dc1536957b}{concatenation}} (\mbox{\hyperlink{struct_automata}{Automata}} \&first, \mbox{\hyperlink{struct_automata}{Automata}} \&second)
+\begin{DoxyCompactList}\small\item\em Concatenates two Finite Automatas. \end{DoxyCompactList}\item 
+\Hypertarget{automata_8hpp_a664eb5b1f41e7a9ce897214a56d2f82b}\label{automata_8hpp_a664eb5b1f41e7a9ce897214a56d2f82b} 
+\mbox{\hyperlink{struct_automata}{Automata}} {\bfseries \+\_\+union} (\mbox{\hyperlink{struct_automata}{Automata}} \&first, \mbox{\hyperlink{struct_automata}{Automata}} \&second)
+\item 
+\Hypertarget{automata_8hpp_a93edadffb0857e1ff95219d55dacc162}\label{automata_8hpp_a93edadffb0857e1ff95219d55dacc162} 
+\mbox{\hyperlink{struct_automata}{Automata}} {\bfseries closure} (\mbox{\hyperlink{struct_automata}{Automata}} \&first)
+\item 
+\Hypertarget{automata_8hpp_ad13f98a9e82cf0779b961747ca790923}\label{automata_8hpp_ad13f98a9e82cf0779b961747ca790923} 
+\mbox{\hyperlink{struct_automata}{Automata}} {\bfseries process\+Reg\+Ex} (const string \&exp)
+\item 
+\Hypertarget{automata_8hpp_a6415143d181333c935ef97022fbde9b3}\label{automata_8hpp_a6415143d181333c935ef97022fbde9b3} 
+void {\bfseries closure\+Traversal} (const State\+Shared\+Pointer \&s, Transition\+Set \&states)
+\item 
+\Hypertarget{automata_8hpp_a5e5ad4d251a21843ca6366f953c96ba7}\label{automata_8hpp_a5e5ad4d251a21843ca6366f953c96ba7} 
+Transition\+Set {\bfseries epsilon\+Closure} (const State\+Shared\+Pointer \&s)
+\item 
+\Hypertarget{automata_8hpp_aa96dd77b9630ca925d103431dd628a02}\label{automata_8hpp_aa96dd77b9630ca925d103431dd628a02} 
+Transition\+Set {\bfseries epsilon\+Closure} (const Transition\+Set \&s)
+\item 
+\Hypertarget{automata_8hpp_a6b22b958138432e91da02a420fdc6a70}\label{automata_8hpp_a6b22b958138432e91da02a420fdc6a70} 
+Transition\+Set {\bfseries move} (const State\+Shared\+Pointer \&s, const char \&alphabet)
+\item 
+\Hypertarget{automata_8hpp_a362890a8fd9eba348457728b59f47d1a}\label{automata_8hpp_a362890a8fd9eba348457728b59f47d1a} 
+Transition\+Set {\bfseries move} (const Transition\+Set \&s, const char \&alphabet)
+\item 
+\Hypertarget{automata_8hpp_a2cdfa931635a8fabdf3d9491660a221b}\label{automata_8hpp_a2cdfa931635a8fabdf3d9491660a221b} 
+std\+::optional$<$ std\+::string $>$ {\bfseries make\+Combined\+Id} (Transition\+Set s)
+\item 
+\Hypertarget{automata_8hpp_a8ebe44891c4bef933a1a1abcf4b2d9ec}\label{automata_8hpp_a8ebe44891c4bef933a1a1abcf4b2d9ec} 
+\mbox{\hyperlink{struct_automata}{Automata}} {\bfseries convert\+To\+DFA} (const State\+Shared\+Pointer \&nfa\+\_\+start\+\_\+state, const std\+::vector$<$ char $>$ alphabets)
+\item 
+\Hypertarget{automata_8hpp_a0ed47696471acc66bf6b89765901ec7a}\label{automata_8hpp_a0ed47696471acc66bf6b89765901ec7a} 
+void {\bfseries print\+Automata} (const \mbox{\hyperlink{struct_automata}{Automata}} \&input, const std\+::vector$<$ char $>$ \&alphabets)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{automata_8hpp_a2e73dffd7cdcd360e2189e85e109035c}\label{automata_8hpp_a2e73dffd7cdcd360e2189e85e109035c} 
+const char {\bfseries epsilon} = \textquotesingle{}\#\textquotesingle{}
+\item 
+\Hypertarget{automata_8hpp_a289fa4e5184cc8f29ab4547d7c7909bc}\label{automata_8hpp_a289fa4e5184cc8f29ab4547d7c7909bc} 
+int {\bfseries id\+\_\+counter} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for classes related to NFA 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{automata_8hpp_a4ca5a2d02e5317ff20d302dc1536957b}\index{automata.hpp@{automata.hpp}!concatenation@{concatenation}}
+\index{concatenation@{concatenation}!automata.hpp@{automata.hpp}}
+\doxysubsubsection{\texorpdfstring{concatenation()}{concatenation()}}
+{\footnotesize\ttfamily \label{automata_8hpp_a4ca5a2d02e5317ff20d302dc1536957b} 
+\mbox{\hyperlink{struct_automata}{Automata}} concatenation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_automata}{Automata}} \&}]{first}{, }\item[{\mbox{\hyperlink{struct_automata}{Automata}} \&}]{second}{}\end{DoxyParamCaption})}
+
+
+
+Concatenates two Finite Automatas. 
+
+Concatenates two Automatas and returns a new one
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & First \doxylink{struct_automata}{Automata} \\
+\hline
+{\em second} & Second \doxylink{struct_automata}{Automata} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The concatenated \doxylink{struct_automata}{Automata} 
+\end{DoxyReturn}

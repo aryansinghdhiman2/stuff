@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("com",["Variable"],[["combined_id",,[["State",,,,0,"File:automata.hpp:State.combined_id","CClass:State:combined_id"]]],["combined_set",,[["State",,,,0,"File:automata.hpp:State.combined_set","CClass:State:combined_set"]]]]);

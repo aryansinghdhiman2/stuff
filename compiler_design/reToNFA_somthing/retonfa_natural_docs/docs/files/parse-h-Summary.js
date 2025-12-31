@@ -1,0 +1,1 @@
+﻿NDFramePage.OnPageTitleLoaded("File:parse.h","parse.h");NDSummary.OnSummaryLoaded("File:parse.h",[["C/C++","C"]],[["Files","File"],["Functions","Function"],["Groups","Group"]],[[1,0,0,"Parse.h","Parse.h"],[2,0,2,"Functions","Functions"],[3,0,1,"prec","prec"],[4,0,1,"associativity","associativity"],[5,0,1,"infixToPostfix","infixToPostfix"]]);

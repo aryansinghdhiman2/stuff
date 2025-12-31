@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="struct_state" kind="struct" language="C++" prot="public">
+    <compoundname>State</compoundname>
+    <includes refid="automata_8hpp" local="no">automata.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_state_1abc172088da8328c72ae3425df8b06e1a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int State::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>State::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The id of the state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="77" column="9" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_state_1a372b1589568bc651959ed9c57808da69" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool State::is_accepting</definition>
+        <argsstring></argsstring>
+        <name>is_accepting</name>
+        <qualifiedname>State::is_accepting</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If the state is an accepted state of the NFA </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="78" column="10" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_state_1adf88281590f518419ff664abe5a1da96" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; State::combined_id</definition>
+        <argsstring></argsstring>
+        <name>combined_id</name>
+        <qualifiedname>State::combined_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Id used when state is made from combining many states </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="79" column="19" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_state_1ac555f06b6fed114b38754ad5d3fb6c42" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; TransitionSet &gt;</type>
+        <definition>std::optional&lt;TransitionSet&gt; State::combined_set</definition>
+        <argsstring></argsstring>
+        <name>combined_set</name>
+        <qualifiedname>State::combined_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set of states used to make this state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="80" column="19" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_state_1a48d6f46a23969d2770f915087e86f735" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; char, TransitionSet &gt;</type>
+        <definition>std::unordered_map&lt;char,TransitionSet&gt; State::transitions</definition>
+        <argsstring></argsstring>
+        <name>transitions</name>
+        <qualifiedname>State::transitions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Transitions of this set </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="81" column="24" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_state_1a4e5dd8c6ee44f840b310d7b326fab7f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>State::State</definition>
+        <argsstring>(int identifer, bool accept=false)</argsstring>
+        <name>State</name>
+        <qualifiedname>State::State</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>identifer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>accept</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor for the <ref refid="struct_state" kindref="compound">State</ref> class <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>identifier</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Used as identifier for the class </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>accept</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Used to specify if it is an acceptable state </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="88" column="5" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_state_1a3a61c5abd69242fee0983d4bfac2aec4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void State::insertTransition</definition>
+        <argsstring>(char alphabet, const StateSharedPointer &amp;s)</argsstring>
+        <name>insertTransition</name>
+        <qualifiedname>State::insertTransition</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>alphabet</declname>
+        </param>
+        <param>
+          <type>const StateSharedPointer &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inserts a transition on an alphabet to a state</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alphabet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alphabet on which transition happens </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_state" kindref="compound">State</ref> on which it transitions to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="96" column="10" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="96" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_state_1ada270d0f994dca9e13d09e7d88c6bc1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool State::operator&lt;</definition>
+        <argsstring>(const State &amp;other)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>State::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_state" kindref="compound">State</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overloaded Less Than Operator.</para>
+<para>Returns by comparing <ref refid="struct_state_1abc172088da8328c72ae3425df8b06e1a" kindref="member">State::id</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="114" column="5" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_state_1adb2136a330eddafe1e9e7e852a1af7d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool State::operator==</definition>
+        <argsstring>(const State &amp;other)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>State::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_state" kindref="compound">State</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overloaded Equals Operator.</para>
+<para>Compares based on <ref refid="struct_state_1adf88281590f518419ff664abe5a1da96" kindref="member">State::combined_id</ref> if exists otherwise on <ref refid="struct_state_1abc172088da8328c72ae3425df8b06e1a" kindref="member">State::id</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="124" column="10" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="124" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Used to represent a <ref refid="struct_state" kindref="compound">State</ref> in NFA. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa/automata.hpp" line="75" column="1" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="76" bodyend="133"/>
+    <listofallmembers>
+      <member refid="struct_state_1adf88281590f518419ff664abe5a1da96" prot="public" virt="non-virtual"><scope>State</scope><name>combined_id</name></member>
+      <member refid="struct_state_1ac555f06b6fed114b38754ad5d3fb6c42" prot="public" virt="non-virtual"><scope>State</scope><name>combined_set</name></member>
+      <member refid="struct_state_1abc172088da8328c72ae3425df8b06e1a" prot="public" virt="non-virtual"><scope>State</scope><name>id</name></member>
+      <member refid="struct_state_1a3a61c5abd69242fee0983d4bfac2aec4" prot="public" virt="non-virtual"><scope>State</scope><name>insertTransition</name></member>
+      <member refid="struct_state_1a372b1589568bc651959ed9c57808da69" prot="public" virt="non-virtual"><scope>State</scope><name>is_accepting</name></member>
+      <member refid="struct_state_1ada270d0f994dca9e13d09e7d88c6bc1f" prot="public" virt="non-virtual"><scope>State</scope><name>operator&lt;</name></member>
+      <member refid="struct_state_1adb2136a330eddafe1e9e7e852a1af7d4" prot="public" virt="non-virtual"><scope>State</scope><name>operator==</name></member>
+      <member refid="struct_state_1a4e5dd8c6ee44f840b310d7b326fab7f5" prot="public" virt="non-virtual"><scope>State</scope><name>State</name></member>
+      <member refid="struct_state_1a48d6f46a23969d2770f915087e86f735" prot="public" virt="non-virtual"><scope>State</scope><name>transitions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

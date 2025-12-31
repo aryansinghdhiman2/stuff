@@ -1,0 +1,931 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="namespacenonstd_1_1optional__lite" kind="namespace" language="C++">
+    <compoundname>nonstd::optional_lite</compoundname>
+    <innerclass refid="structnonstd_1_1optional__lite_1_1nullopt__t" prot="public">nonstd::optional_lite::nullopt_t</innerclass>
+    <innerclass refid="classnonstd_1_1optional__lite_1_1optional" prot="public">nonstd::optional_lite::optional</innerclass>
+    <innernamespace refid="namespacenonstd_1_1optional__lite_1_1detail">nonstd::optional_lite::detail</innernamespace>
+    <innernamespace refid="namespacenonstd_1_1optional__lite_1_1std11">nonstd::optional_lite::std11</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="tabulate_8hpp_1a8caa94752d08b4630d211967646b6b46" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        <definition>const nullopt_t nonstd::optional_lite::nullopt((nullopt_t::init()))</definition>
+        <argsstring>((nullopt_t::init()))</argsstring>
+        <name>nullopt</name>
+        <qualifiedname>nonstd::optional_lite::nullopt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3238" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="tabulate_8hpp_1a6ae823a46b77ddd0a5c4ffa2edb22f18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator==</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, optional&lt; U &gt; const &amp;y)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>nonstd::optional_lite::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3741" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3741" bodyend="3743"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1ab6a0a1a16d60b13c1c7ed7a8a19a49b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator!=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, optional&lt; U &gt; const &amp;y)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>nonstd::optional_lite::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3746" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3746" bodyend="3748"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a0d6c651d715dad3ffde296d23e6b1e44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, optional&lt; U &gt; const &amp;y)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3751" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3751" bodyend="3753"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a4114214b19ec1a855ea38ee5fb42e09c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, optional&lt; U &gt; const &amp;y)</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3756" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3756" bodyend="3758"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a476a2b04a09c94c7e4c715cd2fb0e81a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, optional&lt; U &gt; const &amp;y)</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3761" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3761" bodyend="3763"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1acb283390428e43b21c9b454fc40b546d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, optional&lt; U &gt; const &amp;y)</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; U &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3766" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3766" bodyend="3768"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1ac82ef8ca6d094960c9219464d8405a5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator==</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, nullopt_t) optional_noexcept</argsstring>
+        <name>operator==</name>
+        <qualifiedname>nonstd::optional_lite::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3773" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3773" bodyend="3776"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a7137565eb096568df7c062cf1b4da978" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator==</definition>
+        <argsstring>(nullopt_t, optional&lt; T &gt; const &amp;x) optional_noexcept</argsstring>
+        <name>operator==</name>
+        <qualifiedname>nonstd::optional_lite::operator==</qualifiedname>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3779" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3779" bodyend="3782"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1ae9695a873081abab4586b9275f70e12c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator!=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, nullopt_t) optional_noexcept</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>nonstd::optional_lite::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3785" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3785" bodyend="3788"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a5575493e98a9f89b90bc3a7cee61d199" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator!=</definition>
+        <argsstring>(nullopt_t, optional&lt; T &gt; const &amp;x) optional_noexcept</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>nonstd::optional_lite::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3791" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3791" bodyend="3794"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a30f91c4b9fbff654df826fdef1aa2066" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;, nullopt_t) optional_noexcept</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3797" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3797" bodyend="3800"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a8eb50362ea4098e0bf26e47226010b91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;</definition>
+        <argsstring>(nullopt_t, optional&lt; T &gt; const &amp;x) optional_noexcept</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3803" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3803" bodyend="3806"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a2b1662bbc97a09bcb41000a2b0b2123e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, nullopt_t) optional_noexcept</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3809" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3809" bodyend="3812"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1adc3edef53f4efe47d06f48e7f7de0863" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;=</definition>
+        <argsstring>(nullopt_t, optional&lt; T &gt; const &amp;) optional_noexcept</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3815" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3815" bodyend="3818"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a84f0d95747435c8ce529c0754328807a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, nullopt_t) optional_noexcept</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3821" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3821" bodyend="3824"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1ada56825548f431cd958b5e04ee8935d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;</definition>
+        <argsstring>(nullopt_t, optional&lt; T &gt; const &amp;) optional_noexcept</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3827" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3827" bodyend="3830"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1ae0fd21aca46d8e5fecd084a1aabddd21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;, nullopt_t) optional_noexcept</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3833" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3833" bodyend="3836"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a25613eb0bba501deaa5b092c3883cc39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;=</definition>
+        <argsstring>(nullopt_t, optional&lt; T &gt; const &amp;x) optional_noexcept</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="structnonstd_1_1optional__lite_1_1nullopt__t" kindref="compound">nullopt_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3839" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3839" bodyend="3842"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a8a891c032d7511f69950cc17c5c849b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator==</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, U const &amp;v)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>nonstd::optional_lite::operator==</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3847" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3847" bodyend="3849"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a4dc3e941471f86249318dd5b70646663" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator==</definition>
+        <argsstring>(U const &amp;v, optional&lt; T &gt; const &amp;x)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>nonstd::optional_lite::operator==</qualifiedname>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3852" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3852" bodyend="3854"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a30951e7130620b5ff17ec1fbfb97f38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator!=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, U const &amp;v)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>nonstd::optional_lite::operator!=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3857" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3857" bodyend="3859"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1aa7467f05b38f7a606f8a4681d85f9abd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator!=</definition>
+        <argsstring>(U const &amp;v, optional&lt; T &gt; const &amp;x)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>nonstd::optional_lite::operator!=</qualifiedname>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3862" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3862" bodyend="3864"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a8a4ab40f5cb0d66886220f7929af1797" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, U const &amp;v)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3867" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3867" bodyend="3869"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a5952ac1926363da5c0bf5ede26355301" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;</definition>
+        <argsstring>(U const &amp;v, optional&lt; T &gt; const &amp;x)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;</qualifiedname>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3872" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3872" bodyend="3874"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a7a1df9bbdfce6cdff853e6066a60eea2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, U const &amp;v)</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3877" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3877" bodyend="3879"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a4bb88d1a667d289241046411396f60c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&lt;=</definition>
+        <argsstring>(U const &amp;v, optional&lt; T &gt; const &amp;x)</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&lt;=</qualifiedname>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3882" column="27" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3882" bodyend="3884"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1ad11f55ffa7f20d78ed4881bbb90af5f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, U const &amp;v)</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3887" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3887" bodyend="3889"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a36b3075353aa0c02fe9146551178fb82" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;</definition>
+        <argsstring>(U const &amp;v, optional&lt; T &gt; const &amp;x)</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;</qualifiedname>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3892" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3892" bodyend="3894"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a402990e47e1921d0a6d76ccf776de33e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;=</definition>
+        <argsstring>(optional&lt; T &gt; const &amp;x, U const &amp;v)</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;=</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3897" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3897" bodyend="3899"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a401d0fd558f88c2eccdb8df7b502fa7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>optional_constexpr bool</type>
+        <definition>optional_constexpr bool nonstd::optional_lite::operator&gt;=</definition>
+        <argsstring>(U const &amp;v, optional&lt; T &gt; const &amp;x)</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>nonstd::optional_lite::operator&gt;=</qualifiedname>
+        <param>
+          <type>U const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3902" column="32" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3902" bodyend="3904"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1ab1410153235f5900a1006bce2bf4f140" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void nonstd::optional_lite::swap</definition>
+        <argsstring>(optional&lt; T &gt; &amp;x, optional&lt; T &gt; &amp;y)</argsstring>
+        <name>swap</name>
+        <qualifiedname>nonstd::optional_lite::swap</qualifiedname>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3914" column="6" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3914" bodyend="3920"/>
+      </memberdef>
+      <memberdef kind="function" id="tabulate_8hpp_1a9509073e9af119424975ca9507381f49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classnonstd_1_1optional__lite_1_1optional" kindref="compound">optional</ref>&lt; T &gt;</type>
+        <definition>optional&lt; T &gt; nonstd::optional_lite::make_optional</definition>
+        <argsstring>(T const &amp;value)</argsstring>
+        <name>make_optional</name>
+        <qualifiedname>nonstd::optional_lite::make_optional</qualifiedname>
+        <param>
+          <type>T const &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="3941" column="22" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="3941" bodyend="3941"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa/tabulate.hpp" line="2915" column="1"/>
+  </compounddef>
+</doxygen>

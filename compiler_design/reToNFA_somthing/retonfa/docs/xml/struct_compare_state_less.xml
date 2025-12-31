@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="struct_compare_state_less" kind="struct" language="C++" prot="public">
+    <compoundname>CompareStateLess</compoundname>
+    <includes refid="automata_8hpp" local="no">automata.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_compare_state_less_1ac1feebc5b2f2c1fefe30397f4f7484d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CompareStateLess::operator()</definition>
+        <argsstring>(const StateWeakPointer a, const StateWeakPointer b) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>CompareStateLess::operator()</qualifiedname>
+        <param>
+          <type>const StateWeakPointer</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const StateWeakPointer</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/automata.hpp" line="49" column="10" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="184" bodyend="187"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A function Object used to compare two states of the automata.</para>
+<para>Acts as Less Than Operator </para>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa/automata.hpp" line="47" column="1" bodyfile="E:/Projects/retonfa/automata.hpp" bodystart="48" bodyend="50"/>
+    <listofallmembers>
+      <member refid="struct_compare_state_less_1ac1feebc5b2f2c1fefe30397f4f7484d5" prot="public" virt="non-virtual"><scope>CompareStateLess</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

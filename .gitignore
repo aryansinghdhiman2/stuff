@@ -27,3 +27,5 @@ business intelligence/Country_population_2023.csv
 business intelligence/Country_population_2022.csv
 business intelligence/GDP_2022.csv
 business intelligence/retail_sales_dataset.csv
+projects/url_shortener/venv
+projects/url_shortener/__pycache__

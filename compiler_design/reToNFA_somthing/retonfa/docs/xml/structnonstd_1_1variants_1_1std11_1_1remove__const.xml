@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="structnonstd_1_1variants_1_1std11_1_1remove__const" kind="struct" language="C++" prot="public">
+    <compoundname>nonstd::variants::std11::remove_const</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structnonstd_1_1variants_1_1std11_1_1remove__const_1a00be867af9e50661d041924f07cf9a3d" prot="public" static="no">
+        <type>T</type>
+        <definition>T nonstd::variants::std11::remove_const&lt; T &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>nonstd::variants::std11::remove_const::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="445" column="41" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="445" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa/tabulate.hpp" line="445" column="12" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="445" bodyend="445"/>
+    <listofallmembers>
+      <member refid="structnonstd_1_1variants_1_1std11_1_1remove__const_1a00be867af9e50661d041924f07cf9a3d" prot="public" virt="non-virtual"><scope>nonstd::variants::std11::remove_const</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

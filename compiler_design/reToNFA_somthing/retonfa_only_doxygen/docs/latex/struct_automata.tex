@@ -1,0 +1,93 @@
+\doxysection{Automata Struct Reference}
+\hypertarget{struct_automata}{}\label{struct_automata}\index{Automata@{Automata}}
+
+
+Used to represent an \doxylink{struct_automata}{Automata}.  
+
+
+
+
+{\ttfamily \#include $<$automata.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_automata_ae13e4a7c4d7f0291c80b252a2510ebff}{Automata}} ()
+\item 
+\mbox{\hyperlink{struct_automata_af4b45726eeed50477afc67f58b707a87}{Automata}} (char tran)
+\item 
+\mbox{\hyperlink{struct_automata_a616a9af82140773f0ab88692a51433fb}{Automata}} (const \mbox{\hyperlink{struct_automata}{Automata}} \&other)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+State\+Shared\+Pointer \mbox{\hyperlink{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}{initial\+\_\+state}}
+\item 
+State\+Shared\+Pointer \mbox{\hyperlink{struct_automata_a5eb6c13a974aefaca6459b9bac557398}{final\+\_\+state}}
+\item 
+std\+::set$<$ State\+Shared\+Pointer, \mbox{\hyperlink{struct_compare_state_less}{Compare\+State\+Less}} $>$ \mbox{\hyperlink{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}{states}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to represent an \doxylink{struct_automata}{Automata}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_automata_ae13e4a7c4d7f0291c80b252a2510ebff}\index{Automata@{Automata}!Automata@{Automata}}
+\index{Automata@{Automata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{Automata()}{Automata()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{struct_automata_ae13e4a7c4d7f0291c80b252a2510ebff} 
+Automata\+::\+Automata (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default Constructor \Hypertarget{struct_automata_af4b45726eeed50477afc67f58b707a87}\index{Automata@{Automata}!Automata@{Automata}}
+\index{Automata@{Automata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{Automata()}{Automata()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{struct_automata_af4b45726eeed50477afc67f58b707a87} 
+Automata\+::\+Automata (\begin{DoxyParamCaption}\item[{char}]{tran}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an \doxylink{struct_automata}{Automata} having a transition on tran
+
+
+\begin{DoxyParams}{Parameters}
+{\em tran} & Character on which \doxylink{struct_automata}{Automata} has a transition \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_automata_a616a9af82140773f0ab88692a51433fb}\index{Automata@{Automata}!Automata@{Automata}}
+\index{Automata@{Automata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{Automata()}{Automata()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{struct_automata_a616a9af82140773f0ab88692a51433fb} 
+Automata\+::\+Automata (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_automata}{Automata}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{struct_automata}{Automata} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_automata_a5eb6c13a974aefaca6459b9bac557398}\index{Automata@{Automata}!final\_state@{final\_state}}
+\index{final\_state@{final\_state}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{final\_state}{final\_state}}
+{\footnotesize\ttfamily \label{struct_automata_a5eb6c13a974aefaca6459b9bac557398} 
+State\+Shared\+Pointer Automata\+::final\+\_\+state}
+
+Final \doxylink{struct_state}{State} of NFA. Only used with NFA \Hypertarget{struct_automata_a3048a6f9b701c702965f43f9db1b0c41}\index{Automata@{Automata}!initial\_state@{initial\_state}}
+\index{initial\_state@{initial\_state}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{initial\_state}{initial\_state}}
+{\footnotesize\ttfamily \label{struct_automata_a3048a6f9b701c702965f43f9db1b0c41} 
+State\+Shared\+Pointer Automata\+::initial\+\_\+state}
+
+Entry \doxylink{struct_state}{State} of the FA \Hypertarget{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca}\index{Automata@{Automata}!states@{states}}
+\index{states@{states}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{states}{states}}
+{\footnotesize\ttfamily \label{struct_automata_a4e1e0da5c43828bb1bfe8de7b36c5dca} 
+std\+::set$<$State\+Shared\+Pointer,\mbox{\hyperlink{struct_compare_state_less}{Compare\+State\+Less}}$>$ Automata\+::states}
+
+Contains all the States in the Finite \doxylink{struct_automata}{Automata} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Projects/retonfa\+\_\+only\+\_\+doxygen/\mbox{\hyperlink{automata_8hpp}{automata.\+hpp}}\end{DoxyCompactItemize}

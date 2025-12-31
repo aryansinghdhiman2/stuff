@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("is_",["Variable"],[["is_accepting",,[["State",,,,0,"File:automata.hpp:State.is_accepting","CClass:State:is_accepting"]]]]);

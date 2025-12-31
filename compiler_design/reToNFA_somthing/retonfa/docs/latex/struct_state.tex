@@ -1,0 +1,126 @@
+\doxysection{State Struct Reference}
+\hypertarget{struct_state}{}\label{struct_state}\index{State@{State}}
+
+
+Used to represent a \doxylink{struct_state}{State} in NFA.  
+
+
+
+
+{\ttfamily \#include $<$automata.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_state_a4e5dd8c6ee44f840b310d7b326fab7f5}{State}} (int identifer, bool accept=false)
+\item 
+void \mbox{\hyperlink{struct_state_a3a61c5abd69242fee0983d4bfac2aec4}{insert\+Transition}} (char alphabet, const State\+Shared\+Pointer \&s)
+\item 
+bool \mbox{\hyperlink{struct_state_ada270d0f994dca9e13d09e7d88c6bc1f}{operator$<$}} (const \mbox{\hyperlink{struct_state}{State}} \&other)
+\item 
+bool \mbox{\hyperlink{struct_state_adb2136a330eddafe1e9e7e852a1af7d4}{operator==}} (const \mbox{\hyperlink{struct_state}{State}} \&other)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_state_abc172088da8328c72ae3425df8b06e1a}{id}}
+\item 
+bool \mbox{\hyperlink{struct_state_a372b1589568bc651959ed9c57808da69}{is\+\_\+accepting}}
+\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{struct_state_adf88281590f518419ff664abe5a1da96}{combined\+\_\+id}}
+\item 
+std\+::optional$<$ Transition\+Set $>$ \mbox{\hyperlink{struct_state_ac555f06b6fed114b38754ad5d3fb6c42}{combined\+\_\+set}}
+\item 
+std\+::unordered\+\_\+map$<$ char, Transition\+Set $>$ \mbox{\hyperlink{struct_state_a48d6f46a23969d2770f915087e86f735}{transitions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to represent a \doxylink{struct_state}{State} in NFA. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_state_a4e5dd8c6ee44f840b310d7b326fab7f5}\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily \label{struct_state_a4e5dd8c6ee44f840b310d7b326fab7f5} 
+State\+::\+State (\begin{DoxyParamCaption}\item[{int}]{identifer}{, }\item[{bool}]{accept}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for the \doxylink{struct_state}{State} class 
+\begin{DoxyParams}{Parameters}
+{\em identifier} & Used as identifier for the class \\
+\hline
+{\em accept} & Used to specify if it is an acceptable state \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_state_a3a61c5abd69242fee0983d4bfac2aec4}\index{State@{State}!insertTransition@{insertTransition}}
+\index{insertTransition@{insertTransition}!State@{State}}
+\doxysubsubsection{\texorpdfstring{insertTransition()}{insertTransition()}}
+{\footnotesize\ttfamily \label{struct_state_a3a61c5abd69242fee0983d4bfac2aec4} 
+void State\+::insert\+Transition (\begin{DoxyParamCaption}\item[{char}]{alphabet}{, }\item[{const State\+Shared\+Pointer \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Inserts a transition on an alphabet to a state
+
+
+\begin{DoxyParams}{Parameters}
+{\em alphabet} & Alphabet on which transition happens \\
+\hline
+{\em s} & \doxylink{struct_state}{State} on which it transitions to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_state_ada270d0f994dca9e13d09e7d88c6bc1f}\index{State@{State}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!State@{State}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{struct_state_ada270d0f994dca9e13d09e7d88c6bc1f} 
+bool State\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_state}{State}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Overloaded Less Than Operator.
+
+Returns by comparing \doxylink{struct_state_abc172088da8328c72ae3425df8b06e1a}{State\+::id} \Hypertarget{struct_state_adb2136a330eddafe1e9e7e852a1af7d4}\index{State@{State}!operator==@{operator==}}
+\index{operator==@{operator==}!State@{State}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{struct_state_adb2136a330eddafe1e9e7e852a1af7d4} 
+bool State\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_state}{State}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Overloaded Equals Operator.
+
+Compares based on \doxylink{struct_state_adf88281590f518419ff664abe5a1da96}{State\+::combined\+\_\+id} if exists otherwise on \doxylink{struct_state_abc172088da8328c72ae3425df8b06e1a}{State\+::id} 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_state_adf88281590f518419ff664abe5a1da96}\index{State@{State}!combined\_id@{combined\_id}}
+\index{combined\_id@{combined\_id}!State@{State}}
+\doxysubsubsection{\texorpdfstring{combined\_id}{combined\_id}}
+{\footnotesize\ttfamily \label{struct_state_adf88281590f518419ff664abe5a1da96} 
+std\+::optional$<$std\+::string$>$ State\+::combined\+\_\+id}
+
+Id used when state is made from combining many states \Hypertarget{struct_state_ac555f06b6fed114b38754ad5d3fb6c42}\index{State@{State}!combined\_set@{combined\_set}}
+\index{combined\_set@{combined\_set}!State@{State}}
+\doxysubsubsection{\texorpdfstring{combined\_set}{combined\_set}}
+{\footnotesize\ttfamily \label{struct_state_ac555f06b6fed114b38754ad5d3fb6c42} 
+std\+::optional$<$Transition\+Set$>$ State\+::combined\+\_\+set}
+
+Set of states used to make this state \Hypertarget{struct_state_abc172088da8328c72ae3425df8b06e1a}\index{State@{State}!id@{id}}
+\index{id@{id}!State@{State}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{struct_state_abc172088da8328c72ae3425df8b06e1a} 
+int State\+::id}
+
+The id of the state \Hypertarget{struct_state_a372b1589568bc651959ed9c57808da69}\index{State@{State}!is\_accepting@{is\_accepting}}
+\index{is\_accepting@{is\_accepting}!State@{State}}
+\doxysubsubsection{\texorpdfstring{is\_accepting}{is\_accepting}}
+{\footnotesize\ttfamily \label{struct_state_a372b1589568bc651959ed9c57808da69} 
+bool State\+::is\+\_\+accepting}
+
+If the state is an accepted state of the NFA \Hypertarget{struct_state_a48d6f46a23969d2770f915087e86f735}\index{State@{State}!transitions@{transitions}}
+\index{transitions@{transitions}!State@{State}}
+\doxysubsubsection{\texorpdfstring{transitions}{transitions}}
+{\footnotesize\ttfamily \label{struct_state_a48d6f46a23969d2770f915087e86f735} 
+std\+::unordered\+\_\+map$<$char,Transition\+Set$>$ State\+::transitions}
+
+Transitions of this set 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Projects/retonfa/\mbox{\hyperlink{automata_8hpp}{automata.\+hpp}}\end{DoxyCompactItemize}

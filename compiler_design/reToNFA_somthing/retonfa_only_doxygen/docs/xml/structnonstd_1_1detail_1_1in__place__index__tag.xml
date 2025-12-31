@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="structnonstd_1_1detail_1_1in__place__index__tag" kind="struct" language="C++" prot="public">
+    <compoundname>nonstd::detail::in_place_index_tag</compoundname>
+    <templateparamlist>
+      <param>
+        <type>std::size_t</type>
+        <declname>K</declname>
+        <defname>K</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa_only_doxygen/tabulate.hpp" line="132" column="12" bodyfile="E:/Projects/retonfa_only_doxygen/tabulate.hpp" bodystart="132" bodyend="132"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

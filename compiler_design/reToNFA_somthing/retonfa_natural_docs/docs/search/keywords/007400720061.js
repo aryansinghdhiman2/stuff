@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("tra",["Variable"],[["transitions",,[["State",,,,0,"File:automata.hpp:State.transitions","CClass:State:transitions"]]]]);

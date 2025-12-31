@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("sta",["Struct","Variable"],[["State",,[[,,,,0,"File:automata.hpp:State","CClass:State"],["State","Members of State",,,1,"File:automata.hpp:State.Members_of_State","CClass:State:Members_of_State"]]]]);

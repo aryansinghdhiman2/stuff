@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="structnonstd_1_1variants_1_1detail_1_1typelist__type__at_3_01typelist_3_01_head_00_01_tail_01_4_00_010_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>nonstd::variants::detail::typelist_type_at&lt; typelist&lt; Head, Tail &gt;, 0 &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class Head</type>
+      </param>
+      <param>
+        <type>class Tail</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structnonstd_1_1variants_1_1detail_1_1typelist__type__at_3_01typelist_3_01_head_00_01_tail_01_4_00_010_01_4_1a2c8af28589595531c53f06787e555b15" prot="public" static="no">
+        <type>Head</type>
+        <definition>Head nonstd::variants::detail::typelist_type_at&lt; typelist&lt; Head, Tail &gt;, 0 &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>nonstd::variants::detail::typelist_type_at&lt; typelist&lt; Head, Tail &gt;, 0 &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa/tabulate.hpp" line="755" column="16" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="755" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa/tabulate.hpp" line="754" column="14" bodyfile="E:/Projects/retonfa/tabulate.hpp" bodystart="754" bodyend="756"/>
+    <listofallmembers>
+      <member refid="structnonstd_1_1variants_1_1detail_1_1typelist__type__at_3_01typelist_3_01_head_00_01_tail_01_4_00_010_01_4_1a2c8af28589595531c53f06787e555b15" prot="public" virt="non-virtual"><scope>nonstd::variants::detail::typelist_type_at&lt; typelist&lt; Head, Tail &gt;, 0 &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="structnonstd_1_1variants_1_1detail_1_1_comparator" kind="struct" language="C++" prot="public">
+    <compoundname>nonstd::variants::detail::Comparator</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class Variant</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structnonstd_1_1variants_1_1detail_1_1_comparator_1a5deee98fca43e563c523d572eb1a079b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool nonstd::variants::detail::Comparator&lt; Variant &gt;::equal</definition>
+        <argsstring>(Variant const &amp;v, Variant const &amp;w)</argsstring>
+        <name>equal</name>
+        <qualifiedname>nonstd::variants::detail::Comparator::equal</qualifiedname>
+        <param>
+          <type>Variant const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>Variant const &amp;</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/tabulate.hpp" line="2265" column="22" bodyfile="E:/Projects/retonfa_only_doxygen/tabulate.hpp" bodystart="2265" bodyend="2303"/>
+      </memberdef>
+      <memberdef kind="function" id="structnonstd_1_1variants_1_1detail_1_1_comparator_1a2ddb38be27b964ca167944ee9c9a7b5e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool nonstd::variants::detail::Comparator&lt; Variant &gt;::less_than</definition>
+        <argsstring>(Variant const &amp;v, Variant const &amp;w)</argsstring>
+        <name>less_than</name>
+        <qualifiedname>nonstd::variants::detail::Comparator::less_than</qualifiedname>
+        <param>
+          <type>Variant const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>Variant const &amp;</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/tabulate.hpp" line="2305" column="22" bodyfile="E:/Projects/retonfa_only_doxygen/tabulate.hpp" bodystart="2305" bodyend="2343"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa_only_doxygen/tabulate.hpp" line="2264" column="12" bodyfile="E:/Projects/retonfa_only_doxygen/tabulate.hpp" bodystart="2264" bodyend="2344"/>
+    <listofallmembers>
+      <member refid="structnonstd_1_1variants_1_1detail_1_1_comparator_1a5deee98fca43e563c523d572eb1a079b" prot="public" virt="non-virtual"><scope>nonstd::variants::detail::Comparator</scope><name>equal</name></member>
+      <member refid="structnonstd_1_1variants_1_1detail_1_1_comparator_1a2ddb38be27b964ca167944ee9c9a7b5e" prot="public" virt="non-virtual"><scope>nonstd::variants::detail::Comparator</scope><name>less_than</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="structnonstd_1_1variants_1_1std11_1_1conditional_3_01false_00_01_then_00_01_else_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>nonstd::variants::std11::conditional&lt; false, Then, Else &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class Then</type>
+      </param>
+      <param>
+        <type>class Else</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structnonstd_1_1variants_1_1std11_1_1conditional_3_01false_00_01_then_00_01_else_01_4_1a9cc941e3568fd24b7703672cd42ff1e6" prot="public" static="no">
+        <type>Else</type>
+        <definition>Else nonstd::variants::std11::conditional&lt; false, Then, Else &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>nonstd::variants::std11::conditional&lt; false, Then, Else &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/Projects/retonfa_only_doxygen/tabulate.hpp" line="467" column="46" bodyfile="E:/Projects/retonfa_only_doxygen/tabulate.hpp" bodystart="467" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa_only_doxygen/tabulate.hpp" line="467" column="14" bodyfile="E:/Projects/retonfa_only_doxygen/tabulate.hpp" bodystart="467" bodyend="467"/>
+    <listofallmembers>
+      <member refid="structnonstd_1_1variants_1_1std11_1_1conditional_3_01false_00_01_then_00_01_else_01_4_1a9cc941e3568fd24b7703672cd42ff1e6" prot="public" virt="non-virtual"><scope>nonstd::variants::std11::conditional&lt; false, Then, Else &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

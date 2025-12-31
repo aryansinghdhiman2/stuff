@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="structnonstd_1_1variants_1_1detail_1_1_s8" kind="struct" language="C++" prot="public">
+    <compoundname>nonstd::variants::detail::S8</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/Projects/retonfa_only_doxygen/tabulate.hpp" line="602" column="1" bodyfile="E:/Projects/retonfa_only_doxygen/tabulate.hpp" bodystart="602" bodyend="602"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

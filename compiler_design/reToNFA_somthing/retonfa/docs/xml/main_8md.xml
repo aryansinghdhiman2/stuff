@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="main_8md" kind="file" language="Markdown">
+    <compoundname>main.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>main<sp/>page</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Automata](@ref<sp/>Automata)</highlight></codeline>
+    </programlisting>
+    <location file="E:/Projects/retonfa/main.md"/>
+  </compounddef>
+</doxygen>

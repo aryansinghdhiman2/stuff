@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("aut",["File"],[["Automata",,[[,"Automata.hpp",,,0,"File:automata.hpp:Automata.hpp"]]]]);

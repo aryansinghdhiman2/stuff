@@ -1,0 +1,59 @@
+\doxysection{E\+:/\+Projects/retonfa/parse.h File Reference}
+\hypertarget{parse_8h}{}\label{parse_8h}\index{E:/Projects/retonfa/parse.h@{E:/Projects/retonfa/parse.h}}
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{parse_8h_a9d0cededcbe3e767d4819bf897cb6736}{prec}} (char c)
+\item 
+char \mbox{\hyperlink{parse_8h_a462e1813cf591729237efa8287c74c99}{associativity}} (char c)
+\item 
+string \mbox{\hyperlink{parse_8h_a31ac5bb2b8560710f94e51780e44df4e}{infix\+To\+Postfix}} (string s)
+\begin{DoxyCompactList}\small\item\em Used to Convert infix to post fix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Has parsing Functions 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{parse_8h_a462e1813cf591729237efa8287c74c99}\index{parse.h@{parse.h}!associativity@{associativity}}
+\index{associativity@{associativity}!parse.h@{parse.h}}
+\doxysubsubsection{\texorpdfstring{associativity()}{associativity()}}
+{\footnotesize\ttfamily \label{parse_8h_a462e1813cf591729237efa8287c74c99} 
+char associativity (\begin{DoxyParamCaption}\item[{char}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns Associativity \Hypertarget{parse_8h_a31ac5bb2b8560710f94e51780e44df4e}\index{parse.h@{parse.h}!infixToPostfix@{infixToPostfix}}
+\index{infixToPostfix@{infixToPostfix}!parse.h@{parse.h}}
+\doxysubsubsection{\texorpdfstring{infixToPostfix()}{infixToPostfix()}}
+{\footnotesize\ttfamily \label{parse_8h_a31ac5bb2b8560710f94e51780e44df4e} 
+string infix\+To\+Postfix (\begin{DoxyParamCaption}\item[{string}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Used to Convert infix to post fix. 
+
+Takes an infix string and returns a postfix string
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The infix string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The postfix string 
+\end{DoxyReturn}
+\Hypertarget{parse_8h_a9d0cededcbe3e767d4819bf897cb6736}\index{parse.h@{parse.h}!prec@{prec}}
+\index{prec@{prec}!parse.h@{parse.h}}
+\doxysubsubsection{\texorpdfstring{prec()}{prec()}}
+{\footnotesize\ttfamily \label{parse_8h_a9d0cededcbe3e767d4819bf897cb6736} 
+int prec (\begin{DoxyParamCaption}\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+Checks precedence of character
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character for which to check precedence \\
+\hline
+\end{DoxyParams}
